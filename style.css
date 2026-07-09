@@ -142,7 +142,7 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  height: 68px;
+  min-height: 68px;
   display: flex;
   background: var(--primary);
   border-bottom: none;
