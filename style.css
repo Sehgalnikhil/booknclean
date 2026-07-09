@@ -2068,3 +2068,22 @@ body {
     margin-bottom: 4px;
   }
 }
+
+
+/* Fix for top right buttons overlapping on small phones */
+@media(max-width: 480px) {
+  .btn-call {
+    font-size: 0 !important; /* Hide text */
+    padding: 0 !important;
+    width: 44px;
+    height: 44px;
+    border-radius: 50% !important;
+    justify-content: center;
+    min-width: 0 !important;
+  }
+  .btn-call svg {
+    width: 20px !important;
+    height: 20px !important;
+    margin: 0 !important;
+  }
+}

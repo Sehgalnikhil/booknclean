@@ -226,7 +226,7 @@ void main(){
             <option value="Wollongong">Wollongong</option>
           </select>
           <div class="fe" id="esub">Please select your city</div>
-          <input type="date" class="fi" id="idate" min="" onchange="dateChg(this.value)">
+          <input type="text" placeholder="Select preferred date..." class="fi" id="idate" min="" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" onchange="dateChg(this.value)">
           <div class="fe" id="edate">Please select a preferred date</div>
           <div class="fn"><button class="bb" onclick="prv(5)">← Back</button><button class="bn" onclick="nxt(5)">Next →</button></div>
         </div>
