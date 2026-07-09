@@ -1969,10 +1969,10 @@ body {
   
   /* Grids and Cards */
   .ogc {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   .oga {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   
   /* Comparison Table */
