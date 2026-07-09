@@ -14,6 +14,98 @@
 <meta property="og:locale" content="en_AU">
 <meta name="twitter:card" content="summary">
 
+<!-- ═══════════════════════════════════════════════════════════
+     GOOGLE FAQPage SCHEMA MARKUP — Makes Q&As appear in SERP
+════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need to pay a deposit upfront for bond cleaning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No deposit. Zero advance payment. You pay only after the bond clean is 100% complete. Book &amp; Clean is one of the very few bond cleaning services in Australia with this policy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to be home during the bond clean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — you don't need to be home. Most customers hand over a key or leave access instructions and get on with moving. Our cleaners are police-checked and fully insured. Before-and-after photos are taken on every job."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the property need to be empty for a bond clean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — the property must be completely vacant (no furniture, no belongings) before the bond clean begins. This is required to clean every surface properly, including under and behind where furniture sat, and is a condition of the bond-back guarantee."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is oven cleaning included in a bond clean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, always included at no extra cost. Oven deep cleaning (racks, trays, glass door, inside and out), cooktop degreasing, and rangehood cleaning are all part of the standard bond clean package at Book &amp; Clean."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the Bond Back Guarantee work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If your property manager flags any cleaning item within 72 hours of your exit inspection, Book &amp; Clean will return and re-clean it completely free of charge. Just send us the inspection report or photos and we'll arrange a re-clean — typically within 2–3 business days, no later than 5 business days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is carpet steam cleaning included in the bond clean price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Carpet steam cleaning is an optional upgrade selected at quote time. Vacuuming is always included free. The 'With Carpet' package includes professional hot-water extraction steam cleaning plus a receipt for your property manager, which most agencies require at lease handover."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a bond clean take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the size and condition of the property. A 2-bedroom apartment typically takes 4–6 hours; a 3–4 bedroom house typically 6–9 hours. Our cleaners work until the job is done to inspection standard — they don't clock-watch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I need to provide for the bond cleaners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three things: electricity (for equipment and lighting), running hot water (essential for proper cleaning), and parking access for our vehicle. Book &amp; Clean brings all equipment and cleaning products."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is wall cleaning included in a bond clean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wall spot cleaning (scuffs, light marks, fingerprints) is always included as standard. A full wall wash with sugar soap is available as an optional add-on for heavily marked walls."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which cities does Book & Clean service for bond cleaning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Book &amp; Clean provides professional bond cleaning services across Perth, Melbourne, Brisbane, and Sydney metro areas and surrounding suburbs — typically within 30km of each CBD."
+      }
+    }
+  ]
+}
+</script>
+
 <!-- Fonts: Geist + Inter + JetBrains Mono (Stitch "Obsidian Clean" design system) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -329,21 +421,6 @@ void main(){
   </div>
 </div>
 
-<!-- SCOPE OF WORK -->
-<div class="section reveal-on-scroll">
-  <div class="container">
-    <span class="eyebrow">The Exact Scope</span>
-    <h2 class="section-title">Every room. Every item. In writing.</h2>
-    <p class="section-sub">Your quote comes with our full Scope of Work — the exact checklist our cleaners work from, and the standard your bond-back guarantee is assessed against. If it's listed, we do it.</p>
-    <div class="scope-note">
-      <div>
-        <div style="font-family:var(--ff-head);font-weight:700;font-size:15px;color:var(--on-bg)">Want it all in writing? Good — so do we.</div>
-        <div style="font-size:13px;color:var(--on-surface-var);margin-top:2px">Download our full Scope of Work. It's the exact document we attach to every quote and give to every cleaner.</div>
-      </div>
-      <a class="scope-dl" href="OC-Bond-Clean-Scope-of-Work.pdf" target="_blank">⬇ Download the Scope of Work (PDF)</a>
-    </div>
-  </div>
-</div>
 
 <!-- STORY SECTION -->
 <div class="section section-alt reveal-on-scroll">
@@ -428,6 +505,56 @@ void main(){
     <div style="text-align:center;margin-top:28px">
       <p style="font-size:14px;color:var(--on-surface-var);margin-bottom:16px">Every clean comes with a bond-back guarantee. If your agent flags anything, we return free.</p>
       <button class="btn-primary" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Get My Bond Clean Quote →</button>
+    </div>
+  </div>
+</div>
+
+<!-- BEFORE & AFTER SLIDER -->
+<div class="section section-alt reveal-on-scroll" id="before-after">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:36px">
+      <span class="eyebrow">See The Difference</span>
+      <h2 class="section-title">From filthy to flawless — <em style="font-style:normal" class="text-gradient">drag to reveal</em></h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center">Every bond clean is completed to strict inspection standard. Drag the slider left and right to see the transformation.</p>
+    </div>
+
+    <div class="ba-slider-wrap">
+      <!-- The two images + labels + divider all inside the clipping container -->
+      <div class="ba-slider" id="baSlider" role="img" aria-label="Before and after bond cleaning comparison">
+        <!-- AFTER image (bottom layer — right side, always fully visible) -->
+        <img class="ba-img ba-after" src="after-clean.jpg" alt="Kitchen after professional bond cleaning — sparkling clean" draggable="false">
+        <!-- BEFORE image (top layer — left side, clips as handle moves right) -->
+        <div class="ba-before-wrap" id="baBeforeWrap">
+          <img class="ba-img ba-before" src="before-clean.jpg" alt="Kitchen before bond cleaning — dirty and grimy" draggable="false">
+        </div>
+
+        <!-- Floating labels -->
+        <div class="ba-label ba-label-before">
+          <span class="ba-label-icon">✕</span> Before
+        </div>
+        <div class="ba-label ba-label-after">
+          <span class="ba-label-icon">✓</span> After
+        </div>
+
+        <!-- Divider line + handle -->
+        <div class="ba-divider" id="baDivider">
+          <div class="ba-handle" aria-label="Drag to compare before and after">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 12H3M3 12L6 9M3 12L6 15" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 12H21M21 12L18 9M21 12L18 15" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <p class="ba-hint" id="baHint">
+        ↔ Drag the handle left or right to compare
+      </p>
+    </div>
+
+    <div style="text-align:center;margin-top:32px">
+      <p style="font-size:14px;color:var(--on-surface-var);margin-bottom:16px">This is the standard we hold every job to — and it's backed by our written guarantee.</p>
+      <button class="btn-primary" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Get My Fixed-Price Quote →</button>
     </div>
   </div>
 </div>
@@ -658,25 +785,256 @@ void main(){
   </div>
 </div>
 
-<!-- FAQ -->
-<div class="section section-alt">
+<!-- ═══════════════════════════════════════════════════════════
+     FAQ — Accordion with Google FAQPage Schema Markup
+════════════════════════════════════════════════════════════ -->
+<div class="section section-alt faq-section" id="faq">
   <div class="container">
-    <span class="eyebrow">FAQ</span>
-    <h2 class="section-title">Common questions answered</h2>
-    <p class="section-sub">Everything you need to know before booking your bond clean.</p>
-    <div class="faq-list">
-      <div class="fi2"><div class="fq2" onclick="tFaq(this)">What exactly is included in an End of Lease Clean?<span class="fqi">+</span></div><div class="fa">Our End of Lease Cleaning includes detailed cleaning of all living areas, bedrooms, bathrooms, laundry, kitchen, interior windows, doors, skirting boards, built-in cupboards, oven, cooktop, rangehood, and carpet steam cleaning. Garage and balcony floors are also swept.</div></div>
-      <div class="fi2"><div class="fq2" onclick="tFaq(this)">Is oven deep cleaning included?<span class="fqi">+</span></div><div class="fa">Yes. Professional oven, cooktop, rangehood, and filter cleaning are included as part of our End of Lease Cleaning service at no extra cost.</div></div>
-      <div class="fi2"><div class="fq2" onclick="tFaq(this)">Is wall cleaning included?<span class="fqi">+</span></div><div class="fa">Wall spot cleaning is included as standard. Full wall washing is an optional add-on for heavily marked walls.</div></div>
-      <div class="fi2"><div class="fq2" onclick="tFaq(this)">How does the Bond Back Guarantee work?<span class="fqi">+</span></div><div class="fa">We provide a 72-hour Bond Back Guarantee. If your property manager or real estate agent reports any cleaning-related issues within 72 hours of your exit inspection, we'll return and rectify those items at no additional cost.</div></div>
-      <div class="fi2"><div class="fq2" onclick="tFaq(this)">Do I need to pay a deposit?<span class="fqi">+</span></div><div class="fa">No deposit is required. Payment is due after the clean is complete and you are satisfied.</div></div>
-      <div class="fi2"><div class="fq2" onclick="tFaq(this)">Do you clean external or upper-floor windows?<span class="fqi">+</span></div><div class="fa">External ground-floor window cleaning is available as an optional add-on. Upper-floor exterior glass is a specialist job for safety reasons.</div></div>
-      <div class="fi2"><div class="fq2" onclick="tFaq(this)">Does the property need to be vacant?<span class="fqi">+</span></div><div class="fa">Yes. For the best results and to meet our Bond Back Guarantee requirements, the property must be completely vacant before cleaning begins.</div></div>
-      <div class="fi2"><div class="fq2" onclick="tFaq(this)">What do I need to provide before the clean?<span class="fqi">+</span></div><div class="fa">Please ensure electricity, running hot water, and suitable parking for our service vehicle are available throughout the cleaning service.</div></div>
-      <div class="fi2"><div class="fq2" onclick="tFaq(this)">Is carpet steam cleaning included?<span class="fqi">+</span></div><div class="fa">Carpet steam cleaning is an option you select during the quote process — it's included in the "With Carpet" package at a flat rate.</div></div>
-      <div class="fi2"><div class="fq2" onclick="tFaq(this)">Can I add extra services after booking?<span class="fqi">+</span></div><div class="fa">Yes. Additional services can usually be added before your appointment, subject to availability. Contact us as early as possible.</div></div>
-      <div class="fi2"><div class="fq2" onclick="tFaq(this)">Do you service multiple cities?<span class="fqi">+</span></div><div class="fa">Yes. We provide professional bond cleaning services across Perth, Melbourne, Brisbane, and Sydney.</div></div>
-      <div class="fi2"><div class="fq2" onclick="tFaq(this)">What payment methods do you accept?<span class="fqi">+</span></div><div class="fa">Payment is required upon completion. We accept major credit/debit cards through our secure payment link.</div></div>
+    <div class="faq-header">
+      <span class="eyebrow">Got Questions?</span>
+      <h2 class="section-title">Everything You Need to Know</h2>
+      <p class="section-sub">Straight answers before you book — no fluff, no phone calls needed.</p>
+    </div>
+
+    <!-- Category tabs -->
+    <div class="faq-tabs" role="tablist">
+      <button class="faq-tab active" data-cat="booking" role="tab" aria-selected="true">📋 Booking &amp; Pricing</button>
+      <button class="faq-tab" data-cat="service" role="tab" aria-selected="false">🧹 The Service</button>
+      <button class="faq-tab" data-cat="guarantee" role="tab" aria-selected="false">🛡️ Guarantee</button>
+      <button class="faq-tab" data-cat="logistics" role="tab" aria-selected="false">🏠 Logistics</button>
+    </div>
+
+    <!-- Booking & Pricing -->
+    <div class="faq-group active" data-cat="booking">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Do I need to pay a deposit upfront?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            <strong>No deposit. Zero advance payment.</strong> You pay only after the clean is 100% complete. We're one of the very few bond cleaning services in Australia with this policy — because we're confident in our work.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How is my price calculated?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            Your price is based on your <strong>property size</strong> (bedrooms + bathrooms), <strong>property type</strong> (single vs double storey), and whether you want <strong>carpet steam cleaning</strong> included. The price you see in the quote is the price you pay — no surprise charges on the day.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is the price I see the final price?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            Yes. Our quotes are <strong>fixed-price and GST-inclusive</strong>. Unlike many cleaners who quote "from" a price and then adjust it on the day, your quote is locked in. No hidden fees, no add-ons you didn't ask for.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What payment methods do you accept?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            We accept all major credit and debit cards via a secure payment link sent after the job. Payment on completion — never before.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can I add extra services after booking?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            Yes — contact us as soon as possible and we'll update your booking. The earlier the better, though we'll do our best to accommodate last-minute requests depending on what's needed.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Service -->
+    <div class="faq-group" data-cat="service">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's included in a standard bond clean?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            Everything agents check: kitchen (oven deep clean, rangehood, cupboards), all bathrooms (shower screens, tiles, toilet, mirrors), all bedrooms and living areas (windows, skirting, wardrobes, light fittings), wall spot cleaning, blinds, fly screens, and all floors vacuumed and mopped. A full written scope of work is included with every quote.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is oven cleaning included — or is it extra?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            <strong>Always included at no extra cost.</strong> Oven deep cleaning (racks, trays, glass door, inside and out), cooktop degreasing, and rangehood cleaning are all part of our standard package. The oven is one of the top two reasons agents fail bonds — so we never skip it.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is carpet steam cleaning included?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            It's an optional package upgrade you select at quote time. Vacuuming is always free. If you choose the <strong>"With Carpet"</strong> package, we do professional hot-water extraction steam cleaning and provide a receipt for your property manager — which most agencies require at handover.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is wall cleaning included?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            <strong>Wall spot cleaning is always included</strong> — scuffs, light marks, finger prints. If your walls have heavy built-up staining or marks that go beyond spot-cleaning, our <em>Full Wall Wash</em> add-on covers a sugar-soap wash of every surface top to bottom.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Do you clean outside windows?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            <strong>Interior windows are always included free</strong> (glass, sills, and tracks on every floor). External ground-floor windows are an optional add-on. Upper-storey exterior glass requires specialist equipment — that's not something we offer for safety reasons.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guarantee -->
+    <div class="faq-group" data-cat="guarantee">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What is your Bond Back Guarantee, exactly?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            If your property manager flags any cleaning item from our scope within <strong>72 hours of your exit inspection</strong>, we return and re-clean it completely free. Just send us the inspection report or photos and we'll arrange a re-clean — typically within 2–3 business days, no later than 5. No arguments, no charge.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What if my inspection is flagged after 72 hours?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            The guarantee window is 72 hours from exit inspection (and no later than 7 days after our clean). If you have a tight turnaround — tell us as soon as you're notified and we'll do everything we can to prioritise you. Outside the window, we'll still try to help, though any re-clean may be chargeable.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Does the guarantee cover carpet stains that won't come out?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            The guarantee covers our cleaning work — not pre-existing damage. <strong>Permanent stains, burns, bleach marks, and pet odour soaked into the underlay</strong> are beyond what any cleaning service can fix and are not covered. We'll flag anything like this before we start so there are no surprises.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Is the guarantee a refund or a re-clean?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            A <strong>free re-clean</strong> — not a cash refund. We come back and make it right. This is intentional: a refund doesn't get your bond back; a re-clean does.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logistics -->
+    <div class="faq-group" data-cat="logistics">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Do I need to be home during the clean?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            <strong>No — you don't need to be there.</strong> Most customers hand over a key or leave access instructions and get on with moving. Our cleaners are police-checked and fully insured. Before-and-after photos are taken on every job so you have full visibility.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Does the property need to be empty?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            Yes — the property must be <strong>completely vacant</strong> (no furniture, no belongings) before we start. This is a requirement of our bond-back guarantee and allows us to clean every surface properly, including under and behind where furniture sat.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What do I need to have ready for the cleaners?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            Three things: <strong>electricity</strong> (for equipment and lighting), <strong>running hot water</strong> (essential for proper cleaning), and <strong>parking access</strong> for our vehicle. That's it — we bring all equipment and products.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Which cities do you service?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            We cover <strong>Perth, Melbourne, Brisbane, and Sydney</strong> metro areas and surrounding suburbs — typically within 30km of each CBD. Enter your suburb in the quote form to confirm availability and see your fixed price instantly.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How long does a bond clean take?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            It depends on the size and condition of the property, but as a rough guide: a 2-bedroom apartment takes around 4–6 hours; a 3–4 bedroom house typically 6–9 hours. We work until the job is done to standard — we don't clock-watch.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-cta">
+      <p>Still have a question?</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+        <a href="https://wa.me/61468230552" class="btn-primary" style="font-size:14px;padding:12px 24px;text-decoration:none">💬 Ask on WhatsApp</a>
+        <button class="btn-outline" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})" style="font-size:14px;padding:12px 24px">Get Instant Quote →</button>
+      </div>
     </div>
   </div>
 </div>
@@ -1091,6 +1449,50 @@ function tFaq(el){
   if(!w)i.classList.add('op');
 }
 
+// ── New FAQ tabs + accordion ──────────────────────────────────
+(function(){
+  // Tab switching
+  document.querySelectorAll('.faq-tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var cat = tab.dataset.cat;
+      document.querySelectorAll('.faq-tab').forEach(function(t){
+        t.classList.remove('active');
+        t.setAttribute('aria-selected','false');
+      });
+      document.querySelectorAll('.faq-group').forEach(function(g){
+        g.classList.remove('active');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected','true');
+      var group = document.querySelector('.faq-group[data-cat="'+cat+'"]');
+      if(group) group.classList.add('active');
+    });
+  });
+
+  // Accordion toggle
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      // Close all in this group
+      var group = btn.closest('.faq-group');
+      group.querySelectorAll('.faq-item').forEach(function(i){
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+        var panel = i.querySelector('.faq-a');
+        panel.style.maxHeight = null;
+      });
+      // Open clicked (unless it was already open)
+      if(!isOpen){
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+        var panel = item.querySelector('.faq-a');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+})();
+
 upProg(1);
 </script>
 
@@ -1140,6 +1542,96 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+/* ── Before & After Slider ─────────────────────────────── */
+(function() {
+  var slider   = document.getElementById('baSlider');
+  var divider  = document.getElementById('baDivider');
+  var beforeWrap = document.getElementById('baBeforeWrap');
+  var hint     = document.getElementById('baHint');
+  if (!slider || !divider || !beforeWrap) return;
+
+  var handle = slider.querySelector('.ba-handle');
+  var isDragging = false;
+  var hasInteracted = false;
+
+  /* Clamp helper */
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+  /* Core update — pos is 0–1 (fraction of slider width) */
+  function setPosition(pos) {
+    var pct = clamp(pos * 100, 0, 100);
+    divider.style.left = pct + '%';
+    var right = (100 - pct).toFixed(3);
+    beforeWrap.style.clipPath = 'inset(0 ' + right + '% 0 0)';
+    /* Remove intro anim class so JS takes over */
+    beforeWrap.classList.remove('intro-anim');
+  }
+
+  /* Get X fraction from mouse/touch event */
+  function getPos(e) {
+    var rect = slider.getBoundingClientRect();
+    var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    return (clientX - rect.left) / rect.width;
+  }
+
+  function onStart(e) {
+    e.preventDefault();
+    isDragging = true;
+    slider.classList.add('dragging');
+    if (handle) handle.classList.remove('pulse');
+    if (!hasInteracted) {
+      hasInteracted = true;
+      if (hint) hint.classList.add('hidden');
+    }
+    setPosition(getPos(e));
+  }
+
+  function onMove(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+    setPosition(getPos(e));
+  }
+
+  function onEnd() {
+    isDragging = false;
+    slider.classList.remove('dragging');
+  }
+
+  /* Mouse events */
+  slider.addEventListener('mousedown', onStart);
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('mouseup', onEnd);
+
+  /* Touch events */
+  slider.addEventListener('touchstart', onStart, { passive: false });
+  window.addEventListener('touchmove', onMove, { passive: false });
+  window.addEventListener('touchend', onEnd);
+
+  /* Intro sweep when section scrolls into view */
+  var section = document.getElementById('before-after');
+  if ('IntersectionObserver' in window && section) {
+    var baObs = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) {
+        /* Reset to full-before, then sweep */
+        beforeWrap.style.clipPath = 'inset(0 0% 0 0)';
+        divider.style.left = '0%';
+        beforeWrap.classList.add('intro-anim');
+        if (handle) {
+          setTimeout(function() {
+            handle.classList.add('pulse');
+          }, 1900);
+        }
+        baObs.disconnect();
+      }
+    }, { threshold: 0.4 });
+    baObs.observe(section);
+  } else {
+    /* Fallback: start at 50% */
+    setPosition(0.5);
+    if (handle) handle.classList.add('pulse');
+  }
+})();
 </script>
 </body>
 </html>

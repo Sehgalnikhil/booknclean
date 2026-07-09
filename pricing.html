@@ -161,6 +161,92 @@ void main(){
     </div>
   </div>
 </div>
+
+<!-- DIY vs BOOK & CLEAN CALCULATOR -->
+<div class="section section-alt reveal-on-scroll">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:40px">
+      <span class="eyebrow">The Real Cost</span>
+      <h2 class="section-title">DIY vs. Book & Clean</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center">Doing it yourself isn't always cheaper. Adjust your hourly rate below to see the true cost of your time.</p>
+    </div>
+    
+    <style>
+      .diy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      @media(max-width: 768px) { .diy-grid { grid-template-columns: 1fr; } }
+    </style>
+
+    <div class="diy-calc-container" style="background:var(--surface);border-radius:20px;border:1px solid rgba(0,0,0,0.08);box-shadow:var(--shadow-glass), 0 0 40px rgba(0,102,204,0.04);padding:40px;margin-bottom:40px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--primary-ctr),var(--secondary));border-radius:4px 0 0 4px"></div>
+      
+      <div style="text-align:center;margin-bottom:30px;">
+        <label for="hourlyRate_pr" style="font-family:var(--ff-head);font-weight:700;font-size:16px;color:var(--on-bg);display:block;margin-bottom:12px;">What is one hour of your free time worth? <span id="rateDisplay_pr" style="color:var(--primary-ctr);">$30/hr</span></label>
+        <input type="range" id="hourlyRate_pr" min="10" max="100" value="30" step="5" style="width:100%;max-width:400px;accent-color:var(--primary-ctr);cursor:pointer;" oninput="updateDiyCalc_pr()">
+      </div>
+
+      <div class="diy-grid">
+        <!-- DIY Card -->
+        <div style="background:rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.06);border-radius:16px;padding:24px;">
+          <h3 style="font-family:var(--ff-head);font-size:18px;font-weight:800;color:var(--on-bg);margin-bottom:16px;border-bottom:2px solid rgba(0,0,0,0.05);padding-bottom:12px;">Do It Yourself</h3>
+          <ul style="list-style:none;padding:0;margin:0 0 20px 0;">
+            <li style="display:flex;justify-content:space-between;margin-bottom:12px;color:var(--on-surface-var);font-size:15px;"><span>Carpet Steam Cleaner Rental</span><strong>$50</strong></li>
+            <li style="display:flex;justify-content:space-between;margin-bottom:12px;color:var(--on-surface-var);font-size:15px;"><span>Heavy-Duty Chemicals</span><strong>$60</strong></li>
+            <li style="display:flex;justify-content:space-between;margin-bottom:12px;color:var(--on-surface-var);font-size:15px;"><span>Your Time (14 hours)</span><strong id="timeCostDisplay_pr">$420</strong></li>
+          </ul>
+          <div style="display:flex;justify-content:space-between;align-items:center;border-top:2px solid rgba(0,0,0,0.05);padding-top:16px;">
+            <span style="font-family:var(--ff-head);font-weight:700;font-size:16px;color:var(--on-bg);">True Cost</span>
+            <span id="diyTotalDisplay_pr" style="font-family:var(--ff-mono);font-size:24px;font-weight:800;color:#e74c3c;">$530</span>
+          </div>
+        </div>
+
+        <!-- Our Service Card -->
+        <div style="background:linear-gradient(135deg, rgba(26,62,47,0.05), rgba(197,225,165,0.15));border:1px solid rgba(26,62,47,0.15);border-radius:16px;padding:24px;position:relative;">
+          <div style="position:absolute;top:-12px;right:24px;background:var(--secondary);color:#003824;font-family:var(--ff-mono);font-size:11px;font-weight:800;padding:4px 12px;border-radius:99px;letter-spacing:1px;text-transform:uppercase;">Bargain</div>
+          <h3 style="font-family:var(--ff-head);font-size:18px;font-weight:800;color:var(--primary-ctr);margin-bottom:16px;border-bottom:2px solid rgba(26,62,47,0.1);padding-bottom:12px;">Book & Clean</h3>
+          <ul style="list-style:none;padding:0;margin:0 0 20px 0;">
+            <li style="display:flex;justify-content:space-between;margin-bottom:12px;color:var(--on-bg);font-size:15px;"><span>100% Bond Back Guarantee</span><strong>Included</strong></li>
+            <li style="display:flex;justify-content:space-between;margin-bottom:12px;color:var(--on-bg);font-size:15px;"><span>Oven Deep Clean</span><strong>Included</strong></li>
+            <li style="display:flex;justify-content:space-between;margin-bottom:12px;color:var(--on-bg);font-size:15px;"><span>Your Free Time</span><strong>Saved</strong></li>
+          </ul>
+          <div style="display:flex;justify-content:space-between;align-items:center;border-top:2px solid rgba(26,62,47,0.1);padding-top:16px;">
+            <span style="font-family:var(--ff-head);font-weight:700;font-size:16px;color:var(--on-bg);">Flat Rate From</span>
+            <span style="font-family:var(--ff-mono);font-size:24px;font-weight:800;color:var(--primary-ctr);">$339</span>
+          </div>
+        </div>
+      </div>
+      
+      <div style="margin-top:30px;padding:20px;background:rgba(26,62,47,0.04);border-radius:12px;text-align:center;">
+        <h4 style="font-family:var(--ff-head);font-size:16px;color:var(--primary-ctr);margin-bottom:8px;">Verdict: <span id="verdictDisplay_pr">You save $191 and a whole weekend of back-breaking work.</span></h4>
+        <a href="index.html#quote" class="btn-primary" style="margin-top:12px;">Get My Fixed Price Quote →</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+function updateDiyCalc_pr() {
+  const hourlyRate = parseInt(document.getElementById('hourlyRate_pr').value);
+  const timeHours = 14;
+  const equipmentCost = 110;
+  const flatRate = 339;
+  
+  const timeCost = hourlyRate * timeHours;
+  const diyTotal = equipmentCost + timeCost;
+  const savings = diyTotal - flatRate;
+  
+  document.getElementById('rateDisplay_pr').innerText = '$' + hourlyRate + '/hr';
+  document.getElementById('timeCostDisplay_pr').innerText = '$' + timeCost;
+  document.getElementById('diyTotalDisplay_pr').innerText = '$' + diyTotal;
+  
+  const verdictEl = document.getElementById('verdictDisplay_pr');
+  if (savings > 0) {
+    verdictEl.innerText = 'You save $' + savings + ' and a whole weekend of back-breaking work.';
+  } else {
+    verdictEl.innerText = 'Even if you value your time near zero, is the hassle really worth it?';
+  }
+}
+</script>
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
