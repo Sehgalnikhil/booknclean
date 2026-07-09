@@ -1573,7 +1573,7 @@ footer {
   .f2 { grid-template-columns: 1fr; }
   .og2 { grid-template-columns: 1fr; }
   .cg { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .ag { grid-template-columns: 1fr; }
+  .ag { grid-template-columns: 1fr 1fr; }
   .oga { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   #fs1 .obtn { flex-direction: row; min-height: 52px; height: 52px; padding: 8px 12px; justify-content: flex-start; gap: 10px; }
   #fs1 .oi { font-size: 18px; display: inline-block; }
