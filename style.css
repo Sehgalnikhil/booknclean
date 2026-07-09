@@ -55,51 +55,7 @@
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* ── Dark mode overrides ────────────────────────────────── */
-[data-theme="dark"] {
-  --bg:              #0f172a;
-  --surface:         #1e293b;
-  --surface-low:     #0f172a;
-  --surface-mid:     #1e293b;
-  --surface-high:    #334155;
-  --surface-highest: #475569;
-  --surface-bright:  #1e293b;
-  --primary:         #3b82f6;
-  --primary-ctr:     #60a5fa;
-  --primary-dim:     #2563eb;
-  --secondary:       #fbbf24;
-  --secondary-ctr:   #fcd34d;
-  --tertiary:        #1e293b;
-  --tertiary-ctr:    #334155;
-  --on-bg:           #f8fafc;
-  --on-surface:      #f1f5f9;
-  --on-surface-var:  #94a3b8;
-  --outline:         #334155;
-  --outline-var:     #475569;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg:              #0f172a;
-    --surface:         #1e293b;
-    --surface-low:     #0f172a;
-    --surface-mid:     #1e293b;
-    --surface-high:    #334155;
-    --surface-highest: #475569;
-    --surface-bright:  #1e293b;
-    --primary:         #3b82f6;
-    --primary-ctr:     #60a5fa;
-    --primary-dim:     #2563eb;
-    --secondary:       #fbbf24;
-    --secondary-ctr:   #fcd34d;
-    --tertiary:        #1e293b;
-    --tertiary-ctr:    #334155;
-    --on-bg:           #f8fafc;
-    --on-surface:      #f1f5f9;
-    --on-surface-var:  #94a3b8;
-    --outline:         #334155;
-    --outline-var:     #475569;
-  }
-}
+
 
 /* ═══════════════════════════════════════════════════════════
    RESET & BASE
