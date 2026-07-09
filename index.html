@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-AU" >
+<html lang="en-AU">
 <head>
+<script>/* Anti-FOUC: apply saved theme before paint */try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bond Cleaning | Fixed Price End of Lease Cleaning — Book & Clean</title>
@@ -203,6 +204,10 @@ void main(){
         <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
         Call Now
       </a>
+      <button class="dm-toggle" id="dmToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span class="dm-moon">🌙</span>
+        <span class="dm-sun">☀️</span>
+      </button>
       <button class="btn-outline" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Get Quote</button>
     </div>
   </div>
@@ -312,25 +317,25 @@ void main(){
         <!-- STEP 5 -->
         <div class="fs" id="fs5">
           <div class="fq">When and where?</div>
-          <div class="fqs">Select your city and preferred clean date</div>
-          <select class="fi" id="isub" onchange="citySel(this.value)" style="margin-bottom:12px;">
-            <option value="" disabled selected>Select a City...</option>
-            <option value="Sydney">Sydney</option>
-            <option value="Melbourne">Melbourne</option>
-            <option value="Brisbane">Brisbane</option>
-            <option value="Perth">Perth</option>
-            <option value="Adelaide">Adelaide</option>
-            <option value="Gold Coast">Gold Coast</option>
-            <option value="Canberra">Canberra</option>
-            <option value="Newcastle">Newcastle</option>
-            <option value="Hobart">Hobart</option>
-            <option value="Darwin">Darwin</option>
-            <option value="Geelong">Geelong</option>
-            <option value="Townsville">Townsville</option>
-            <option value="Cairns">Cairns</option>
-            <option value="Wollongong">Wollongong</option>
-          </select>
-          <div class="fe" id="esub">Please select your city</div>
+          <div class="fqs">Type your suburb to check availability and confirm your city</div>
+
+          <!-- Suburb autocomplete -->
+          <div class="suburb-wrap">
+            <input
+              type="text"
+              class="suburb-input"
+              id="suburbInput"
+              placeholder="🔍  Type your suburb (e.g. Bondi, Richmond...)"
+              autocomplete="off"
+              autocorrect="off"
+              spellcheck="false"
+              inputmode="text"
+            >
+            <div class="suburb-dropdown" id="suburbDropdown"></div>
+          </div>
+          <!-- Hidden city field (populated by autocomplete) -->
+          <input type="hidden" id="isub" value="">
+          <div class="fe" id="esub">Please enter and select your suburb</div>
           <input type="text" placeholder="Select preferred date..." class="fi" id="idate" min="" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" onchange="dateChg(this.value)">
           <div class="fe" id="edate">Please select a preferred date</div>
           <div class="fn"><button class="bb" onclick="prv(5)">← Back</button><button class="bn" onclick="nxt(5)">Next →</button></div>
@@ -1707,6 +1712,215 @@ document.addEventListener('DOMContentLoaded', function() {
     clearTimeout(autoTimer);
     if (badge) badge.style.display = 'none';
   }, { once: true });
+})();
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MOBILE BOTTOM NAV BAR
+════════════════════════════════════════════════════════════ -->
+<nav class="mob-nav" id="mobNav" aria-label="Mobile navigation">
+  <a class="mob-nav-item" href="index.html" id="mnHome">
+    <span class="mob-nav-icon">🏠</span>
+    <span>Home</span>
+  </a>
+  <a class="mob-nav-item" href="services.html" id="mnServices">
+    <span class="mob-nav-icon">✨</span>
+    <span>Services</span>
+  </a>
+  <button class="mob-nav-item mob-quote" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">
+    <div class="mob-nav-inner">
+      <span class="mob-nav-icon">📋</span>
+      <span>Quote</span>
+    </div>
+  </button>
+  <a class="mob-nav-item" href="tel:+61468230552" id="mnCall">
+    <span class="mob-nav-icon">📞</span>
+    <span>Call</span>
+  </a>
+  <a class="mob-nav-item" href="https://wa.me/61468230552?text=Hi%20I%27d%20like%20a%20bond%20cleaning%20quote" target="_blank" rel="noopener" id="mnWA">
+    <span class="mob-nav-icon">💬</span>
+    <span>WhatsApp</span>
+  </a>
+</nav>
+
+<script>
+/* ── Dark Mode Toggle ────────────────────────────────────── */
+(function(){
+  var html = document.documentElement;
+  var btn  = document.getElementById('dmToggle');
+  // Apply saved preference immediately
+  var saved = localStorage.getItem('theme');
+  if (saved) html.setAttribute('data-theme', saved);
+
+  if (!btn) return;
+  btn.addEventListener('click', function(){
+    var current = html.getAttribute('data-theme');
+    var next    = current === 'dark' ? 'light' : 'dark';
+    // Use View Transitions if available for smooth theme switch
+    if (document.startViewTransition) {
+      document.startViewTransition(function(){
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      });
+    } else {
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+  });
+})();
+
+/* ── Animated Stats Counter ──────────────────────────────── */
+(function(){
+  function animateCount(el, target, suffix, duration) {
+    var start = 0;
+    var startTime = null;
+    el.classList.add('counted');
+    function step(ts) {
+      if (!startTime) startTime = ts;
+      var progress = Math.min((ts - startTime) / duration, 1);
+      // Ease out cubic
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  if (!('IntersectionObserver' in window)) return;
+  var statsBar = document.getElementById('statsBar');
+  if (!statsBar) return;
+
+  var obs = new IntersectionObserver(function(entries){
+    if (!entries[0].isIntersecting) return;
+    obs.disconnect();
+    statsBar.querySelectorAll('.statn[data-count]').forEach(function(el){
+      var count  = parseInt(el.getAttribute('data-count'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      animateCount(el, count, suffix, 1400);
+    });
+  }, { threshold: 0.5 });
+  obs.observe(statsBar);
+})();
+
+/* ── Suburb Autocomplete ─────────────────────────────────── */
+(function(){
+  var SUBURBS = [
+    // Sydney
+    {n:'Bondi',c:'Sydney'},{n:'Bondi Junction',c:'Sydney'},{n:'Surry Hills',c:'Sydney'},{n:'Newtown',c:'Sydney'},{n:'Parramatta',c:'Sydney'},{n:'Chatswood',c:'Sydney'},{n:'Manly',c:'Sydney'},{n:'Cronulla',c:'Sydney'},{n:'Mosman',c:'Sydney'},{n:'Randwick',c:'Sydney'},{n:'Darlinghurst',c:'Sydney'},{n:'Paddington',c:'Sydney'},{n:'Glebe',c:'Sydney'},{n:'Leichhardt',c:'Sydney'},{n:'Balmain',c:'Sydney'},{n:'Ryde',c:'Sydney'},{n:'Hornsby',c:'Sydney'},{n:'Liverpool',c:'Sydney'},{n:'Campbelltown',c:'Sydney'},{n:'Penrith',c:'Sydney'},{n:'Blacktown',c:'Sydney'},{n:'Bankstown',c:'Sydney'},{n:'Hurstville',c:'Sydney'},{n:'Kogarah',c:'Sydney'},{n:'Strathfield',c:'Sydney'},{n:'Auburn',c:'Sydney'},{n:'Burwood',c:'Sydney'},{n:'Eastwood',c:'Sydney'},{n:'Dee Why',c:'Sydney'},{n:'Brookvale',c:'Sydney'},
+    // Melbourne
+    {n:'Richmond',c:'Melbourne'},{n:'Fitzroy',c:'Melbourne'},{n:'Collingwood',c:'Melbourne'},{n:'South Yarra',c:'Melbourne'},{n:'St Kilda',c:'Melbourne'},{n:'Carlton',c:'Melbourne'},{n:'Brunswick',c:'Melbourne'},{n:'Prahran',c:'Melbourne'},{n:'Hawthorn',c:'Melbourne'},{n:'Camberwell',c:'Melbourne'},{n:'Box Hill',c:'Melbourne'},{n:'Doncaster',c:'Melbourne'},{n:'Footscray',c:'Melbourne'},{n:'Sunshine',c:'Melbourne'},{n:'Dandenong',c:'Melbourne'},{n:'Frankston',c:'Melbourne'},{n:'Ringwood',c:'Melbourne'},{n:'Chadstone',c:'Melbourne'},{n:'Glen Waverley',c:'Melbourne'},{n:'Oakleigh',c:'Melbourne'},{n:'Northcote',c:'Melbourne'},{n:'Preston',c:'Melbourne'},{n:'Coburg',c:'Melbourne'},{n:'Essendon',c:'Melbourne'},{n:'Moonee Ponds',c:'Melbourne'},{n:'Point Cook',c:'Melbourne'},{n:'Werribee',c:'Melbourne'},{n:'Craigieburn',c:'Melbourne'},{n:'Epping',c:'Melbourne'},{n:'Narre Warren',c:'Melbourne'},
+    // Brisbane
+    {n:'South Brisbane',c:'Brisbane'},{n:'Fortitude Valley',c:'Brisbane'},{n:'New Farm',c:'Brisbane'},{n:'Paddington',c:'Brisbane'},{n:'Indooroopilly',c:'Brisbane'},{n:'Chermside',c:'Brisbane'},{n:'Carindale',c:'Brisbane'},{n:'Mt Gravatt',c:'Brisbane'},{n:'Sunnybank',c:'Brisbane'},{n:'Logan',c:'Brisbane'},{n:'Ipswich',c:'Brisbane'},{n:'Redcliffe',c:'Brisbane'},{n:'Nundah',c:'Brisbane'},{n:'Lutwyche',c:'Brisbane'},{n:'Kedron',c:'Brisbane'},{n:'Stafford',c:'Brisbane'},{n:'Aspley',c:'Brisbane'},{n:'Everton Park',c:'Brisbane'},{n:'Mitchelton',c:'Brisbane'},{n:'The Gap',c:'Brisbane'},{n:'Kenmore',c:'Brisbane'},{n:'Toowong',c:'Brisbane'},{n:'Auchenflower',c:'Brisbane'},{n:'Milton',c:'Brisbane'},{n:'Woolloongabba',c:'Brisbane'},{n:'Annerley',c:'Brisbane'},{n:'Greenslopes',c:'Brisbane'},{n:'Coorparoo',c:'Brisbane'},{n:'Camp Hill',c:'Brisbane'},{n:'Capalaba',c:'Brisbane'},
+    // Perth
+    {n:'Subiaco',c:'Perth'},{n:'Fremantle',c:'Perth'},{n:'Cottesloe',c:'Perth'},{n:'Scarborough',c:'Perth'},{n:'Joondalup',c:'Perth'},{n:'Mandurah',c:'Perth'},{n:'Midland',c:'Perth'},{n:'Armadale',c:'Perth'},{n:'Rockingham',c:'Perth'},{n:'Cannington',c:'Perth'},{n:'Belmont',c:'Perth'},{n:'Victoria Park',c:'Perth'},{n:'South Perth',c:'Perth'},{n:'Como',c:'Perth'},{n:'Applecross',c:'Perth'},{n:'Melville',c:'Perth'},{n:'Bibra Lake',c:'Perth'},{n:'Cockburn Central',c:'Perth'},{n:'Baldivis',c:'Perth'},{n:'Success',c:'Perth'},{n:'Ellenbrook',c:'Perth'},{n:'Mirrabooka',c:'Perth'},{n:'Malaga',c:'Perth'},{n:'Morley',c:'Perth'},{n:'Dianella',c:'Perth'},{n:'Stirling',c:'Perth'},{n:'Innaloo',c:'Perth'},{n:'Osborne Park',c:'Perth'},{n:'Wembley',c:'Perth'},{n:'Floreat',c:'Perth'}
+  ];
+
+  var input    = document.getElementById('suburbInput');
+  var dropdown = document.getElementById('suburbDropdown');
+  var hiddenCity = document.getElementById('isub');
+  if (!input || !dropdown || !hiddenCity) return;
+
+  var highlighted = -1;
+  var filtered    = [];
+  var selectedVal = '';
+
+  function render(list, query) {
+    dropdown.innerHTML = '';
+    if (!list.length) {
+      dropdown.innerHTML = '<div class="suburb-empty">No suburbs found. Try a different name.</div>';
+      dropdown.classList.add('open');
+      return;
+    }
+    list.slice(0, 10).forEach(function(item, i){
+      var div = document.createElement('div');
+      div.className = 'suburb-option';
+      // Bold the matching part
+      var idx = item.n.toLowerCase().indexOf(query.toLowerCase());
+      var label = idx >= 0
+        ? item.n.slice(0,idx) + '<strong>' + item.n.slice(idx, idx+query.length) + '</strong>' + item.n.slice(idx+query.length)
+        : item.n;
+      div.innerHTML = '📍 ' + label + '<span class="sub-city">' + item.c + '</span>';
+      div.addEventListener('mousedown', function(e){
+        e.preventDefault();
+        select(item);
+      });
+      div.addEventListener('touchend', function(e){
+        e.preventDefault();
+        select(item);
+      });
+      dropdown.appendChild(div);
+    });
+    dropdown.classList.add('open');
+    highlighted = -1;
+  }
+
+  function select(item) {
+    input.value  = item.n + ', ' + item.c;
+    hiddenCity.value = item.c;
+    selectedVal  = item.c;
+    dropdown.classList.remove('open');
+    // Update availability strip city
+    var cityEl = document.getElementById('availCity');
+    if (cityEl) cityEl.textContent = item.c;
+    // Trigger original citySel if it exists
+    if (typeof citySel === 'function') citySel(item.c);
+  }
+
+  input.addEventListener('input', function(){
+    selectedVal = '';
+    hiddenCity.value = '';
+    var q = this.value.trim();
+    if (q.length < 2) { dropdown.classList.remove('open'); return; }
+    filtered = SUBURBS.filter(function(s){
+      return s.n.toLowerCase().includes(q.toLowerCase());
+    });
+    render(filtered, q);
+  });
+
+  input.addEventListener('keydown', function(e){
+    var items = dropdown.querySelectorAll('.suburb-option');
+    if (e.key === 'ArrowDown')  { e.preventDefault(); highlighted = Math.min(highlighted+1, items.length-1); }
+    if (e.key === 'ArrowUp')    { e.preventDefault(); highlighted = Math.max(highlighted-1, 0); }
+    if (e.key === 'Escape')     { dropdown.classList.remove('open'); return; }
+    items.forEach(function(el,i){ el.classList.toggle('highlighted', i === highlighted); });
+    if (e.key === 'Enter' && highlighted >= 0 && filtered[highlighted]) {
+      e.preventDefault();
+      select(filtered[highlighted]);
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if (!input.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+    }
+  });
+})();
+
+/* ── View Transitions — intercept nav links ──────────────── */
+(function(){
+  if (!document.startViewTransition) return;
+  document.querySelectorAll('a[href]').forEach(function(a){
+    var href = a.getAttribute('href');
+    // Only same-origin, non-hash, non-tel/mailto links
+    if (!href || href.startsWith('#') || href.startsWith('tel:') || href.startsWith('mailto:') || href.startsWith('http')) return;
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      document.startViewTransition(function(){
+        window.location.href = href;
+      });
+    });
+  });
+})();
+
+/* ── Mobile nav active state ─────────────────────────────── */
+(function(){
+  var page = window.location.pathname.split('/').pop() || 'index.html';
+  var map  = { 'index.html': 'mnHome', 'services.html': 'mnServices' };
+  var id   = map[page];
+  if (id) {
+    var el = document.getElementById(id);
+    if (el) el.classList.add('active');
+  }
 })();
 </script>
 </body>
