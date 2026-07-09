@@ -189,6 +189,7 @@ void main(){
       </svg>
       <div>
         <div class="nav-brand">Book & Clean</div>
+        <div class="nav-tagline">Bond Cleaning Experts</div>
       </div>
     </a>
     <div class="nav-links">
@@ -204,10 +205,7 @@ void main(){
         <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
         Call Now
       </a>
-      <button class="dm-toggle" id="dmToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-        <span class="dm-moon">🌙</span>
-        <span class="dm-sun">☀️</span>
-      </button>
+
       <button class="btn-outline" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Get Quote</button>
     </div>
   </div>
@@ -217,9 +215,7 @@ void main(){
      HERO
 ════════════════════════════════════════════════════════════ -->
 <div class="hero-section">
-  <div class="hero-bg-gradient"></div>
-  <div class="hero-bg-image" style="background-image:url(perth-hero.jpg?v=2)"></div>
-  <div class="hero-overlay"></div>
+  <div class="hero-bg-image" style="background-image:url(perth-hero.png?v=2)"></div>
   <div class="hero-content">
     <div class="hero-kicker">NO ADVANCE PAYMENT</div>
     <h1 class="hero-h1">Bond Cleaning<span id="h1city"></span></h1>
@@ -228,14 +224,24 @@ void main(){
     </div>
     <p class="hero-note">Payment on completion — no advance payment required,<br>pay only once your clean is finished.</p>
     
-    <div class="prog" id="progress-bar">
-      <div class="pd act" id="pd1">1</div><div class="pl" id="pl1"></div>
-      <div class="pd" id="pd2">2</div><div class="pl" id="pl2"></div>
-      <div class="pd" id="pd3">3</div><div class="pl" id="pl3"></div>
-      <div class="pd" id="pd4">4</div><div class="pl" id="pl4"></div>
-      <div class="pd" id="pd5">5</div><div class="pl" id="pl5"></div>
-      <div class="pd" id="pd6">6</div>
+    <div class="hero-trust-badges">
+      <div class="htb-item"><span class="htb-icon">🛡️</span> Police Verified<br>Cleaners</div>
+      <div class="htb-item"><span class="htb-icon">✨</span> 100% Bond Back<br>Guarantee</div>
+      <div class="htb-item"><span class="htb-icon">👍</span> Satisfaction<br>Guaranteed</div>
+      <div class="htb-item"><span class="htb-icon">⏱️</span> On-Time<br>Service</div>
     </div>
+  </div>
+</div>
+
+<!-- STEPPER -->
+<div class="container">
+  <div class="prog" id="progress-bar">
+    <div class="pd-wrap act"><div class="pd act" id="pd1">1</div><div class="pd-label">Property Details</div></div><div class="pl" id="pl1"></div>
+    <div class="pd-wrap"><div class="pd" id="pd2">2</div><div class="pd-label">Add-ons</div></div><div class="pl" id="pl2"></div>
+    <div class="pd-wrap"><div class="pd" id="pd3">3</div><div class="pd-label">Date & Time</div></div><div class="pl" id="pl3"></div>
+    <div class="pd-wrap"><div class="pd" id="pd4">4</div><div class="pd-label">Your Details</div></div><div class="pl" id="pl4"></div>
+    <div class="pd-wrap"><div class="pd" id="pd5">5</div><div class="pd-label">Review</div></div><div class="pl" id="pl5"></div>
+    <div class="pd-wrap"><div class="pd" id="pd6">6</div><div class="pd-label">Confirm</div></div>
   </div>
 </div>
 
@@ -266,17 +272,50 @@ void main(){
           <div class="fq">What size is your property?</div>
           <div class="fqs">Select your bedroom and bathroom combination</div>
           <div class="og oga">
-            <button class="obtn" data-s="1" data-v="Studio / Granny Flat"><span class="oi">🏠</span><span class="on2">Studio / Granny Flat</span></button>
-            <button class="obtn" data-s="1" data-v="1 Bedroom, 1 Bathroom"><span class="oi">🛏</span><span class="on2">1 Bed · 1 Bath</span></button>
-            <button class="obtn" data-s="1" data-v="2 Bedroom, 1 Bathroom"><span class="oi">🛏</span><span class="on2">2 Bed · 1 Bath</span></button>
-            <button class="obtn" data-s="1" data-v="2 Bedroom, 2 Bathroom"><span class="oi">🛏</span><span class="on2">2 Bed · 2 Bath</span></button>
-            <button class="obtn" data-s="1" data-v="3 Bedroom, 1 Bathroom"><span class="oi">🛏</span><span class="on2">3 Bed · 1 Bath</span></button>
-            <button class="obtn" data-s="1" data-v="3 Bedroom, 2 Bathroom"><span class="oi">🛏</span><span class="on2">3 Bed · 2 Bath</span></button>
-            <button class="obtn" data-s="1" data-v="3 Bedroom, 3 Bathroom"><span class="oi">🛏</span><span class="on2">3 Bed · 3 Bath</span></button>
-            <button class="obtn" data-s="1" data-v="4 Bedroom, 2 Bathroom"><span class="oi">🏡</span><span class="on2">4 Bed · 2 Bath</span></button>
-            <button class="obtn" data-s="1" data-v="4 Bedroom, 3 Bathroom"><span class="oi">🏡</span><span class="on2">4 Bed · 3 Bath</span></button>
-            <button class="obtn" data-s="1" data-v="5 Bedroom, 2 Bathroom"><span class="oi">🏡</span><span class="on2">5 Bed · 2 Bath</span></button>
-            <button class="obtn" data-s="1" data-v="5 Bedroom, 3 Bathroom"><span class="oi">🏡</span><span class="on2">5 Bed · 3 Bath</span></button>
+            <button class="obtn" data-s="1" data-v="Studio / Granny Flat">
+              <img src="img-studio.png" alt="Studio Flat" style="width:100px;height:auto;margin-bottom:8px;">
+              <span class="on2">Studio / Granny Flat</span>
+            </button>
+            <button class="obtn" data-s="1" data-v="1 Bedroom, 1 Bathroom">
+              <img src="img-1bed.png" alt="1 Bedroom" style="width:100px;height:auto;margin-bottom:8px;">
+              <span class="on2">1 Bed · 1 Bath</span>
+            </button>
+            <button class="obtn" data-s="1" data-v="2 Bedroom, 1 Bathroom">
+              <img src="img-2bed.png" alt="2 Bedroom" style="width:100px;height:auto;margin-bottom:8px;">
+              <span class="on2">2 Bed · 1 Bath</span>
+            </button>
+            <button class="obtn" data-s="1" data-v="2 Bedroom, 2 Bathroom">
+              <img src="img-2bed-2bath.png" alt="2 Bed 2 Bath" style="width:100px;height:auto;margin-bottom:8px;">
+              <span class="on2">2 Bed · 2 Bath</span>
+            </button>
+            <button class="obtn" data-s="1" data-v="3 Bedroom, 1 Bathroom">
+              <img src="img-3bed-1bath.png" alt="3 Bed 1 Bath" style="width:100px;height:auto;margin-bottom:8px;">
+              <span class="on2">3 Bed · 1 Bath</span>
+            </button>
+            <button class="obtn" data-s="1" data-v="3 Bedroom, 2 Bathroom">
+              <img src="img-3bed-2bath.png" alt="3 Bed 2 Bath" style="width:100px;height:auto;margin-bottom:8px;">
+              <span class="on2">3 Bed · 2 Bath</span>
+            </button>
+            <button class="obtn" data-s="1" data-v="3 Bedroom, 3 Bathroom">
+              <img src="img-3bed-2bath.png" alt="3 Bed 3 Bath" style="width:100px;height:auto;margin-bottom:8px;">
+              <span class="on2">3 Bed · 3 Bath</span>
+            </button>
+            <button class="obtn" data-s="1" data-v="4 Bedroom, 2 Bathroom">
+              <img src="img-3bed-2bath.png" alt="4 Bed 2 Bath" style="width:100px;height:auto;margin-bottom:8px;">
+              <span class="on2">4 Bed · 2 Bath</span>
+            </button>
+            <button class="obtn" data-s="1" data-v="4 Bedroom, 3 Bathroom">
+              <img src="img-3bed-2bath.png" alt="4 Bed 3 Bath" style="width:100px;height:auto;margin-bottom:8px;">
+              <span class="on2">4 Bed · 3 Bath</span>
+            </button>
+            <button class="obtn" data-s="1" data-v="5 Bedroom, 2 Bathroom">
+              <img src="img-3bed-2bath.png" alt="5 Bed 2 Bath" style="width:100px;height:auto;margin-bottom:8px;">
+              <span class="on2">5 Bed · 2 Bath</span>
+            </button>
+            <button class="obtn" data-s="1" data-v="5 Bedroom, 3 Bathroom">
+              <img src="img-3bed-2bath.png" alt="5 Bed 3 Bath" style="width:100px;height:auto;margin-bottom:8px;">
+              <span class="on2">5 Bed · 3 Bath</span>
+            </button>
           </div>
           <div class="fn"><span></span><button class="bn" onclick="nxt(1)">Next →</button></div>
         </div>
@@ -409,20 +448,20 @@ void main(){
 
 <div class="trust-badges-banner reveal-on-scroll">
   <div class="tb-item">
-    <span class="tb-icon">🛡️</span>
-    <span class="tb-text">100% Bond Back Guarantee</span>
+    <span class="tb-icon" style="filter: hue-rotate(180deg)">👨‍🔧</span>
+    <span class="tb-text">Trusted<br>Professionals</span>
   </div>
   <div class="tb-item">
-    <span class="tb-icon">👮</span>
-    <span class="tb-text">Police Checked Cleaners</span>
+    <span class="tb-icon" style="filter: hue-rotate(180deg)">🛡️</span>
+    <span class="tb-text">Insured &<br>Reliable</span>
   </div>
   <div class="tb-item">
-    <span class="tb-icon">🌱</span>
-    <span class="tb-text">Eco Friendly Products</span>
+    <span class="tb-icon" style="filter: hue-rotate(180deg)">💧</span>
+    <span class="tb-text">Eco-Friendly<br>Products</span>
   </div>
   <div class="tb-item">
-    <span class="tb-icon">⭐</span>
-    <span class="tb-text">Satisfaction Guaranteed</span>
+    <span class="tb-icon" style="filter: hue-rotate(180deg)">💬</span>
+    <span class="tb-text">Customer<br>Support</span>
   </div>
 </div>
 
