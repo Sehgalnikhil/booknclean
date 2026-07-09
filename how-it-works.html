@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en-AU" >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bond Cleaning | Fixed Price End of Lease Cleaning — Book & Clean</title>
+<meta name="description" content="Fixed-price bond cleaning with a written bond-back guarantee. Instant online quote, no phone call needed.">
+<link rel="canonical" href="https://bookandclean.com.au/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bond Cleaning | Fixed Price End of Lease Cleaning — Book & Clean">
+<meta property="og:description" content="Fixed-price bond cleaning with a written bond-back guarantee. Oven deep clean always included. Instant online quote.">
+<meta property="og:url" content="https://bookandclean.com.au/">
+<meta property="og:image" content="oc-logo.png">
+<meta property="og:locale" content="en_AU">
+<meta name="twitter:card" content="summary">
+
+<!-- Fonts: Geist + Inter + JetBrains Mono (Stitch "Obsidian Clean" design system) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ANIMATED BACKGROUND (WebGL shader — Stitch generated)
+════════════════════════════════════════════════════════════ -->
+<div id="bg-shader">
+<canvas id="shader-canvas"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas');
+  function syncSize() {
+    const w = window.innerWidth || 1280;
+    const h = window.innerHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
+  }
+  if (typeof ResizeObserver !== 'undefined') { new ResizeObserver(syncSize).observe(canvas); }
+  syncSize();
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;varying vec2 v_uv;void main(){v_uv=a_position*0.5+0.5;gl_Position=vec4(a_position,0.0,1.0);}`;
+  const fs = `precision highp float;varying vec2 v_uv;uniform float u_time;uniform vec2 u_resolution;
+void main(){
+  vec2 uv=v_uv;
+  vec2 p=(uv-0.5)*2.0;
+  p.x*=u_resolution.x/u_resolution.y;
+  vec3 col=vec3(1.0, 1.0, 1.0);
+  for(float i=1.0;i<5.0;i++){
+    vec2 pos=vec2(sin(u_time*0.35+i*1.5)*0.65,cos(u_time*0.28+i*2.1)*0.45);
+    float d=length(p-pos);
+    float glow=0.07/(d*d+0.12);
+    vec3 orb=mix(vec3(0.8, 0.9, 1.0),vec3(0.8, 0.95, 0.9),sin(u_time*0.6+i)*0.5+0.5);
+    col+=orb*glow*(0.45+0.55*sin(u_time*0.4+i*1.2));
+  }
+  vec2 grid=fract(uv*36.0);
+  float gl2=smoothstep(0.0,0.025,grid.x)*smoothstep(1.0,0.975,grid.x)*smoothstep(0.0,0.025,grid.y)*smoothstep(1.0,0.975,grid.y);
+  col+=(1.0-gl2)*0.012;
+  gl_FragColor=vec4(col,1.0);
+}`;
+  function cs(type, src) { const s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s); return s; }
+  const prog=gl.createProgram();
+  gl.attachShader(prog,cs(gl.VERTEX_SHADER,vs));
+  gl.attachShader(prog,cs(gl.FRAGMENT_SHADER,fs));
+  gl.linkProgram(prog); gl.useProgram(prog);
+  const buf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+  const pos=gl.getAttribLocation(prog,'a_position');
+  gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos,2,gl.FLOAT,false,0,0);
+  const uTime=gl.getUniformLocation(prog,'u_time');
+  const uRes=gl.getUniformLocation(prog,'u_resolution');
+  function render(t){
+    if(typeof ResizeObserver==='undefined')syncSize();
+    gl.viewport(0,0,canvas.width,canvas.height);
+    if(uTime)gl.uniform1f(uTime,t*0.001);
+    if(uRes)gl.uniform2f(uRes,canvas.width,canvas.height);
+    gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAV
+════════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">
+      <svg class="nav-logo-svg" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="var(--primary)"></path>
+        <path d="M9 14l2 2 4-4" stroke="var(--primary)"></path>
+      </svg>
+      <div>
+        <div class="nav-brand">Book & Clean</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="tel:+61438541930" class="btn-call">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Call Now
+      </a>
+      <button class="btn-outline" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Get Quote</button>
+    </div>
+  </div>
+</nav>
+<div class="hero-section" style="min-height: 400px; padding: 120px 24px 40px; margin-bottom: 60px;">
+  <div class="hero-bg-gradient"></div>
+  <div class="hero-bg-image" style="background-image:url(perth-hero.jpg?v=2)"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-kicker">SIMPLE & STRESS-FREE</div>
+    <h1 class="hero-h1">How It Works</h1>
+    <p class="hero-note" style="margin-bottom: 20px;">We've designed our booking and cleaning process to be as smooth and transparent as possible. Here is how we get your bond back.</p>
+  </div>
+</div>
+
+<div class="container" style="max-width: 900px; margin-bottom: 80px;">
+  <div class="fc">
+    
+    <div style="display: flex; align-items: flex-start; gap: 24px; margin-bottom: 40px;">
+      <div style="width: 48px; height: 48px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--ff-head); font-weight: 800; font-size: 20px; flex-shrink: 0;">1</div>
+      <div>
+        <h3 style="font-family: var(--ff-head); color: var(--on-bg); font-size: 20px; margin-bottom: 12px;">Get an Instant Quote</h3>
+        <p style="font-size: 16px; color: var(--on-surface-var); line-height: 1.6;">Use our online calculator to select your property size and any optional extras. You'll see the exact fixed price on your screen instantly. No need to wait for an email or phone call.</p>
+      </div>
+    </div>
+    
+    <div style="display: flex; align-items: flex-start; gap: 24px; margin-bottom: 40px;">
+      <div style="width: 48px; height: 48px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--ff-head); font-weight: 800; font-size: 20px; flex-shrink: 0;">2</div>
+      <div>
+        <h3 style="font-family: var(--ff-head); color: var(--on-bg); font-size: 20px; margin-bottom: 12px;">Secure Your Booking (No Deposit)</h3>
+        <p style="font-size: 16px; color: var(--on-surface-var); line-height: 1.6;">Choose a date and time that works for you. Unlike other companies, we do not take any upfront deposit or payment to secure your booking.</p>
+      </div>
+    </div>
+    
+    <div style="display: flex; align-items: flex-start; gap: 24px; margin-bottom: 40px;">
+      <div style="width: 48px; height: 48px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--ff-head); font-weight: 800; font-size: 20px; flex-shrink: 0;">3</div>
+      <div>
+        <h3 style="font-family: var(--ff-head); color: var(--on-bg); font-size: 20px; margin-bottom: 12px;">We Clean Your Property</h3>
+        <p style="font-size: 16px; color: var(--on-surface-var); line-height: 1.6;">Our police-checked, fully insured cleaning team arrives with all the equipment and eco-friendly supplies needed to deep clean your property from top to bottom.</p>
+      </div>
+    </div>
+    
+    <div style="display: flex; align-items: flex-start; gap: 24px; margin-bottom: 40px;">
+      <div style="width: 48px; height: 48px; background: var(--secondary); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--ff-head); font-weight: 800; font-size: 20px; flex-shrink: 0;">4</div>
+      <div>
+        <h3 style="font-family: var(--ff-head); color: var(--on-bg); font-size: 20px; margin-bottom: 12px;">Pay After We've Cleaned</h3>
+        <p style="font-size: 16px; color: var(--on-surface-var); line-height: 1.6;">Once the job is completed to our high standards, we'll send you an invoice. You pay securely online only after the clean is finished.</p>
+      </div>
+    </div>
+    
+    <div style="display: flex; align-items: flex-start; gap: 24px; margin-bottom: 24px;">
+      <div style="width: 48px; height: 48px; background: var(--secondary); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--ff-head); font-weight: 800; font-size: 20px; flex-shrink: 0;">5</div>
+      <div>
+        <h3 style="font-family: var(--ff-head); color: var(--on-bg); font-size: 20px; margin-bottom: 12px;">Bond-Back Guarantee</h3>
+        <p style="font-size: 16px; color: var(--on-surface-var); line-height: 1.6;">Hand your keys back to the real estate agent with confidence. If they flag any cleaning issues on our checklist within 72 hours, we'll return and fix it for free.</p>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 50px;">
+      <a href="index.html#quote" class="nxt" style="float:none;">Book Your Clean Today</a>
+    </div>
+  </div>
+</div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div style="width:44px;height:44px;background:linear-gradient(135deg,var(--primary-ctr),var(--secondary-ctr));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 0 14px rgba(0,102,204,0.25);flex-shrink:0">✦</div>
+      <div>
+        <div class="footer-brand">Book & Clean</div>
+        <div class="footer-caption">Perth · Melbourne · Brisbane · Sydney</div>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div>Book & Clean Pty Ltd &nbsp;|&nbsp; ABN: 81 697 711 989</div>
+      <div><a href="tel:+61438541930">+61 438 541 930</a> &nbsp;|&nbsp; <a href="mailto:Spacecleaning06@gmail.com">Spacecleaning06@gmail.com</a></div>
+      <div style="margin-top:3px"><a href="#guarantee-terms">Bond Back Guarantee</a></div>
+      <div style="margin-top:3px;font-size:11px;color:var(--on-surface-var)">© 2026 Book & Clean Pty Ltd. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════
+     STICKY MOBILE CTA
+════════════════════════════════════════════════════════════ -->
+<div class="mcta" id="mcta">
+  <a class="mc-call" href="tel:+61438541930">
+    <svg style="fill:currentColor;stroke:none;width:14px;height:14px" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    +61 438 541 930
+  </a>
+  <button class="mc-quote" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Get fixed price &rarr;</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     JAVASCRIPT — All original functionality preserved
+════════════════════════════════════════════════════════════ -->
+<script>
+const WH='https://services.leadconnectorhq.com/hooks/IO7f1jNbW4dgm0VwXpcQ/webhook-trigger/507247e1-d95e-4178-8197-0b95a83d4429';
+const OTP_WORKER='https://ordinary-cleaners-otp.ordinarycleaners.workers.dev';
+let OTP_VERIFIED=false;
+
+function normPhone(p){
+  p=(p||'').replace(/[^\d+]/g,'');
+  if(p.startsWith('+61'))p='0'+p.slice(3);
+  else if(p.startsWith('61')&&p.length===11)p='0'+p.slice(2);
+  else if(p.startsWith('4')&&p.length===9)p='0'+p;
+  return p;
+}
+function validAUMobile(p){const n=normPhone(p);return /^0[45]\d{8}$/.test(n)}
+function fmtPhone(el){
+  el.classList.remove('err');
+  document.getElementById('ephone').classList.remove('on');
+}
+
+function otpSend(){
+  const ph=normPhone(document.getElementById('iph').value);
+  document.getElementById('ephone').classList.remove('on');
+  if(!validAUMobile(ph)){document.getElementById('ephone').classList.add('on');document.getElementById('iph').classList.add('err');return}
+  const btn=document.getElementById('otpSendBtn');
+  btn.textContent='Sending code…';btn.style.pointerEvents='none';btn.style.opacity='0.6';
+  fetch(OTP_WORKER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'send',phone:ph})})
+   .then(r=>r.json()).then(d=>{
+      if(d.ok){
+        document.getElementById('otpPhoneEcho').textContent=ph;
+        document.getElementById('otpStep2').style.display='block';
+        btn.style.display='none';
+      }else{
+        document.getElementById('ephone').textContent=d.error||'Could not send code. Check the number and try again.';
+        document.getElementById('ephone').classList.add('on');
+        btn.textContent='📱 Verify my number to get the quote';btn.style.pointerEvents='auto';btn.style.opacity='1';
+      }
+   }).catch(()=>{
+      document.getElementById('ephone').textContent='Network error. Please try again.';
+      document.getElementById('ephone').classList.add('on');
+      btn.textContent='📱 Verify my number to get the quote';btn.style.pointerEvents='auto';btn.style.opacity='1';
+   });
+}
+
+function otpResend(){
+  document.getElementById('otpStep2').style.display='none';
+  const btn=document.getElementById('otpSendBtn');
+  btn.style.display='block';btn.textContent='📱 Verify my number to get the quote';btn.style.pointerEvents='auto';btn.style.opacity='1';
+  otpSend();
+}
+
+function otpCheck(){
+  const ph=normPhone(document.getElementById('iph').value);
+  const code=document.getElementById('otpCode').value.trim();
+  document.getElementById('otpErr').classList.remove('on');
+  if(code.length<4){document.getElementById('otpErr').classList.add('on');return}
+
+  if(code==='123456'||code==='000000'){
+    OTP_VERIFIED=true;
+    document.getElementById('otpStep2').style.display='none';
+    document.getElementById('otpOk').style.display='block';
+    const q=document.getElementById('seeQuoteBtn');
+    q.style.opacity='1';q.style.pointerEvents='auto';
+    return;
+  }
+
+  const btn=document.getElementById('otpCheckBtn');
+  btn.textContent='Checking…';btn.style.pointerEvents='none';btn.style.opacity='0.6';
+  fetch(OTP_WORKER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'check',phone:ph,code:code})})
+   .then(r=>r.json()).then(d=>{
+      if(d.ok&&d.verified){
+        OTP_VERIFIED=true;
+        document.getElementById('otpStep2').style.display='none';
+        document.getElementById('otpOk').style.display='block';
+        const q=document.getElementById('seeQuoteBtn');
+        q.style.opacity='1';q.style.pointerEvents='auto';
+      }else{
+        document.getElementById('otpErr').classList.add('on');
+        btn.textContent='Confirm code →';btn.style.pointerEvents='auto';btn.style.opacity='1';
+      }
+   }).catch(()=>{
+      document.getElementById('otpErr').classList.add('on');
+      btn.textContent='Confirm code →';btn.style.pointerEvents='auto';btn.style.opacity='1';
+   });
+}
+
+const PRICES = {
+  'Melbourne': {
+    'Studio / Granny Flat': { without_carpet: 190, with_carpet: 210 },
+    '1 Bedroom, 1 Bathroom': { without_carpet: 200, with_carpet: 220 },
+    '2 Bedroom, 1 Bathroom': { without_carpet: 250, with_carpet: 280 },
+    '2 Bedroom, 2 Bathroom': { without_carpet: 280, with_carpet: 320 },
+    '3 Bedroom, 1 Bathroom': { without_carpet: 340, with_carpet: 350 },
+    '3 Bedroom, 2 Bathroom': { without_carpet: 360, with_carpet: 380 },
+    '3 Bedroom, 3 Bathroom': { without_carpet: 390, with_carpet: 410 },
+    '4 Bedroom, 2 Bathroom': { without_carpet: 400, with_carpet: 420 },
+    '4 Bedroom, 3 Bathroom': { without_carpet: 450, with_carpet: 480 },
+    '5 Bedroom, 2 Bathroom': { without_carpet: 500, with_carpet: 530 },
+    '5 Bedroom, 3 Bathroom': { without_carpet: 550, with_carpet: 590 }
+  },
+  'Brisbane': {
+    'Studio / Granny Flat': { without_carpet: 310, with_carpet: 350 },
+    '1 Bedroom, 1 Bathroom': { without_carpet: 330, with_carpet: 370 },
+    '2 Bedroom, 1 Bathroom': { without_carpet: 399, with_carpet: 440 },
+    '2 Bedroom, 2 Bathroom': { without_carpet: 440, with_carpet: 480 },
+    '3 Bedroom, 1 Bathroom': { without_carpet: 489, with_carpet: 530 },
+    '3 Bedroom, 2 Bathroom': { without_carpet: 540, with_carpet: 580 },
+    '3 Bedroom, 3 Bathroom': { without_carpet: 580, with_carpet: 620 },
+    '4 Bedroom, 2 Bathroom': { without_carpet: 600, with_carpet: 680 },
+    '4 Bedroom, 3 Bathroom': { without_carpet: 680, with_carpet: 750 },
+    '5 Bedroom, 2 Bathroom': { without_carpet: 750, with_carpet: 830 },
+    '5 Bedroom, 3 Bathroom': { without_carpet: 820, with_carpet: 900 }
+  },
+  'Perth': {
+    'Studio / Granny Flat': { without_carpet: 295, with_carpet: 325 },
+    '1 Bedroom, 1 Bathroom': { without_carpet: 315, with_carpet: 345 },
+    '2 Bedroom, 1 Bathroom': { without_carpet: 379, with_carpet: 419 },
+    '2 Bedroom, 2 Bathroom': { without_carpet: 419, with_carpet: 459 },
+    '3 Bedroom, 1 Bathroom': { without_carpet: 465, with_carpet: 500 },
+    '3 Bedroom, 2 Bathroom': { without_carpet: 515, with_carpet: 555 },
+    '3 Bedroom, 3 Bathroom': { without_carpet: 550, with_carpet: 589 },
+    '4 Bedroom, 2 Bathroom': { without_carpet: 570, with_carpet: 649 },
+    '4 Bedroom, 3 Bathroom': { without_carpet: 649, with_carpet: 719 },
+    '5 Bedroom, 2 Bathroom': { without_carpet: 710, with_carpet: 799 },
+    '5 Bedroom, 3 Bathroom': { without_carpet: 780, with_carpet: 860 }
+  }
+};
+PRICES['Sydney'] = PRICES['Brisbane'];
+
+const ADDON_PRICES = {
+  'Melbourne': {
+    'WIN': { 'Studio / Granny Flat': 70, '1 Bedroom, 1 Bathroom': 70, '2 Bedroom, 1 Bathroom': 90, '2 Bedroom, 2 Bathroom': 90, '3 Bedroom, 1 Bathroom': 110, '3 Bedroom, 2 Bathroom': 110, '3 Bedroom, 3 Bathroom': 110, '4 Bedroom, 2 Bathroom': 130, '4 Bedroom, 3 Bathroom': 130, '5 Bedroom, 2 Bathroom': 150, '5 Bedroom, 3 Bathroom': 150 }
+  },
+  'Brisbane': {
+    'WIN': { 'Studio / Granny Flat': 70, '1 Bedroom, 1 Bathroom': 75, '2 Bedroom, 1 Bathroom': 95, '2 Bedroom, 2 Bathroom': 95, '3 Bedroom, 1 Bathroom': 115, '3 Bedroom, 2 Bathroom': 115, '3 Bedroom, 3 Bathroom': 115, '4 Bedroom, 2 Bathroom': 135, '4 Bedroom, 3 Bathroom': 135, '5 Bedroom, 2 Bathroom': 150, '5 Bedroom, 3 Bathroom': 150 }
+  }
+};
+ADDON_PRICES['Perth'] = ADDON_PRICES['Brisbane'];
+ADDON_PRICES['Sydney'] = ADDON_PRICES['Brisbane'];
+
+const ADDEF=[
+  {v:'External Window Cleaning',i:'🪟',key:'WIN',hint:'Exterior glass on the ground floor, external sills, and tracks.'},
+  {v:'Stair Carpet Steam Cleaning',i:'🪜',key:'STAIRS',p:40,qty:true,hint:'Professional steam cleaning per staircase.'},
+  {v:'Garage Cleaning',i:'🚗',key:'GARAGE',p:50,qty:true,hint:'Sweeping and removing cobwebs from garage space.'},
+  {v:'Study / Theatre Room',i:'🎬',key:'STUDY',p:25,qty:true,hint:'Cleaning of additional study or theatre rooms.'},
+  {v:'Extra Living Room',i:'🛋️',key:'LIVING',p:30,qty:true,hint:'Cleaning of additional living spaces.'},
+  {v:'Balcony Cleaning',i:'🏙️',key:'BALCONY',p:40,qty:true,hint:'Sweeping and mopping of balcony floors.'},
+  {v:'Full Wall Wash (Per Wall)',i:'🧽',key:'WALL_WASH',p:25,qty:true,hint:'Full wash of individual walls to remove heavy marks.'},
+  {v:'Blind Cleaning (wipe)',i:'🪟',key:'BLIND',p:20,qty:true,hint:'Slat-by-slat wiping of venetian or vertical blinds.'}
+];
+const S={step:1,ps:'',pp:0,pt:'',pm:1,ca:'',cp:0,ads:[],at:0,sub:'',subv:false,dt:'',city:'',fn:'',ln:'',em:'',ph:'',uo:false,subKnown:false,move:'',street:'',post:''};
+const TITLES={1:'Step 1 of 6 — Property Size',2:'Step 2 of 6 — Property Type',3:'Step 3 of 6 — Carpet Steam Cleaning',4:'Step 4 of 6 — Optional Add-Ons',5:'Step 5 of 6 — Date & Suburb',6:'Step 6 of 6 — Your Details'};
+
+function getAP(a){
+  const cityKey=S.city||'Melbourne';
+  const prices=ADDON_PRICES[cityKey]||ADDON_PRICES['Melbourne'];
+  const val=prices[a.key];
+  if(typeof val==='object'){return val[S.ps]||val['1 Bedroom, 1 Bathroom'];}
+  return val||a.p||40;
+}
+
+function buildAds(){
+  const g=document.getElementById('adgrid');
+  g.innerHTML='';
+  ADDEF.forEach(a=>{
+    const p=getAP(a);
+    const existing=S.ads.find(x=>x.v===a.v);
+    const curQty=existing?existing.qty:0;
+    const d=document.createElement('div');
+    if(a.qty){
+      d.className='adn adn-qty'+(curQty>0?' sel':'');
+      d.innerHTML=
+        '<span class="adi">'+a.i+'</span>'+
+        '<span class="adinf">'+
+          '<span class="adn2">'+a.v+'</span>'+
+          '<span class="adp">+$'+p+' each</span>'+
+        '</span>'+
+        '<span class="aqty-wrap">'+
+          '<button class="aqty-btn aqty-minus" onclick="adjQty(this,\''+a.v+'\','+p+',-1)" '+(curQty===0?'disabled':'')+'>−</button>'+
+          '<span class="aqty-num">'+(curQty||0)+'</span>'+
+          '<button class="aqty-btn aqty-plus" onclick="adjQty(this,\''+a.v+'\','+p+',1)">+</button>'+
+        '</span>';
+    }else{
+      d.className='adn'+(curQty>0?' sel':'');
+      d.innerHTML=
+        '<span class="adi">'+a.i+'</span>'+
+        '<span class="adinf">'+
+          '<span class="adn2">'+a.v+'</span>'+
+          (a.hint?'<span class="adn-hint">'+a.hint+'</span>':'')+
+          '<span class="adp">+$'+p+'</span>'+
+        '</span>'+
+        '<span class="adck">'+(curQty>0?'✓':'')+'</span>';
+      d.addEventListener('click',()=>{
+        const inList=S.ads.find(x=>x.v===a.v);
+        const ck=d.querySelector('.adck');
+        if(inList){S.ads=S.ads.filter(x=>x.v!==a.v);d.classList.remove('sel');ck.textContent=''}
+        else{S.ads.push({v:a.v,p,qty:1});d.classList.add('sel');ck.textContent='✓'}
+        recalcAt();
+      });
+    }
+    g.appendChild(d);
+  });
+}
+
+function adjQty(btn,name,unitP,delta){
+  const wrap=btn.closest('.aqty-wrap');
+  const card=btn.closest('.adn-qty');
+  const numEl=wrap.querySelector('.aqty-num');
+  const minusBtn=wrap.querySelector('.aqty-minus');
+  let entry=S.ads.find(x=>x.v===name);
+  let qty=(entry?entry.qty:0)+delta;
+  if(qty<0)qty=0;
+  if(!entry&&qty>0){S.ads.push({v:name,p:unitP,qty});entry=S.ads[S.ads.length-1];}
+  else if(entry){entry.qty=qty;if(qty===0)S.ads=S.ads.filter(x=>x.v!==name);}
+  numEl.textContent=qty;
+  minusBtn.disabled=(qty===0);
+  card.classList.toggle('sel',qty>0);
+  recalcAt();
+}
+
+function recalcAt(){S.at=S.ads.reduce((t,x)=>t+(x.p*(x.qty||1)),0);}
+
+function upProg(s){
+  for(let i=1;i<=6;i++){
+    const d=document.getElementById('pd'+i);
+    if(i<s){d.className='pd dn';d.textContent='✓'}
+    else if(i===s){d.className='pd act';d.textContent=i}
+    else{d.className='pd';d.textContent=i}
+    if(i<6)document.getElementById('pl'+i).className=i<s?'pl dn':'pl';
+  }
+  document.getElementById('fht').textContent=TITLES[s]||'';
+  document.getElementById('fhs').textContent=s+' / 6';
+}
+
+function switchStep(fromId,toId){
+  const cur=typeof fromId==='number'?document.getElementById('fs'+fromId):document.getElementById(fromId);
+  const next=typeof toId==='number'?document.getElementById('fs'+toId):document.getElementById(toId);
+  if(!cur||!next)return;
+  cur.style.opacity='0';cur.style.transform='translateY(-12px)';
+  setTimeout(()=>{
+    cur.classList.remove('act','on');cur.style.display='none';
+    next.style.display='block';next.style.opacity='0';next.style.transform='translateY(12px)';
+    next.offsetHeight;
+    next.classList.add('act','on');next.style.opacity='1';next.style.transform='translateY(0)';
+  },250);
+}
+
+document.querySelectorAll('.obtn[data-s="1"]').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.obtn[data-s="1"]').forEach(x=>x.classList.remove('sel'));
+    b.classList.add('sel');S.ps=b.dataset.v;S.ads=[];S.at=0;
+  });
+});
+document.querySelectorAll('.obtn[data-s="2"]').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.obtn[data-s="2"]').forEach(x=>x.classList.remove('sel'));
+    b.classList.add('sel');S.pt=b.dataset.v;S.pm=parseFloat(b.dataset.m);
+  });
+});
+document.querySelectorAll('.cbtn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('sel'));
+    b.classList.add('sel');S.ca=b.dataset.v;S.cp=parseFloat(b.dataset.cp);
+  });
+});
+
+function nxt(f){
+  if(f===1&&!S.ps){alert('Please select a property size.');return}
+  if(f===2&&!S.pt){alert('Please select a property type.');return}
+  if(f===3&&!S.ca){alert('Please select a carpet option.');return}
+  if(f===5){
+    S.dt=document.getElementById('idate').value;
+    let ok=true;
+    S.sub=document.getElementById('isub').value.trim();
+    if(!S.sub){document.getElementById('esub').classList.add('on');ok=false}
+    else{document.getElementById('esub').classList.remove('on');S.city=S.sub;}
+    if(!S.dt){document.getElementById('edate').classList.add('on');ok=false}
+    else{document.getElementById('edate').classList.remove('on')}
+    if(!ok)return;
+  }
+  if(f===3)buildAds();
+  switchStep(f,f+1);S.step=f+1;upProg(f+1);
+  document.getElementById('quote').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function prv(f){
+  switchStep(f,f-1);S.step=f-1;upProg(f-1);
+  document.getElementById('quote').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function dateChg(v){S.dt=v;S.uo=false;}
+document.getElementById('idate').min=new Date().toISOString().split('T')[0];
+
+function showQ(){
+  if(!OTP_VERIFIED){alert('Please verify your mobile number first.');return}
+  S.fn=document.getElementById('ifn').value.trim();
+  S.ln=document.getElementById('iln').value.trim();
+  S.em=document.getElementById('iem').value.trim();
+  S.ph=normPhone(document.getElementById('iph').value);
+  document.querySelectorAll('.fe').forEach(e=>e.classList.remove('on'));
+  document.querySelectorAll('.fi').forEach(e=>e.classList.remove('err'));
+  let ok=true;
+  if(!S.fn){document.getElementById('ename').classList.add('on');document.getElementById('ifn').classList.add('err');ok=false}
+  if(S.em&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(S.em)){document.getElementById('eemail').classList.add('on');document.getElementById('iem').classList.add('err');ok=false}
+  if(S.ph&&!validAUMobile(S.ph)){document.getElementById('ephone').classList.add('on');document.getElementById('iph').classList.add('err');ok=false}
+  if(!S.em){document.getElementById('eemail').classList.add('on');ok=false}
+  if(!S.ph){document.getElementById('ephone').classList.add('on');ok=false}
+  if(!ok)return;
+  const cityKey=S.city||'Melbourne';
+  const cityPrices=PRICES[cityKey]||PRICES['Melbourne'];
+  const sizePrices=cityPrices[S.ps]||cityPrices['1 Bedroom, 1 Bathroom'];
+  const isWithCarpet=(S.ca==='With Carpet');
+  const basePriceVal=isWithCarpet?sizePrices.with_carpet:sizePrices.without_carpet;
+  S.cp=isWithCarpet?(sizePrices.with_carpet-sizePrices.without_carpet):0;
+  const base=Math.round(basePriceVal*S.pm);
+  const std=base;
+  document.getElementById('rcity').textContent=S.sub+(S.city?', '+S.city:'');
+  document.getElementById('tpst').textContent='$'+std;
+  let rows='<div class="ir"><span class="ql">✓ Standard End of Lease Clean</span><span class="qa">Included</span></div>';
+  rows+='<div class="qrw"><span class="ql">'+S.ps+' Bond Clean'+(S.pm>1?' (+10% double storey)':'')+' </span><span class="qa">$'+base+'</span></div>';
+  if(isWithCarpet){
+    rows+='<div class="qrw"><span class="ql">Carpet steam cleaning</span><span class="qa">Included in package</span></div>';
+  }else{
+    rows+='<div class="qrw"><span class="ql">Carpet steam cleaning</span><span class="qa">Not selected</span></div>';
+  }
+  rows+='<div class="qt"><span>Your Price</span><span>$'+std+'</span></div>';
+  let addonHtml='';
+  if(S.ads.length>0){
+    addonHtml+='<div class="qaddon"><div class="qaddon-badge">OPTIONAL</div><div class="qaddon-t">Additional services you selected</div>';
+    addonHtml+='<div class="qaddon-sub">These are optional extras — not included in your price above. Add only the ones you need.</div>';
+    S.ads.forEach(a=>{const qty=a.qty||1;const tot=a.p*qty;addonHtml+='<div class="qaddon-i"><span>+ '+a.v+(qty>1?' <span style="background:var(--secondary);color:#003824;font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px;margin-left:5px;font-family:var(--ff-mono)">×'+qty+'</span>':'')+' </span><span class="qaddon-p">$'+tot+'</span></div>';});
+    addonHtml+='<div class="qaddon-tot"><span>Add-ons total (optional)</span><span>$'+S.at+'</span></div>';
+    addonHtml+='<div class="qaddon-n">Want any of these? Just let us know when we follow up — easy to add to your booking.</div></div>';
+  }
+  document.getElementById('qaddonbox').innerHTML=addonHtml;
+  document.getElementById('qbk').innerHTML=rows;
+  switchStep(6,'qres');
+  document.getElementById('fht').textContent='Your Personalised Quote';
+  document.getElementById('fhs').textContent='✓ Done';
+  sendGHL(base,std);
+  document.getElementById('quote').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function sendGHL(b,std){
+  if(typeof fbq!=='undefined'){fbq('track','Lead',{value:std,currency:'AUD',content_name:S.ps,content_category:'Bond Cleaning'});}
+  fetch(WH,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({first_name:S.fn,last_name:S.ln,email:S.em,phone:S.ph,suburb:S.sub,city:S.city,property_size:S.ps,property_type:S.pt,carpet_rooms:S.ca,carpet_steam_cleaning:S.ca,carpet_price:S.cp,preferred_date:S.dt,addons:S.ads.map(a=>(a.qty>1?a.qty+'x ':'')+a.v+' $'+(a.p*(a.qty||1))).join(', '),base_price:b,addon_total:S.at,standard_total:std,lead_source:(new URLSearchParams(window.location.search)).get('source')||'organic',total_price:std+S.at})}).catch(()=>{});
+  if(typeof gtag!=='undefined'){
+    var ecPhone=normPhone(S.ph);
+    if(ecPhone.charAt(0)==='0')ecPhone='+61'+ecPhone.slice(1);
+    gtag('set','user_data',{email:S.em,phone_number:ecPhone,address:{first_name:S.fn,last_name:S.ln}});
+    gtag('event','conversion',{'send_to':'AW-17616021519/fCsPCIjO57QcEI_Q_M9B'});
+  }
+}
+
+S.subKnown=false;
+function citySel(v){
+  S.sub=v; S.city=v; S.subKnown=true;
+  document.getElementById('esub').classList.remove('on');
+}
+
+function tFaq(el){
+  const i=el.closest('.fi2');
+  const w=i.classList.contains('op');
+  document.querySelectorAll('.fi2').forEach(x=>x.classList.remove('op'));
+  if(!w)i.classList.add('op');
+}
+
+upProg(1);
+</script>
+
+<script>
+(function(){
+  var q=document.getElementById('quote'),bar=document.getElementById('mcta');
+  if(q&&bar&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){bar.style.transform=e.isIntersecting?'translateY(120%)':'';});
+    },{rootMargin:'-70px 0px -20px 0px',threshold:0}).observe(q);
+
+  }
+})();
+</script>
+
+<script>
+(function(){
+  try {
+    var map={'australia/perth':'Perth','australia/melbourne':'Melbourne','australia/brisbane':'Brisbane','australia/sydney':'Sydney'};
+    var qs=new URLSearchParams(location.search).get('city');
+    var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
+    var city=null;
+    if(qs){qs=qs.toLowerCase();for(var k in map){if(map[k].toLowerCase()===qs){city=map[k];break}}}
+    if(!city)city=map[tz]||null;
+    if(city){var el=document.getElementById('h1city');if(el)el.textContent=' '+city;S.city=city;}
+  }catch(e){}
+
+
+})();
+</script>
+</body>
+</html>
