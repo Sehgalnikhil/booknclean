@@ -2026,3 +2026,39 @@ body {
     padding: 20px 12px;
   }
 }
+
+
+/* Fix for Add-on Grid 2-column layout on mobile */
+@media(max-width: 640px) {
+  .adn {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 16px 8px !important;
+    gap: 8px !important;
+  }
+  .adinf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .adn2 {
+    font-size: 13px !important;
+  }
+  .adn-hint {
+    display: none !important; /* Hide long hint text to save space in 2-col mode */
+  }
+  .adck {
+    margin-left: 0 !important;
+    margin-top: 4px !important;
+  }
+  .aqty-wrap {
+    justify-content: center;
+    margin-top: 4px;
+    width: 100%;
+  }
+  .adi {
+    font-size: 24px !important;
+    margin-bottom: 4px;
+  }
+}
