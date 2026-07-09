@@ -1900,15 +1900,21 @@ body {
    MOBILE COMPATIBILITY (Added for full responsiveness)
 ════════════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
   /* Navigation */
   .nav-inner {
     flex-wrap: wrap;
     padding: 12px 24px;
     gap: 16px;
+    max-width: 100vw;
   }
   .nav-links {
     order: 3;
     width: 100%;
+    max-width: 100vw;
     overflow-x: auto;
     white-space: nowrap;
     padding-bottom: 8px;
