@@ -1053,6 +1053,11 @@ function showQ(){
   document.getElementById('fhs').textContent='✓ Done';
   sendGHL(base,std);
   document.getElementById('quote').scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(()=>{
+    if(typeof confetti!=='undefined'){
+      confetti({particleCount:150,spread:90,origin:{y:0.55},colors:['#003824','#2ecc71','#f1c40f','#e74c3c','#3498db'],zIndex:9999});
+    }
+  },400);
 }
 
 function sendGHL(b,std){
@@ -1109,5 +1114,6 @@ upProg(1);
 
 })();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>
 </html>
