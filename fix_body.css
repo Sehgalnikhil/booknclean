@@ -1,0 +1,5 @@
+/* Global mobile smoothness and prevent wobble */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
