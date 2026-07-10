@@ -1266,6 +1266,7 @@ void main(){
 <!-- ═══════════════════════════════════════════════════════════
      JAVASCRIPT — All original functionality preserved
 ════════════════════════════════════════════════════════════ -->
+<script src="suburbs.js"></script>
 <script>
 const WH='https://script.google.com/macros/s/AKfycbw-wXeRMfvg0qmSXTml8zurO7XZmO7h_ZX67wk4gk4z1dyivW6psyDkhVZrSgGgzgJI/exec';
 const OTP_WORKER='https://ordinary-cleaners-otp.ordinarycleaners.workers.dev';
@@ -1961,16 +1962,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* ── Suburb Autocomplete ─────────────────────────────────── */
 (function(){
-  var SUBURBS = [
-    // Sydney
-    {n:'Bondi',c:'Sydney'},{n:'Bondi Junction',c:'Sydney'},{n:'Surry Hills',c:'Sydney'},{n:'Newtown',c:'Sydney'},{n:'Parramatta',c:'Sydney'},{n:'Chatswood',c:'Sydney'},{n:'Manly',c:'Sydney'},{n:'Cronulla',c:'Sydney'},{n:'Mosman',c:'Sydney'},{n:'Randwick',c:'Sydney'},{n:'Darlinghurst',c:'Sydney'},{n:'Paddington',c:'Sydney'},{n:'Glebe',c:'Sydney'},{n:'Leichhardt',c:'Sydney'},{n:'Balmain',c:'Sydney'},{n:'Ryde',c:'Sydney'},{n:'Hornsby',c:'Sydney'},{n:'Liverpool',c:'Sydney'},{n:'Campbelltown',c:'Sydney'},{n:'Penrith',c:'Sydney'},{n:'Blacktown',c:'Sydney'},{n:'Bankstown',c:'Sydney'},{n:'Hurstville',c:'Sydney'},{n:'Kogarah',c:'Sydney'},{n:'Strathfield',c:'Sydney'},{n:'Auburn',c:'Sydney'},{n:'Burwood',c:'Sydney'},{n:'Eastwood',c:'Sydney'},{n:'Dee Why',c:'Sydney'},{n:'Brookvale',c:'Sydney'},
-    // Melbourne
-    {n:'Richmond',c:'Melbourne'},{n:'Fitzroy',c:'Melbourne'},{n:'Collingwood',c:'Melbourne'},{n:'South Yarra',c:'Melbourne'},{n:'St Kilda',c:'Melbourne'},{n:'Carlton',c:'Melbourne'},{n:'Brunswick',c:'Melbourne'},{n:'Prahran',c:'Melbourne'},{n:'Hawthorn',c:'Melbourne'},{n:'Camberwell',c:'Melbourne'},{n:'Box Hill',c:'Melbourne'},{n:'Doncaster',c:'Melbourne'},{n:'Footscray',c:'Melbourne'},{n:'Sunshine',c:'Melbourne'},{n:'Dandenong',c:'Melbourne'},{n:'Frankston',c:'Melbourne'},{n:'Ringwood',c:'Melbourne'},{n:'Chadstone',c:'Melbourne'},{n:'Glen Waverley',c:'Melbourne'},{n:'Oakleigh',c:'Melbourne'},{n:'Northcote',c:'Melbourne'},{n:'Preston',c:'Melbourne'},{n:'Coburg',c:'Melbourne'},{n:'Essendon',c:'Melbourne'},{n:'Moonee Ponds',c:'Melbourne'},{n:'Point Cook',c:'Melbourne'},{n:'Werribee',c:'Melbourne'},{n:'Craigieburn',c:'Melbourne'},{n:'Epping',c:'Melbourne'},{n:'Narre Warren',c:'Melbourne'},
-    // Brisbane
-    {n:'South Brisbane',c:'Brisbane'},{n:'Fortitude Valley',c:'Brisbane'},{n:'New Farm',c:'Brisbane'},{n:'Paddington',c:'Brisbane'},{n:'Indooroopilly',c:'Brisbane'},{n:'Chermside',c:'Brisbane'},{n:'Carindale',c:'Brisbane'},{n:'Mt Gravatt',c:'Brisbane'},{n:'Sunnybank',c:'Brisbane'},{n:'Logan',c:'Brisbane'},{n:'Ipswich',c:'Brisbane'},{n:'Redcliffe',c:'Brisbane'},{n:'Nundah',c:'Brisbane'},{n:'Lutwyche',c:'Brisbane'},{n:'Kedron',c:'Brisbane'},{n:'Stafford',c:'Brisbane'},{n:'Aspley',c:'Brisbane'},{n:'Everton Park',c:'Brisbane'},{n:'Mitchelton',c:'Brisbane'},{n:'The Gap',c:'Brisbane'},{n:'Kenmore',c:'Brisbane'},{n:'Toowong',c:'Brisbane'},{n:'Auchenflower',c:'Brisbane'},{n:'Milton',c:'Brisbane'},{n:'Woolloongabba',c:'Brisbane'},{n:'Annerley',c:'Brisbane'},{n:'Greenslopes',c:'Brisbane'},{n:'Coorparoo',c:'Brisbane'},{n:'Camp Hill',c:'Brisbane'},{n:'Capalaba',c:'Brisbane'},
-    // Perth
-    {n:'Subiaco',c:'Perth'},{n:'Fremantle',c:'Perth'},{n:'Cottesloe',c:'Perth'},{n:'Scarborough',c:'Perth'},{n:'Joondalup',c:'Perth'},{n:'Mandurah',c:'Perth'},{n:'Midland',c:'Perth'},{n:'Armadale',c:'Perth'},{n:'Rockingham',c:'Perth'},{n:'Cannington',c:'Perth'},{n:'Belmont',c:'Perth'},{n:'Victoria Park',c:'Perth'},{n:'South Perth',c:'Perth'},{n:'Como',c:'Perth'},{n:'Applecross',c:'Perth'},{n:'Melville',c:'Perth'},{n:'Bibra Lake',c:'Perth'},{n:'Cockburn Central',c:'Perth'},{n:'Baldivis',c:'Perth'},{n:'Success',c:'Perth'},{n:'Ellenbrook',c:'Perth'},{n:'Mirrabooka',c:'Perth'},{n:'Malaga',c:'Perth'},{n:'Morley',c:'Perth'},{n:'Dianella',c:'Perth'},{n:'Stirling',c:'Perth'},{n:'Innaloo',c:'Perth'},{n:'Osborne Park',c:'Perth'},{n:'Wembley',c:'Perth'},{n:'Floreat',c:'Perth'}
-  ];
+    // SUBURBS array is loaded globally via suburbs.js
 
   var input    = document.getElementById('suburbInput');
   var dropdown = document.getElementById('suburbDropdown');
