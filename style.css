@@ -660,14 +660,13 @@ nav.nav-scrolled {
 }
 .fs {
   display: none;
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+  opacity: 1;
+  transform: none;
 }
 .fs.act {
   display: block;
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 .fq {
   font-family: var(--ff-head);
@@ -2137,7 +2136,6 @@ body {
 }
 .fs {
   display: none;
-  animation: fadein 0.4s var(--ease);
 }
 .fs.act { display: block; }
 

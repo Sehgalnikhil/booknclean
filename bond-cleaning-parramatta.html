@@ -1420,19 +1420,10 @@ function switchStep(fromId,toId){
   const cur=typeof fromId==='number'?document.getElementById('fs'+fromId):document.getElementById(fromId);
   const next=typeof toId==='number'?document.getElementById('fs'+toId):document.getElementById(toId);
   if(!cur||!next)return;
-  
-  // Instantly hide current step
-  cur.style.opacity='0';
-  cur.style.transform='translateY(-12px)';
   cur.classList.remove('act','on');
   cur.style.display='none';
-  
-  // Instantly show next step
   next.style.display='block';
-  next.offsetHeight; // Force reflow
   next.classList.add('act','on');
-  next.style.opacity='1';
-  next.style.transform='translateY(0)';
 }
 
 document.querySelectorAll('.obtn[data-s="1"]').forEach(b=>{
@@ -1477,7 +1468,7 @@ function nxt(f){
   if(f===3)buildAds();
   switchStep(f,f+1);S.step=f+1;upProg(f+1);
   if(typeof updateStickySummary==='function') updateStickySummary();
-  document.getElementById('quote').scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('quote').scrollIntoView({behavior:'instant',block:'start'});
 }
 
 function prv(f){
@@ -1543,7 +1534,7 @@ function showQ(){
     document.getElementById('fht').textContent='Your Personalised Quote';
     document.getElementById('fhs').textContent='✓ Done';
     sendGHL(base,std);
-    document.getElementById('quote').scrollIntoView({behavior:'smooth',block:'start'});
+    document.getElementById('quote').scrollIntoView({behavior:'instant',block:'start'});
     setTimeout(()=>{
       if(typeof confetti!=='undefined'){
         confetti({particleCount:150,spread:90,origin:{y:0.55},colors:['#003824','#2ecc71','#f1c40f','#e74c3c','#3498db'],zIndex:9999});
