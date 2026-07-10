@@ -371,7 +371,11 @@ void main(){
           <!-- Hidden city field (populated by dropdown) -->
           <input type="hidden" id="isub" value="">
           <div class="fe" id="esub">Please enter and select your suburb</div>
-          <input type="text" placeholder="Select preferred date..." class="fi" id="idate" min="" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" onchange="dateChg(this.value)">
+          
+          <input type="text" class="fi" id="iaddr" placeholder="Street address (e.g. 123 Main St, Unit 4)" autocomplete="street-address" style="margin-top: 16px;">
+          <div class="fe" id="eaddr">Please enter your street address</div>
+
+          <input type="text" placeholder="Select preferred date..." class="fi" id="idate" min="" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" onchange="dateChg(this.value)" style="margin-top: 16px;">
           <div class="fe" id="edate">Please select a preferred date</div>
           <div class="fn"><button class="bb" onclick="prv(5)">← Back</button><button class="bn" onclick="nxt(5)">Next →</button></div>
         </div>
@@ -1404,10 +1408,13 @@ function nxt(f){
   if(f===3&&!S.ca){alert('Please select a carpet option.');return}
   if(f===5){
     S.dt=document.getElementById('idate').value;
+    S.addr=document.getElementById('iaddr').value.trim();
     let ok=true;
     S.sub=document.getElementById('isub').value.trim();
     if(!S.sub){document.getElementById('esub').classList.add('on');ok=false}
     else{document.getElementById('esub').classList.remove('on');S.city=S.sub;}
+    if(!S.addr){document.getElementById('eaddr').classList.add('on');ok=false}
+    else{document.getElementById('eaddr').classList.remove('on');}
     if(!S.dt){document.getElementById('edate').classList.add('on');ok=false}
     else{document.getElementById('edate').classList.remove('on')}
     if(!ok)return;
@@ -1493,7 +1500,7 @@ function showQ(){
 
 function sendGHL(b,std){
   if(typeof fbq!=='undefined'){fbq('track','Lead',{value:std,currency:'AUD',content_name:S.ps,content_category:'Bond Cleaning'});}
-  fetch(WH,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({first_name:S.fn,last_name:S.ln,email:S.em,phone:S.ph,suburb:S.sub,city:S.city,property_size:S.ps,property_type:S.pt,carpet_rooms:S.ca,carpet_steam_cleaning:S.ca,carpet_price:S.cp,preferred_date:S.dt,addons:S.ads.map(a=>(a.qty>1?a.qty+'x ':'')+a.v+' $'+(a.p*(a.qty||1))).join(', '),base_price:b,addon_total:S.at,standard_total:std,lead_source:(new URLSearchParams(window.location.search)).get('source')||'organic',total_price:std+S.at})}).catch(()=>{});
+  fetch(WH,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({first_name:S.fn,last_name:S.ln,email:S.em,phone:S.ph,suburb:S.sub,address:S.addr,city:S.city,property_size:S.ps,property_type:S.pt,carpet_rooms:S.ca,carpet_steam_cleaning:S.ca,carpet_price:S.cp,preferred_date:S.dt,addons:S.ads.map(a=>(a.qty>1?a.qty+'x ':'')+a.v+' $'+(a.p*(a.qty||1))).join(', '),base_price:b,addon_total:S.at,standard_total:std,lead_source:(new URLSearchParams(window.location.search)).get('source')||'organic',total_price:std+S.at})}).catch(()=>{});
   if(typeof gtag!=='undefined'){
     var ecPhone=normPhone(S.ph);
     if(ecPhone.charAt(0)==='0')ecPhone='+61'+ecPhone.slice(1);
