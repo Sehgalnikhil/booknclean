@@ -3376,3 +3376,8 @@ html, body {
 a, button, input, select, textarea, .obtn, .adck, .tb-item {
   touch-action: manipulation;
 }
+
+/* Force mobile clicks to register exclusively on the button element */
+.obtn *, .cbtn *, .adck * {
+  pointer-events: none;
+}
