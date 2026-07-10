@@ -1420,13 +1420,19 @@ function switchStep(fromId,toId){
   const cur=typeof fromId==='number'?document.getElementById('fs'+fromId):document.getElementById(fromId);
   const next=typeof toId==='number'?document.getElementById('fs'+toId):document.getElementById(toId);
   if(!cur||!next)return;
-  cur.style.opacity='0';cur.style.transform='translateY(-12px)';
-  setTimeout(()=>{
-    cur.classList.remove('act','on');cur.style.display='none';
-    next.style.display='block';next.style.opacity='0';next.style.transform='translateY(12px)';
-    next.offsetHeight;
-    next.classList.add('act','on');next.style.opacity='1';next.style.transform='translateY(0)';
-  },250);
+  
+  // Instantly hide current step
+  cur.style.opacity='0';
+  cur.style.transform='translateY(-12px)';
+  cur.classList.remove('act','on');
+  cur.style.display='none';
+  
+  // Instantly show next step
+  next.style.display='block';
+  next.offsetHeight; // Force reflow
+  next.classList.add('act','on');
+  next.style.opacity='1';
+  next.style.transform='translateY(0)';
 }
 
 document.querySelectorAll('.obtn[data-s="1"]').forEach(b=>{
