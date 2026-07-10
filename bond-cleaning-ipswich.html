@@ -1547,7 +1547,13 @@ function showQ(){
 
 function sendGHL(b,std){
   if(typeof fbq!=='undefined'){fbq('track','Lead',{value:std,currency:'AUD',content_name:S.ps,content_category:'Bond Cleaning'});}
-  fetch(WH,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({first_name:S.fn,last_name:S.ln,email:S.em,phone:S.ph,suburb:S.sub,address:S.addr,city:S.city,property_size:S.ps,property_type:S.pt,carpet_rooms:S.ca,carpet_steam_cleaning:S.ca,carpet_price:S.cp,preferred_date:S.dt,addons:S.ads.map(a=>(a.qty>1?a.qty+'x ':'')+a.v+' $'+(a.p*(a.qty||1))).join(', '),base_price:b,addon_total:S.at,standard_total:std,lead_source:(new URLSearchParams(window.location.search)).get('source')||'organic',total_price:std+S.at})}).catch(()=>{});
+  const inclusions = "Inclusions:\nLiving & Bedrooms: Doors, frames, handles, skirting boards, inside windows, blinds dusted, light fittings, wardrobes, railings, cobwebs.\nBathrooms & Laundry: Shower screens, bathtubs, toilets, wall tiles, vanities, mirrors, towel rails, cupboards, exhaust fans.\nKitchen: Oven, stovetop, rangehood, bench tops, splashbacks, sink, taps, cupboards inside/out.\nGeneral: Hard floors vacuumed and mopped.";
+  const exclusions = "Exclusions (Unless selected as Add-ons):\nOutside windows, Wall washing, Balcony/Patio cleaning, Garage cleaning, Furniture cleaning, Rubbish removal, Ceilings, Deep grout cleaning, Fridge/Microwave deep clean.";
+  const terms = "Terms & Conditions:\nWe offer a 3-working-day Bond Back Assurance. Should your property manager or agent raise any cleaning concerns, our team will promptly return to address the reported items at no additional cost, provided notification is received within this period. Pricing is based on a property in normal condition.";
+  const formatted_addons = S.ads.length > 0 ? "Selected Add-ons: " + S.ads.map(a=>(a.qty>1?a.qty+'x ':'')+a.v+' ($'+(a.p*(a.qty||1))+')').join(', ') : "No additional add-ons selected.";
+  const invoice_summary = inclusions + "\n\n" + exclusions + "\n\n" + formatted_addons + "\n\n" + terms;
+
+  fetch(WH,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({first_name:S.fn,last_name:S.ln,email:S.em,phone:S.ph,suburb:S.sub,address:S.addr,city:S.city,property_size:S.ps,property_type:S.pt,carpet_rooms:S.ca,carpet_steam_cleaning:S.ca,carpet_price:S.cp,preferred_date:S.dt,addons:S.ads.map(a=>(a.qty>1?a.qty+'x ':'')+a.v+' $'+(a.p*(a.qty||1))).join(', '),base_price:b,addon_total:S.at,standard_total:std,lead_source:(new URLSearchParams(window.location.search)).get('source')||'organic',total_price:std+S.at, inclusions: inclusions, exclusions: exclusions, terms: terms, invoice_summary: invoice_summary})}).catch(()=>{});
   if(typeof gtag!=='undefined'){
     var ecPhone=normPhone(S.ph);
     if(ecPhone.charAt(0)==='0')ecPhone='+61'+ecPhone.slice(1);
