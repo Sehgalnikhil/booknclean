@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-AU" >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Booking Report — Book & Clean</title>
+<meta name="description" content="View your official Book & Clean report, receipt, and before & after photos.">
+<link rel="canonical" href="https://bookandclean.com.au/report.html">
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Fonts: Geist + Inter + JetBrains Mono (Stitch "Obsidian Clean" design system) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ANIMATED BACKGROUND (WebGL shader)
+════════════════════════════════════════════════════════════ -->
+<div id="bg-shader">
+<canvas id="shader-canvas"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas');
+  function syncSize() {
+    const w = window.innerWidth || 1280;
+    const h = window.innerHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
+  }
+  if (typeof ResizeObserver !== 'undefined') { new ResizeObserver(syncSize).observe(canvas); }
+  syncSize();
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;varying vec2 v_uv;void main(){v_uv=a_position*0.5+0.5;gl_Position=vec4(a_position,0.0,1.0);}`;
+  const fs = `precision highp float;varying vec2 v_uv;uniform float u_time;uniform vec2 u_resolution;
+void main(){
+  vec2 uv=v_uv;
+  vec2 p=(uv-0.5)*2.0;
+  p.x*=u_resolution.x/u_resolution.y;
+  vec3 col=vec3(1.0, 1.0, 1.0);
+  for(float i=1.0;i<5.0;i++){
+    vec2 pos=vec2(sin(u_time*0.35+i*1.5)*0.65,cos(u_time*0.28+i*2.1)*0.45);
+    float d=length(p-pos);
+    float glow=0.07/(d*d+0.12);
+    vec3 orb=mix(vec3(0.8, 0.9, 1.0),vec3(0.8, 0.95, 0.9),sin(u_time*0.6+i)*0.5+0.5);
+    col+=orb*glow*(0.45+0.55*sin(u_time*0.4+i*1.2));
+  }
+  vec2 grid=fract(uv*36.0);
+  float gl2=smoothstep(0.0,0.025,grid.x)*smoothstep(1.0,0.975,grid.x)*smoothstep(0.0,0.025,grid.y)*smoothstep(1.0,0.975,grid.y);
+  col+=(1.0-gl2)*0.012;
+  gl_FragColor=vec4(col,1.0);
+}`;
+  function cs(type, src) { const s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s); return s; }
+  const prog=gl.createProgram();
+  gl.attachShader(prog,cs(gl.VERTEX_SHADER,vs));
+  gl.attachShader(prog,cs(gl.FRAGMENT_SHADER,fs));
+  gl.linkProgram(prog); gl.useProgram(prog);
+  const buf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+  const pos=gl.getAttribLocation(prog,'a_position');
+  gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos,2,gl.FLOAT,false,0,0);
+  const uTime=gl.getUniformLocation(prog,'u_time');
+  const uRes=gl.getUniformLocation(prog,'u_resolution');
+  function render(t){
+    if(typeof ResizeObserver==='undefined')syncSize();
+    gl.viewport(0,0,canvas.width,canvas.height);
+    if(uTime)gl.uniform1f(uTime,t*0.001);
+    if(uRes)gl.uniform2f(uRes,canvas.width,canvas.height);
+    gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAV
+════════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">
+      <svg class="nav-logo-svg" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="var(--primary)"></path>
+        <path d="M9 14l2 2 4-4" stroke="var(--primary)"></path>
+      </svg>
+      <div>
+        <div class="nav-brand">Book & Clean</div>
+        <div class="nav-tagline">Bond Cleaning Experts</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="tel:+61468230552" class="btn-call">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Call Now
+      </a>
+      <button class="btn-outline" onclick="window.location.href='index.html#quote'">Get Quote</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════
+     DASHBOARD CONTENT
+════════════════════════════════════════════════════════════ -->
+<div class="dashboard-wrapper" style="position: relative; z-index: 10;">
+  <div class="container" style="max-width: 900px; padding-top: 120px; margin-bottom: 80px;">
+    
+    <!-- DASHBOARD HEADER -->
+    <div class="dashboard-header fc reveal-on-scroll">
+      <div class="dh-top">
+        <span class="dh-id" id="bookingIdDisplay">Booking #BNC-8924</span>
+        <span class="dh-status status-completed">Clean Completed</span>
+      </div>
+      <h1 class="dh-title">Your Bond Clean Report</h1>
+      <p class="dh-desc">Thank you for choosing Book & Clean. Below you will find your official receipt for your real estate agent, and the before/after photos taken by our team.</p>
+    </div>
+
+    <!-- QUICK ACTIONS -->
+    <div class="dashboard-actions reveal-on-scroll" style="animation-delay: 0.1s;">
+      <a href="#" class="btn-primary dl-btn" onclick="alert('Demo: Downloading PDF Receipt...')">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Download Official Receipt (PDF)
+      </a>
+    </div>
+
+    <!-- REVIEW CTA -->
+    <div class="review-cta reveal-on-scroll" style="animation-delay: 0.2s;">
+      <div class="r-cta-content">
+        <h3 class="r-cta-title">Happy with the result? 🌟</h3>
+        <p class="r-cta-desc">Our cleaners work incredibly hard to secure your bond. A 5-star Google review is the best tip you can give them!</p>
+      </div>
+      <a href="https://g.page/r/your-google-review-link" target="_blank" rel="noopener" class="btn-review">Leave a Review</a>
+    </div>
+
+    <!-- GUARANTEE BADGE -->
+    <div class="guarantee-badge reveal-on-scroll" style="animation-delay: 0.3s;">
+      <div class="gb-icon">🛡️</div>
+      <div class="gb-text">
+        <strong>Bond Back Guarantee Active</strong>
+        <span>Your 72-hour guarantee period has started. If your property manager flags any item from our scope, simply reply to your booking email and we will return completely free.</span>
+      </div>
+    </div>
+
+    <!-- BEFORE / AFTER GALLERY -->
+    <div class="photo-gallery reveal-on-scroll" style="animation-delay: 0.4s;">
+      <h2 class="pg-title">Job Photos</h2>
+      <p class="pg-desc">These photos were captured by our team upon completion of your clean.</p>
+
+      <div class="pg-grid">
+        <!-- Photo Item 1 -->
+        <div class="pg-item">
+          <div class="pg-label">Oven - Before</div>
+          <div class="pg-img-wrap before-img">
+            <div class="placeholder-text">Oven Before Image</div>
+          </div>
+        </div>
+        <!-- Photo Item 2 -->
+        <div class="pg-item">
+          <div class="pg-label">Oven - After</div>
+          <div class="pg-img-wrap after-img">
+            <div class="placeholder-text">Oven After Image</div>
+          </div>
+        </div>
+
+        <!-- Photo Item 3 -->
+        <div class="pg-item">
+          <div class="pg-label">Shower - Before</div>
+          <div class="pg-img-wrap before-img">
+            <div class="placeholder-text">Shower Before Image</div>
+          </div>
+        </div>
+        <!-- Photo Item 4 -->
+        <div class="pg-item">
+          <div class="pg-label">Shower - After</div>
+          <div class="pg-img-wrap after-img">
+            <div class="placeholder-text">Shower After Image</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div style="width:44px;height:44px;background:linear-gradient(135deg,var(--primary-ctr),var(--secondary-ctr));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 0 14px rgba(0,102,204,0.25);flex-shrink:0">✦</div>
+      <div>
+        <div class="footer-brand">Book & Clean</div>
+        <div class="footer-caption">Perth · Melbourne · Brisbane · Sydney</div>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div>Book & Clean Pty Ltd</div>
+      <div><a href="tel:+61468230552">+61 468 230 552</a> &nbsp;|&nbsp; <a href="mailto:Booknclean0@gmail.com">Booknclean0@gmail.com</a></div>
+      <div style="margin-top:3px"><a href="index.html#guarantee-terms">Bond Back Guarantee</a></div>
+      <div style="margin-top:3px;font-size:11px;color:var(--on-surface-var)">© 2026 Book & Clean Pty Ltd. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mock data parsing from URL
+document.addEventListener("DOMContentLoaded", () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get('id');
+  if (id) {
+    document.getElementById('bookingIdDisplay').textContent = "Booking #" + id.toUpperCase();
+  }
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (!CSS.supports('(animation-timeline: view()) and (animation-range: entry)')) {
+    document.documentElement.classList.add('reveal-fallback');
+    var observer = new IntersectionObserver(function(entries, obs) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(function(el) {
+      observer.observe(el);
+    });
+  }
+});
+</script>
+</body>
+</html>

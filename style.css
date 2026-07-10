@@ -3127,3 +3127,100 @@ select.suburb-input {
     height: 44px;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   CUSTOMER DASHBOARD (report.html)
+═══════════════════════════════════════════════════════════ */
+.dashboard-header {
+  text-align: center; margin-bottom: 40px; padding: 40px;
+  background: var(--surface); border-radius: 16px; border: 1px solid var(--outline);
+}
+.dh-top {
+  display: flex; justify-content: center; align-items: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap;
+}
+.dh-id {
+  font-family: var(--ff-mono); font-size: 14px; font-weight: 700; color: var(--on-surface-var);
+}
+.dh-status {
+  padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-family: var(--ff-mono);
+}
+.status-completed {
+  background: rgba(34, 197, 94, 0.15); color: #166534; border: 1px solid rgba(34, 197, 94, 0.3);
+}
+.dh-title {
+  font-family: var(--ff-head); font-size: 32px; color: var(--primary); margin-bottom: 16px;
+}
+.dh-desc {
+  font-size: 16px; color: var(--on-surface-var); line-height: 1.6; max-width: 600px; margin: 0 auto;
+}
+
+.dashboard-actions {
+  display: flex; justify-content: center; margin-bottom: 40px;
+}
+.dl-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 16px; padding: 16px 32px; border-radius: 99px;
+  background: var(--primary); color: white; text-decoration: none; font-weight: 600;
+  transition: all 0.3s var(--ease);
+}
+.dl-btn:hover {
+  transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.review-cta {
+  background: linear-gradient(135deg, var(--surface-high), var(--surface));
+  border: 1px solid var(--outline); border-radius: 16px; padding: 32px;
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  margin-bottom: 40px;
+}
+.r-cta-title { font-family: var(--ff-head); font-size: 24px; color: var(--primary); margin-bottom: 8px; }
+.r-cta-desc { font-size: 15px; color: var(--on-surface-var); line-height: 1.6; margin: 0; }
+.btn-review {
+  background: #4285F4; color: white; padding: 14px 28px; border-radius: 99px;
+  text-decoration: none; font-weight: 600; white-space: nowrap; transition: all 0.2s var(--ease);
+}
+.btn-review:hover {
+  background: #3367D6; transform: scale(1.05);
+}
+
+.guarantee-badge {
+  background: rgba(0, 102, 204, 0.05); border: 1px solid rgba(0, 102, 204, 0.2);
+  border-radius: 12px; padding: 24px; display: flex; gap: 16px; align-items: flex-start; margin-bottom: 40px;
+}
+.gb-icon { font-size: 24px; line-height: 1; }
+.gb-text strong { display: block; color: var(--primary); font-size: 16px; margin-bottom: 4px; }
+.gb-text span { color: var(--on-surface-var); font-size: 14px; line-height: 1.6; display: block; }
+
+.photo-gallery {
+  background: var(--surface); padding: 40px; border-radius: 16px; border: 1px solid var(--outline);
+}
+.pg-title { font-family: var(--ff-head); font-size: 28px; color: var(--primary); margin-bottom: 8px; }
+.pg-desc { font-size: 16px; color: var(--on-surface-var); line-height: 1.6; margin-bottom: 32px; }
+.pg-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+}
+.pg-item {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.pg-label { font-weight: 600; color: var(--on-surface); font-size: 15px; }
+.pg-img-wrap {
+  background: var(--surface-high); border-radius: 12px; overflow: hidden;
+  border: 1px solid var(--outline); position: relative;
+}
+.pg-img-wrap::before {
+  content: ''; display: block; padding-top: 75%; /* 4:3 aspect ratio */
+}
+.placeholder-text {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--on-surface-var); font-family: var(--ff-mono); font-size: 13px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.05em; background: rgba(0,0,0,0.02);
+}
+.before-img .placeholder-text { color: #dc2626; background: rgba(220, 38, 38, 0.05); }
+.after-img .placeholder-text { color: #16a34a; background: rgba(22, 163, 74, 0.05); }
+
+@media(max-width: 768px) {
+  .review-cta { flex-direction: column; text-align: center; }
+  .btn-review { width: 100%; text-align: center; }
+  .pg-grid { grid-template-columns: 1fr; }
+}
