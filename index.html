@@ -110,7 +110,7 @@
 <!-- Fonts: Geist + Inter + JetBrains Mono (Stitch "Obsidian Clean" design system) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -193,7 +193,7 @@ void main(){
       </div>
     </a>
     <div class="nav-links">
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="services.html">Services</a>
       <a href="how-it-works.html">How It Works</a>
       <a href="pricing.html">Pricing</a>
@@ -215,46 +215,51 @@ void main(){
      HERO
 ════════════════════════════════════════════════════════════ -->
 <div class="hero-section">
-  <div class="hero-bg-image" style="background-image:url(perth-hero.png?v=2)"></div>
+  <!-- Right Side Background Image with wavy clip path -->
+  <div class="hero-bg-wrapper">
+    <div class="hero-bg-yellow-shape"></div>
+    <div class="hero-bg-image" style="background-image:url(perth-hero.png?v=2)"></div>
+  </div>
+
   <div class="hero-content">
     <div class="hero-kicker">NO ADVANCE PAYMENT</div>
-    <h1 class="hero-h1">Bond Cleaning<span id="h1city"></span></h1>
-    <div class="hero-badge">
-      <span>✓</span> Pay After We've Cleaned
-    </div>
+    <h1 class="hero-h1">Bond Cleaning</h1>
+    <div class="hero-badge">Pay After We've Cleaned</div>
     <p class="hero-note">Payment on completion — no advance payment required,<br>pay only once your clean is finished.</p>
     
     <div class="hero-trust-badges">
-      <div class="htb-item"><span class="htb-icon">🛡️</span> Police Verified<br>Cleaners</div>
-      <div class="htb-item"><span class="htb-icon">✨</span> 100% Bond Back<br>Guarantee</div>
-      <div class="htb-item"><span class="htb-icon">👍</span> Satisfaction<br>Guaranteed</div>
-      <div class="htb-item"><span class="htb-icon">⏱️</span> On-Time<br>Service</div>
+      <div class="htb-item"><div class="htb-icon-wrap"><span class="htb-icon">🛡️</span></div> <div>Police Verified<br>Cleaners</div></div>
+      <div class="htb-item"><div class="htb-icon-wrap"><span class="htb-icon">✨</span></div> <div>100% Bond Back<br>Guarantee</div></div>
+      <div class="htb-item"><div class="htb-icon-wrap"><span class="htb-icon">👍</span></div> <div>Satisfaction<br>Guaranteed</div></div>
+      <div class="htb-item"><div class="htb-icon-wrap"><span class="htb-icon">⏱️</span></div> <div>On-Time<br>Service</div></div>
     </div>
   </div>
 </div>
 
-<!-- STEPPER -->
-<div class="container">
-  <div class="prog" id="progress-bar">
-    <div class="pd-wrap act"><div class="pd act" id="pd1">1</div><div class="pd-label">Property Details</div></div><div class="pl" id="pl1"></div>
-    <div class="pd-wrap"><div class="pd" id="pd2">2</div><div class="pd-label">Add-ons</div></div><div class="pl" id="pl2"></div>
-    <div class="pd-wrap"><div class="pd" id="pd3">3</div><div class="pd-label">Date & Time</div></div><div class="pl" id="pl3"></div>
-    <div class="pd-wrap"><div class="pd" id="pd4">4</div><div class="pd-label">Your Details</div></div><div class="pl" id="pl4"></div>
-    <div class="pd-wrap"><div class="pd" id="pd5">5</div><div class="pd-label">Review</div></div><div class="pl" id="pl5"></div>
-    <div class="pd-wrap"><div class="pd" id="pd6">6</div><div class="pd-label">Confirm</div></div>
+<!-- FLOATING WIDGET (Stepper & Availability) -->
+<div class="floating-widget-wrapper">
+  <!-- STEPPER -->
+  <div class="container stepper-container">
+    <div class="prog" id="progress-bar">
+      <div class="pd-wrap act"><div class="pd act" id="pd1">1</div><div class="pd-label">Property Details</div></div><div class="pl" id="pl1"></div>
+      <div class="pd-wrap"><div class="pd" id="pd2">2</div><div class="pd-label">Add-ons</div></div><div class="pl" id="pl2"></div>
+      <div class="pd-wrap"><div class="pd" id="pd3">3</div><div class="pd-label">Date & Time</div></div><div class="pl" id="pl3"></div>
+      <div class="pd-wrap"><div class="pd" id="pd4">4</div><div class="pd-label">Your Details</div></div><div class="pl" id="pl4"></div>
+      <div class="pd-wrap"><div class="pd" id="pd5">5</div><div class="pd-label">Review</div></div><div class="pl" id="pl5"></div>
+      <div class="pd-wrap"><div class="pd" id="pd6">6</div><div class="pd-label">Confirm</div></div>
+    </div>
   </div>
-</div>
 
-<!-- URGENCY / AVAILABILITY STRIP -->
-<div class="avail-strip" id="availStrip">
-  <div class="avail-inner">
-    <div class="avail-dot"></div>
-    <span class="avail-text">
-      🗓 Next available slot in <strong id="availCity">your area</strong>: <strong id="availDate">Tomorrow</strong>
-      &nbsp;·&nbsp;
-      <span class="avail-slots"><span id="slotsLeft">4</span> slots left this week</span>
-    </span>
-    <a class="avail-cta" href="#quote" onclick="event.preventDefault();document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Book now →</a>
+  <!-- URGENCY / AVAILABILITY STRIP -->
+  <div class="avail-strip" id="availStrip">
+    <div class="avail-inner">
+      <div class="avail-left">
+        <span class="avail-icon">🗓️</span>
+        <span class="avail-text">Next available slot in <strong id="availCity">your area</strong>: <strong id="availDate">Tomorrow</strong></span>
+      </div>
+      <div class="avail-slots-pill"><span id="slotsLeft">2</span> slots left this week</div>
+      <a class="avail-cta" href="#quote" onclick="event.preventDefault();document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Book now →</a>
+    </div>
   </div>
 </div>
 
@@ -1575,36 +1580,47 @@ function showQ(){
   S.cp=isWithCarpet?(sizePrices.with_carpet-sizePrices.without_carpet):0;
   const base=Math.round(basePriceVal*S.pm);
   const std=base;
-  document.getElementById('rcity').textContent=S.sub+(S.city?', '+S.city:'');
-  document.getElementById('tpst').textContent='$'+std;
-  let rows='<div class="ir"><span class="ql">✓ Standard End of Lease Clean</span><span class="qa">Included</span></div>';
-  rows+='<div class="qrw"><span class="ql">'+S.ps+' Bond Clean'+(S.pm>1?' (+10% double storey)':'')+' </span><span class="qa">$'+base+'</span></div>';
-  if(isWithCarpet){
-    rows+='<div class="qrw"><span class="ql">Carpet steam cleaning</span><span class="qa">Included in package</span></div>';
-  }else{
-    rows+='<div class="qrw"><span class="ql">Carpet steam cleaning</span><span class="qa">Not selected</span></div>';
-  }
-  rows+='<div class="qt"><span>Your Price</span><span>$'+std+'</span></div>';
-  let addonHtml='';
-  if(S.ads.length>0){
-    addonHtml+='<div class="qaddon"><div class="qaddon-badge">OPTIONAL</div><div class="qaddon-t">Additional services you selected</div>';
-    addonHtml+='<div class="qaddon-sub">These are optional extras — not included in your price above. Add only the ones you need.</div>';
-    S.ads.forEach(a=>{const qty=a.qty||1;const tot=a.p*qty;addonHtml+='<div class="qaddon-i"><span>+ '+a.v+(qty>1?' <span style="background:var(--secondary);color:#003824;font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px;margin-left:5px;font-family:var(--ff-mono)">×'+qty+'</span>':'')+' </span><span class="qaddon-p">$'+tot+'</span></div>';});
-    addonHtml+='<div class="qaddon-tot"><span>Add-ons total (optional)</span><span>$'+S.at+'</span></div>';
-    addonHtml+='<div class="qaddon-n">Want any of these? Just let us know when we follow up — easy to add to your booking.</div></div>';
-  }
-  document.getElementById('qaddonbox').innerHTML=addonHtml;
-  document.getElementById('qbk').innerHTML=rows;
-  switchStep(6,'qres');
-  document.getElementById('fht').textContent='Your Personalised Quote';
-  document.getElementById('fhs').textContent='✓ Done';
-  sendGHL(base,std);
-  document.getElementById('quote').scrollIntoView({behavior:'smooth',block:'start'});
-  setTimeout(()=>{
-    if(typeof confetti!=='undefined'){
-      confetti({particleCount:150,spread:90,origin:{y:0.55},colors:['#003824','#2ecc71','#f1c40f','#e74c3c','#3498db'],zIndex:9999});
+  
+  const quoteBtn=document.getElementById('seeQuoteBtn');
+  const ogText=quoteBtn.innerHTML;
+  quoteBtn.innerHTML='<span style="display:flex;align-items:center;justify-content:center;gap:8px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite"><circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="32"></circle></svg> Calculating...</span>';
+  quoteBtn.style.pointerEvents='none';
+
+  setTimeout(() => {
+    document.getElementById('rcity').textContent=S.sub+(S.city?', '+S.city:'');
+    document.getElementById('tpst').textContent='$'+std;
+    let rows='<div class="ir"><span class="ql">✓ Standard End of Lease Clean</span><span class="qa">Included</span></div>';
+    rows+='<div class="qrw"><span class="ql">'+S.ps+' Bond Clean'+(S.pm>1?' (+10% double storey)':'')+' </span><span class="qa">$'+base+'</span></div>';
+    if(isWithCarpet){
+      rows+='<div class="qrw"><span class="ql">Carpet steam cleaning</span><span class="qa">Included in package</span></div>';
+    }else{
+      rows+='<div class="qrw"><span class="ql">Carpet steam cleaning</span><span class="qa">Not selected</span></div>';
     }
-  },400);
+    rows+='<div class="qt"><span>Your Price</span><span>$'+std+'</span></div>';
+    let addonHtml='';
+    if(S.ads.length>0){
+      addonHtml+='<div class="qaddon"><div class="qaddon-badge">OPTIONAL</div><div class="qaddon-t">Additional services you selected</div>';
+      addonHtml+='<div class="qaddon-sub">These are optional extras — not included in your price above. Add only the ones you need.</div>';
+      S.ads.forEach(a=>{const qty=a.qty||1;const tot=a.p*qty;addonHtml+='<div class="qaddon-i"><span>+ '+a.v+(qty>1?' <span style="background:var(--secondary);color:#003824;font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px;margin-left:5px;font-family:var(--ff-mono)">×'+qty+'</span>':'')+' </span><span class="qaddon-p">$'+tot+'</span></div>';});
+      addonHtml+='<div class="qaddon-tot"><span>Add-ons total (optional)</span><span>$'+S.at+'</span></div>';
+      addonHtml+='<div class="qaddon-n">Want any of these? Just let us know when we follow up — easy to add to your booking.</div></div>';
+    }
+    document.getElementById('qaddonbox').innerHTML=addonHtml;
+    document.getElementById('qbk').innerHTML=rows;
+    switchStep(6,'qres');
+    document.getElementById('fht').textContent='Your Personalised Quote';
+    document.getElementById('fhs').textContent='✓ Done';
+    sendGHL(base,std);
+    document.getElementById('quote').scrollIntoView({behavior:'smooth',block:'start'});
+    setTimeout(()=>{
+      if(typeof confetti!=='undefined'){
+        confetti({particleCount:150,spread:90,origin:{y:0.55},colors:['#003824','#2ecc71','#f1c40f','#e74c3c','#3498db'],zIndex:9999});
+      }
+    },400);
+    
+    quoteBtn.innerHTML=ogText;
+    quoteBtn.style.pointerEvents='auto';
+  }, 1200);
 }
 
 function sendGHL(b,std){
@@ -1882,33 +1898,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
-<!-- ═══════════════════════════════════════════════════════════
-     MOBILE BOTTOM NAV BAR
-════════════════════════════════════════════════════════════ -->
-<nav class="mob-nav" id="mobNav" aria-label="Mobile navigation">
-  <a class="mob-nav-item" href="index.html" id="mnHome">
-    <span class="mob-nav-icon">🏠</span>
-    <span>Home</span>
-  </a>
-  <a class="mob-nav-item" href="services.html" id="mnServices">
-    <span class="mob-nav-icon">✨</span>
-    <span>Services</span>
-  </a>
-  <button class="mob-nav-item mob-quote" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">
-    <div class="mob-nav-inner">
-      <span class="mob-nav-icon">📋</span>
-      <span>Quote</span>
-    </div>
-  </button>
-  <a class="mob-nav-item" href="tel:+61468230552" id="mnCall">
-    <span class="mob-nav-icon">📞</span>
-    <span>Call</span>
-  </a>
-  <a class="mob-nav-item" href="https://wa.me/61468230552?text=Hi%20I%27d%20like%20a%20bond%20cleaning%20quote" target="_blank" rel="noopener" id="mnWA">
-    <span class="mob-nav-icon">💬</span>
-    <span>WhatsApp</span>
-  </a>
-</nav>
+
 
 <script>
 /* ── Dark Mode Toggle ────────────────────────────────────── */
@@ -2079,16 +2069,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 })();
 
-/* ── Mobile nav active state ─────────────────────────────── */
-(function(){
-  var page = window.location.pathname.split('/').pop() || 'index.html';
-  var map  = { 'index.html': 'mnHome', 'services.html': 'mnServices' };
-  var id   = map[page];
-  if (id) {
-    var el = document.getElementById(id);
-    if (el) el.classList.add('active');
-  }
-})();
+
 </script>
+<script src="global-ui.js"></script>
 </body>
 </html>

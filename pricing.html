@@ -103,7 +103,7 @@ void main(){
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="how-it-works.html">How It Works</a>
-      <a href="pricing.html">Pricing</a>
+      <a href="pricing.html" class="active">Pricing</a>
       <a href="about.html">About Us</a>
       <a href="contact.html">Contact</a>
     </div>
@@ -117,7 +117,11 @@ void main(){
   </div>
 </nav>
 <div class="hero-section">
-  <div class="hero-bg-image" style="background-image:url(perth-hero.png?v=2)"></div>
+  <!-- Right Side Background Image with wavy clip path -->
+  <div class="hero-bg-wrapper">
+    <div class="hero-bg-yellow-shape"></div>
+    <div class="hero-bg-image" style="background-image:url(perth-hero.png?v=2)"></div>
+  </div>
   <div class="hero-content">
     <div class="hero-kicker">100% TRANSPARENT PRICING</div>
     <h1 class="hero-h1">No Hidden Fees. Fixed Quotes.</h1>
@@ -681,5 +685,6 @@ upProg(1);
 
 })();
 </script>
+<script src="global-ui.js"></script>
 </body>
 </html>
