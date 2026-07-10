@@ -1,5 +1,0 @@
-
-/* Fix the 300ms tap delay on mobile devices */
-a, button, input, select, textarea, .obtn, .adck, .tb-item {
-  touch-action: manipulation;
-}

@@ -3431,7 +3431,8 @@ a, button, .obtn, .cbtn, .adn, .aqty-btn, .tb-item, .bn, .sdi {
   }
   .nav-links {
     position: fixed;
-    top: 0; left: -100%;
+    top: 0; left: 0;
+    transform: translateX(-100%);
     width: min(80vw, 300px);
     height: 100dvh;
     background: #fff;
@@ -3439,14 +3440,14 @@ a, button, .obtn, .cbtn, .adn, .aqty-btn, .tb-item, .bn, .sdi {
     padding: 80px 24px 40px;
     gap: 4px;
     box-shadow: 4px 0 24px rgba(0,0,0,0.15);
-    transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 999;
     overflow-y: auto;
     overflow-x: hidden;
     white-space: normal;
     overscroll-behavior: contain;
   }
-  body.nav-open .nav-links { left: 0; }
+  body.nav-open .nav-links { transform: translateX(0); }
   .nav-links a {
     color: var(--primary) !important;
     font-size: 17px !important;
@@ -3817,3 +3818,46 @@ a, button, .obtn, .cbtn, .adn, .aqty-btn, .tb-item, .bn, .sdi {
   body.nav-open .nav-overlay { display: block; }
 }
 
+
+/* ── Mobile Performance Fixes for selection states ── */
+@media (max-width: 768px) {
+  .obtn, .cbtn, .bn, .adn {
+    transition: background-color 0.1s, border-color 0.1s, color 0.1s !important;
+  }
+  .obtn.sel {
+    transform: none !important;
+    box-shadow: 0 0 0 1.5px var(--primary-ctr) !important; /* simple solid outline, no blur */
+  }
+  .cbtn.sel, .adn.sel {
+    transform: none !important;
+    box-shadow: 0 0 0 1.5px var(--primary-ctr) !important;
+  }
+}
+
+/* ── Ultimate iOS Sticky Hover Fix ── */
+@media (hover: none), (pointer: coarse) {
+  .obtn:hover, .cbtn:hover, .bn:hover, .btn-primary:hover,
+  .btn-call:hover, .btn-outline:hover, .step-card:hover,
+  .review-card:hover, .scope-card:hover, .area-card:hover,
+  .ab-c:hover, .statc:hover, .bb:hover, .rst:hover, .aqty-btn:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: inherit;
+    background: inherit;
+  }
+  
+  /* Retain selected states since they are class-based, not hover-based */
+  .obtn.sel {
+    border-color: var(--primary-ctr) !important;
+    background: rgba(232,112,90,0.08) !important;
+  }
+  .cbtn.sel {
+    border-color: var(--primary-ctr) !important;
+    background: rgba(232,112,90,0.08) !important;
+  }
+}
+
+/* Force mobile clicks to register exclusively on the button element */
+.obtn *, .cbtn *, .adck *, .aqty-btn *, .sdi * {
+  pointer-events: none;
+}

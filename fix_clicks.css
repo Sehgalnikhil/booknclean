@@ -1,5 +1,0 @@
-
-/* Force mobile clicks to register exclusively on the button element */
-.obtn *, .cbtn *, .adck * {
-  pointer-events: none;
-}

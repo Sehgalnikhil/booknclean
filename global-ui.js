@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         nav.classList.remove('nav-scrolled');
       }
-    });
+    }, { passive: true });
   }
 
   // 2. Scroll-to-Top Button
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       scrollTopBtn.classList.remove('show');
     }
-  });
+  }, { passive: true });
 
   // Scroll to top on click
   scrollTopBtn.addEventListener('click', () => {
