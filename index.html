@@ -1988,7 +1988,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var label = idx >= 0
         ? item.n.slice(0,idx) + '<strong>' + item.n.slice(idx, idx+query.length) + '</strong>' + item.n.slice(idx+query.length)
         : item.n;
-      div.innerHTML = '📍 ' + label + '<span class="sub-city">' + item.c + '</span>';
+      div.innerHTML = '📍 ' + label + '<span class="sub-city">' + item.s + '</span>';
       div.addEventListener('mousedown', function(e){
         e.preventDefault();
         select(item);
@@ -2004,13 +2004,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function select(item) {
-    input.value  = item.n + ', ' + item.c;
+    input.value  = item.n + ', ' + item.s;
     hiddenCity.value = item.c;
     selectedVal  = item.c;
     dropdown.classList.remove('open');
     // Update availability strip city
     var cityEl = document.getElementById('availCity');
-    if (cityEl) cityEl.textContent = item.c;
+    if (cityEl) cityEl.textContent = item.n + ', ' + item.s;
     // Trigger original citySel if it exists
     if (typeof citySel === 'function') citySel(item.c);
   }
