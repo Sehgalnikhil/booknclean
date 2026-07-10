@@ -3357,3 +3357,17 @@ html, body {
     padding-top: 60px !important; /* Give some space at the top */
   }
 }
+
+/* Make property selection icons fill their button width */
+.prop-icon {
+  width: 100%;
+  max-width: 140px; /* Limit size on desktop */
+  height: auto;
+  margin-bottom: 8px;
+  object-fit: contain;
+}
+@media (max-width: 640px) {
+  .prop-icon {
+    max-width: 100%; /* Fully fill the button on small screens */
+  }
+}
