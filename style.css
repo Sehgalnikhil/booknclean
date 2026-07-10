@@ -3371,3 +3371,8 @@ html, body {
     max-width: 100%; /* Fully fill the button on small screens */
   }
 }
+
+/* Fix the 300ms tap delay on mobile devices */
+a, button, input, select, textarea, .obtn, .adck, .tb-item {
+  touch-action: manipulation;
+}
