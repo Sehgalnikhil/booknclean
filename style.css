@@ -3376,9 +3376,7 @@ a, button, input, select, textarea, .obtn, .adck, .tb-item {
 }
 
 /* Force mobile clicks to register exclusively on the button element */
-.obtn *, .cbtn *, .adck * {
-  pointer-events: none;
-}
+/* pointer-events removed to fix iOS click bug */
 
 /* ═══════════════════════════════════════════════════════════
    PRODUCTION MOBILE CSS — Book & Clean
@@ -3652,7 +3650,7 @@ a, button, .obtn, .cbtn, .adn, .aqty-btn, .tb-item, .bn, .sdi {
   .ss-price { font-size: 20px; }
 
   /* ── FLOATING WHATSAPP ──────────────────────────────────── */
-  .floating-widget-wrapper { bottom: 80px; right: 16px; }
+  .wa-widget { bottom: 80px; right: 16px; }
 
   /* ── PRICING PAGE ───────────────────────────────────────── */
   .pgrid-new { grid-template-columns: 1fr; gap: 16px; }
@@ -3718,7 +3716,7 @@ a, button, .obtn, .cbtn, .adn, .aqty-btn, .tb-item, .bn, .sdi {
   .sticky-summary {
     padding-bottom: calc(12px + env(safe-area-inset-bottom));
   }
-  .floating-widget-wrapper {
+  .wa-widget {
     bottom: calc(80px + env(safe-area-inset-bottom));
   }
   body {

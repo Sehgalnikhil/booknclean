@@ -1450,10 +1450,23 @@ document.querySelectorAll('.cbtn').forEach(b=>{
   });
 });
 
+function showErr(step, msg) {
+  const btn = document.querySelector('#fs' + step + ' .bn');
+  if(!btn) return;
+  const originalText = btn.innerText;
+  btn.innerText = msg;
+  btn.style.background = '#d9381e'; // red
+  btn.style.transform = 'translateY(0)';
+  setTimeout(() => {
+    btn.innerText = originalText;
+    btn.style.background = '';
+  }, 2000);
+}
+
 function nxt(f){
-  if(f===1&&!S.ps){alert('Please select a property size.');return}
-  if(f===2&&!S.pt){alert('Please select a property type.');return}
-  if(f===3&&!S.ca){alert('Please select a carpet option.');return}
+  if(f===1&&!S.ps){showErr(f, 'Please select a size ↑');return}
+  if(f===2&&!S.pt){showErr(f, 'Please select a type ↑');return}
+  if(f===3&&!S.ca){showErr(f, 'Please select an option ↑');return}
   if(f===5){
     S.dt=document.getElementById('idate').value;
     S.addr=document.getElementById('iaddr').value.trim();
@@ -1470,13 +1483,13 @@ function nxt(f){
   if(f===3)buildAds();
   switchStep(f,f+1);S.step=f+1;upProg(f+1);
   if(typeof updateStickySummary==='function') updateStickySummary();
-  document.getElementById('quote').scrollIntoView({behavior:'instant',block:'start'});
+  document.getElementById('quote').scrollIntoView({behavior:'auto',block:'start'});
 }
 
 function prv(f){
   switchStep(f,f-1);S.step=f-1;upProg(f-1);
   if(typeof updateStickySummary==='function') updateStickySummary();
-  document.getElementById('quote').scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('quote').scrollIntoView({behavior:'auto',block:'start'});
 }
 
 function dateChg(v){S.dt=v;S.uo=false;}
@@ -1536,7 +1549,7 @@ function showQ(){
     document.getElementById('fht').textContent='Your Personalised Quote';
     document.getElementById('fhs').textContent='✓ Done';
     sendGHL(base,std);
-    document.getElementById('quote').scrollIntoView({behavior:'instant',block:'start'});
+    document.getElementById('quote').scrollIntoView({behavior:'auto',block:'start'});
     setTimeout(()=>{
       if(typeof confetti!=='undefined'){
         confetti({particleCount:150,spread:90,origin:{y:0.55},colors:['#E8705A','#C95740','#2B4A8B','#F9F3EC','#3A5EA8'],zIndex:9999});
