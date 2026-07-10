@@ -1,0 +1,360 @@
+
+/* ═══════════════════════════════════════════════════════════
+   PRODUCTION MOBILE CSS — Book & Clean
+   Complete, authoritative mobile overrides.
+   Replaces all scattered patches. Added at end of style.css.
+═══════════════════════════════════════════════════════════ */
+
+/* ── BASE: Prevent horizontal scroll on ALL devices ─────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { overflow-x: hidden; }
+body { overflow-x: hidden; max-width: 100vw; }
+img, video, svg { max-width: 100%; height: auto; }
+
+/* ── CRITICAL: iOS input zoom fix (font-size must be ≥16px) */
+input, select, textarea {
+  font-size: 16px !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── Tap target minimum size for all clickable elements ──── */
+a, button, .obtn, .cbtn, .adn, .aqty-btn, .tb-item, .bn, .sdi {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Remove hover transforms on touch to prevent stuck states */
+@media (hover: none) {
+  .obtn:hover, .cbtn:hover, .bn:hover, .btn-primary:hover,
+  .btn-call:hover, .btn-outline:hover, .step-card:hover,
+  .review-card:hover, .scope-card:hover, .area-card:hover,
+  .ab-c:hover, .statc:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   768px — TABLET & MOBILE NAV
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── NAV ────────────────────────────────────────────────── */
+  nav {
+    min-height: 64px;
+    padding: 0;
+  }
+  .nav-inner {
+    padding: 0 16px;
+    min-height: 64px;
+    flex-wrap: nowrap;
+    position: relative;
+  }
+  .nav-links {
+    position: fixed;
+    top: 0; left: -100%;
+    width: min(80vw, 300px);
+    height: 100dvh;
+    background: #fff;
+    flex-direction: column;
+    padding: 80px 24px 40px;
+    gap: 4px;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.15);
+    transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: normal;
+    overscroll-behavior: contain;
+  }
+  body.nav-open .nav-links { left: 0; }
+  .nav-links a {
+    color: var(--primary) !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    padding: 14px 0 !important;
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    text-align: left;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+  .nav-links a::after { display: none !important; }
+
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  body.nav-open .nav-overlay { display: block; }
+  body.nav-open { overflow: hidden; }
+
+  .nav-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 10px;
+    margin-left: 8px;
+    cursor: pointer;
+    z-index: 1001;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .nav-toggle svg {
+    fill: #ffffff !important;
+    width: 26px; height: 26px;
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    z-index: 1001;
+  }
+  .nav-right .btn-outline { display: none; }
+  .btn-call {
+    font-size: 12px;
+    padding: 7px 12px;
+    white-space: nowrap;
+  }
+  .btn-call svg { width: 13px; height: 13px; }
+
+  /* ── HERO SECTION ───────────────────────────────────────── */
+  .hero-section {
+    padding: 80px 20px 48px;
+    min-height: auto;
+    text-align: center;
+  }
+  .hero-content { align-items: center; }
+  .hero-bg-wrapper { display: none; }
+  .hero-kicker { font-size: 11px; margin-bottom: 16px; }
+  .hero-h1 { font-size: clamp(28px, 8vw, 38px); margin-bottom: 8px; }
+  .hero-badge { font-size: clamp(22px, 7vw, 32px); margin-bottom: 16px; }
+  .hero-note { font-size: 15px; padding: 0 4px; margin-bottom: 24px; }
+  .hero-trust-badges {
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .htb-item { font-size: 12px; padding: 8px 12px; gap: 8px; }
+  .htb-icon-wrap { width: 30px; height: 30px; }
+  .hero-ctas { flex-direction: column; align-items: stretch; gap: 12px; width: 100%; }
+  .hero-ctas .btn-primary, .hero-ctas .btn-call {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    min-height: 52px;
+    font-size: 16px;
+  }
+
+  /* ── QUOTE FORM ─────────────────────────────────────────── */
+  .fc {
+    padding: 0;
+    border-radius: 16px;
+    margin: 0 -4px;
+  }
+  .fh { padding: 14px 16px; }
+  .fb { padding: 16px; min-height: auto; }
+  .fq { font-size: 17px !important; }
+  .fqs { font-size: 13px; margin-bottom: 20px; }
+
+  /* Property size grid — 2 columns on mobile */
+  .oga { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+  .obtn { min-height: 80px; padding: 12px 8px 10px; gap: 4px; }
+  .on2 { font-size: 11px; }
+  .prop-icon { max-width: 100%; }
+
+  /* Property type grid — 2 columns */
+  .og2 { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
+
+  /* Carpet options — 3 columns on mobile */
+  .cg { grid-template-columns: repeat(3, 1fr) !important; gap: 8px; }
+  .cbtn { min-height: 60px; padding: 10px 6px; font-size: 12px; }
+
+  /* Add-ons grid */
+  .ag { grid-template-columns: 1fr !important; gap: 10px; }
+  .adn { padding: 14px; }
+
+  /* Next/Prev buttons */
+  .fn {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 16px;
+  }
+  .bn {
+    flex: 1;
+    justify-content: center;
+    min-height: 50px;
+    font-size: 15px;
+    padding: 12px 16px;
+  }
+
+  /* Form inputs */
+  .fi, .fi2 { padding: 14px; margin-bottom: 12px; }
+  .fi input, .fi2 input, .fi select, .fi2 select {
+    font-size: 16px;
+    min-height: 44px;
+  }
+  .f2 { grid-template-columns: 1fr; gap: 0; }
+
+  /* Progress stepper */
+  .prog {
+    padding: 12px 16px;
+    gap: 4px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pd { min-width: 28px; min-height: 28px; font-size: 12px; }
+  .st { font-size: 9px; }
+  .pl { min-width: 12px; }
+
+  /* ── TRUST BADGES BANNER ────────────────────────────────── */
+  .trust-badges-banner {
+    padding: 20px 16px;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .tb-item { width: 100%; justify-content: center; }
+  .tb-text { max-width: none; }
+
+  /* ── SECTION PADDING ────────────────────────────────────── */
+  .section { padding: 48px 20px; }
+  .section-alt { padding: 48px 20px; }
+  .section-dark { padding: 48px 20px; }
+
+  /* ── SECTION HEADINGS ───────────────────────────────────── */
+  .sh { font-size: clamp(22px, 6vw, 32px); }
+  .ss { font-size: 14px; }
+
+  /* ── COMPARISON TABLE ───────────────────────────────────── */
+  .cmp { padding: 16px; border-radius: 12px; overflow-x: auto; }
+  .cmp-h { font-size: 11px; gap: 6px; }
+  .cmp-h, .cmp-r { grid-template-columns: 1.6fr 0.7fr 0.7fr; }
+  .cmp-r { padding: 10px 0; gap: 6px; font-size: 12px; }
+
+  /* ── STAT BAR ───────────────────────────────────────────── */
+  .statbar { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .statn { font-size: 28px; }
+
+  /* ── BEFORE/AFTER SLIDER ────────────────────────────────── */
+  .ba-wrap { height: 260px; border-radius: 12px; }
+  .ba-hint { font-size: 12px; }
+
+  /* ── REVIEW CARDS ───────────────────────────────────────── */
+  .review-grid { grid-template-columns: 1fr; gap: 12px; }
+  .review-card { padding: 20px; }
+
+  /* ── GUARANTEE SECTION ──────────────────────────────────── */
+  .guarantee-grid { grid-template-columns: 1fr; gap: 24px; }
+
+  /* ── AREAS GRID ─────────────────────────────────────────── */
+  .areas-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .area-card { padding: 12px; }
+
+  /* ── FOOTER ─────────────────────────────────────────────── */
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-right { text-align: left; }
+  .footer-links { flex-wrap: wrap; gap: 8px; }
+
+  /* ── STICKY QUOTE SUMMARY ───────────────────────────────── */
+  .sticky-summary { padding: 12px 16px; }
+  .ss-inner { flex-direction: column; gap: 8px; text-align: center; }
+  .ss-price { font-size: 20px; }
+
+  /* ── FLOATING WHATSAPP ──────────────────────────────────── */
+  .floating-widget-wrapper { bottom: 80px; right: 16px; }
+
+  /* ── PRICING PAGE ───────────────────────────────────────── */
+  .pgrid-new { grid-template-columns: 1fr; gap: 16px; }
+  .pcard { padding: 24px 20px; }
+
+  /* ── HOW IT WORKS ───────────────────────────────────────── */
+  .step-card { padding: 20px; }
+  .step-icon { width: 48px; height: 48px; font-size: 20px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   480px — SMALL PHONES
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .hero-section { padding: 72px 16px 40px; }
+  .hero-h1 { font-size: clamp(26px, 8vw, 34px); }
+  .hero-badge { font-size: clamp(20px, 6vw, 28px); }
+
+  .fb { padding: 12px; }
+  .oga { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+  .obtn { padding: 10px 6px 8px; min-height: 72px; }
+  .on2 { font-size: 10.5px; }
+
+  .cg { grid-template-columns: repeat(3, 1fr) !important; gap: 6px; }
+  .cbtn { min-height: 56px; padding: 8px 4px; font-size: 11px; }
+
+  .statbar { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .areas-grid { grid-template-columns: 1fr; }
+
+  .section, .section-alt, .section-dark { padding: 40px 16px; }
+
+  .cmp-h, .cmp-r { grid-template-columns: 1.5fr 0.75fr 0.75fr; }
+  .cmp-h { font-size: 10px; }
+  .cmp-r { font-size: 11px; }
+
+  .htb-item { font-size: 11px; padding: 7px 10px; }
+
+  /* quote section stays full-width */
+  .quote-section { padding-left: 12px; padding-right: 12px; }
+  .fc { margin: 0; border-radius: 12px; }
+
+  /* Sticky bottom bar — prevent overlap */
+  body { padding-bottom: 72px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   390px — IPHONE SE / SMALL PHONES
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 390px) {
+  .hero-h1 { font-size: 26px; }
+  .hero-badge { font-size: 20px; }
+  .oga { gap: 6px !important; }
+  .obtn { min-height: 68px; padding: 8px 4px; }
+  .cg { gap: 5px !important; }
+  .prog { padding: 10px 12px; }
+  .pd { min-width: 24px; min-height: 24px; font-size: 11px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SAFE AREA — iPhone notch / Dynamic Island / bottom bar
+═══════════════════════════════════════════════════════════ */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .sticky-summary {
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+  }
+  .floating-widget-wrapper {
+    bottom: calc(80px + env(safe-area-inset-bottom));
+  }
+  body {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   POINTER: HOVER DISABLED on touch screens
+═══════════════════════════════════════════════════════════ */
+@media (pointer: coarse) {
+  /* Ensure 44px minimum tap targets everywhere */
+  .obtn { min-height: 72px; }
+  .cbtn { min-height: 56px; }
+  .adn { min-height: 56px; }
+  .bn { min-height: 50px; }
+  .nav-links a { min-height: 48px; }
+  .aqty-btn { min-width: 40px; min-height: 40px; }
+}
+

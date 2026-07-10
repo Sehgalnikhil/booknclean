@@ -192,13 +192,15 @@ void main(){
         <div class="nav-tagline">Bond Cleaning Experts</div>
       </div>
     </a>
-    <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="services.html">Services</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact</a>
+    <div class="nav-overlay" onclick="document.body.classList.remove('nav-open')"></div>
+    <div class="nav-links" id="navLinks">
+      <button class="nav-close" onclick="document.body.classList.remove('nav-open')" aria-label="Close menu">✕</button>
+      <a href="index.html" class="active" onclick="document.body.classList.remove('nav-open')">Home</a>
+      <a href="services.html" onclick="document.body.classList.remove('nav-open')">Services</a>
+      <a href="how-it-works.html" onclick="document.body.classList.remove('nav-open')">How It Works</a>
+      <a href="pricing.html" onclick="document.body.classList.remove('nav-open')">Pricing</a>
+      <a href="about.html" onclick="document.body.classList.remove('nav-open')">About Us</a>
+      <a href="contact.html" onclick="document.body.classList.remove('nav-open')">Contact</a>
     </div>
     
     <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.body.classList.toggle('nav-open')">
