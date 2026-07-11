@@ -1561,6 +1561,9 @@ S.subKnown=false;
 function citySel(v){
   S.sub=v; S.city=v; S.subKnown=true;
   document.getElementById('esub').classList.remove('on');
+  if (typeof updateStickySummary === 'function') {
+    updateStickySummary();
+  }
 }
 
 function tFaq(el){
