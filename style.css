@@ -3861,3 +3861,26 @@ a, button, .obtn, .cbtn, .adn, .aqty-btn, .tb-item, .bn, .sdi {
 .obtn *, .cbtn *, .adck *, .aqty-btn *, .sdi * {
   pointer-events: none;
 }
+
+/* ── Stepper Mobile Overflow Fix ── */
+@media (max-width: 768px) {
+  .prog { 
+    overflow-x: auto; 
+    flex-wrap: nowrap; 
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+  }
+  .prog::-webkit-scrollbar { 
+    display: none; 
+  }
+  .pd-wrap { 
+    flex-shrink: 0; 
+    min-width: 68px; 
+  }
+  .pd-label { 
+    white-space: nowrap; 
+    font-size: 11px; 
+    letter-spacing: -0.2px; 
+  }
+}

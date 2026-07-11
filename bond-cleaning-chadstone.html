@@ -371,11 +371,11 @@ void main(){
 
           <!-- Suburb Dropdown -->
           <div class="suburb-wrap">
-            <input type="text" class="suburb-input" id="suburbInput" placeholder="🔍 Enter your suburb (e.g. Bondi)" value="Chadstone" autocomplete="off">
+            <input type="text" class="suburb-input" id="suburbInput" placeholder="🔍 Enter your suburb (e.g. Bondi)" value="Chadstone, VIC" autocomplete="off">
             <div class="suburb-dropdown" id="suburbDropdown"></div>
           </div>
           <!-- Hidden city field (populated by dropdown) -->
-          <input type="hidden" id="isub" value="">
+          <input type="hidden" id="isub" value="Melbourne">
           <div class="fe" id="esub">Please enter and select your suburb</div>
           
           <input type="text" class="fi" id="iaddr" placeholder="Street address (e.g. 123 Main St, Unit 4)" autocomplete="street-address" style="margin-top: 16px;">
@@ -1303,7 +1303,7 @@ const ADDEF=[
   {v:'Full Wall Wash (Per Wall)',i:'🧽',key:'WALL_WASH',p:15,qty:true,hint:'Full wash of individual walls to remove heavy marks.'},
   {v:'Blind Cleaning (wipe)',i:'🪟',key:'BLIND',p:20,qty:true,hint:'Slat-by-slat wiping of venetian or vertical blinds.'}
 ];
-const S={step:1,ps:'',pp:0,pt:'',pm:1,ca:'',cp:0,ads:[],at:0,sub:'',subv:false,dt:'',city:'',fn:'',ln:'',em:'',ph:'',uo:false,subKnown:false,move:'',street:'',post:''};
+const S={step:1,ps:'',pp:0,pt:'',pm:1,ca:'',cp:0,ads:[],at:0,sub:'Chadstone',subv:false,dt:'',city:'Melbourne',fn:'',ln:'',em:'',ph:'',uo:false,subKnown:false,move:'',street:'',post:''};
 const TITLES={1:'Step 1 of 6 — Property Size',2:'Step 2 of 6 — Property Type',3:'Step 3 of 6 — Carpet Steam Cleaning',4:'Step 4 of 6 — Optional Add-Ons',5:'Step 5 of 6 — Date & Suburb',6:'Step 6 of 6 — Your Details'};
 
 function getAP(a){
