@@ -1423,10 +1423,10 @@ function showErr(step, msg) {
 
 let isNavigating = false;
 
-function nxt(f){
-  if(f===1&&!S.ps){showErr(f, 'Please select a size ↑');return}
-  if(f===2&&!S.pt){showErr(f, 'Please select a type ↑');return}
-  if(f===3&&!S.ca){showErr(f, 'Please select an option ↑');return}
+function nxt(f){ console.log("nxt called");
+  if(f===1){ if(!S.ps){showErr(f, "Please select a size ↑");return} console.log("validation passed"); }
+  if(f===2){ if(!S.pt){showErr(f, "Please select a type ↑");return} console.log("validation passed"); }
+  if(f===3){ if(!S.ca){showErr(f, "Please select an option ↑");return} console.log("validation passed"); }
   if(f===5){
     S.dt=document.getElementById('idate').value;
     S.addr=document.getElementById('iaddr').value.trim();
@@ -1475,6 +1475,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleInteraction = (e) => {
     // Handle Navigation Buttons
     const btnNav = e.target.closest('[data-nxt], [data-prv]');
+    if (btnNav && btnNav.hasAttribute('data-nxt')) {
+      console.log("button tapped", e.type, "target:", e.target.tagName);
+    }
     if (btnNav) {
       if (btnNav.hasAttribute('data-nxt')) nxt(parseInt(btnNav.getAttribute('data-nxt')));
       else if (btnNav.hasAttribute('data-prv')) prv(parseInt(btnNav.getAttribute('data-prv')));
@@ -1523,6 +1526,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   document.addEventListener('click', handleInteraction);
+  document.addEventListener('touchend', handleInteraction, { passive: false });
 });
 
 function dateChg(v){S.dt=v;S.uo=false;}
