@@ -277,13 +277,13 @@
     
     <!-- Personal Greeting -->
     <div class="greeting-text">
-      Hi {{first_name}},
+      Hi <?= typeof first_name !== 'undefined' ? first_name : '' ?>,
     </div>
     
     <!-- Highlighted Pricing Card -->
     <div class="price-card">
       <div class="price-label">Total Booking Amount</div>
-      <div class="price-value">${{total_price}}</div>
+      <div class="price-value">$<?= typeof total_price !== 'undefined' ? total_price : '' ?></div>
       <p class="price-note">Payment is required upon arrival on the day of service.</p>
     </div>
     
@@ -308,31 +308,31 @@
       </div>
       <div class="detail-row">
         <div class="detail-label">Property Type</div>
-        <div class="detail-value">{{property_type}}</div>
+        <div class="detail-value"><?= typeof property_type !== 'undefined' ? property_type : '' ?></div>
       </div>
       <div class="detail-row">
         <div class="detail-label">Property Size</div>
-        <div class="detail-value">{{property_size}}</div>
+        <div class="detail-value"><?= typeof property_size !== 'undefined' ? property_size : '' ?></div>
       </div>
       <div class="detail-row">
         <div class="detail-label">Preferred Date</div>
-        <div class="detail-value">{{preferred_date}}</div>
+        <div class="detail-value"><?= typeof preferred_date !== 'undefined' ? preferred_date : '' ?></div>
       </div>
       <div class="detail-row">
         <div class="detail-label">Preferred Time</div>
-        <div class="detail-value">{{preferred_time}}</div>
+        <div class="detail-value"><?= typeof preferred_time !== 'undefined' ? preferred_time : '' ?></div>
       </div>
       <div class="detail-row">
         <div class="detail-label">Customer Name</div>
-        <div class="detail-value">{{first_name}} {{last_name}}</div>
+        <div class="detail-value"><?= typeof first_name !== 'undefined' ? first_name : '' ?> <?= typeof last_name !== 'undefined' ? last_name : '' ?></div>
       </div>
       <div class="detail-row">
         <div class="detail-label">Phone Number</div>
-        <div class="detail-value">{{phone}}</div>
+        <div class="detail-value"><?= typeof phone !== 'undefined' ? phone : '' ?></div>
       </div>
       <div class="detail-row">
         <div class="detail-label">Property Address</div>
-        <div class="detail-value">{{address}}</div>
+        <div class="detail-value"><?= typeof address !== 'undefined' ? address : '' ?></div>
       </div>
     </div>
     
@@ -343,7 +343,7 @@
         <h2 class="card-title">Selected Add-ons</h2>
       </div>
       <div style="padding-top: 4px; font-size: 13px; color: #4a5568; line-height: 1.5;">
-        {{addons}}
+        <?= typeof addons !== 'undefined' ? addons : '' ?>
       </div>
     </div>
     
