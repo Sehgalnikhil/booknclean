@@ -1308,12 +1308,14 @@ function buildAds(){
           '<span class="adp">+$'+p+' each</span>'+
         '</span>'+
         '<span class="aqty-wrap">'+
-          '<button class="aqty-btn aqty-minus" onclick="adjQty(this,\''+a.v+'\','+p+',-1)" '+(curQty===0?'disabled':'')+'>−</button>'+
+          `<button class="aqty-btn aqty-minus" data-aqty-v="${a.v}" data-aqty-p="${p}" data-aqty-dir="-1" `+(curQty===0?'disabled':'')+'>−</button>'+
           '<span class="aqty-num">'+(curQty||0)+'</span>'+
-          '<button class="aqty-btn aqty-plus" onclick="adjQty(this,\''+a.v+'\','+p+',1)">+</button>'+
+          `<button class="aqty-btn aqty-plus" data-aqty-v="${a.v}" data-aqty-p="${p}" data-aqty-dir="1">+</button>`+
         '</span>';
     }else{
       d.className='adn'+(curQty>0?' sel':'');
+      d.dataset.adnV = a.v;
+      d.dataset.adnP = p;
       d.innerHTML=
         '<span class="adi">'+a.i+'</span>'+
         '<span class="adinf">'+
@@ -1322,13 +1324,6 @@ function buildAds(){
           '<span class="adp">+$'+p+'</span>'+
         '</span>'+
         '<span class="adck">'+(curQty>0?'✓':'')+'</span>';
-      d.addEventListener('click',()=>{
-        const inList=S.ads.find(x=>x.v===a.v);
-        const ck=d.querySelector('.adck');
-        if(inList){S.ads=S.ads.filter(x=>x.v!==a.v);d.classList.remove('sel');ck.textContent=''}
-        else{S.ads.push({v:a.v,p,qty:1});d.classList.add('sel');ck.textContent='✓'}
-        recalcAt();
-      });
     }
     g.appendChild(d);
   });
@@ -1412,27 +1407,7 @@ function switchStep(fromId,toId){
   setTimeout(() => next.classList.add('on'), 10);
 }
 
-document.querySelectorAll('.obtn[data-s="1"]').forEach(b=>{
-  b.addEventListener('click',()=>{
-    document.querySelectorAll('.obtn[data-s="1"]').forEach(x=>x.classList.remove('sel'));
-    b.classList.add('sel');S.ps=b.dataset.v;S.ads=[];S.at=0;
-    if(typeof updateStickySummary==='function') updateStickySummary();
-  });
-});
-document.querySelectorAll('.obtn[data-s="2"]').forEach(b=>{
-  b.addEventListener('click',()=>{
-    document.querySelectorAll('.obtn[data-s="2"]').forEach(x=>x.classList.remove('sel'));
-    b.classList.add('sel');S.pt=b.dataset.v;S.pm=parseFloat(b.dataset.m);
-    if(typeof updateStickySummary==='function') updateStickySummary();
-  });
-});
-document.querySelectorAll('.cbtn').forEach(b=>{
-  b.addEventListener('click',()=>{
-    document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('sel'));
-    b.classList.add('sel');S.ca=b.dataset.v;S.cp=parseFloat(b.dataset.cp);
-    if(typeof updateStickySummary==='function') updateStickySummary();
-  });
-});
+
 
 function showErr(step, msg) {
   const btn = document.querySelector('#fs' + step + ' .bn');
@@ -1498,24 +1473,71 @@ function prv(f){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const handleNav = (e) => {
-    const btn = e.target.closest('[data-nxt], [data-prv]');
-    if (!btn) return;
-    e.preventDefault();
-    if (btn.hasAttribute('data-nxt')) {
-      nxt(parseInt(btn.getAttribute('data-nxt')));
-    } else if (btn.hasAttribute('data-prv')) {
-      prv(parseInt(btn.getAttribute('data-prv')));
+  const handleInteraction = (e) => {
+    // Handle Navigation Buttons
+    const btnNav = e.target.closest('[data-nxt], [data-prv]');
+    if (btnNav) {
+      e.preventDefault();
+      if (btnNav.hasAttribute('data-nxt')) nxt(parseInt(btnNav.getAttribute('data-nxt')));
+      else if (btnNav.hasAttribute('data-prv')) prv(parseInt(btnNav.getAttribute('data-prv')));
+      return;
+    }
+    // Handle Property Size / Type Buttons
+    const obtn1 = e.target.closest('.obtn[data-s="1"]');
+    if (obtn1) {
+      e.preventDefault();
+      document.querySelectorAll('.obtn[data-s="1"]').forEach(x=>x.classList.remove('sel'));
+      obtn1.classList.add('sel');S.ps=obtn1.dataset.v;S.ads=[];S.at=0;
+      if(typeof updateStickySummary==='function') updateStickySummary();
+      return;
+    }
+    const obtn2 = e.target.closest('.obtn[data-s="2"]');
+    if (obtn2) {
+      e.preventDefault();
+      document.querySelectorAll('.obtn[data-s="2"]').forEach(x=>x.classList.remove('sel'));
+      obtn2.classList.add('sel');S.pt=obtn2.dataset.v;S.pm=parseFloat(obtn2.dataset.m);
+      if(typeof updateStickySummary==='function') updateStickySummary();
+      return;
+    }
+    // Handle Extras / Carpet Buttons
+    const cbtn = e.target.closest('.cbtn');
+    if (cbtn) {
+      e.preventDefault();
+      document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('sel'));
+      cbtn.classList.add('sel');S.ca=cbtn.dataset.v;S.cp=parseFloat(cbtn.dataset.cp);
+      if(typeof updateStickySummary==='function') updateStickySummary();
+      return;
+    }
+    // Handle quantity adjusters
+    const aqtyBtn = e.target.closest('.aqty-btn');
+    if (aqtyBtn) {
+      e.preventDefault();
+      adjQty(aqtyBtn, aqtyBtn.dataset.aqtyV, parseFloat(aqtyBtn.dataset.aqtyP), parseInt(aqtyBtn.dataset.aqtyDir));
+      return;
+    }
+    // Handle standard add-ons
+    const adn = e.target.closest('.adn:not(.adn-qty)');
+    if (adn) {
+      e.preventDefault();
+      const v = adn.dataset.adnV;
+      const p = parseFloat(adn.dataset.adnP);
+      const inList=S.ads.find(x=>x.v===v);
+      const ck=adn.querySelector('.adck');
+      if(inList){S.ads=S.ads.filter(x=>x.v!==v);adn.classList.remove('sel');ck.textContent=''}
+      else{S.ads.push({v,p,qty:1});adn.classList.add('sel');ck.textContent='✓'}
+      recalcAt();
+      return;
     }
   };
+
   if (window.PointerEvent) {
-    document.addEventListener('pointerdown', handleNav, { passive: false });
+    document.addEventListener('pointerdown', handleInteraction, { passive: false });
     document.addEventListener('click', (e) => {
-      if(e.target.closest('[data-nxt], [data-prv]')) e.preventDefault();
+      if(e.target.closest('[data-nxt], [data-prv], .obtn, .cbtn, .aqty-btn, .adn:not(.adn-qty)')) e.preventDefault();
     });
   } else {
-    document.addEventListener('touchend', handleNav, { passive: false });
-    document.addEventListener('click', handleNav);
+    document.addEventListener('touchend', handleInteraction, { passive: false });
+    document.addEventListener('click', handleInteraction);
   }
 });
 
