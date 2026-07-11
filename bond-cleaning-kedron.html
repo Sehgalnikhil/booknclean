@@ -1530,15 +1530,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  if (window.PointerEvent) {
-    document.addEventListener('pointerdown', handleInteraction, { passive: false });
-    document.addEventListener('click', (e) => {
-      if(e.target.closest('[data-nxt], [data-prv], .obtn, .cbtn, .aqty-btn, .adn:not(.adn-qty)')) e.preventDefault();
-    });
-  } else {
-    document.addEventListener('touchend', handleInteraction, { passive: false });
-    document.addEventListener('click', handleInteraction);
-  }
+  document.addEventListener('click', handleInteraction);
 });
 
 function dateChg(v){S.dt=v;S.uo=false;}
