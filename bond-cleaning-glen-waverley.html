@@ -4,6 +4,8 @@
 <script>/* Anti-FOUC: apply saved theme before paint */try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 <meta charset="UTF-8">
 <link rel="icon" type="image/webp" href="oc-logo.webp">
+<link rel="preload" as="image" href="perth-hero.webp?v=2" fetchpriority="high">
+<link rel="preload" as="image" href="oc-logo.webp">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bond Cleaning in Glen Waverley | Fixed Price End of Lease Cleaning</title>
 <meta name="description" content="Fixed-price bond cleaning in Glen Waverley with a written bond-back guarantee. Instant online quote, no phone call needed.">
@@ -534,10 +536,10 @@ void main(){
       <!-- The two images + labels + divider all inside the clipping container -->
       <div class="ba-slider" id="baSlider" role="img" aria-label="Before and after bond cleaning comparison">
         <!-- AFTER image (bottom layer — right side, always fully visible) -->
-        <img class="ba-img ba-after" src="after-clean.webp" alt="Kitchen after professional bond cleaning — sparkling clean" draggable="false">
+        <img class="ba-img ba-after" src="after-clean.webp" alt="Kitchen after professional bond cleaning — sparkling clean" draggable="false" loading="lazy">
         <!-- BEFORE image (top layer — left side, clips as handle moves right) -->
         <div class="ba-before-wrap" id="baBeforeWrap">
-          <img class="ba-img ba-before" src="before-clean.webp" alt="Kitchen before bond cleaning — dirty and grimy" draggable="false">
+          <img class="ba-img ba-before" src="before-clean.webp" alt="Kitchen before bond cleaning — dirty and grimy" draggable="false" loading="lazy">
         </div>
 
         <!-- Floating labels -->
