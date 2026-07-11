@@ -1477,7 +1477,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle Navigation Buttons
     const btnNav = e.target.closest('[data-nxt], [data-prv]');
     if (btnNav) {
-      e.preventDefault();
       if (btnNav.hasAttribute('data-nxt')) nxt(parseInt(btnNav.getAttribute('data-nxt')));
       else if (btnNav.hasAttribute('data-prv')) prv(parseInt(btnNav.getAttribute('data-prv')));
       return;
@@ -1485,7 +1484,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle Property Size / Type Buttons
     const obtn1 = e.target.closest('.obtn[data-s="1"]');
     if (obtn1) {
-      e.preventDefault();
       document.querySelectorAll('.obtn[data-s="1"]').forEach(x=>x.classList.remove('sel'));
       obtn1.classList.add('sel');S.ps=obtn1.dataset.v;S.ads=[];S.at=0;
       if(typeof updateStickySummary==='function') updateStickySummary();
@@ -1493,7 +1491,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const obtn2 = e.target.closest('.obtn[data-s="2"]');
     if (obtn2) {
-      e.preventDefault();
       document.querySelectorAll('.obtn[data-s="2"]').forEach(x=>x.classList.remove('sel'));
       obtn2.classList.add('sel');S.pt=obtn2.dataset.v;S.pm=parseFloat(obtn2.dataset.m);
       if(typeof updateStickySummary==='function') updateStickySummary();
@@ -1502,7 +1499,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle Extras / Carpet Buttons
     const cbtn = e.target.closest('.cbtn');
     if (cbtn) {
-      e.preventDefault();
       document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('sel'));
       cbtn.classList.add('sel');S.ca=cbtn.dataset.v;S.cp=parseFloat(cbtn.dataset.cp);
       if(typeof updateStickySummary==='function') updateStickySummary();
@@ -1511,14 +1507,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle quantity adjusters
     const aqtyBtn = e.target.closest('.aqty-btn');
     if (aqtyBtn) {
-      e.preventDefault();
       adjQty(aqtyBtn, aqtyBtn.dataset.aqtyV, parseFloat(aqtyBtn.dataset.aqtyP), parseInt(aqtyBtn.dataset.aqtyDir));
       return;
     }
     // Handle standard add-ons
     const adn = e.target.closest('.adn:not(.adn-qty)');
     if (adn) {
-      e.preventDefault();
       const v = adn.dataset.adnV;
       const p = parseFloat(adn.dataset.adnP);
       const inList=S.ads.find(x=>x.v===v);
