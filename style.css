@@ -186,6 +186,13 @@ nav.nav-scrolled {
   padding: 0px;
   flex-shrink: 0;
 }
+.nav-logo-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
 .nav-brand {
   font-family: var(--ff-head);
   font-weight: 800;
