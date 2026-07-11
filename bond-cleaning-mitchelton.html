@@ -1507,8 +1507,9 @@ function showQ(){
   quoteBtn.style.pointerEvents='none';
 
   setTimeout(() => {
+    const totalVal = std + S.at;
     document.getElementById('rcity').textContent=S.sub+(S.city?', '+S.city:'');
-    document.getElementById('tpst').textContent='$'+std;
+    document.getElementById('tpst').textContent='$'+totalVal;
     let rows='<div class="ir"><span class="ql">✓ Standard End of Lease Clean</span><span class="qa">Included</span></div>';
     rows+='<div class="qrw"><span class="ql">'+S.ps+' Bond Clean'+(S.pm>1?' (+10% double storey)':'')+' </span><span class="qa">$'+base+'</span></div>';
     if(isWithCarpet){
@@ -1516,16 +1517,20 @@ function showQ(){
     }else{
       rows+='<div class="qrw"><span class="ql">Carpet steam cleaning</span><span class="qa">Not selected</span></div>';
     }
-    rows+='<div class="qt"><span>Your Price</span><span>$'+std+'</span></div>';
-    let addonHtml='';
-    if(S.ads.length>0){
-      addonHtml+='<div class="qaddon"><div class="qaddon-badge">OPTIONAL</div><div class="qaddon-t">Additional services you selected</div>';
-      addonHtml+='<div class="qaddon-sub">These are optional extras — not included in your price above. Add only the ones you need.</div>';
-      S.ads.forEach(a=>{const qty=a.qty||1;const tot=a.p*qty;addonHtml+='<div class="qaddon-i"><span>+ '+a.v+(qty>1?' <span style="background:var(--secondary);color:#003824;font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px;margin-left:5px;font-family:var(--ff-mono)">×'+qty+'</span>':'')+' </span><span class="qaddon-p">$'+tot+'</span></div>';});
-      addonHtml+='<div class="qaddon-tot"><span>Add-ons total (optional)</span><span>$'+S.at+'</span></div>';
-      addonHtml+='<div class="qaddon-n">Want any of these? Just let us know when we follow up — easy to add to your booking.</div></div>';
+    
+    // Add chosen addons to the main breakdown table
+    if(S.ads.length > 0){
+      S.ads.forEach(a=>{
+        const qty=a.qty||1;
+        const tot=a.p*qty;
+        rows+='<div class="qrw"><span class="ql">+ '+a.v+(qty>1?' <span style="background:var(--secondary);color:#003824;font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px;margin-left:5px;font-family:var(--ff-mono)">×'+qty+'</span>':'')+' </span><span class="qa">$'+tot+'</span></div>';
+      });
     }
-    document.getElementById('qaddonbox').innerHTML=addonHtml;
+    
+    rows+='<div class="qt"><span>Your Price</span><span>$'+totalVal+'</span></div>';
+    
+    // Clear the optional addons box since they are now included in the main price
+    document.getElementById('qaddonbox').innerHTML='';
     document.getElementById('qbk').innerHTML=rows;
     switchStep(6,'qres');
     document.getElementById('fht').textContent='Your Personalised Quote';
