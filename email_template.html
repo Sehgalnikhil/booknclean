@@ -277,13 +277,13 @@
     
     <!-- Personal Greeting -->
     <div class="greeting-text">
-      Hi {{first_name}},
+      Hi <?= first_name ?>,
     </div>
     
     <!-- Highlighted Pricing Card -->
     <div class="price-card">
       <div class="price-label">Total Booking Amount</div>
-      <div class="price-value">${{total_price}}</div>
+      <div class="price-value">$<?= total_price ?></div>
       <p class="price-note">Payment is required upon arrival on the day of service.</p>
     </div>
     
@@ -308,31 +308,31 @@
       </div>
       <div class="detail-row">
         <div class="detail-label">Property Type</div>
-        <div class="detail-value">{{property_type}}</div>
+        <div class="detail-value"><?= property_type ?></div>
       </div>
       <div class="detail-row">
         <div class="detail-label">Property Size</div>
-        <div class="detail-value">{{property_size}}</div>
+        <div class="detail-value"><?= property_size ?></div>
       </div>
       <div class="detail-row">
         <div class="detail-label">Preferred Date</div>
-        <div class="detail-value">{{preferred_date}}</div>
+        <div class="detail-value"><?= preferred_date ?></div>
       </div>
       <div class="detail-row">
         <div class="detail-label">Preferred Time</div>
-        <div class="detail-value">{{preferred_time}}</div>
+        <div class="detail-value"><?= preferred_time ?></div>
       </div>
       <div class="detail-row">
         <div class="detail-label">Customer Name</div>
-        <div class="detail-value">{{first_name}} {{last_name}}</div>
+        <div class="detail-value"><?= first_name ?> <?= last_name ?></div>
       </div>
       <div class="detail-row">
         <div class="detail-label">Phone Number</div>
-        <div class="detail-value">{{phone}}</div>
+        <div class="detail-value"><?= phone ?></div>
       </div>
       <div class="detail-row">
         <div class="detail-label">Property Address</div>
-        <div class="detail-value">{{address}}</div>
+        <div class="detail-value"><?= address ?></div>
       </div>
     </div>
     
@@ -343,17 +343,17 @@
         <h2 class="card-title">Selected Add-ons</h2>
       </div>
       <div style="padding-top: 4px;">
-        {{#if addons_list}}
-          {{#each addons_list}}
+        <? if (addons_list && addons_list.length > 0) { ?>
+          <? for (var i = 0; i < addons_list.length; i++) { ?>
             <div class="checklist-item">
-              <span class="checklist-icon">✓</span> {{this}}
+              <span class="checklist-icon">✓</span> <?= addons_list[i] ?>
             </div>
-          {{/each}}
-        {{else}}
+          <? } ?>
+        <? } else { ?>
           <div style="font-size: 13px; color: #718096; font-style: italic; padding: 4px 0;">
             No Optional Add-ons Selected
           </div>
-        {{/if}}
+        <? } ?>
       </div>
     </div>
     
