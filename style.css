@@ -664,16 +664,33 @@ nav.nav-scrolled {
 .fb {
   padding: 28px 24px;
   min-height: 280px;
+  position: relative;
 }
 .fs {
-  display: none;
-  opacity: 1;
-  transform: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 28px 24px;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
 }
 .fs.act {
-  display: block;
+  position: relative;
+  left: auto;
+  top: auto;
+  width: auto;
+  padding: 0;
+  /* keep visibility hidden and opacity 0 until .on is added */
+}
+.fs.act.on, .fs.on {
+  visibility: visible;
   opacity: 1;
-  transform: none;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 .fq {
   font-family: var(--ff-head);
@@ -3407,6 +3424,7 @@ input, select, textarea {
 a, button, .obtn, .cbtn, .adn, .aqty-btn, .tb-item, .bn, .sdi {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 /* ── Remove hover transforms on touch to prevent stuck states */

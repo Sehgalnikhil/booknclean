@@ -253,7 +253,7 @@ void main(){
       <div class="fb">
 
         <!-- STEP 1 -->
-        <div class="fs act" id="fs1">
+        <div class="fs act on" id="fs1">
           <div class="fq">What size is your property?</div>
           <div class="fqs">Select your bedroom and bathroom combination</div>
           <div class="og oga">
@@ -302,7 +302,7 @@ void main(){
               <span class="on2">5 Bed · 3 Bath</span>
             </button>
           </div>
-          <div class="fn"><span></span><button class="bn" onclick="nxt(1)">Next →</button></div>
+          <div class="fn"><span></span><button class="bn" data-nxt="1">Next →</button></div>
         </div>
 
         <!-- STEP 2 -->
@@ -315,7 +315,7 @@ void main(){
             <button class="obtn" data-s="2" data-v="Double Storey House" data-m="1.10"><span class="oi">🏡</span><span class="on2">Double Storey House</span><span class="op">+10%</span></button>
             <button class="obtn" data-s="2" data-v="Townhouse / Multi-level" data-m="1.10"><span class="oi">🏘</span><span class="on2">Townhouse / Multi-level</span><span class="op">+10%</span></button>
           </div>
-          <div class="fn"><button class="bb" onclick="prv(2)">← Back</button><button class="bn" onclick="nxt(2)">Next →</button></div>
+          <div class="fn"><button class="bb" data-prv="2">← Back</button><button class="bn" data-nxt="2">Next →</button></div>
         </div>
 
         <!-- STEP 3 -->
@@ -326,7 +326,7 @@ void main(){
             <button class="cbtn" data-s="3" data-v="Without Carpet" data-cp="0" style="padding: 24px 16px;"><span class="cl" style="font-size: 16px; font-weight: 800; display: block; margin-bottom: 6px;">Without Carpet</span><span class="cp2">Included as standard</span></button>
             <button class="cbtn" data-s="3" data-v="With Carpet" data-cp="1" style="padding: 24px 16px;"><span class="cl" style="font-size: 16px; font-weight: 800; display: block; margin-bottom: 6px;">With Carpet</span><span class="cp2">Flat-rate package price</span></button>
           </div>
-          <div class="fn"><button class="bb" onclick="prv(3)">← Back</button><button class="bn" onclick="nxt(3)">Next →</button></div>
+          <div class="fn"><button class="bb" data-prv="3">← Back</button><button class="bn" data-nxt="3">Next →</button></div>
         </div>
 
         <!-- STEP 4 -->
@@ -335,7 +335,7 @@ void main(){
           <div class="fqs">Select any optional additional services below.</div>
           <div class="ag" id="adgrid"></div>
           <p style="font-size:12px;color:var(--on-surface-var);margin-top:10px">No add-ons needed? Just click Next.</p>
-          <div class="fn"><button class="bb" onclick="prv(4)">← Back</button><button class="bn" onclick="nxt(4)">Next →</button></div>
+          <div class="fn"><button class="bb" data-prv="4">← Back</button><button class="bn" data-nxt="4">Next →</button></div>
         </div>
 
         <!-- STEP 5 -->
@@ -357,7 +357,7 @@ void main(){
 
           <input type="text" placeholder="Select preferred date..." class="fi" id="idate" min="" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" onchange="dateChg(this.value)" style="margin-top: 16px;">
           <div class="fe" id="edate">Please select a preferred date</div>
-          <div class="fn"><button class="bb" onclick="prv(5)">← Back</button><button class="bn" onclick="nxt(5)">Next →</button></div>
+          <div class="fn"><button class="bb" data-prv="5">← Back</button><button class="bn" data-nxt="5">Next →</button></div>
         </div>
 
         <!-- STEP 6 -->
@@ -391,7 +391,7 @@ void main(){
           </div>
 
           <div class="fn">
-            <button class="bb" onclick="prv(6)">← Back</button>
+            <button class="bb" data-prv="6">← Back</button>
             <button class="bn" id="seeQuoteBtn" onclick="showQ()" style="font-size:16px;padding:13px 28px;opacity:0.45;pointer-events:none">See My Quote →</button>
           </div>
         </div>
@@ -1404,10 +1404,12 @@ function switchStep(fromId,toId){
   const cur=typeof fromId==='number'?document.getElementById('fs'+fromId):document.getElementById(fromId);
   const next=typeof toId==='number'?document.getElementById('fs'+toId):document.getElementById(toId);
   if(!cur||!next)return;
+  cur.style.display = '';
+  next.style.display = '';
   cur.classList.remove('act','on');
-  cur.style.display='none';
-  next.style.display='block';
-  next.classList.add('act','on');
+  next.classList.add('act');
+  // Small delay to allow act to apply before on for transition
+  setTimeout(() => next.classList.add('on'), 10);
 }
 
 document.querySelectorAll('.obtn[data-s="1"]').forEach(b=>{
@@ -1445,6 +1447,8 @@ function showErr(step, msg) {
   }, 2000);
 }
 
+let isNavigating = false;
+
 function nxt(f){
   if(f===1&&!S.ps){showErr(f, 'Please select a size ↑');return}
   if(f===2&&!S.pt){showErr(f, 'Please select a type ↑');return}
@@ -1463,16 +1467,57 @@ function nxt(f){
     if(!ok)return;
   }
   if(f===3)buildAds();
+  
+  if (isNavigating) return;
+  isNavigating = true;
+  document.querySelectorAll('.bn, .bb').forEach(b => b.style.pointerEvents = 'none');
+  
   switchStep(f,f+1);S.step=f+1;upProg(f+1);
   if(typeof updateStickySummary==='function') updateStickySummary();
   document.getElementById('quote').scrollIntoView({behavior:'auto',block:'start'});
+  
+  setTimeout(() => {
+    isNavigating = false;
+    document.querySelectorAll('.bn, .bb').forEach(b => b.style.pointerEvents = '');
+  }, 350);
 }
 
 function prv(f){
+  if (isNavigating) return;
+  isNavigating = true;
+  document.querySelectorAll('.bn, .bb').forEach(b => b.style.pointerEvents = 'none');
+  
   switchStep(f,f-1);S.step=f-1;upProg(f-1);
   if(typeof updateStickySummary==='function') updateStickySummary();
   document.getElementById('quote').scrollIntoView({behavior:'auto',block:'start'});
+  
+  setTimeout(() => {
+    isNavigating = false;
+    document.querySelectorAll('.bn, .bb').forEach(b => b.style.pointerEvents = '');
+  }, 350);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const handleNav = (e) => {
+    const btn = e.target.closest('[data-nxt], [data-prv]');
+    if (!btn) return;
+    e.preventDefault();
+    if (btn.hasAttribute('data-nxt')) {
+      nxt(parseInt(btn.getAttribute('data-nxt')));
+    } else if (btn.hasAttribute('data-prv')) {
+      prv(parseInt(btn.getAttribute('data-prv')));
+    }
+  };
+  if (window.PointerEvent) {
+    document.addEventListener('pointerdown', handleNav, { passive: false });
+    document.addEventListener('click', (e) => {
+      if(e.target.closest('[data-nxt], [data-prv]')) e.preventDefault();
+    });
+  } else {
+    document.addEventListener('touchend', handleNav, { passive: false });
+    document.addEventListener('click', handleNav);
+  }
+});
 
 function dateChg(v){S.dt=v;S.uo=false;}
 document.getElementById('idate').min=new Date().toISOString().split('T')[0];
