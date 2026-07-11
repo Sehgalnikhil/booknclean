@@ -242,32 +242,6 @@ void main(){
   </div>
 </div>
 
-<!-- FLOATING WIDGET (Stepper & Availability) -->
-<div class="floating-widget-wrapper">
-  <!-- STEPPER -->
-  <div class="container stepper-container">
-    <div class="prog" id="progress-bar">
-      <div class="pd-wrap act"><div class="pd act" id="pd1">1</div><div class="pd-label">Property Details</div></div><div class="pl" id="pl1"></div>
-      <div class="pd-wrap"><div class="pd" id="pd2">2</div><div class="pd-label">Add-ons</div></div><div class="pl" id="pl2"></div>
-      <div class="pd-wrap"><div class="pd" id="pd3">3</div><div class="pd-label">Date & Time</div></div><div class="pl" id="pl3"></div>
-      <div class="pd-wrap"><div class="pd" id="pd4">4</div><div class="pd-label">Your Details</div></div><div class="pl" id="pl4"></div>
-      <div class="pd-wrap"><div class="pd" id="pd5">5</div><div class="pd-label">Review</div></div><div class="pl" id="pl5"></div>
-      <div class="pd-wrap"><div class="pd" id="pd6">6</div><div class="pd-label">Confirm</div></div>
-    </div>
-  </div>
-
-  <!-- URGENCY / AVAILABILITY STRIP -->
-  <div class="avail-strip" id="availStrip">
-    <div class="avail-inner">
-      <div class="avail-left">
-        <span class="avail-icon">🗓️</span>
-        <span class="avail-text">Next available slot in <strong id="availCity">your area</strong>: <strong id="availDate">Tomorrow</strong></span>
-      </div>
-      <div class="avail-slots-pill"><span id="slotsLeft">2</span> slots left this week</div>
-      <a class="avail-cta" href="#quote" onclick="event.preventDefault();document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Book now →</a>
-    </div>
-  </div>
-</div>
 
 <div class="quote-section" id="quote">
   <div class="container" style="padding:0 24px;max-width:900px">
@@ -1409,13 +1383,18 @@ function updateStickySummary() {
 function upProg(s){
   for(let i=1;i<=6;i++){
     const d=document.getElementById('pd'+i);
-    if(i<s){d.className='pd dn';d.textContent='✓'}
-    else if(i===s){d.className='pd act';d.textContent=i}
-    else{d.className='pd';d.textContent=i}
-    if(i<6)document.getElementById('pl'+i).className=i<s?'pl dn':'pl';
+    if (d) {
+      if(i<s){d.className='pd dn';d.textContent='✓'}
+      else if(i===s){d.className='pd act';d.textContent=i}
+      else{d.className='pd';d.textContent=i}
+    }
+    const pl=document.getElementById('pl'+i);
+    if(i<6 && pl) pl.className=i<s?'pl dn':'pl';
   }
-  document.getElementById('fht').textContent=TITLES[s]||'';
-  document.getElementById('fhs').textContent=s+' / 6';
+  const fht = document.getElementById('fht');
+  const fhs = document.getElementById('fhs');
+  if (fht) fht.textContent=TITLES[s]||'';
+  if (fhs) fhs.textContent=s+' / 6';
 }
 
 function switchStep(fromId,toId){
