@@ -154,7 +154,7 @@ nav {
   display: flex;
   background: var(--hero-blue);
   border-bottom: none;
-  transition: all 0.3s var(--ease);
+  transition: transform 0.3s var(--ease), background-color 0.3s var(--ease), border-color 0.3s var(--ease), color 0.3s var(--ease), opacity 0.3s var(--ease);
 }
 nav.nav-scrolled {
   min-height: 60px;
@@ -253,7 +253,7 @@ nav.nav-scrolled {
   border: none;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.25s var(--ease);
+  transition: transform 0.25s var(--ease), background-color 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease), opacity 0.25s var(--ease);
 }
 .btn-call:hover {
   background: rgba(255,255,255,0.9);
@@ -270,7 +270,7 @@ nav.nav-scrolled {
   border-radius: var(--r-full);
   border: none;
   cursor: pointer;
-  transition: all 0.25s var(--ease);
+  transition: transform 0.25s var(--ease), background-color 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease), opacity 0.25s var(--ease);
 }
 .btn-outline:hover {
   background: #f0c000;
@@ -366,7 +366,7 @@ nav.nav-scrolled {
   border-radius: var(--r-lg);
   border: none;
   cursor: pointer;
-  transition: all 0.25s var(--ease);
+  transition: transform 0.25s var(--ease), background-color 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease), opacity 0.25s var(--ease);
   text-decoration: none;
   box-shadow: 0 0 30px rgba(232,112,90,0.2), 0 4px 20px rgba(0,0,0,0.3);
   letter-spacing: -0.01em;
@@ -594,7 +594,7 @@ nav.nav-scrolled {
   font-weight: 700;
   color: var(--on-surface-var);
   flex-shrink: 0;
-  transition: all 0.35s var(--ease-spring);
+  transition: transform 0.35s var(--ease-spring), background-color 0.35s var(--ease-spring), border-color 0.35s var(--ease-spring), color 0.35s var(--ease-spring), opacity 0.35s var(--ease-spring);
   font-family: var(--ff-mono);
 }
 .pd.act {
@@ -719,7 +719,7 @@ nav.nav-scrolled {
   cursor: pointer;
   text-align: center;
   font-family: var(--ff-body);
-  transition: all 0.2s var(--ease);
+  transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -787,7 +787,7 @@ nav.nav-scrolled {
   cursor: pointer;
   text-align: center;
   font-family: var(--ff-body);
-  transition: all 0.2s var(--ease);
+  transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease);
   min-height: 64px;
   color: var(--on-bg);
 }
@@ -817,7 +817,7 @@ nav.nav-scrolled {
   display: flex;
   align-items: center;
   gap: 12px;
-  transition: all 0.2s var(--ease);
+  transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease);
   position: relative;
   font-family: var(--ff-body);
   color: var(--on-bg);
@@ -846,7 +846,7 @@ nav.nav-scrolled {
   display: flex; align-items: center; justify-content: center;
   font-size: 11px;
   color: transparent;
-  transition: all 0.2s var(--ease);
+  transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease);
   background: var(--surface-mid);
 }
 .adn.sel .adck {
@@ -899,7 +899,7 @@ nav.nav-scrolled {
   font-family: var(--ff-body);
   color: var(--on-bg);
   background: #ffffff;
-  transition: all 0.2s var(--ease);
+  transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease);
   margin-bottom: 12px;
   outline: none;
 }
@@ -930,7 +930,7 @@ nav.nav-scrolled {
   opacity: 0;
   transform: translateY(-5px);
   pointer-events: none;
-  transition: all 0.2s var(--ease);
+  transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease);
   box-shadow: var(--shadow-glass);
 }
 .sd.on { opacity: 1; transform: translateY(0); pointer-events: auto; }
@@ -964,7 +964,7 @@ nav.nav-scrolled {
   font-weight: 600;
   color: var(--on-surface-var);
   font-family: var(--ff-body);
-  transition: all 0.2s var(--ease);
+  transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease);
 }
 .bb:hover { border-color: var(--primary-ctr); color: var(--primary-ctr); background: rgba(232,112,90,0.05); }
 .bn {
@@ -977,7 +977,7 @@ nav.nav-scrolled {
   font-weight: 700;
   color: #ffffff;
   font-family: var(--ff-head);
-  transition: all 0.2s var(--ease);
+  transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease);
   display: flex; align-items: center; gap: 6px;
   box-shadow: 0 4px 14px rgba(232,112,90,0.2);
   letter-spacing: -0.01em;
@@ -1039,7 +1039,7 @@ nav.nav-scrolled {
   font-size: 14px; font-weight: 700; text-align: center;
   cursor: pointer; margin-top: 14px;
   font-family: var(--ff-head); text-decoration: none;
-  transition: all 0.2s var(--ease); letter-spacing: -0.01em;
+  transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease); letter-spacing: -0.01em;
 }
 .tbk:hover { transform: translateY(-1px); }
 .tbk.s {
@@ -1060,7 +1060,7 @@ nav.nav-scrolled {
   background: transparent; border: 1.5px solid var(--outline-var);
   border-radius: var(--r-md); font-size: 13px; color: var(--on-surface-var);
   text-align: center; cursor: pointer; margin-top: 10px;
-  font-family: var(--ff-body); transition: all 0.2s var(--ease);
+  font-family: var(--ff-body); transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease);
 }
 .rst:hover { color: var(--primary-ctr); border-color: var(--primary-ctr); background: rgba(232,112,90,0.05); }
 .ir {
@@ -1101,7 +1101,7 @@ nav.nav-scrolled {
   border-radius: var(--r-lg);
   padding: 22px 28px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  transition: all 0.25s var(--ease);
+  transition: transform 0.25s var(--ease), background-color 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease), opacity 0.25s var(--ease);
 }
 .bbg-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
 .bbg-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
@@ -1132,7 +1132,7 @@ nav.nav-scrolled {
   background: linear-gradient(135deg, var(--primary-ctr), var(--secondary));
   color: #ffffff; padding: 10px 20px;
   border-radius: var(--r-md); font-family: var(--ff-mono); font-weight: 700; font-size: 13px;
-  text-decoration: none; transition: all 0.2s var(--ease); white-space: nowrap;
+  text-decoration: none; transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease); white-space: nowrap;
   box-shadow: 0 4px 14px rgba(232,112,90,0.2);
 }
 .scope-dl:hover { transform: translateY(-1px); box-shadow: var(--glow-teal); }
@@ -1174,7 +1174,7 @@ nav.nav-scrolled {
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: var(--r-lg);
   backdrop-filter: blur(4px);
-  transition: all 0.25s var(--ease);
+  transition: transform 0.25s var(--ease), background-color 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease), opacity 0.25s var(--ease);
 }
 .statc:hover { border-color: rgba(232,112,90,0.2); transform: translateY(-2px); }
 .statn { font-family: var(--ff-mono); font-weight: 800; font-size: 32px; color: var(--primary-ctr); line-height: 1; text-shadow: 0 0 20px rgba(232,112,90,0.3); }
@@ -1195,7 +1195,7 @@ nav.nav-scrolled {
   border-radius: var(--r-lg);
   padding: 28px 24px;
   text-align: center;
-  transition: all 0.25s var(--ease);
+  transition: transform 0.25s var(--ease), background-color 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease), opacity 0.25s var(--ease);
   position: relative;
   overflow: hidden;
 }
@@ -1240,7 +1240,7 @@ nav.nav-scrolled {
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: var(--r-lg);
   padding: 22px;
-  transition: all 0.25s var(--ease);
+  transition: transform 0.25s var(--ease), background-color 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease), opacity 0.25s var(--ease);
 }
 .review-card:hover { transform: translateY(-2px); border-color: rgba(232,112,90,0.15); }
 .rev-stars { color: #FBBC05; font-size: 14px; margin-bottom: 10px; letter-spacing: 2px; }
@@ -1295,7 +1295,7 @@ nav.nav-scrolled {
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: var(--r-lg);
   padding: 24px;
-  transition: all 0.25s var(--ease);
+  transition: transform 0.25s var(--ease), background-color 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease), opacity 0.25s var(--ease);
 }
 .scope-card:hover { transform: translateY(-2px); border-color: rgba(232,112,90,0.2); }
 .scope-card h3 {
@@ -1415,7 +1415,7 @@ nav.nav-scrolled {
   text-align: center;
   position: relative;
   z-index: 1;
-  transition: all 0.25s var(--ease);
+  transition: transform 0.25s var(--ease), background-color 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease), opacity 0.25s var(--ease);
 }
 .ab-c:hover { border-color: rgba(232,112,90,0.2); transform: translateY(-3px); }
 .ab-n {
@@ -1530,7 +1530,7 @@ nav.nav-scrolled {
   background: var(--surface);
   color: var(--on-surface-var);
   cursor: pointer;
-  transition: all 0.22s var(--ease);
+  transition: transform 0.22s var(--ease), background-color 0.22s var(--ease), border-color 0.22s var(--ease), color 0.22s var(--ease), opacity 0.22s var(--ease);
   white-space: nowrap;
   letter-spacing: -0.01em;
 }
@@ -1611,7 +1611,7 @@ nav.nav-scrolled {
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: all 0.25s var(--ease-spring);
+  transition: transform 0.25s var(--ease-spring), background-color 0.25s var(--ease-spring), border-color 0.25s var(--ease-spring), color 0.25s var(--ease-spring), opacity 0.25s var(--ease-spring);
   background: var(--surface-mid);
 }
 .faq-icon::before,
@@ -1620,7 +1620,7 @@ nav.nav-scrolled {
   position: absolute;
   background: var(--primary-ctr);
   border-radius: 2px;
-  transition: all 0.25s var(--ease);
+  transition: transform 0.25s var(--ease), background-color 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease), opacity 0.25s var(--ease);
 }
 .faq-icon::before { width: 10px; height: 1.5px; }
 .faq-icon::after  { width: 1.5px; height: 10px; }
@@ -2090,7 +2090,7 @@ body {
   font-family: var(--ff-head);
   font-weight: 700;
   font-size: 16px;
-  transition: all 0.3s var(--ease);
+  transition: transform 0.3s var(--ease), background-color 0.3s var(--ease), border-color 0.3s var(--ease), color 0.3s var(--ease), opacity 0.3s var(--ease);
 }
 .pd.act {
   background: var(--hero-blue);
@@ -2196,7 +2196,7 @@ body {
   border-radius: 16px;
   padding: 24px 16px;
   cursor: pointer;
-  transition: all 0.2s var(--ease);
+  transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease);
   color: var(--on-surface);
   text-align: center;
 }
@@ -2237,7 +2237,7 @@ body {
   border: none;
   cursor: pointer;
   margin-top: 40px;
-  transition: all 0.25s var(--ease);
+  transition: transform 0.25s var(--ease), background-color 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease), opacity 0.25s var(--ease);
   float: right;
 }
 .nxt:hover {
@@ -3129,7 +3129,7 @@ select.suburb-input {
   opacity: 0;
   transform: translateY(20px) scale(0.9);
   pointer-events: none;
-  transition: all 0.3s var(--ease);
+  transition: transform 0.3s var(--ease), background-color 0.3s var(--ease), border-color 0.3s var(--ease), color 0.3s var(--ease), opacity 0.3s var(--ease);
   z-index: 997; /* Below whatsapp widget if it exists */
 }
 #scrollTopBtn.show {
@@ -3183,7 +3183,7 @@ select.suburb-input {
   display: inline-flex; align-items: center; justify-content: center;
   font-size: 16px; padding: 16px 32px; border-radius: 99px;
   background: var(--primary); color: white; text-decoration: none; font-weight: 600;
-  transition: all 0.3s var(--ease);
+  transition: transform 0.3s var(--ease), background-color 0.3s var(--ease), border-color 0.3s var(--ease), color 0.3s var(--ease), opacity 0.3s var(--ease);
 }
 .dl-btn:hover {
   transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -3199,7 +3199,7 @@ select.suburb-input {
 .r-cta-desc { font-size: 15px; color: var(--on-surface-var); line-height: 1.6; margin: 0; }
 .btn-review {
   background: #4285F4; color: white; padding: 14px 28px; border-radius: 99px;
-  text-decoration: none; font-weight: 600; white-space: nowrap; transition: all 0.2s var(--ease);
+  text-decoration: none; font-weight: 600; white-space: nowrap; transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease);
 }
 .btn-review:hover {
   background: #3367D6; transform: scale(1.05);

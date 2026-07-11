@@ -1323,7 +1323,7 @@ function buildAds(){
           (a.hint?'<span class="adn-hint">'+a.hint+'</span>':'')+
           '<span class="adp">+$'+p+'</span>'+
         '</span>'+
-        '<span class="adck">'+(curQty>0?'✓':'')+'</span>';
+        '<span class="adck">✓</span>';
     }
     g.appendChild(d);
   });
@@ -1516,9 +1516,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const v = adn.dataset.adnV;
       const p = parseFloat(adn.dataset.adnP);
       const inList=S.ads.find(x=>x.v===v);
-      const ck=adn.querySelector('.adck');
-      if(inList){S.ads=S.ads.filter(x=>x.v!==v);adn.classList.remove('sel');ck.textContent=''}
-      else{S.ads.push({v,p,qty:1});adn.classList.add('sel');ck.textContent='✓'}
+      if(inList){S.ads=S.ads.filter(x=>x.v!==v);adn.classList.remove('sel');}
+      else{S.ads.push({v,p,qty:1});adn.classList.add('sel');}
       recalcAt();
       return;
     }
