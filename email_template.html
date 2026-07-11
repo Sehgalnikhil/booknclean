@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Booking is Confirmed - Book N Clean</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #fcfbfa;
+      color: #2d3748;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      width: 100% !important;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+    }
+    
+    /* Responsive container */
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fcfbfa;
+      padding: 20px;
+    }
+    
+    /* Header styling */
+    .header-section {
+      text-align: center;
+      padding: 32px 0 24px;
+    }
+    .brand-logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #2B4A8B;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    
+    /* Celebration Header Card */
+    .congrats-card {
+      background: linear-gradient(135deg, #2B4A8B 0%, #1e3565 100%);
+      border-radius: 20px;
+      padding: 36px 24px;
+      text-align: center;
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(43, 74, 139, 0.15);
+      margin-bottom: 24px;
+    }
+    .congrats-emoji {
+      font-size: 40px;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .congrats-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin: 0 0 12px;
+      letter-spacing: -0.3px;
+      line-height: 1.3;
+    }
+    .congrats-subtitle {
+      font-size: 14px;
+      opacity: 0.9;
+      margin: 0;
+      line-height: 1.5;
+    }
+    
+    /* Main body text wrapper */
+    .greeting-text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #4a5568;
+      margin-bottom: 24px;
+      padding: 0 8px;
+    }
+    
+    /* Standard Card */
+    .card {
+      background-color: #ffffff;
+      border: 1px solid #edf2f7;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+    }
+    .card-title-row {
+      display: table;
+      width: 100%;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #edf2f7;
+      padding-bottom: 12px;
+    }
+    .card-icon {
+      display: table-cell;
+      width: 24px;
+      vertical-align: middle;
+      font-size: 18px;
+    }
+    .card-title {
+      display: table-cell;
+      font-size: 15px;
+      font-weight: 700;
+      color: #2B4A8B;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      vertical-align: middle;
+      padding-left: 8px;
+    }
+    
+    /* Booking Details List */
+    .detail-row {
+      display: table;
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: 1px dashed #f7fafc;
+    }
+    .detail-row:last-child {
+      border-bottom: none;
+    }
+    .detail-label {
+      display: table-cell;
+      font-size: 14px;
+      color: #718096;
+      font-weight: 500;
+      width: 40%;
+    }
+    .detail-value {
+      display: table-cell;
+      font-size: 14px;
+      color: #2d3748;
+      font-weight: 600;
+      text-align: right;
+    }
+    
+    /* Highlighted Pricing Card */
+    .price-card {
+      background-color: rgba(232, 112, 90, 0.06);
+      border: 2px solid rgba(232, 112, 90, 0.15);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .price-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #C95740;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .price-value {
+      font-size: 38px;
+      font-weight: 800;
+      color: #E8705A;
+      margin: 0 0 12px;
+      line-height: 1;
+    }
+    .price-note {
+      font-size: 13px;
+      color: #718096;
+      margin: 0;
+      font-weight: 500;
+    }
+    
+    /* Assurance Card */
+    .assurance-card {
+      background-color: rgba(43, 74, 139, 0.03);
+      border-left: 4px solid #2B4A8B;
+      border-radius: 4px 16px 16px 4px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .assurance-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #2B4A8B;
+      margin: 0 0 8px;
+    }
+    .assurance-desc {
+      font-size: 13px;
+      color: #4a5568;
+      line-height: 1.5;
+      margin: 0;
+    }
+    
+    /* Checklist styles */
+    .scope-section-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #4a5568;
+      margin-top: 16px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .checklist-item {
+      padding: 6px 0;
+      font-size: 13px;
+      color: #4a5568;
+      line-height: 1.4;
+    }
+    .checklist-icon {
+      color: #2B4A8B;
+      font-weight: bold;
+      margin-right: 6px;
+    }
+    
+    /* Numbered list styles */
+    .numbered-item {
+      padding: 8px 0;
+      font-size: 13px;
+      color: #4a5568;
+      line-height: 1.5;
+      border-bottom: 1px solid #f7fafc;
+    }
+    .numbered-item:last-child {
+      border-bottom: none;
+    }
+    .numbered-prefix {
+      color: #2B4A8B;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+    
+    /* Footer & Signoff */
+    .footer-section {
+      text-align: center;
+      padding: 24px 8px 40px;
+      border-top: 1px solid #edf2f7;
+    }
+    .footer-text {
+      font-size: 13px;
+      color: #718096;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .footer-signoff {
+      font-size: 14px;
+      font-weight: 600;
+      color: #4a5568;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="email-container">
+    
+    <!-- Logo Header -->
+    <div class="header-section">
+      <a href="https://bookandclean.com.au" class="brand-logo">Book N Clean</a>
+    </div>
+    
+    <!-- Congratulations Header Card -->
+    <div class="congrats-card">
+      <span class="congrats-emoji">🎉</span>
+      <h1 class="congrats-title">Congratulations!<br>Your Booking is Confirmed</h1>
+      <p class="congrats-subtitle">
+        Thank you for choosing Book N Clean.<br>
+        Your End of Lease Cleaning has been successfully booked.<br>
+        Below are your booking details.
+      </p>
+    </div>
+    
+    <!-- Personal Greeting -->
+    <div class="greeting-text">
+      Hi {{first_name}},
+    </div>
+    
+    <!-- Highlighted Pricing Card -->
+    <div class="price-card">
+      <div class="price-label">Total Booking Amount</div>
+      <div class="price-value">${{total_price}}</div>
+      <p class="price-note">Payment is required upon arrival on the day of service.</p>
+    </div>
+    
+    <!-- Bond Back Assurance -->
+    <div class="assurance-card">
+      <h3 class="assurance-title">🛡️ Bond Back Assurance</h3>
+      <p class="assurance-desc">
+        We offer a 3-working-day Bond Back Assurance. If your property manager or real estate agent identifies any cleaning-related concerns, our team will return to rectify the reported items at no additional cost, provided we are notified within 3 working days of the completed service. Pricing is based on a property in standard condition.
+      </p>
+    </div>
+    
+    <!-- Booking Summary Card -->
+    <div class="card">
+      <div class="card-title-row">
+        <span class="card-icon">📋</span>
+        <h2 class="card-title">Booking Summary</h2>
+      </div>
+      
+      <div class="detail-row">
+        <div class="detail-label">Service</div>
+        <div class="detail-value">End of Lease Cleaning</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Property Type</div>
+        <div class="detail-value">{{property_type}}</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Property Size</div>
+        <div class="detail-value">{{property_size}}</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Preferred Date</div>
+        <div class="detail-value">{{preferred_date}}</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Preferred Time</div>
+        <div class="detail-value">{{preferred_time}}</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Customer Name</div>
+        <div class="detail-value">{{first_name}} {{last_name}}</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Phone Number</div>
+        <div class="detail-value">{{phone}}</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Property Address</div>
+        <div class="detail-value">{{address}}</div>
+      </div>
+    </div>
+    
+    <!-- Add-ons Card -->
+    <div class="card">
+      <div class="card-title-row">
+        <span class="card-icon">✨</span>
+        <h2 class="card-title">Selected Add-ons</h2>
+      </div>
+      <div style="padding-top: 4px;">
+        {{#if addons_list}}
+          {{#each addons_list}}
+            <div class="checklist-item">
+              <span class="checklist-icon">✓</span> {{this}}
+            </div>
+          {{/each}}
+        {{else}}
+          <div style="font-size: 13px; color: #718096; font-style: italic; padding: 4px 0;">
+            No Optional Add-ons Selected
+          </div>
+        {{/if}}
+      </div>
+    </div>
+    
+    <!-- Scope of Services Card -->
+    <div class="card">
+      <div class="card-title-row">
+        <span class="card-icon">🧹</span>
+        <h2 class="card-title">Scope of Services</h2>
+      </div>
+      
+      <div class="scope-section-title">Living Areas & Bedrooms</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Detailed cleaning of doors, frames, and handles</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Skirting boards professionally cleaned</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Interior windows cleaned</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Blinds and light fittings dusted</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Light switches wiped</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Built-in wardrobes and cupboards cleaned</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Railings cleaned</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Removal of visible cobwebs</div>
+      
+      <div class="scope-section-title">Bathrooms, Toilets & Laundry</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Shower screens and bathtubs cleaned</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Toilets cleaned and sanitised</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Wall tiles wiped</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Vanities, sinks, taps, and mirrors cleaned</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Towel rails and fittings cleaned</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Cupboards cleaned internally and externally</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Exhaust fans and vents dusted</div>
+      
+      <div class="scope-section-title">Kitchen</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Oven and cooktop professionally deep cleaned</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Rangehood and filters cleaned</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Splashback and benchtops cleaned</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Pantry and cupboards cleaned internally and externally</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Sink and tapware cleaned</div>
+      
+      <div class="scope-section-title">Floors</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> All floors vacuumed</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Hard floors mopped</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Garage and balcony swept</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span> Carpet steam cleaned</div>
+    </div>
+    
+    <!-- Terms & Conditions Card -->
+    <div class="card">
+      <div class="card-title-row">
+        <span class="card-icon">⚠️</span>
+        <h2 class="card-title">Terms & Conditions</h2>
+      </div>
+      
+      <div class="numbered-item">
+        <span class="numbered-prefix">1.</span> Payment is required upon arrival on the day of service.
+      </div>
+      <div class="numbered-item">
+        <span class="numbered-prefix">2.</span> The customer is responsible for arranging suitable parking for our service vehicle.
+      </div>
+      <div class="numbered-item">
+        <span class="numbered-prefix">3.</span> Electricity and running hot water must be available throughout the service.
+      </div>
+      <div class="numbered-item">
+        <span class="numbered-prefix">4.</span> While every effort is made, complete removal of pet hair cannot be guaranteed.
+      </div>
+      <div class="numbered-item">
+        <span class="numbered-prefix">5.</span> The property must be vacant at the time of cleaning.
+      </div>
+      <div class="numbered-item">
+        <span class="numbered-prefix">6.</span> Pricing is based on a property in standard condition. Additional charges may apply for heavily soiled properties.
+      </div>
+      <div class="numbered-item">
+        <span class="numbered-prefix">7.</span> An invoice will be emailed once payment has been received.
+      </div>
+    </div>
+    
+    <!-- Footer Signoff -->
+    <div class="footer-section">
+      <p class="footer-text">
+        Thank you for choosing Book N Clean.<br>
+        We look forward to providing you with a spotless cleaning experience.<br>
+        If you have any questions, simply reply to this email.
+      </p>
+      <div class="footer-signoff">
+        Regards,<br>
+        <strong>Book N Clean Team</strong>
+      </div>
+    </div>
+    
+  </div>
+
+</body>
+</html>

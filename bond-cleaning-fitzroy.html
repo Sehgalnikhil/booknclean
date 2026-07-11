@@ -1548,7 +1548,27 @@ function sendGHL(b,std){
   const formatted_addons = S.ads.length > 0 ? "Selected Add-ons: " + S.ads.map(a=>(a.qty>1?a.qty+'x ':'')+a.v+' ($'+(a.p*(a.qty||1))+')').join(', ') : "No additional add-ons selected.";
   const invoice_summary = inclusions + "\n\n" + exclusions + "\n\n" + formatted_addons + "\n\n" + terms;
 
-  fetch(WH,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({first_name:S.fn,last_name:S.ln,email:S.em,phone:S.ph,suburb:S.sub,address:S.addr,city:S.city,property_size:S.ps,property_type:S.pt,carpet_rooms:S.ca,carpet_steam_cleaning:S.ca,carpet_price:S.cp,preferred_date:S.dt,addons:S.ads.map(a=>(a.qty>1?a.qty+'x ':'')+a.v+' $'+(a.p*(a.qty||1))).join(', '),base_price:b,addon_total:S.at,standard_total:std,lead_source:(new URLSearchParams(window.location.search)).get('source')||'organic',total_price:std+S.at, inclusions: inclusions, exclusions: exclusions, terms: terms, invoice_summary: invoice_summary})}).catch(()=>{});
+  let formattedDate = S.dt;
+  if (S.dt) {
+    const parts = S.dt.split('-');
+    if (parts.length === 3) {
+      let year = parseInt(parts[0], 10);
+      let month = parseInt(parts[1], 10) - 1;
+      let day = parseInt(parts[2], 10);
+      if (year < 100) {
+        year += 2000;
+      } else if (year < 2000) {
+        // If year is somehow 70 or 0070
+        year = new Date().getFullYear();
+      }
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      if (months[month]) {
+        formattedDate = day + ' ' + months[month] + ' ' + year;
+      }
+    }
+  }
+
+  fetch(WH,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({first_name:S.fn,last_name:S.ln,email:S.em,phone:S.ph,suburb:S.sub,address:S.addr,city:S.city,property_size:S.ps,property_type:S.pt,carpet_rooms:S.ca,carpet_steam_cleaning:S.ca,carpet_price:S.cp,preferred_date:formattedDate,preferred_date_raw:S.dt,addons:S.ads.map(a=>(a.qty>1?a.qty+'x ':'')+a.v+' $'+(a.p*(a.qty||1))).join(', '),base_price:b,addon_total:S.at,standard_total:std,lead_source:(new URLSearchParams(window.location.search)).get('source')||'organic',total_price:std+S.at, inclusions: inclusions, exclusions: exclusions, terms: terms, invoice_summary: invoice_summary})}).catch(()=>{});
   if(typeof gtag!=='undefined'){
     var ecPhone=normPhone(S.ph);
     if(ecPhone.charAt(0)==='0')ecPhone='+61'+ecPhone.slice(1);
