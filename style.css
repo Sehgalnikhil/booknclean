@@ -729,7 +729,7 @@ nav.nav-scrolled {
   color: var(--on-bg);
 }
 @media (hover: hover) {
-  .obtn:hover {
+  .obtn:active {
     border-color: rgba(232,112,90,0.4);
     background: rgba(232,112,90,0.05);
     transform: translateY(-2px);
@@ -794,7 +794,7 @@ nav.nav-scrolled {
   color: var(--on-bg);
 }
 @media (hover: hover) {
-  .cbtn:hover {
+  .cbtn:active {
     border-color: rgba(232,112,90,0.4);
     background: rgba(232,112,90,0.05);
     transform: translateY(-2px);
@@ -827,7 +827,7 @@ nav.nav-scrolled {
   color: var(--on-bg);
 }
 @media (hover: hover) {
-  .adn:hover {
+  .adn:active {
     border-color: rgba(232,112,90,0.4);
     background: rgba(232,112,90,0.04);
     transform: translateY(-2px);
@@ -889,12 +889,12 @@ nav.nav-scrolled {
   flex-shrink: 0;
 }
 @media (hover: hover) {
-  .aqty-btn:hover:not(:disabled) { border-color: var(--primary-ctr); background: rgba(232,112,90,0.1); color: var(--primary-ctr); }
+  .aqty-btn:active:not(:disabled) { border-color: var(--primary-ctr); background: rgba(232,112,90,0.1); color: var(--primary-ctr); }
 }
 .aqty-btn:disabled { opacity: .3; cursor: not-allowed; }
 .aqty-plus { background: rgba(232,112,90,0.08); border-color: rgba(232,112,90,0.25); color: var(--primary-ctr); }
 @media (hover: hover) {
-  .aqty-plus:hover { background: var(--primary-ctr) !important; color: #ffffff !important; }
+  .aqty-plus:active { background: var(--primary-ctr) !important; color: #ffffff !important; }
 }
 .aqty-num { font-family: var(--ff-mono); font-size: 15px; font-weight: 700; color: var(--on-bg); min-width: 18px; text-align: center; }
 .adn.sel .aqty-num { color: var(--primary-ctr); }
@@ -977,7 +977,7 @@ nav.nav-scrolled {
   transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease);
 }
 @media (hover: hover) {
-  .bb:hover { border-color: var(--primary-ctr); color: var(--primary-ctr); background: rgba(232,112,90,0.05); }
+  .bb:active { border-color: var(--primary-ctr); color: var(--primary-ctr); background: rgba(232,112,90,0.05); }
 }
 .bn {
   padding: 12px 28px;
@@ -995,7 +995,7 @@ nav.nav-scrolled {
   letter-spacing: -0.01em;
 }
 @media (hover: hover) {
-  .bn:hover { transform: translateY(-1px); box-shadow: var(--glow-teal); }
+  .bn:active { transform: translateY(-1px); box-shadow: var(--glow-teal); }
 }
 .bn:active { transform: translateY(0); }
 
@@ -1077,7 +1077,7 @@ nav.nav-scrolled {
   font-family: var(--ff-body); transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease);
 }
 @media (hover: hover) {
-  .rst:hover { color: var(--primary-ctr); border-color: var(--primary-ctr); background: rgba(232,112,90,0.05); }
+  .rst:active { color: var(--primary-ctr); border-color: var(--primary-ctr); background: rgba(232,112,90,0.05); }
 }
 .ir {
   display: flex; justify-content: space-between;
@@ -2217,7 +2217,7 @@ body {
   text-align: center;
 }
 @media (hover: hover) {
-  .obtn:hover {
+  .obtn:active {
     border-color: var(--outline-var);
     background: var(--surface-low);
     transform: translateY(-2px);
@@ -2259,7 +2259,7 @@ body {
   float: right;
 }
 @media (hover: hover) {
-  .nxt:hover {
+  .nxt:active {
     background: var(--primary-dim);
     transform: translateX(2px);
   }
@@ -3449,7 +3449,7 @@ a, button, .obtn, .cbtn, .adn, .aqty-btn, .tb-item, .bn, .sdi {
 
 /* ── Remove hover transforms on touch to prevent stuck states */
 @media (hover: none) {
-  .obtn:hover, .cbtn:hover, .bn:hover, .btn-primary:hover,
+  .obtn:active, .cbtn:active, .bn:active, .btn-primary:hover,
   .btn-call:hover, .btn-outline:hover, .step-card:hover,
   .review-card:hover, .scope-card:hover, .area-card:hover,
   .ab-c:hover, .statc:hover {
@@ -3881,10 +3881,10 @@ a, button, .obtn, .cbtn, .adn, .aqty-btn, .tb-item, .bn, .sdi {
 
 /* ── Ultimate iOS Sticky Hover Fix ── */
 @media (hover: none), (pointer: coarse) {
-  .obtn:hover, .cbtn:hover, .bn:hover, .btn-primary:hover,
+  .obtn:active, .cbtn:active, .bn:active, .btn-primary:hover,
   .btn-call:hover, .btn-outline:hover, .step-card:hover,
   .review-card:hover, .scope-card:hover, .area-card:hover,
-  .ab-c:hover, .statc:hover, .bb:hover, .rst:hover, .aqty-btn:hover {
+  .ab-c:hover, .statc:hover, .bb:active, .rst:active, .aqty-btn:active {
     transform: none !important;
     box-shadow: none !important;
     border-color: inherit;
@@ -3902,10 +3902,6 @@ a, button, .obtn, .cbtn, .adn, .aqty-btn, .tb-item, .bn, .sdi {
   }
 }
 
-/* Force mobile clicks to register exclusively on the button element */
-.obtn *, .cbtn *, .adck *, .aqty-btn *, .sdi * {
-  pointer-events: none;
-}
 
 /* ── Stepper Mobile Overflow Fix ── */
 @media (max-width: 768px) {
