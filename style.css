@@ -3415,9 +3415,6 @@ html, body {
 }
 
 /* Fix the 300ms tap delay on mobile devices */
-a, button, input, select, textarea, .obtn, .adck, .tb-item {
-  touch-action: manipulation;
-}
 
 /* Force mobile clicks to register exclusively on the button element */
 /* pointer-events removed to fix iOS click bug */
@@ -3441,12 +3438,6 @@ input, select, textarea {
 }
 
 /* ── Tap target minimum size for all clickable elements ──── */
-a, button, .obtn, .cbtn, .adn, .aqty-btn, .tb-item, .bn, .sdi {
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
-}
-
 /* ── Remove hover transforms on touch to prevent stuck states */
 @media (hover: none) {
   .obtn:active, .cbtn:active, .bn:active, .btn-primary:hover,

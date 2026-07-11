@@ -115,7 +115,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -1412,12 +1412,12 @@ function switchStep(fromId,toId){
 function showErr(step, msg) {
   const btn = document.querySelector('#fs' + step + ' .bn');
   if(!btn) return;
-  const originalText = btn.innerText;
+  if (!btn.hasAttribute('data-orig')) btn.setAttribute('data-orig', btn.innerText);
   btn.innerText = msg;
   btn.style.background = '#d9381e'; // red
   btn.style.transform = 'translateY(0)';
   setTimeout(() => {
-    btn.innerText = originalText;
+    btn.innerText = btn.getAttribute('data-orig');
     btn.style.background = '';
   }, 2000);
 }
