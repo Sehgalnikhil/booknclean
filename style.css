@@ -3239,6 +3239,12 @@ html, body {
   height: auto;
   margin-bottom: 8px;
   object-fit: contain;
+  mix-blend-mode: multiply; /* Dissolve white background into button */
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.obtn:hover .prop-icon {
+  transform: scale(1.05); /* Cool hover effect */
 }
 @media (max-width: 640px) {
   .prop-icon {
