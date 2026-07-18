@@ -68,7 +68,7 @@ const ADDEF = [
 
     pattern = re.compile(r'(const|let)\s+PRICES\s*=\s*\{.*?(const|let)\s+ADDEF\s*=\s*\[.*?\n\s*\]\s*;?', re.DOTALL)
 
-    target_files = ['index.html', 'pricing.html', 'services.html', 'how-it-works.html']
+    target_files = ['index.html', 'pricing.html', 'services.html', 'how-it-works.html', 'about.html', 'contact.html']
     
     for filename in target_files:
         print(f"Updating JS blocks in {filename}...")
