@@ -1533,91 +1533,87 @@ function prv(f){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const handleInteraction = (e) => {
-    console.log("CLICK RECEIVED");
-    const btnNav = e.target.closest("[data-nxt],[data-prv]");
-    console.log("BUTTON", btnNav);
-    if(btnNav){
-        console.log("NEXT BUTTON FOUND");
+  let lastTouchTime = 0;
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  document.addEventListener('touchstart', (e) => {
+    if (e.touches && e.touches[0]) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
     }
-    console.log("EVENT", e.type);
-    console.time("handleInteraction");
-    performance.mark("handleInteraction-start");
+  }, { passive: true });
+
+  const handleInteraction = (e) => {
+    if (e.type === 'touchend') {
+      if (e.changedTouches && e.changedTouches[0]) {
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        // If the user moved their finger more than 10px, it was a scroll, NOT a tap.
+        if (Math.abs(touchEndX - touchStartX) > 10 || Math.abs(touchEndY - touchStartY) > 10) {
+          return;
+        }
+      }
+      lastTouchTime = Date.now();
+    } else if (e.type === 'click') {
+      if (Date.now() - lastTouchTime < 500) {
+        return; // Prevent duplicate/ghost click
+      }
+    }
 
     // Handle Navigation Buttons
+    const btnNav = e.target.closest("[data-nxt],[data-prv]");
     if (btnNav) {
-      console.log("BUTTON FOUND");
+      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
       if (btnNav.hasAttribute('data-nxt')) nxt(parseInt(btnNav.getAttribute('data-nxt')));
       else if (btnNav.hasAttribute('data-prv')) prv(parseInt(btnNav.getAttribute('data-prv')));
-      
-      performance.mark("handleInteraction-end");
-      performance.measure("handleInteraction", "handleInteraction-start", "handleInteraction-end");
-      console.timeEnd("handleInteraction");
       return;
     }
     // Handle Property Size / Type Buttons
     const obtn1 = e.target.closest('.obtn[data-s="1"]');
     if (obtn1) {
+      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
       document.querySelectorAll('.obtn[data-s="1"]').forEach(x=>x.classList.remove('sel'));
       obtn1.classList.add('sel');S.ps=obtn1.dataset.v;S.ads=[];S.at=0;
       if(typeof updateStickySummary==='function') updateStickySummary();
-      
-      performance.mark("handleInteraction-end");
-      performance.measure("handleInteraction", "handleInteraction-start", "handleInteraction-end");
-      console.timeEnd("handleInteraction");
       return;
     }
     const obtn2 = e.target.closest('.obtn[data-s="2"]');
     if (obtn2) {
+      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
       document.querySelectorAll('.obtn[data-s="2"]').forEach(x=>x.classList.remove('sel'));
       obtn2.classList.add('sel');S.pt=obtn2.dataset.v;S.pm=parseFloat(obtn2.dataset.m);
       if(typeof updateStickySummary==='function') updateStickySummary();
-      
-      performance.mark("handleInteraction-end");
-      performance.measure("handleInteraction", "handleInteraction-start", "handleInteraction-end");
-      console.timeEnd("handleInteraction");
       return;
     }
     // Handle Extras / Carpet Buttons
     const cbtn = e.target.closest('.cbtn');
     if (cbtn) {
+      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
       document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('sel'));
       cbtn.classList.add('sel');S.ca=cbtn.dataset.v;S.cp=parseFloat(cbtn.dataset.cp);
       if(typeof updateStickySummary==='function') updateStickySummary();
-      
-      performance.mark("handleInteraction-end");
-      performance.measure("handleInteraction", "handleInteraction-start", "handleInteraction-end");
-      console.timeEnd("handleInteraction");
       return;
     }
     // Handle quantity adjusters
     const aqtyBtn = e.target.closest('.aqty-btn');
     if (aqtyBtn) {
+      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
       adjQty(aqtyBtn, aqtyBtn.dataset.aqtyV, parseFloat(aqtyBtn.dataset.aqtyP), parseInt(aqtyBtn.dataset.aqtyDir));
-      
-      performance.mark("handleInteraction-end");
-      performance.measure("handleInteraction", "handleInteraction-start", "handleInteraction-end");
-      console.timeEnd("handleInteraction");
       return;
     }
     // Handle standard add-ons
     const adn = e.target.closest('.adn:not(.adn-qty)');
     if (adn) {
+      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
       const v = adn.dataset.adnV;
       const p = parseFloat(adn.dataset.adnP);
       const inList=S.ads.find(x=>x.v===v);
       if(inList){S.ads=S.ads.filter(x=>x.v!==v);adn.classList.remove('sel');}
       else{S.ads.push({v,p,qty:1});adn.classList.add('sel');}
       recalcAt();
-      
-      performance.mark("handleInteraction-end");
-      performance.measure("handleInteraction", "handleInteraction-start", "handleInteraction-end");
-      console.timeEnd("handleInteraction");
       return;
     }
-    performance.mark("handleInteraction-end");
-    performance.measure("handleInteraction", "handleInteraction-start", "handleInteraction-end");
-    console.timeEnd("handleInteraction");
   };
 
   document.addEventListener('click', handleInteraction);
