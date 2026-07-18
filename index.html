@@ -1460,6 +1460,11 @@ function nxt(step){
     
     console.log("VALIDATION");
     if(step===1){
+      if(!S.city){
+        showErr(step, "Please select your city ↑");
+        console.timeEnd("nxt");
+        return;
+      }
       if(!S.ps){
         console.log("RETURN", "S.ps missing");
         showErr(step, "Please select a size ↑");
@@ -1829,15 +1834,22 @@ upProg(1);
     var map={'australia/perth':'Perth','australia/melbourne':'Melbourne','australia/brisbane':'Brisbane','australia/sydney':'Sydney'};
     var qs=new URLSearchParams(location.search).get('city');
     var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
-    var city=null;
-    if(qs){qs=qs.toLowerCase();for(var k in map){if(map[k].toLowerCase()===qs){city=map[k];break}}}
-    if(!city)city=map[tz]||null;
-    if(city){
-      var el=document.getElementById('h1city');if(el)el.textContent=' '+city;
-      S.city=city;
-      // Highlight the matching city selector button
+    
+    // Only pre-select form city if it came from the URL (SEO pages)
+    var urlCity = null;
+    if(qs){qs=qs.toLowerCase();for(var k in map){if(map[k].toLowerCase()===qs){urlCity=map[k];break}}}
+    
+    if(urlCity){
+      S.city=urlCity;
+      var el=document.getElementById('h1city');if(el)el.textContent=' '+urlCity;
       var btns=document.querySelectorAll('.city-btn');
-      btns.forEach(function(b){b.classList.toggle('sel',b.dataset.city===city);});
+      btns.forEach(function(b){b.classList.toggle('sel',b.dataset.city===urlCity);});
+    } else {
+      // If no URL city, just update the H1 based on timezone if possible, but DON'T pre-select the form
+      var tzCity = map[tz]||null;
+      if(tzCity){
+        var el=document.getElementById('h1city');if(el)el.textContent=' '+tzCity;
+      }
     }
   }catch(e){}
 
