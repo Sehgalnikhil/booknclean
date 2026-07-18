@@ -254,6 +254,15 @@ void main(){
 
         <!-- STEP 1 -->
         <div class="fs act on" id="fs1">
+          <div class="city-sel-wrap" id="citySelectorWrap">
+            <div class="city-sel-label">📍 Your city</div>
+            <div class="city-sel-group" id="citySelGroup">
+              <button class="city-btn" data-city="Perth">Perth</button>
+              <button class="city-btn" data-city="Melbourne">Melbourne</button>
+              <button class="city-btn" data-city="Brisbane">Brisbane</button>
+              <button class="city-btn" data-city="Sydney">Sydney</button>
+            </div>
+          </div>
           <div class="fq">What size is your property?</div>
           <div class="fqs">Select your bedroom and bathroom combination</div>
           <div class="og oga">
@@ -1563,6 +1572,20 @@ document.addEventListener('DOMContentLoaded', () => {
       else if (btnNav.hasAttribute('data-prv')) prv(parseInt(btnNav.getAttribute('data-prv')));
       return;
     }
+    // Handle City Selector Buttons
+    const cityBtn = e.target.closest('.city-btn');
+    if (cityBtn) {
+      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
+      document.querySelectorAll('.city-btn').forEach(x=>x.classList.remove('sel'));
+      cityBtn.classList.add('sel');
+      S.city = cityBtn.dataset.city;
+      S.sub = cityBtn.dataset.city;
+      document.getElementById('isub').value = cityBtn.dataset.city;
+      var h1city = document.getElementById('h1city');
+      if (h1city) h1city.textContent = ' ' + cityBtn.dataset.city;
+      if(typeof updateStickySummary==='function') updateStickySummary();
+      return;
+    }
     // Handle Property Size / Type Buttons
     const obtn1 = e.target.closest('.obtn[data-s="1"]');
     if (obtn1) {
@@ -1809,7 +1832,13 @@ upProg(1);
     var city=null;
     if(qs){qs=qs.toLowerCase();for(var k in map){if(map[k].toLowerCase()===qs){city=map[k];break}}}
     if(!city)city=map[tz]||null;
-    if(city){var el=document.getElementById('h1city');if(el)el.textContent=' '+city;S.city=city;}
+    if(city){
+      var el=document.getElementById('h1city');if(el)el.textContent=' '+city;
+      S.city=city;
+      // Highlight the matching city selector button
+      var btns=document.querySelectorAll('.city-btn');
+      btns.forEach(function(b){b.classList.toggle('sel',b.dataset.city===city);});
+    }
   }catch(e){}
 
 

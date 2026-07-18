@@ -810,6 +810,57 @@ nav.nav-scrolled {
 .cbtn.sel .cl { color: var(--primary-ctr); }
 .cp2 { font-family: var(--ff-mono); font-size: 11px; font-weight: 700; color: var(--secondary); display: block; margin-top: 3px; }
 
+/* City Selector */
+.city-sel-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  background: rgba(0,102,204,0.04);
+  border: 1px solid rgba(0,102,204,0.12);
+  border-radius: var(--r-md);
+}
+.city-sel-label {
+  font-family: var(--ff-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--on-surface-var);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.city-sel-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.city-btn {
+  padding: 6px 14px;
+  border: 1.5px solid var(--outline-var);
+  border-radius: 20px;
+  background: var(--surface-mid);
+  font-family: var(--ff-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--on-bg);
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  line-height: 1;
+}
+@media (hover: hover) {
+  .city-btn:hover {
+    border-color: rgba(0,102,204,0.4);
+    background: rgba(0,102,204,0.06);
+    transform: translateY(-1px);
+  }
+}
+.city-btn.sel {
+  border-color: var(--primary-ctr);
+  background: rgba(0,102,204,0.1);
+  color: var(--primary-ctr);
+  box-shadow: 0 0 0 1px var(--primary-ctr);
+}
+
 /* Add-ons */
 .ag { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .adn {
