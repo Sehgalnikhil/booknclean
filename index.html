@@ -1535,13 +1535,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let touchStartX = 0;
   let touchStartY = 0;
 
-  document.addEventListener('touchstart', (e) => {
-    if (e.touches && e.touches[0]) {
-      touchStartX = e.touches[0].clientX;
-      touchStartY = e.touches[0].clientY;
-    }
-  }, { passive: true });
-
   const handleInteraction = (e) => {
     const btnNav = e.target.closest("[data-nxt],[data-prv]");
     if (e.type === 'touchend') {
@@ -1630,7 +1623,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   document.addEventListener('click', handleInteraction);
-  document.addEventListener('touchend', handleInteraction, { passive: false });
 });
 
 function dateChg(v){S.dt=v;S.uo=false;}
@@ -2011,14 +2003,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var trigger = document.getElementById('waTrigger');
   if (!bubble || !trigger) return;
 
-  /* Auto-open bubble after 10s if not interacted */
-  var autoTimer = setTimeout(function(){
-    bubble.classList.add('open');
-  }, 10000);
-
   /* Dismiss badge on first click */
   trigger.addEventListener('click', function(){
-    clearTimeout(autoTimer);
     if (badge) badge.style.display = 'none';
   }, { once: true });
 })();

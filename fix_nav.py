@@ -17,7 +17,7 @@ for file in files:
     if match:
         links_inner = match.group(2)
         # add onclick to all links
-        links_inner = re.sub(r'<a href="([^"]+)"( class="active")?>', r'<a href="\1"\2 onclick="document.body.classList.remove(\'nav-open\')">', links_inner)
+        links_inner = re.sub(r'<a href="([^"]+)"( class="active")?>', r'''<a href="\1"\2 onclick="document.body.classList.remove('nav-open')">''', links_inner)
         
         replacement = f'''</a>
     <div class="nav-overlay" onclick="document.body.classList.remove('nav-open')"></div>

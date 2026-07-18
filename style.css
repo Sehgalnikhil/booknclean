@@ -3424,7 +3424,7 @@ html, body {
   .tb-text { max-width: none; }
   
   /* Next/Prev buttons */
-  .fn { flex-direction: column; gap: 12px; }
+  .fn { flex-direction: column; gap: 12px; margin-bottom: 120px; }
   .bn { width: 100%; min-height: 50px; justify-content: center; }
   .nxt { width: 100%; float: none; justify-content: center; margin-top: 24px; }
   
