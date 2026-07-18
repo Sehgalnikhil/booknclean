@@ -266,10 +266,6 @@ void main(){
           <div class="fq">What size is your property?</div>
           <div class="fqs">Select your bedroom and bathroom combination</div>
           <div class="og oga">
-            <button class="obtn" data-s="1" data-v="Studio / Granny Flat">
-              <img src="img-studio.webp" alt="Studio Flat" class="prop-icon">
-              <span class="on2">Studio / Granny Flat</span>
-            </button>
             <button class="obtn" data-s="1" data-v="1 Bedroom, 1 Bathroom">
               <img src="img-1bed.webp" alt="1 Bedroom" class="prop-icon">
               <span class="on2">1 Bed · 1 Bath</span>
@@ -1227,7 +1223,6 @@ function otpCheck(){
 
 const PRICES = {
   'Melbourne': {
-    'Studio / Granny Flat': { without_carpet: 190, with_carpet: 210 },
     '1 Bedroom, 1 Bathroom': { without_carpet: 200, with_carpet: 220 },
     '2 Bedroom, 1 Bathroom': { without_carpet: 250, with_carpet: 280 },
     '2 Bedroom, 2 Bathroom': { without_carpet: 280, with_carpet: 320 },
@@ -1240,7 +1235,6 @@ const PRICES = {
     '5 Bedroom, 3 Bathroom': { without_carpet: 480, with_carpet: 500 }
   },
   'Brisbane': {
-    'Studio / Granny Flat': { without_carpet: 310, with_carpet: 350 },
     '1 Bedroom, 1 Bathroom': { without_carpet: 320, with_carpet: 350 },
     '2 Bedroom, 1 Bathroom': { without_carpet: 400, with_carpet: 450 },
     '2 Bedroom, 2 Bathroom': { without_carpet: 420, with_carpet: 480 },
@@ -1253,7 +1247,6 @@ const PRICES = {
     '5 Bedroom, 3 Bathroom': { without_carpet: 700, with_carpet: 750 }
   },
   'Perth': {
-    'Studio / Granny Flat': { without_carpet: 295, with_carpet: 325 },
     '1 Bedroom, 1 Bathroom': { without_carpet: 304, with_carpet: 332.5 },
     '2 Bedroom, 1 Bathroom': { without_carpet: 380, with_carpet: 427.5 },
     '2 Bedroom, 2 Bathroom': { without_carpet: 399, with_carpet: 456 },
@@ -1270,10 +1263,8 @@ PRICES['Sydney'] = PRICES['Perth'];
 
 const ADDON_PRICES = {
   'Melbourne': {
-    'WIN': { 'Studio / Granny Flat': 40, '1 Bedroom, 1 Bathroom': 40, '2 Bedroom, 1 Bathroom': 70, '2 Bedroom, 2 Bathroom': 70, '3 Bedroom, 1 Bathroom': 90, '3 Bedroom, 2 Bathroom': 90, '3 Bedroom, 3 Bathroom': 90, '4 Bedroom, 2 Bathroom': 90, '4 Bedroom, 3 Bathroom': 90, '5 Bedroom, 2 Bathroom': 120, '5 Bedroom, 3 Bathroom': 120 }
   },
   'Brisbane': {
-    'WIN': { 'Studio / Granny Flat': 50, '1 Bedroom, 1 Bathroom': 50, '2 Bedroom, 1 Bathroom': 80, '2 Bedroom, 2 Bathroom': 80, '3 Bedroom, 1 Bathroom': 110, '3 Bedroom, 2 Bathroom': 110, '3 Bedroom, 3 Bathroom': 110, '4 Bedroom, 2 Bathroom': 120, '4 Bedroom, 3 Bathroom': 120, '5 Bedroom, 2 Bathroom': 140, '5 Bedroom, 3 Bathroom': 140 }
   }
 };
 ADDON_PRICES['Perth'] = ADDON_PRICES['Brisbane'];
