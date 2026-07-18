@@ -2321,13 +2321,6 @@ body {
   font-weight: 400;
 }
 
-@media(max-width: 768px) {
-  .hero-section { padding-top: 100px; }
-  .hero-h1 { font-size: 32px; }
-  .hero-bg-image { width: 100%; opacity: 0.3; }
-  .fc { padding: 24px; border-radius: 16px; }
-  .prog { display: none; } /* Hide stepper on very small mobile if needed, or simplify it */
-}
 
 
 .trust-badges-banner {
@@ -2360,218 +2353,6 @@ body {
   line-height: 1.3;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   MOBILE COMPATIBILITY (Added for full responsiveness)
-════════════════════════════════════════════════════════════ */
-@media (max-width: 900px) {
-  html, body {
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-  /* Navigation */
-  .nav-inner {
-    flex-wrap: wrap;
-    padding: 12px 24px;
-    gap: 16px;
-    max-width: 100vw;
-  }
-  .nav-links {
-    order: 3;
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-bottom: 8px;
-    justify-content: flex-start;
-    -webkit-overflow-scrolling: touch;
-    gap: 24px; /* Slightly tighter gap on mobile */
-  }
-  .nav-links::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for clean look */
-  }
-  .nav-right {
-    margin-left: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Hide top nav links and secondary buttons on mobile, since we have the bottom sticky nav */
-  .nav-right .btn-outline { display: none; }
-  .nav-inner { gap: 8px; padding: 12px 16px; flex-wrap: wrap; }
-
-  /* Hero Section */
-  .hero-section {
-    padding: 100px 20px 40px;
-    min-height: auto;
-    align-items: center;
-    text-align: center;
-  }
-  .hero-content {
-    align-items: center;
-  }
-  .hero-bg-image {
-    display: none; /* Simplify background on mobile */
-  }
-  .hero-h1 {
-    font-size: 36px;
-  }
-  .hero-note {
-    font-size: 16px;
-    padding: 0 12px;
-  }
-  
-  /* Trust Badges Banner */
-  .trust-badges-banner {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 24px;
-    gap: 20px;
-  }
-  .tb-item {
-    width: 100%;
-    justify-content: center;
-  }
-  .tb-text {
-    max-width: none;
-  }
-  
-  /* Avail Strip */
-  .avail-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 12px;
-  }
-
-  /* Form Container */
-  .fc {
-    padding: 24px 16px;
-  }
-  .fqs {
-    font-size: 14px;
-  }
-  .prog {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .st {
-    font-size: 11px;
-  }
-  
-  /* Grids and Cards */
-  .ogc {
-    grid-template-columns: 1fr 1fr;
-  }
-  .oga {
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  /* Comparison Table */
-  .cmp {
-    padding: 16px;
-  }
-  .cmp-h {
-    font-size: 12px;
-    gap: 8px;
-  }
-  .cmp-r {
-    padding: 12px 0;
-    gap: 8px;
-  }
-  .cmp-r .f {
-    font-size: 13px;
-  }
-  .cmp-r .n {
-    font-size: 13px;
-  }
-  
-  /* Services & How It Works layout fixes */
-  .container > .fc > div[style*="display: flex"] {
-    flex-direction: column;
-    align-items: flex-start !important;
-    gap: 12px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Ultra-small phones */
-  .hero-h1 {
-    font-size: 32px;
-  }
-  .nav-inner {
-    padding: 12px 16px;
-  }
-  .nav-links {
-    padding-left: 0;
-  }
-  .btn-call {
-    font-size: 13px;
-    padding: 8px 12px;
-  }
-  .btn-outline {
-    font-size: 13px;
-    padding: 8px 12px;
-  }
-  .fc {
-    border-radius: 12px;
-    padding: 20px 12px;
-  }
-}
-
-
-/* Fix for Add-on Grid 2-column layout on mobile */
-@media(max-width: 640px) {
-  .adn {
-    flex-direction: column !important;
-    text-align: center !important;
-    padding: 16px 8px !important;
-    gap: 8px !important;
-  }
-  .adinf {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  .adn2 {
-    font-size: 13px !important;
-  }
-  .adn-hint {
-    display: none !important; /* Hide long hint text to save space in 2-col mode */
-  }
-  .adck {
-    margin-left: 0 !important;
-    margin-top: 4px !important;
-  }
-  .aqty-wrap {
-    justify-content: center;
-    margin-top: 4px;
-    width: 100%;
-  }
-  .adi {
-    font-size: 24px !important;
-    margin-bottom: 4px;
-  }
-}
-
-
-/* Fix for top right buttons overlapping on small phones */
-@media(max-width: 480px) {
-  .btn-call {
-    font-size: 0 !important; /* Hide text */
-    padding: 0 !important;
-    width: 44px;
-    height: 44px;
-    border-radius: 50% !important;
-    justify-content: center;
-    min-width: 0 !important;
-  }
-  .btn-call svg {
-    width: 20px !important;
-    height: 20px !important;
-    margin: 0 !important;
-  }
-}
 
 /* ═══════════════════════════════════════════════════════════
    SCROLL ANIMATIONS (Reveal on Scroll)
@@ -3470,500 +3251,289 @@ html, body {
 /* Force mobile clicks to register exclusively on the button element */
 /* pointer-events removed to fix iOS click bug */
 
-/* ═══════════════════════════════════════════════════════════
-   PRODUCTION MOBILE CSS — Book & Clean
-   Complete, authoritative mobile overrides.
-   Replaces all scattered patches. Added at end of style.css.
-═══════════════════════════════════════════════════════════ */
-
-/* ── BASE: Prevent horizontal scroll on ALL devices ─────── */
-*, *::before, *::after { box-sizing: border-box; }
-html { overflow-x: hidden; }
-body { overflow-x: hidden; max-width: 100vw; }
-img, video, svg { max-width: 100%; height: auto; }
-
-/* ── CRITICAL: iOS input zoom fix (font-size must be ≥16px) */
-input, select, textarea {
-  font-size: 16px !important;
-  -webkit-text-size-adjust: 100%;
-}
-
-/* ── Tap target minimum size for all clickable elements ──── */
-/* ── Remove hover transforms on touch to prevent stuck states */
-@media (hover: none) {
-  .obtn:active, .cbtn:active, .bn:active, .btn-primary:hover,
-  .btn-call:hover, .btn-outline:hover, .step-card:hover,
-  .review-card:hover, .scope-card:hover, .area-card:hover,
-  .ab-c:hover, .statc:hover {
-    transform: none;
-    box-shadow: none;
-  }
-}
 
 /* ═══════════════════════════════════════════════════════════
-   768px — TABLET & MOBILE NAV
-═══════════════════════════════════════════════════════════ */
+   RESPONSIVE OVERRIDES (Consolidated)
+════════════════════════════════════════════════════════════ */
+
+/* ── 1024px — Tablet Landscape / Small Laptop ───────────── */
+@media (max-width: 1024px) {
+  /* Navigation */
+  .nav-inner { gap: 16px; padding: 12px 24px; }
+  .nav-links { gap: 16px; }
+  .hero-section { padding: 100px 20px 60px; }
+  .hero-h1 { font-size: 48px; }
+  .hero-bg-image { opacity: 0.5; }
+  /* Form Grids */
+  .oga { grid-template-columns: repeat(3, 1fr); }
+  .ogc { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── 768px — Tablet Portrait / Mobile Nav ───────────────── */
 @media (max-width: 768px) {
+  /* Base & Fixes */
+  html, body { overflow-x: hidden; max-width: 100vw; }
+  *, *::before, *::after { box-sizing: border-box; }
+  
+  /* Inputs */
+  input, select, textarea { font-size: 16px !important; -webkit-text-size-adjust: 100%; } /* iOS zoom fix */
 
-  /* ── NAV ────────────────────────────────────────────────── */
-  nav {
-    min-height: 64px;
-    padding: 0;
+  /* Navigation */
+  nav { padding: 0; min-height: 64px; }
+  .nav-inner { padding: 0 16px; min-height: 64px; flex-wrap: nowrap; position: relative; }
+  
+  /* Hamburger and Slide-out */
+  .nav-toggle { display: flex; align-items: center; justify-content: center; background: none; border: none; padding: 10px; margin-left: auto; z-index: 1001; cursor: pointer; min-width: 44px; min-height: 44px; }
+  .nav-toggle svg { fill: #ffffff; width: 28px; height: 28px; }
+
+  .nav-links { 
+    position: fixed; top: 0; left: -100%; width: 280px; height: 100vh; 
+    background: #fff; flex-direction: column; padding: 80px 24px 24px; 
+    gap: 0; box-shadow: 2px 0 12px rgba(0,0,0,0.15); 
+    transition: left 0.3s ease; z-index: 999; 
+    overflow-y: auto; overflow-x: hidden; white-space: normal; overscroll-behavior: contain;
   }
-  .nav-inner {
-    padding: 0 16px;
-    min-height: 64px;
-    flex-wrap: nowrap;
-    position: relative;
-  }
-  .nav-links {
-    position: fixed;
-    top: 0; left: 0;
-    transform: translateX(-100%);
-    width: min(80vw, 300px);
-    height: 100dvh;
-    background: #fff;
-    flex-direction: column;
-    padding: 80px 24px 40px;
-    gap: 4px;
-    box-shadow: 4px 0 24px rgba(0,0,0,0.15);
-    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 999;
-    overflow-y: auto;
-    overflow-x: hidden;
-    white-space: normal;
-    overscroll-behavior: contain;
-  }
-  body.nav-open .nav-links { transform: translateX(0); }
+  body.nav-open .nav-links { left: 0; }
+  body.nav-open { overflow: hidden; }
+  
   .nav-links a {
-    color: var(--primary) !important;
-    font-size: 17px !important;
-    font-weight: 600 !important;
-    padding: 14px 0 !important;
-    display: block;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    text-align: left;
-    min-height: 48px;
-    display: flex;
-    align-items: center;
+    color: var(--primary) !important; font-size: 18px !important; font-weight: 600 !important;
+    padding: 16px 0 !important; display: flex; align-items: center; border-bottom: 1px solid rgba(0,0,0,0.05);
+    width: 100%; min-height: 48px;
   }
   .nav-links a::after { display: none !important; }
-
+  
+  .nav-close {
+    display: flex; position: absolute; top: 20px; right: 20px;
+    background: var(--surface-high); border: none; width: 40px; height: 40px;
+    border-radius: 50%; align-items: center; justify-content: center;
+    font-size: 20px; color: var(--on-surface-var); cursor: pointer;
+  }
+  .nav-close:active { background: var(--surface-highest); }
+  
   .nav-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 998;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 998; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); cursor: pointer;
   }
   body.nav-open .nav-overlay { display: block; }
-  body.nav-open { overflow: hidden; }
 
-  .nav-toggle {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: none;
-    padding: 10px;
-    margin-left: 8px;
-    cursor: pointer;
-    z-index: 1001;
-    min-width: 44px;
-    min-height: 44px;
-  }
-  .nav-toggle svg {
-    fill: #ffffff !important;
-    width: 26px; height: 26px;
-  }
-  .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-left: auto;
-    z-index: 1001;
-  }
+  /* Nav Right */
+  .nav-right { display: flex; align-items: center; gap: 8px; z-index: 1001; }
   .nav-right .btn-outline { display: none; }
-  .btn-call {
-    font-size: 12px;
-    padding: 7px 12px;
-    white-space: nowrap;
-  }
-  .btn-call svg { width: 13px; height: 13px; }
+  .btn-call { font-size: 13px; padding: 8px 12px; white-space: nowrap; }
 
-  /* ── HERO SECTION ───────────────────────────────────────── */
-  .hero-section {
-    padding: 80px 20px 48px;
-    min-height: auto;
-    text-align: center;
-  }
+  /* Hero */
+  .hero-section { padding: 100px 20px 40px; text-align: center; }
   .hero-content { align-items: center; }
+  .hero-h1 { font-size: clamp(32px, 8vw, 42px); }
   .hero-bg-wrapper { display: none; }
-  .hero-kicker { font-size: 11px; margin-bottom: 16px; }
-  .hero-h1 { font-size: clamp(28px, 8vw, 38px); margin-bottom: 8px; }
-  .hero-badge { font-size: clamp(22px, 7vw, 32px); margin-bottom: 16px; }
-  .hero-note { font-size: 15px; padding: 0 4px; margin-bottom: 24px; }
-  .hero-trust-badges {
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-  .htb-item { font-size: 12px; padding: 8px 12px; gap: 8px; }
-  .htb-icon-wrap { width: 30px; height: 30px; }
-  .hero-ctas { flex-direction: column; align-items: stretch; gap: 12px; width: 100%; }
-  .hero-ctas .btn-primary, .hero-ctas .btn-call {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    min-height: 52px;
-    font-size: 16px;
-  }
+  .hero-badge { text-align: center; font-size: clamp(24px, 6vw, 32px); white-space: normal; height: auto; padding: 12px; margin-bottom: 20px; }
+  .hero-note { font-size: 16px; margin-bottom: 24px; padding: 0 10px; }
+  
+  /* Trust Badges */
+  .hero-trust-badges { justify-content: center; gap: 8px; }
+  .htb-item { font-size: 12px; padding: 8px 12px; }
+  .hero-ctas { flex-direction: column; width: 100%; gap: 12px; align-items: stretch; }
+  .hero-ctas .btn-primary, .hero-ctas .btn-call { width: 100%; justify-content: center; min-height: 52px; font-size: 16px; }
 
-  /* ── QUOTE FORM ─────────────────────────────────────────── */
-  .fc {
-    padding: 0;
-    border-radius: 16px;
-    margin: 0 -4px;
-  }
-  .fh { padding: 14px 16px; }
-  .fb { padding: 16px; min-height: auto; }
-  .fq { font-size: 17px !important; }
-  .fqs { font-size: 13px; margin-bottom: 20px; }
-
-  /* Property size grid — 2 columns on mobile */
-  .oga { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
-  .obtn { min-height: 80px; padding: 12px 8px 10px; gap: 4px; }
-  .on2 { font-size: 11px; }
-  .prop-icon { max-width: 100%; }
-
-  /* Property type grid — 2 columns */
-  .og2 { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
-
-  /* Carpet options — 3 columns on mobile */
-  .cg { grid-template-columns: repeat(3, 1fr) !important; gap: 8px; }
-  .cbtn { min-height: 60px; padding: 10px 6px; font-size: 12px; }
-
-  /* Add-ons grid */
-  .ag { grid-template-columns: 1fr !important; gap: 10px; }
-  .adn { padding: 14px; }
-
-  /* Next/Prev buttons */
-  .fn {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 12px;
-    padding-top: 16px;
-  }
-  .bn {
-    flex: 1;
-    justify-content: center;
-    min-height: 50px;
-    font-size: 15px;
-    padding: 12px 16px;
-  }
-
-  /* Form inputs */
-  .fi, .fi2 { padding: 14px; margin-bottom: 12px; }
-  .fi input, .fi2 input, .fi select, .fi2 select {
-    font-size: 16px;
-    min-height: 44px;
-  }
-  .f2 { grid-template-columns: 1fr; gap: 0; }
-
-  /* Progress stepper */
-  .prog {
-    padding: 12px 16px;
-    gap: 4px;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
+  /* Form Container */
+  .quote-section { padding: 0 16px 40px; }
+  .fc { padding: 20px; border-radius: 16px; margin: 0; }
+  .prog { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; padding: 12px 16px; gap: 4px; }
+  .prog::-webkit-scrollbar { display: none; }
+  .pd-wrap { flex-shrink: 0; min-width: 68px; }
   .pd { min-width: 28px; min-height: 28px; font-size: 12px; }
   .st { font-size: 9px; }
-  .pl { min-width: 12px; }
-
-  /* ── TRUST BADGES BANNER ────────────────────────────────── */
-  .trust-badges-banner {
-    padding: 20px 16px;
-    gap: 16px;
-    margin-bottom: 40px;
-  }
-  .tb-item { width: 100%; justify-content: center; }
-  .tb-text { max-width: none; }
-
-  /* ── SECTION PADDING ────────────────────────────────────── */
-  .section { padding: 48px 20px; }
-  .section-alt { padding: 48px 20px; }
-  .section-dark { padding: 48px 20px; }
-
-  /* ── SECTION HEADINGS ───────────────────────────────────── */
-  .sh { font-size: clamp(22px, 6vw, 32px); }
-  .ss { font-size: 14px; }
-
-  /* ── COMPARISON TABLE ───────────────────────────────────── */
-  .cmp { padding: 16px; border-radius: 12px; overflow-x: auto; }
-  .cmp-h { font-size: 11px; gap: 6px; }
+  .pl { min-width: 12px; margin: 0; }
+  .pd-label { white-space: nowrap; font-size: 11px; letter-spacing: -0.2px; }
+  
+  /* Grids */
+  .oga { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+  .og2 { grid-template-columns: repeat(2, 1fr) !important; gap: 12px; }
+  .ogc { grid-template-columns: 1fr; gap: 12px; }
+  .cg { grid-template-columns: repeat(3, 1fr) !important; gap: 8px; }
+  .ag { grid-template-columns: 1fr !important; gap: 12px; }
+  .obtn { padding: 16px 8px; min-height: 80px; }
+  .cbtn { min-height: 60px; padding: 10px 6px; font-size: 12px; }
+  .prop-icon { max-width: 100%; }
+  
+  /* Comparison Table */
+  .cmp { overflow-x: auto; padding: 16px; border-radius: 12px; }
   .cmp-h, .cmp-r { grid-template-columns: 1.6fr 0.7fr 0.7fr; }
-  .cmp-r { padding: 10px 0; gap: 6px; font-size: 12px; }
-
-  /* ── STAT BAR ───────────────────────────────────────────── */
-  .statbar { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .statn { font-size: 28px; }
-
-  /* ── BEFORE/AFTER SLIDER ────────────────────────────────── */
-  .ba-wrap { height: 260px; border-radius: 12px; }
-  .ba-hint { font-size: 12px; }
-
-  /* ── REVIEW CARDS ───────────────────────────────────────── */
+  
+  /* Sections */
+  .section, .section-alt, .section-dark { padding: 48px 20px; }
+  
+  /* Photo Gallery / Review Cards */
+  .pg-grid { grid-template-columns: 1fr; }
   .review-grid { grid-template-columns: 1fr; gap: 12px; }
   .review-card { padding: 20px; }
-
-  /* ── GUARANTEE SECTION ──────────────────────────────────── */
-  .guarantee-grid { grid-template-columns: 1fr; gap: 24px; }
-
-  /* ── AREAS GRID ─────────────────────────────────────────── */
   .areas-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   .area-card { padding: 12px; }
-
-  /* ── FOOTER ─────────────────────────────────────────────── */
+  
+  /* Footer */
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-right { text-align: left; }
-  .footer-links { flex-wrap: wrap; gap: 8px; }
-
-  /* ── STICKY QUOTE SUMMARY ───────────────────────────────── */
-  .sticky-summary { padding: 12px 16px; }
-  .ss-inner { flex-direction: column; gap: 8px; text-align: center; }
-  .ss-price { font-size: 20px; }
-
-  /* ── FLOATING WHATSAPP ──────────────────────────────────── */
-  .wa-widget { bottom: 80px; right: 16px; }
-
-  /* ── PRICING PAGE ───────────────────────────────────────── */
-  .pgrid-new { grid-template-columns: 1fr; gap: 16px; }
-  .pcard { padding: 24px 20px; }
-
-  /* ── HOW IT WORKS ───────────────────────────────────────── */
+  
+  /* Review Dashboard */
+  .review-cta { flex-direction: column; text-align: center; }
+  
+  /* Services Page Fixes (Targeting inline styles) */
+  .fc > div[style*="display: grid"], div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; gap: 16px !important; }
+  
+  /* How It Works */
   .step-card { padding: 20px; }
   .step-icon { width: 48px; height: 48px; font-size: 20px; }
+  
+  /* Avail Strip */
+  .avail-inner { flex-wrap: wrap; gap: 8px; text-align: center; justify-content: center; }
 }
 
-/* ═══════════════════════════════════════════════════════════
-   480px — SMALL PHONES
-═══════════════════════════════════════════════════════════ */
+/* ── 640px — Standard Mobile ────────────────────────────── */
+@media (max-width: 640px) {
+  .hero-h1 { font-size: clamp(28px, 8vw, 36px); }
+  .hero-section { padding-top: max(80px, calc(64px + env(safe-area-inset-top))); }
+  
+  /* Floating elements */
+  .wa-widget { bottom: 80px; right: 16px; z-index: 9997 !important; }
+  #scrollTopBtn { bottom: 80px; right: 14px; width: 44px; height: 44px; }
+  
+  /* Form refinements */
+  .fc { padding: 16px; }
+  .fq { font-size: 20px !important; }
+  .fqs { font-size: 14px; }
+  .obtn { min-height: 72px; padding: 12px 8px; }
+  
+  /* Add-ons grid */
+  .adn { flex-direction: column !important; text-align: center !important; padding: 16px 8px !important; gap: 8px !important; }
+  .adinf { flex-direction: column; align-items: center; width: 100%; }
+  .adn-hint { display: none !important; }
+  .adck { margin-left: 0 !important; margin-top: 4px !important; }
+  .aqty-wrap { justify-content: center; width: 100%; margin-top: 4px; }
+  .adi { font-size: 24px !important; margin-bottom: 4px; }
+  
+  /* Trust Badges Banner */
+  .trust-badges-banner { padding: 16px; gap: 16px; flex-direction: column; }
+  .tb-item { width: 100%; justify-content: center; }
+  .tb-text { max-width: none; }
+  
+  /* Next/Prev buttons */
+  .fn { flex-direction: column; gap: 12px; }
+  .bn { width: 100%; min-height: 50px; justify-content: center; }
+  .nxt { width: 100%; float: none; justify-content: center; margin-top: 24px; }
+  
+  /* Form Inputs */
+  .fi, .fi2 { padding: 14px; margin-bottom: 12px; }
+  .fi input, .fi2 input, .fi select, .fi2 select { min-height: 44px; }
+  .f2 { grid-template-columns: 1fr; gap: 0; }
+  
+  /* OTP */
+  #otpWrap { padding: 16px; }
+  .otp-input-group { gap: 8px; }
+  .otp-input { width: 44px; height: 52px; font-size: 20px; }
+  
+  /* Sticky Summary */
+  .ss-inner { flex-direction: column; gap: 8px; text-align: center; }
+  .ss-price { font-size: 20px; }
+  .sticky-summary { z-index: 10000; }
+  
+  /* Pricing */
+  .pgrid-new { grid-template-columns: 1fr; }
+  .pcard { padding: 24px 16px; }
+  
+  /* Comparison table */
+  .cmp { font-size: 11px; }
+}
+
+/* ── 480px — Small Mobile ───────────────────────────────── */
 @media (max-width: 480px) {
-  .hero-section { padding: 72px 16px 40px; }
   .hero-h1 { font-size: clamp(26px, 8vw, 34px); }
   .hero-badge { font-size: clamp(20px, 6vw, 28px); }
-
-  .fb { padding: 12px; }
-  .oga { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+  .hero-section { padding: 72px 16px 40px; }
+  
+  /* Nav */
+  .btn-call { font-size: 0 !important; padding: 0 !important; width: 44px; height: 44px; border-radius: 50% !important; min-width: 0 !important; justify-content: center; }
+  .btn-call svg { width: 20px !important; height: 20px !important; margin: 0 !important; }
+  
+  /* Grids */
+  .oga { gap: 8px !important; }
+  .cg { grid-template-columns: repeat(3, 1fr) !important; gap: 6px !important; }
   .obtn { padding: 10px 6px 8px; min-height: 72px; }
   .on2 { font-size: 10.5px; }
-
-  .cg { grid-template-columns: repeat(3, 1fr) !important; gap: 6px; }
   .cbtn { min-height: 56px; padding: 8px 4px; font-size: 11px; }
-
-  .statbar { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .areas-grid { grid-template-columns: 1fr; }
-
+  
+  /* Form Padding */
+  .quote-section { padding-left: 12px; padding-right: 12px; }
+  .fc { padding: 12px; border-radius: 12px; margin: 0; }
+  .fb { padding: 12px; }
+  
+  /* Typography */
   .section, .section-alt, .section-dark { padding: 40px 16px; }
-
+  .sh { font-size: 24px; }
+  
+  /* Areas */
+  .areas-grid { grid-template-columns: 1fr; }
+  
+  /* Comparison */
   .cmp-h, .cmp-r { grid-template-columns: 1.5fr 0.75fr 0.75fr; }
   .cmp-h { font-size: 10px; }
   .cmp-r { font-size: 11px; }
-
-  .htb-item { font-size: 11px; padding: 7px 10px; }
-
-  /* quote section stays full-width */
-  .quote-section { padding-left: 12px; padding-right: 12px; }
-  .fc { margin: 0; border-radius: 12px; }
-
-  /* Sticky bottom bar — prevent overlap */
-  body { padding-bottom: 72px; }
 }
 
-/* ═══════════════════════════════════════════════════════════
-   390px — IPHONE SE / SMALL PHONES
-═══════════════════════════════════════════════════════════ */
+/* ── 390px — Extra Small Mobile ─────────────────────────── */
 @media (max-width: 390px) {
   .hero-h1 { font-size: 26px; }
-  .hero-badge { font-size: 20px; }
+  .hero-badge { font-size: 20px; padding: 8px; }
   .oga { gap: 6px !important; }
   .obtn { min-height: 68px; padding: 8px 4px; }
+  .on2 { font-size: 10px; }
   .cg { gap: 5px !important; }
   .prog { padding: 10px 12px; }
   .pd { min-width: 24px; min-height: 24px; font-size: 11px; }
 }
 
-/* ═══════════════════════════════════════════════════════════
-   SAFE AREA — iPhone notch / Dynamic Island / bottom bar
-═══════════════════════════════════════════════════════════ */
+/* ── Safe Area (iPhone Notch / Bottom Bar) ──────────────── */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
-  .sticky-summary {
-    padding-bottom: calc(12px + env(safe-area-inset-bottom));
-  }
-  .wa-widget {
-    bottom: calc(80px + env(safe-area-inset-bottom));
-  }
-  body {
-    padding-bottom: calc(72px + env(safe-area-inset-bottom));
-  }
+  .sticky-summary { padding-bottom: calc(12px + env(safe-area-inset-bottom)); }
+  .wa-widget { bottom: calc(80px + env(safe-area-inset-bottom)); }
+  body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
 }
 
-/* ═══════════════════════════════════════════════════════════
-   POINTER: HOVER DISABLED on touch screens
-═══════════════════════════════════════════════════════════ */
-@media (pointer: coarse) {
-  /* Ensure 44px minimum tap targets everywhere */
-  .obtn { min-height: 72px; }
-  .cbtn { min-height: 56px; }
-  .adn { min-height: 56px; }
-  .bn { min-height: 50px; }
-  .nav-links a { min-height: 48px; }
-  .aqty-btn { min-width: 40px; min-height: 40px; }
-}
-
-
-/* ── Mobile CTA bar: ensure WhatsApp button has correct styles */
-@media (max-width: 640px) {
-  .mc-whatsapp {
-    background: rgba(37, 211, 102, 0.12);
-    border: 1.5px solid rgba(37, 211, 102, 0.4);
-    color: #128C7E;
-  }
-  .mcta a, .mcta button {
-    min-height: 48px;
-  }
-  /* Fix z-index: sticky summary ABOVE mcta */
-  .sticky-summary { z-index: 10000; }
-  
-  /* Fix hero section on iPhone notch */
-  .hero-section {
-    padding-top: max(80px, calc(64px + env(safe-area-inset-top)));
-  }
-  
-  /* Avail strip compact on mobile */
-  .avail-strip { padding: 10px 16px; }
-  .avail-inner { flex-wrap: wrap; gap: 8px; text-align: center; justify-content: center; }
-  .avail-cta { white-space: nowrap; font-size: 13px; }
-  .avail-text { font-size: 13px; }
-  
-  /* Form: hide comparison table on small mobile, keep it accessible via scroll */
-  .cmp { font-size: 11px; }
-  
-  /* OTP section mobile */
-  #otpWrap { padding: 16px; }
-  .otp-input-group { gap: 8px; }
-  .otp-input { width: 44px; height: 52px; font-size: 20px; }
-}
-
-/* ── Floating widget z-index fix */
-.wa-widget {
-  z-index: 9997 !important;
-}
-@media (max-width: 640px) {
-  .wa-widget { bottom: 80px; right: 16px; }
-  .wa-trigger { width: 52px; height: 52px; }
-}
-
-
-/* ── Nav close button inside mobile slide-out panel ──────── */
-.nav-close {
-  display: none;
-}
-@media (max-width: 768px) {
-  .nav-close {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 20px;
-    color: var(--on-surface-var);
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--surface-high);
-  }
-  .nav-close:active { background: var(--surface-highest); }
-  
-  /* Remove old duplicate overlay styles - nav-links already has position:fixed */
-  .nav-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
-    z-index: 998;
-    display: none;
-    cursor: pointer;
-  }
-  body.nav-open .nav-overlay { display: block; }
-}
-
-
-/* ── Mobile Performance Fixes for selection states ── */
-@media (max-width: 768px) {
-  .obtn, .cbtn, .bn, .adn {
-    transition: background-color 0.1s, border-color 0.1s, color 0.1s !important;
-  }
-  .obtn.sel {
-    transform: none !important;
-    box-shadow: 0 0 0 1.5px var(--primary-ctr) !important; /* simple solid outline, no blur */
-  }
-  .cbtn.sel, .adn.sel {
-    transform: none !important;
-    box-shadow: 0 0 0 1.5px var(--primary-ctr) !important;
-  }
-}
-
-/* ── Ultimate iOS Sticky Hover Fix ── */
+/* ── Touch Devices (Hover Fix) ──────────────────────────── */
 @media (hover: none), (pointer: coarse) {
+  /* Prevent sticky hover states on touch */
   .obtn:active, .cbtn:active, .bn:active, .btn-primary:hover,
   .btn-call:hover, .btn-outline:hover, .step-card:hover,
   .review-card:hover, .scope-card:hover, .area-card:hover,
-  .ab-c:hover, .statc:hover, .bb:active, .rst:active, .aqty-btn:active {
+  .ab-c:hover, .statc:hover, .nxt:hover, .bb:active, .rst:active, .aqty-btn:active {
     transform: none !important;
     box-shadow: none !important;
     border-color: inherit;
     background: inherit;
   }
   
-  /* Retain selected states since they are class-based, not hover-based */
-  .obtn.sel {
-    border-color: var(--primary-ctr) !important;
-    background: rgba(232,112,90,0.08) !important;
-  }
-  .cbtn.sel {
-    border-color: var(--primary-ctr) !important;
-    background: rgba(232,112,90,0.08) !important;
-  }
+  /* Retain active styles for selected elements */
+  .obtn.sel { border-color: var(--primary-ctr) !important; background: rgba(232,112,90,0.08) !important; box-shadow: 0 0 0 1.5px var(--primary-ctr) !important; }
+  .cbtn.sel, .adn.sel { border-color: var(--primary-ctr) !important; background: rgba(232,112,90,0.08) !important; box-shadow: 0 0 0 1.5px var(--primary-ctr) !important; }
+  
+  /* Ensure min tap targets */
+  .obtn { min-height: 72px; }
+  .cbtn, .adn { min-height: 56px; }
+  .bn { min-height: 50px; }
+  .nav-links a { min-height: 48px; }
+  .aqty-btn { min-width: 40px; min-height: 40px; }
+  
+  /* Avoid hover transitions on buttons that misbehave */
+  .obtn, .cbtn, .bn, .adn { transition: background-color 0.1s, border-color 0.1s, color 0.1s !important; }
 }
 
-
-/* ── Stepper Mobile Overflow Fix ── */
-@media (max-width: 768px) {
-  .prog { 
-    overflow-x: auto; 
-    flex-wrap: nowrap; 
-    -webkit-overflow-scrolling: touch; 
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
+/* ── Mobile CTA overrides ── */
+@media (max-width: 640px) {
+  .mc-whatsapp {
+    flex: 1; display: flex; align-items: center; justify-content: center; gap: 5px;
+    font-family: var(--ff-mono); font-weight: 700; font-size: 12px; padding: 12px 6px;
+    border-radius: var(--r-md); text-decoration: none;
+    background: rgba(37, 211, 102, 0.12); border: 1.5px solid rgba(37, 211, 102, 0.4);
+    color: #128C7E; cursor: pointer; letter-spacing: 0.02em;
   }
-  .prog::-webkit-scrollbar { 
-    display: none; 
-  }
-  .pd-wrap { 
-    flex-shrink: 0; 
-    min-width: 68px; 
-  }
-  .pd-label { 
-    white-space: nowrap; 
-    font-size: 11px; 
-    letter-spacing: -0.2px; 
-  }
+  .mcta a, .mcta button { min-height: 48px; }
 }
