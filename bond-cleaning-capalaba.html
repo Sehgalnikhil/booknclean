@@ -1226,58 +1226,66 @@ const PRICES = {
     '3 Bedroom, 3 Bathroom': { without_carpet: 390, with_carpet: 410 },
     '4 Bedroom, 2 Bathroom': { without_carpet: 400, with_carpet: 420 },
     '4 Bedroom, 3 Bathroom': { without_carpet: 450, with_carpet: 480 },
-    '5 Bedroom, 2 Bathroom': { without_carpet: 500, with_carpet: 530 },
-    '5 Bedroom, 3 Bathroom': { without_carpet: 550, with_carpet: 590 }
+    '5 Bedroom, 2 Bathroom': { without_carpet: 450, with_carpet: 480 },
+    '5 Bedroom, 3 Bathroom': { without_carpet: 480, with_carpet: 500 }
   },
   'Brisbane': {
-    'Studio / Granny Flat': { without_carpet: 310, with_carpet: 350 },
-    '1 Bedroom, 1 Bathroom': { without_carpet: 330, with_carpet: 370 },
-    '2 Bedroom, 1 Bathroom': { without_carpet: 399, with_carpet: 440 },
-    '2 Bedroom, 2 Bathroom': { without_carpet: 440, with_carpet: 480 },
-    '3 Bedroom, 1 Bathroom': { without_carpet: 489, with_carpet: 530 },
-    '3 Bedroom, 2 Bathroom': { without_carpet: 540, with_carpet: 580 },
-    '3 Bedroom, 3 Bathroom': { without_carpet: 580, with_carpet: 620 },
-    '4 Bedroom, 2 Bathroom': { without_carpet: 600, with_carpet: 680 },
-    '4 Bedroom, 3 Bathroom': { without_carpet: 680, with_carpet: 750 },
-    '5 Bedroom, 2 Bathroom': { without_carpet: 750, with_carpet: 830 },
-    '5 Bedroom, 3 Bathroom': { without_carpet: 820, with_carpet: 900 }
+    'Studio / Granny Flat': { without_carpet: 300, with_carpet: 330 },
+    '1 Bedroom, 1 Bathroom': { without_carpet: 320, with_carpet: 350 },
+    '2 Bedroom, 1 Bathroom': { without_carpet: 400, with_carpet: 450 },
+    '2 Bedroom, 2 Bathroom': { without_carpet: 420, with_carpet: 480 },
+    '3 Bedroom, 1 Bathroom': { without_carpet: 490, with_carpet: 520 },
+    '3 Bedroom, 2 Bathroom': { without_carpet: 520, with_carpet: 580 },
+    '3 Bedroom, 3 Bathroom': { without_carpet: 550, with_carpet: 610 },
+    '4 Bedroom, 2 Bathroom': { without_carpet: 600, with_carpet: 670 },
+    '4 Bedroom, 3 Bathroom': { without_carpet: 630, with_carpet: 700 },
+    '5 Bedroom, 2 Bathroom': { without_carpet: 630, with_carpet: 700 },
+    '5 Bedroom, 3 Bathroom': { without_carpet: 700, with_carpet: 750 }
   },
   'Perth': {
-    'Studio / Granny Flat': { without_carpet: 295, with_carpet: 325 },
-    '1 Bedroom, 1 Bathroom': { without_carpet: 315, with_carpet: 345 },
-    '2 Bedroom, 1 Bathroom': { without_carpet: 379, with_carpet: 419 },
-    '2 Bedroom, 2 Bathroom': { without_carpet: 419, with_carpet: 459 },
-    '3 Bedroom, 1 Bathroom': { without_carpet: 465, with_carpet: 500 },
-    '3 Bedroom, 2 Bathroom': { without_carpet: 515, with_carpet: 555 },
-    '3 Bedroom, 3 Bathroom': { without_carpet: 550, with_carpet: 589 },
-    '4 Bedroom, 2 Bathroom': { without_carpet: 570, with_carpet: 649 },
-    '4 Bedroom, 3 Bathroom': { without_carpet: 649, with_carpet: 719 },
-    '5 Bedroom, 2 Bathroom': { without_carpet: 710, with_carpet: 799 },
-    '5 Bedroom, 3 Bathroom': { without_carpet: 780, with_carpet: 860 }
+    'Studio / Granny Flat': { without_carpet: 285.00, with_carpet: 313.50 },
+    '1 Bedroom, 1 Bathroom': { without_carpet: 304.00, with_carpet: 332.50 },
+    '2 Bedroom, 1 Bathroom': { without_carpet: 380.00, with_carpet: 427.50 },
+    '2 Bedroom, 2 Bathroom': { without_carpet: 399.00, with_carpet: 456.00 },
+    '3 Bedroom, 1 Bathroom': { without_carpet: 465.50, with_carpet: 494.00 },
+    '3 Bedroom, 2 Bathroom': { without_carpet: 494.00, with_carpet: 551.00 },
+    '3 Bedroom, 3 Bathroom': { without_carpet: 522.50, with_carpet: 579.50 },
+    '4 Bedroom, 2 Bathroom': { without_carpet: 570.00, with_carpet: 636.50 },
+    '4 Bedroom, 3 Bathroom': { without_carpet: 598.50, with_carpet: 665.00 },
+    '5 Bedroom, 2 Bathroom': { without_carpet: 598.50, with_carpet: 665.00 },
+    '5 Bedroom, 3 Bathroom': { without_carpet: 665.00, with_carpet: 712.50 }
   }
 };
-
+PRICES['Sydney'] = PRICES['Perth'];
 
 const ADDON_PRICES = {
   'Melbourne': {
-    'WIN': { 'Studio / Granny Flat': 70, '1 Bedroom, 1 Bathroom': 70, '2 Bedroom, 1 Bathroom': 90, '2 Bedroom, 2 Bathroom': 90, '3 Bedroom, 1 Bathroom': 110, '3 Bedroom, 2 Bathroom': 110, '3 Bedroom, 3 Bathroom': 110, '4 Bedroom, 2 Bathroom': 130, '4 Bedroom, 3 Bathroom': 130, '5 Bedroom, 2 Bathroom': 150, '5 Bedroom, 3 Bathroom': 150 }
+    'WIN': { 'Studio / Granny Flat': 40, '1 Bedroom, 1 Bathroom': 40, '2 Bedroom, 1 Bathroom': 70, '2 Bedroom, 2 Bathroom': 70, '3 Bedroom, 1 Bathroom': 90, '3 Bedroom, 2 Bathroom': 90, '3 Bedroom, 3 Bathroom': 90, '4 Bedroom, 2 Bathroom': 90, '4 Bedroom, 3 Bathroom': 90, '5 Bedroom, 2 Bathroom': 120, '5 Bedroom, 3 Bathroom': 120 },
+    'WALL_SPOTS': { 'Studio / Granny Flat': 60, '1 Bedroom, 1 Bathroom': 60, '2 Bedroom, 1 Bathroom': 80, '2 Bedroom, 2 Bathroom': 80, '3 Bedroom, 1 Bathroom': 80, '3 Bedroom, 2 Bathroom': 80, '3 Bedroom, 3 Bathroom': 80, '4 Bedroom, 2 Bathroom': 100, '4 Bedroom, 3 Bathroom': 100, '5 Bedroom, 2 Bathroom': 120, '5 Bedroom, 3 Bathroom': 120 },
+    'PEST': { 'Studio / Granny Flat': 120, '1 Bedroom, 1 Bathroom': 120, '2 Bedroom, 1 Bathroom': 140, '2 Bedroom, 2 Bathroom': 140, '3 Bedroom, 1 Bathroom': 150, '3 Bedroom, 2 Bathroom': 150, '3 Bedroom, 3 Bathroom': 150, '4 Bedroom, 2 Bathroom': 170, '4 Bedroom, 3 Bathroom': 170, '5 Bedroom, 2 Bathroom': 180, '5 Bedroom, 3 Bathroom': 180 }
   },
   'Brisbane': {
-    'WIN': { 'Studio / Granny Flat': 70, '1 Bedroom, 1 Bathroom': 75, '2 Bedroom, 1 Bathroom': 95, '2 Bedroom, 2 Bathroom': 95, '3 Bedroom, 1 Bathroom': 115, '3 Bedroom, 2 Bathroom': 115, '3 Bedroom, 3 Bathroom': 115, '4 Bedroom, 2 Bathroom': 135, '4 Bedroom, 3 Bathroom': 135, '5 Bedroom, 2 Bathroom': 150, '5 Bedroom, 3 Bathroom': 150 }
+    'WIN': { 'Studio / Granny Flat': 50, '1 Bedroom, 1 Bathroom': 50, '2 Bedroom, 1 Bathroom': 80, '2 Bedroom, 2 Bathroom': 80, '3 Bedroom, 1 Bathroom': 110, '3 Bedroom, 2 Bathroom': 110, '3 Bedroom, 3 Bathroom': 110, '4 Bedroom, 2 Bathroom': 120, '4 Bedroom, 3 Bathroom': 120, '5 Bedroom, 2 Bathroom': 140, '5 Bedroom, 3 Bathroom': 140 },
+    'WALL_SPOTS': { 'Studio / Granny Flat': 80, '1 Bedroom, 1 Bathroom': 80, '2 Bedroom, 1 Bathroom': 90, '2 Bedroom, 2 Bathroom': 90, '3 Bedroom, 1 Bathroom': 120, '3 Bedroom, 2 Bathroom': 120, '3 Bedroom, 3 Bathroom': 120, '4 Bedroom, 2 Bathroom': 150, '4 Bedroom, 3 Bathroom': 150, '5 Bedroom, 2 Bathroom': 180, '5 Bedroom, 3 Bathroom': 180 },
+    'PEST': { 'Studio / Granny Flat': 120, '1 Bedroom, 1 Bathroom': 120, '2 Bedroom, 1 Bathroom': 140, '2 Bedroom, 2 Bathroom': 140, '3 Bedroom, 1 Bathroom': 150, '3 Bedroom, 2 Bathroom': 150, '3 Bedroom, 3 Bathroom': 150, '4 Bedroom, 2 Bathroom': 170, '4 Bedroom, 3 Bathroom': 170, '5 Bedroom, 2 Bathroom': 180, '5 Bedroom, 3 Bathroom': 180 }
   }
 };
 ADDON_PRICES['Perth'] = ADDON_PRICES['Brisbane'];
+ADDON_PRICES['Sydney'] = ADDON_PRICES['Perth'];
 
-
-const ADDEF=[
-  {v:'External Window Cleaning',i:'🪟',key:'WIN',hint:'Exterior glass on the ground floor, external sills, and tracks.'},
-  {v:'Stair Carpet Steam Cleaning',i:'🪜',key:'STAIRS',p:40,qty:true,hint:'Professional steam cleaning per staircase.'},
-  {v:'Garage Cleaning',i:'🚗',key:'GARAGE',p:50,qty:true,hint:'Sweeping and removing cobwebs from garage space.'},
-  {v:'Study / Theatre Room',i:'🎬',key:'STUDY',p:25,qty:true,hint:'Cleaning of additional study or theatre rooms.'},
-  {v:'Extra Living Room',i:'🛋️',key:'LIVING',p:30,qty:true,hint:'Cleaning of additional living spaces.'},
-  {v:'Balcony Cleaning',i:'🏙️',key:'BALCONY',p:40,qty:true,hint:'Sweeping and mopping of balcony floors.'},
-  {v:'Full Wall Wash (Per Wall)',i:'🧽',key:'WALL_WASH',p:15,qty:true,hint:'Full wash of individual walls to remove heavy marks.'},
-  {v:'Blind Cleaning (wipe)',i:'🪟',key:'BLIND',p:20,qty:true,hint:'Slat-by-slat wiping of venetian or vertical blinds.'}
+const ADDEF = [
+  { v: 'External Window Cleaning', i: '🪟', key: 'WIN', hint: 'Exterior glass on the ground floor, external sills, and tracks.' },
+  { v: 'Stair Carpet Steam Cleaning', i: '🪜', key: 'STAIRS', p: 40, qty: true, hint: 'Professional steam cleaning per staircase.' },
+  { v: 'Garage Cleaning', i: '🚗', key: 'GARAGE', p: 50, qty: true, hint: 'Sweeping and removing cobwebs from garage space.' },
+  { v: 'Study / Theatre Room', i: '🎬', key: 'STUDY', p: 25, qty: true, hint: 'Cleaning of additional study or theatre rooms.' },
+  { v: 'Extra Living Room', i: '🛋️', key: 'LIVING', p: 30, qty: true, hint: 'Cleaning of additional living spaces.' },
+  { v: 'Balcony Cleaning', i: '🏙️', key: 'BALCONY', p: 40, qty: true, hint: 'Sweeping and mopping of balcony floors.' },
+  { v: 'Full Wall Wash (Per Wall)', i: '🧽', key: 'WALL_WASH', p: 20, qty: true, hint: 'Full wash of individual walls to remove heavy marks.' },
+  { v: 'Blind Cleaning (wipe)', i: '🪟', key: 'BLIND', p: 15, qty: true, hint: 'Slat-by-slat wiping of venetian or vertical blinds.' },
+  { v: 'Shower Grout Mould Removal', i: '🧼', key: 'MOULD', p: 50, qty: true, hint: 'Removal of grout mould per mould spot.' },
+  { v: 'Air Conditioner Filter Cleaning', i: '❄️', key: 'AC_FILTER', p: 20, qty: true, hint: 'Thorough cleaning of individual AC unit filters.' },
+  { v: 'Wall Spots', i: '🧽', key: 'WALL_SPOTS', hint: 'Detail cleaning of wall scuffs and spots.' },
+  { v: 'Pest / Flea Treatment', i: '🐜', key: 'PEST', hint: 'Professional interior pest & flea spray.' }
 ];
 const S={step:1,ps:'',pp:0,pt:'',pm:1,ca:'',cp:0,ads:[],at:0,sub:'Capalaba',subv:false,dt:'',city:'Brisbane',fn:'',ln:'',em:'',ph:'',uo:false,subKnown:false,move:'',street:'',post:''};
 const TITLES={1:'Step 1 of 6 — Property Size',2:'Step 2 of 6 — Property Type',3:'Step 3 of 6 — Carpet Steam Cleaning',4:'Step 4 of 6 — Optional Add-Ons',5:'Step 5 of 6 — Date & Suburb',6:'Step 6 of 6 — Your Details'};
@@ -1291,6 +1299,8 @@ function getAP(a){
 }
 
 function buildAds(){
+  console.time("buildAds");
+  performance.mark("buildAds-start");
   const g=document.getElementById('adgrid');
   g.innerHTML='';
   ADDEF.forEach(a=>{
@@ -1326,6 +1336,9 @@ function buildAds(){
     }
     g.appendChild(d);
   });
+  performance.mark("buildAds-end");
+  performance.measure("buildAds", "buildAds-start", "buildAds-end");
+  console.timeEnd("buildAds");
 }
 
 function adjQty(btn,name,unitP,delta){
@@ -1350,12 +1363,22 @@ function recalcAt(){
 }
 
 function updateStickySummary() {
+  console.time("updateStickySummary");
+  performance.mark("updateStickySummary-start");
   const ss = document.getElementById('stickySummary');
-  if (!ss) return;
+  if (!ss) {
+    performance.mark("updateStickySummary-end");
+    performance.measure("updateStickySummary", "updateStickySummary-start", "updateStickySummary-end");
+    console.timeEnd("updateStickySummary");
+    return;
+  }
   if (S.step > 1 && S.step < 6) {
     ss.classList.add('visible');
   } else {
     ss.classList.remove('visible');
+    performance.mark("updateStickySummary-end");
+    performance.measure("updateStickySummary", "updateStickySummary-start", "updateStickySummary-end");
+    console.timeEnd("updateStickySummary");
     return;
   }
   
@@ -1375,6 +1398,9 @@ function updateStickySummary() {
   if (S.ads.length > 0) items += ' + ' + S.ads.length + ' Add-on' + (S.ads.length > 1 ? 's' : '');
   
   document.getElementById('ssItems').textContent = items;
+  performance.mark("updateStickySummary-end");
+  performance.measure("updateStickySummary", "updateStickySummary-start", "updateStickySummary-end");
+  console.timeEnd("updateStickySummary");
 }
 
 function upProg(s){
@@ -1395,6 +1421,7 @@ function upProg(s){
 }
 
 function switchStep(fromId,toId){
+  console.log("ENTER switchStep");
   const cur=typeof fromId==='number'?document.getElementById('fs'+fromId):document.getElementById(fromId);
   const next=typeof toId==='number'?document.getElementById('fs'+toId):document.getElementById(toId);
   if(!cur||!next)return;
@@ -1423,64 +1450,109 @@ function showErr(step, msg) {
 
 let isNavigating = false;
 
-function nxt(f){ console.log("nxt called");
-  if(f===1){ if(!S.ps){showErr(f, "Please select a size ↑");return} console.log("validation passed"); }
-  if(f===2){ if(!S.pt){showErr(f, "Please select a type ↑");return} console.log("validation passed"); }
-  if(f===3){ if(!S.ca){showErr(f, "Please select an option ↑");return} console.log("validation passed"); }
-  if(f===5){
-    S.dt=document.getElementById('idate').value;
-    S.addr=document.getElementById('iaddr').value.trim();
-    let ok=true;
-    S.sub=document.getElementById('isub').value.trim();
-    if(!S.sub){document.getElementById('esub').classList.add('on');ok=false}
-    else{document.getElementById('esub').classList.remove('on');S.city=S.sub;}
-    if(!S.addr){document.getElementById('eaddr').classList.add('on');ok=false}
-    else{document.getElementById('eaddr').classList.remove('on');}
-    if(!S.dt){document.getElementById('edate').classList.add('on');ok=false}
-    else{document.getElementById('edate').classList.remove('on')}
-    if(!ok)return;
+function nxt(step){
+  try {
+    console.log("ENTER nxt()", step);
+    console.time("nxt");
+    performance.mark("nxt-start");
+    
+    console.log("VALIDATION");
+    if(step===1){
+      if(!S.ps){
+        console.log("RETURN", "S.ps missing");
+        showErr(step, "Please select a size ↑");
+        console.timeEnd("nxt");
+        return;
+      }
+    }
+    console.log("VALIDATION");
+    if(step===2){
+      if(!S.pt){
+        console.log("RETURN", "S.pt missing");
+        showErr(step, "Please select a type ↑");
+        console.timeEnd("nxt");
+        return;
+      }
+    }
+    console.log("VALIDATION");
+    if(step===3){
+      if(!S.ca){
+        console.log("RETURN", "S.ca missing");
+        showErr(step, "Please select an option ↑");
+        console.timeEnd("nxt");
+        return;
+      }
+    }
+    console.log("VALIDATION");
+    if(step===5){
+      S.dt=document.getElementById('idate').value;
+      S.addr=document.getElementById('iaddr').value.trim();
+      let ok=true;
+      S.sub=document.getElementById('isub').value.trim();
+      if(!S.sub){document.getElementById('esub').classList.add('on');ok=false}
+      else{document.getElementById('esub').classList.remove('on');S.city=S.sub;}
+      if(!S.addr){document.getElementById('eaddr').classList.add('on');ok=false}
+      else{document.getElementById('eaddr').classList.remove('on');}
+      if(!S.dt){document.getElementById('edate').classList.add('on');ok=false}
+      else{document.getElementById('edate').classList.remove('on')}
+      if(!ok){
+        console.log("RETURN", "validation ok is false");
+        console.timeEnd("nxt");
+        return;
+      }
+    }
+
+    if(step===3) buildAds();
+    
+    console.log("SWITCH");
+    console.time("switchStep");
+    performance.mark("switchStep-start");
+    switchStep(step,step+1);
+    performance.mark("switchStep-end");
+    performance.measure("switchStep", "switchStep-start", "switchStep-end");
+    console.timeEnd("switchStep");
+
+    S.step=step+1;
+    upProg(step+1);
+    if(typeof updateStickySummary==='function') updateStickySummary();
+    document.getElementById('quote').scrollIntoView({behavior:'auto',block:'start'});
+    
+    console.log("DONE");
+    performance.mark("nxt-end");
+    performance.measure("nxt", "nxt-start", "nxt-end");
+    console.timeEnd("nxt");
+  } catch(err) {
+    console.error(err);
   }
-  if(f===3)buildAds();
-  
-  if (isNavigating) return;
-  isNavigating = true;
-  document.querySelectorAll('.bn, .bb').forEach(b => b.style.pointerEvents = 'none');
-  
-  switchStep(f,f+1);S.step=f+1;upProg(f+1);
-  if(typeof updateStickySummary==='function') updateStickySummary();
-  document.getElementById('quote').scrollIntoView({behavior:'auto',block:'start'});
-  
-  setTimeout(() => {
-    isNavigating = false;
-    document.querySelectorAll('.bn, .bb').forEach(b => b.style.pointerEvents = '');
-  }, 350);
 }
 
 function prv(f){
-  if (isNavigating) return;
-  isNavigating = true;
-  document.querySelectorAll('.bn, .bb').forEach(b => b.style.pointerEvents = 'none');
-  
   switchStep(f,f-1);S.step=f-1;upProg(f-1);
   if(typeof updateStickySummary==='function') updateStickySummary();
   document.getElementById('quote').scrollIntoView({behavior:'auto',block:'start'});
-  
-  setTimeout(() => {
-    isNavigating = false;
-    document.querySelectorAll('.bn, .bb').forEach(b => b.style.pointerEvents = '');
-  }, 350);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const handleInteraction = (e) => {
-    // Handle Navigation Buttons
-    const btnNav = e.target.closest('[data-nxt], [data-prv]');
-    if (btnNav && btnNav.hasAttribute('data-nxt')) {
-      console.log("button tapped", e.type, "target:", e.target.tagName);
+    console.log("CLICK RECEIVED");
+    const btnNav = e.target.closest("[data-nxt],[data-prv]");
+    console.log("BUTTON", btnNav);
+    if(btnNav){
+        console.log("NEXT BUTTON FOUND");
     }
+    console.log("EVENT", e.type);
+    console.time("handleInteraction");
+    performance.mark("handleInteraction-start");
+
+    // Handle Navigation Buttons
     if (btnNav) {
+      console.log("BUTTON FOUND");
       if (btnNav.hasAttribute('data-nxt')) nxt(parseInt(btnNav.getAttribute('data-nxt')));
       else if (btnNav.hasAttribute('data-prv')) prv(parseInt(btnNav.getAttribute('data-prv')));
+      
+      performance.mark("handleInteraction-end");
+      performance.measure("handleInteraction", "handleInteraction-start", "handleInteraction-end");
+      console.timeEnd("handleInteraction");
       return;
     }
     // Handle Property Size / Type Buttons
@@ -1489,6 +1561,10 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.obtn[data-s="1"]').forEach(x=>x.classList.remove('sel'));
       obtn1.classList.add('sel');S.ps=obtn1.dataset.v;S.ads=[];S.at=0;
       if(typeof updateStickySummary==='function') updateStickySummary();
+      
+      performance.mark("handleInteraction-end");
+      performance.measure("handleInteraction", "handleInteraction-start", "handleInteraction-end");
+      console.timeEnd("handleInteraction");
       return;
     }
     const obtn2 = e.target.closest('.obtn[data-s="2"]');
@@ -1496,6 +1572,10 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.obtn[data-s="2"]').forEach(x=>x.classList.remove('sel'));
       obtn2.classList.add('sel');S.pt=obtn2.dataset.v;S.pm=parseFloat(obtn2.dataset.m);
       if(typeof updateStickySummary==='function') updateStickySummary();
+      
+      performance.mark("handleInteraction-end");
+      performance.measure("handleInteraction", "handleInteraction-start", "handleInteraction-end");
+      console.timeEnd("handleInteraction");
       return;
     }
     // Handle Extras / Carpet Buttons
@@ -1504,12 +1584,20 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('sel'));
       cbtn.classList.add('sel');S.ca=cbtn.dataset.v;S.cp=parseFloat(cbtn.dataset.cp);
       if(typeof updateStickySummary==='function') updateStickySummary();
+      
+      performance.mark("handleInteraction-end");
+      performance.measure("handleInteraction", "handleInteraction-start", "handleInteraction-end");
+      console.timeEnd("handleInteraction");
       return;
     }
     // Handle quantity adjusters
     const aqtyBtn = e.target.closest('.aqty-btn');
     if (aqtyBtn) {
       adjQty(aqtyBtn, aqtyBtn.dataset.aqtyV, parseFloat(aqtyBtn.dataset.aqtyP), parseInt(aqtyBtn.dataset.aqtyDir));
+      
+      performance.mark("handleInteraction-end");
+      performance.measure("handleInteraction", "handleInteraction-start", "handleInteraction-end");
+      console.timeEnd("handleInteraction");
       return;
     }
     // Handle standard add-ons
@@ -1521,8 +1609,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if(inList){S.ads=S.ads.filter(x=>x.v!==v);adn.classList.remove('sel');}
       else{S.ads.push({v,p,qty:1});adn.classList.add('sel');}
       recalcAt();
+      
+      performance.mark("handleInteraction-end");
+      performance.measure("handleInteraction", "handleInteraction-start", "handleInteraction-end");
+      console.timeEnd("handleInteraction");
       return;
     }
+    performance.mark("handleInteraction-end");
+    performance.measure("handleInteraction", "handleInteraction-start", "handleInteraction-end");
+    console.timeEnd("handleInteraction");
   };
 
   document.addEventListener('click', handleInteraction);
