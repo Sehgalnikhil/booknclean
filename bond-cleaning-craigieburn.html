@@ -103,7 +103,7 @@
       "name": "Which cities does Book & Clean service for bond cleaning?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Book &amp; Clean provides professional bond cleaning services across Perth, Melbourne, Brisbane, and Sydney metro areas and surrounding suburbs — typically within 30km of each CBD."
+        "text": "Book &amp; Clean provides professional bond cleaning services across Perth, Melbourne, and Brisbane metro areas and surrounding suburbs — typically within 30km of each CBD."
       }
     }
   ]
@@ -116,14 +116,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css?v=5">
-
-  <!-- External Libraries -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY_HERE&libraries=places"></script>
 </head>
 <body>
 
@@ -258,61 +250,55 @@ void main(){
         <span class="fht" id="fht">Step 1 of 6 — Property Size</span>
         <span class="fhs" id="fhs">1 / 6</span>
       </div>
-      <div class="wizard-progress"><div class="wizard-progress-fill" id="wizardProgress"></div></div>
       <div class="fb">
 
         <!-- STEP 1 -->
         <div class="fs act on" id="fs1">
-          <div class="city-sel-wrap" id="citySelectorWrap">
-            <div class="city-sel-label">📍 Your city</div>
-            <div class="city-sel-group" id="citySelGroup">
-              <button class="city-btn" data-city="Perth">Perth</button>
-              <button class="city-btn" data-city="Melbourne">Melbourne</button>
-              <button class="city-btn" data-city="Brisbane">Brisbane</button>
-              <button class="city-btn" data-city="Sydney">Sydney</button>
-            </div>
-          </div>
           <div class="fq">What size is your property?</div>
           <div class="fqs">Select your bedroom and bathroom combination</div>
           <div class="og oga">
+            <button class="obtn" data-s="1" data-v="Studio / Granny Flat">
+              <img src="img-studio.webp" alt="Studio Flat" class="prop-icon" draggable="false">
+              <span class="on2">Studio / Granny Flat</span>
+            </button>
             <button class="obtn" data-s="1" data-v="1 Bedroom, 1 Bathroom">
-              <img src="img-1bed.webp" alt="1 Bedroom" class="prop-icon">
+              <img src="img-1bed.webp" alt="1 Bedroom" class="prop-icon" draggable="false">
               <span class="on2">1 Bed · 1 Bath</span>
             </button>
             <button class="obtn" data-s="1" data-v="2 Bedroom, 1 Bathroom">
-              <img src="img-2bed.webp" alt="2 Bedroom" class="prop-icon">
+              <img src="img-2bed.webp" alt="2 Bedroom" class="prop-icon" draggable="false">
               <span class="on2">2 Bed · 1 Bath</span>
             </button>
             <button class="obtn" data-s="1" data-v="2 Bedroom, 2 Bathroom">
-              <img src="img-2bed-2bath.webp" alt="2 Bed 2 Bath" class="prop-icon">
+              <img src="img-2bed-2bath.webp" alt="2 Bed 2 Bath" class="prop-icon" draggable="false">
               <span class="on2">2 Bed · 2 Bath</span>
             </button>
             <button class="obtn" data-s="1" data-v="3 Bedroom, 1 Bathroom">
-              <img src="img-3bed-1bath.webp" alt="3 Bed 1 Bath" class="prop-icon">
+              <img src="img-3bed-1bath.webp" alt="3 Bed 1 Bath" class="prop-icon" draggable="false">
               <span class="on2">3 Bed · 1 Bath</span>
             </button>
             <button class="obtn" data-s="1" data-v="3 Bedroom, 2 Bathroom">
-              <img src="img-3bed-2bath.webp" alt="3 Bed 2 Bath" class="prop-icon">
+              <img src="img-3bed-2bath.webp" alt="3 Bed 2 Bath" class="prop-icon" draggable="false">
               <span class="on2">3 Bed · 2 Bath</span>
             </button>
             <button class="obtn" data-s="1" data-v="3 Bedroom, 3 Bathroom">
-              <img src="img-3bed-3bath.webp" alt="3 Bed 3 Bath" class="prop-icon">
+              <img src="img-3bed-3bath.webp" alt="3 Bed 3 Bath" class="prop-icon" draggable="false">
               <span class="on2">3 Bed · 3 Bath</span>
             </button>
             <button class="obtn" data-s="1" data-v="4 Bedroom, 2 Bathroom">
-              <img src="img-4bed-2bath.webp" alt="4 Bed 2 Bath" class="prop-icon">
+              <img src="img-4bed-2bath.webp" alt="4 Bed 2 Bath" class="prop-icon" draggable="false">
               <span class="on2">4 Bed · 2 Bath</span>
             </button>
             <button class="obtn" data-s="1" data-v="4 Bedroom, 3 Bathroom">
-              <img src="img-4bed-3bath.webp" alt="4 Bed 3 Bath" class="prop-icon">
+              <img src="img-4bed-3bath.webp" alt="4 Bed 3 Bath" class="prop-icon" draggable="false">
               <span class="on2">4 Bed · 3 Bath</span>
             </button>
             <button class="obtn" data-s="1" data-v="5 Bedroom, 2 Bathroom">
-              <img src="img-5bed-2bath.webp" alt="5 Bed 2 Bath" class="prop-icon">
+              <img src="img-5bed-2bath.webp" alt="5 Bed 2 Bath" class="prop-icon" draggable="false">
               <span class="on2">5 Bed · 2 Bath</span>
             </button>
             <button class="obtn" data-s="1" data-v="5 Bedroom, 3 Bathroom">
-              <img src="img-5bed-3bath.webp" alt="5 Bed 3 Bath" class="prop-icon">
+              <img src="img-5bed-3bath.webp" alt="5 Bed 3 Bath" class="prop-icon" draggable="false">
               <span class="on2">5 Bed · 3 Bath</span>
             </button>
           </div>
@@ -329,7 +315,15 @@ void main(){
             <button class="obtn" data-s="2" data-v="Double Storey House" data-m="1.10"><span class="oi">🏡</span><span class="on2">Double Storey House</span><span class="op">+10%</span></button>
             <button class="obtn" data-s="2" data-v="Townhouse / Multi-level" data-m="1.10"><span class="oi">🏘</span><span class="on2">Townhouse / Multi-level</span><span class="op">+10%</span></button>
           </div>
-          <div class="fn"><button class="bb" data-prv="2">← Back</button><button class="bn" data-nxt="2">Next →</button></div>
+          <div class="fn form-navigation">
+            <button type="button" class="bb back-button" data-prv="2">← Back</button>
+            <button type="button" class="bn next-button" data-nxt="2">Next →</button>
+          </div>
+          <div class="inline-price-summary" id="inlinePriceSummary-2">
+            <span>Current Total:</span>
+            <strong id="ipsTotal-2">—</strong>
+            <small class="additional-price" id="ipsAdditional-2" style="display:none">Additional Price: +$<span id="ipsAdditionalAmt-2">0</span></small>
+          </div>
         </div>
 
         <!-- STEP 3 -->
@@ -340,7 +334,15 @@ void main(){
             <button class="cbtn" data-s="3" data-v="Without Carpet" data-cp="0" style="padding: 24px 16px;"><span class="cl" style="font-size: 16px; font-weight: 800; display: block; margin-bottom: 6px;">Without Carpet</span><span class="cp2">Included as standard</span></button>
             <button class="cbtn" data-s="3" data-v="With Carpet" data-cp="1" style="padding: 24px 16px;"><span class="cl" style="font-size: 16px; font-weight: 800; display: block; margin-bottom: 6px;">With Carpet</span><span class="cp2">Flat-rate package price</span></button>
           </div>
-          <div class="fn"><button class="bb" data-prv="3">← Back</button><button class="bn" data-nxt="3">Next →</button></div>
+          <div class="fn form-navigation">
+            <button type="button" class="bb back-button" data-prv="3">← Back</button>
+            <button type="button" class="bn next-button" data-nxt="3">Next →</button>
+          </div>
+          <div class="inline-price-summary" id="inlinePriceSummary-3">
+            <span>Current Total:</span>
+            <strong id="ipsTotal-3">—</strong>
+            <small class="additional-price" id="ipsAdditional-3" style="display:none">Additional Price: +$<span id="ipsAdditionalAmt-3">0</span></small>
+          </div>
         </div>
 
         <!-- STEP 4 -->
@@ -349,7 +351,15 @@ void main(){
           <div class="fqs">Select any optional additional services below.</div>
           <div class="ag" id="adgrid"></div>
           <p style="font-size:12px;color:var(--on-surface-var);margin-top:10px">No add-ons needed? Just click Next.</p>
-          <div class="fn"><button class="bb" data-prv="4">← Back</button><button class="bn" data-nxt="4">Next →</button></div>
+          <div class="fn form-navigation">
+            <button type="button" class="bb back-button" data-prv="4">← Back</button>
+            <button type="button" class="bn next-button" data-nxt="4">Next →</button>
+          </div>
+          <div class="inline-price-summary" id="inlinePriceSummary-4">
+            <span>Current Total:</span>
+            <strong id="ipsTotal-4">—</strong>
+            <small class="additional-price" id="ipsAdditional-4" style="display:none">Additional Price: +$<span id="ipsAdditionalAmt-4">0</span></small>
+          </div>
         </div>
 
         <!-- STEP 5 -->
@@ -369,9 +379,17 @@ void main(){
           <input type="text" class="fi" id="iaddr" placeholder="Street address (e.g. 123 Main St, Unit 4)" autocomplete="street-address" style="margin-top: 16px;">
           <div class="fe" id="eaddr">Please enter your street address</div>
 
-          <input type="text" placeholder="Select preferred date..." class="fi" id="idate" min=""   onchange="dateChg(this.value)" style="margin-top: 16px;">
+          <input type="text" placeholder="Select preferred date..." class="fi" id="idate" min="" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" onchange="dateChg(this.value)" style="margin-top: 16px;">
           <div class="fe" id="edate">Please select a preferred date</div>
-          <div class="fn"><button class="bb" data-prv="5">← Back</button><button class="bn" data-nxt="5">Next →</button></div>
+          <div class="fn form-navigation">
+            <button type="button" class="bb back-button" data-prv="5">← Back</button>
+            <button type="button" class="bn next-button" data-nxt="5">Next →</button>
+          </div>
+          <div class="inline-price-summary" id="inlinePriceSummary-5">
+            <span>Current Total:</span>
+            <strong id="ipsTotal-5">—</strong>
+            <small class="additional-price" id="ipsAdditional-5" style="display:none">Additional Price: +$<span id="ipsAdditionalAmt-5">0</span></small>
+          </div>
         </div>
 
         <!-- STEP 6 -->
@@ -487,7 +505,7 @@ void main(){
       <div>
         <p style="font-size:16px;line-height:1.8;color:var(--on-bg);margin-bottom:16px">Moving out is stressful enough without losing your bond over something you didn't even know an agent checks. We've seen it happen too many times — tenants who cleaned for days, hired someone off Gumtree, handed back a tidy property, and still got hit with a deduction.</p>
         <p style="font-size:15px;line-height:1.75;color:var(--on-surface-var);margin-bottom:16px">The problem isn't that they didn't clean. It's that their cleaner didn't know what a real estate agent actually looks for. There's a difference between <strong style="color:var(--on-bg)">clean</strong> and <strong style="color:var(--on-bg)">inspection-ready</strong> — and that gap costs tenants real money.</p>
-        <p style="font-size:15px;line-height:1.75;color:var(--on-surface-var)">So we built Book & Clean around one rule: clean to the real estate agent's standard, every single time — or come back and fix it for free. We now serve renters across <strong style="color:var(--on-bg)">Perth, Melbourne, Brisbane, and Sydney</strong>, with more than <strong style="color:var(--on-bg)">3000 bond cleans</strong> behind us. Still family-run, not a franchise.</p>
+        <p style="font-size:15px;line-height:1.75;color:var(--on-surface-var)">So we built Book & Clean around one rule: clean to the real estate agent's standard, every single time — or come back and fix it for free. We now serve renters across <strong style="color:var(--on-bg)">Perth, Melbourne, and Brisbane</strong>, with more than <strong style="color:var(--on-bg)">3000 bond cleans</strong> behind us. Still family-run, not a franchise.</p>
       </div>
       <div>
         <div style="background:rgba(0,102,204,0.06);border:1px solid rgba(0,102,204,0.15);border-radius:14px;padding:22px;margin-bottom:16px">
@@ -510,16 +528,16 @@ void main(){
         <div class="story-stat">
           <div class="story-stat-label">Re-cleans requested out of 3000+ completed jobs</div>
           <div class="story-stat-num">A handful.</div>
-          <div class="story-stat-cities">Perth · Melbourne · Brisbane · Sydney</div>
+          <div class="story-stat-cities">Perth · Melbourne · Brisbane</div>
         </div>
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px">
+    <div class="story-stats-grid">
       <div class="card" style="text-align:center">
         <div style="font-family:var(--ff-mono);font-size:32px;font-weight:800;color:var(--primary-ctr);margin-bottom:4px;text-shadow:0 0 20px rgba(0,102,204,0.3)">3000+</div>
         <div style="font-size:14px;font-weight:600;color:var(--on-bg);margin-bottom:3px">Bond Cleans Done</div>
-        <div style="font-size:12px;color:var(--on-surface-var)">Perth, Melbourne, Brisbane & Sydney</div>
+        <div style="font-size:12px;color:var(--on-surface-var)">Perth, Melbourne &amp; Brisbane</div>
       </div>
       <div class="card" style="text-align:center">
         <div style="font-family:var(--ff-mono);font-size:32px;font-weight:800;color:var(--primary-ctr);margin-bottom:4px;text-shadow:0 0 20px rgba(0,102,204,0.3)">72hr</div>
@@ -609,14 +627,14 @@ void main(){
   <div class="container">
     <span class="eyebrow">Customer Reviews</span>
     <h2 class="section-title">Real tenants. Real bonds returned.</h2>
-    <p class="section-sub">Over 3000 bond cleans completed across Perth, Melbourne, Brisbane, and Sydney — here's what tenants say.</p>
-    <div class="swiper reviews-slider"><div class="swiper-wrapper">
-      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Highly recommend these guys! My PM is notoriously strict. Got our full bond refund with zero issues!"</div><div class="rev-name">Sarah Jenkins</div></div></div>
-      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Great experience. Punctual, professional, very efficient. Easy booking, clear pricing with no hidden costs. The agent even commented on how clean the place was."</div><div class="rev-name">David T.</div></div></div>
-      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Incredible job on my 2 bed apartment. Carpet steam cleaning was top tier — got out stubborn stains I thought were permanent."</div><div class="rev-name">Michelle Nguyen</div></div></div>
-      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Absolute lifesavers. Another company cancelled last minute and these guys squeezed me in the next day. Passed inspection first go!"</div><div class="rev-name">Lachlan Smith</div></div></div>
-      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Best bond cleaners I've used. Professional, turned up when they said they would, and the quality was excellent."</div><div class="rev-name">Marcus Brody — Brisbane</div></div></div>
-      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Amazing attention to detail! They even cleaned the fly screens and tracks which most places miss. Real estate was super happy."</div><div class="rev-name">Jessica M.</div></div>
+    <p class="section-sub">Over 3000 bond cleans completed across Perth, Melbourne, and Brisbane — here's what tenants say.</p>
+    <div class="reviews-grid">
+      <div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Highly recommend these guys! My PM is notoriously strict. Got our full bond refund with zero issues!"</div><div class="rev-name">Sarah Jenkins</div></div>
+      <div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Great experience. Punctual, professional, very efficient. Easy booking, clear pricing with no hidden costs. The agent even commented on how clean the place was."</div><div class="rev-name">David T.</div></div>
+      <div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Incredible job on my 2 bed apartment. Carpet steam cleaning was top tier — got out stubborn stains I thought were permanent."</div><div class="rev-name">Michelle Nguyen</div></div>
+      <div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Absolute lifesavers. Another company cancelled last minute and these guys squeezed me in the next day. Passed inspection first go!"</div><div class="rev-name">Lachlan Smith</div></div>
+      <div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Best bond cleaners I've used. Professional, turned up when they said they would, and the quality was excellent."</div><div class="rev-name">Marcus Brody — Brisbane</div></div>
+      <div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Amazing attention to detail! They even cleaned the fly screens and tracks which most places miss. Real estate was super happy."</div><div class="rev-name">Jessica M.</div></div>
     </div>
   </div>
 </div>
@@ -666,13 +684,12 @@ void main(){
 <div class="section section-alt reveal-on-scroll">
   <div class="container">
     <span class="eyebrow">Where We Clean</span>
-    <h2 class="section-title">Servicing Perth, Melbourne, Brisbane & Sydney</h2>
+    <h2 class="section-title">Servicing Perth, Melbourne & Brisbane</h2>
     <p class="section-sub">We cover most suburbs within 30km of each CBD. Type your suburb into the quote form — if we service it, you'll see your price straight away.</p>
     <div class="areas-grid">
       <div class="area-card"><div class="area-h">Perth & Surrounds</div><div class="area-list">Perth CBD · Subiaco · Victoria Park · Cannington · Morley · Joondalup · Scarborough · Fremantle · Midland · Armadale · Wanneroo · Bayswater · Belmont · Canning Vale · Gosnells · Stirling · Nedlands · Cottesloe · Rockingham · Mandurah</div></div>
       <div class="area-card"><div class="area-h">Melbourne & Surrounds</div><div class="area-list">St Kilda · Richmond · South Yarra · Brunswick · Footscray · Hawthorn · Preston · Glen Waverley · Box Hill · Doncaster · Essendon · Coburg · Brighton · Oakleigh · Frankston · Dandenong · Werribee · Tarneit · Hoppers Crossing · Pakenham</div></div>
       <div class="area-card"><div class="area-h">Brisbane & Surrounds</div><div class="area-list">Brisbane CBD · South Brisbane · Fortitude Valley · New Farm · West End · Toowong · Indooroopilly · Chermside · Carindale · Mount Gravatt · Sunnybank · Holland Park · Coorparoo · Wynnum · Cleveland · Redcliffe · Logan · Springfield · Ipswich · Capalaba</div></div>
-      <div class="area-card"><div class="area-h">Sydney & Surrounds</div><div class="area-list">Sydney CBD · North Sydney · Parramatta · Chatswood · Manly · Bondi · Ryde · Hurstville · Cronulla · Liverpool · Campbelltown · Penrith · Blacktown · Castle Hill · Hornsby · Randwick · Mascot · Strathfield · Burwood · Auburn</div></div>
       </div>
   </div>
 </div>
@@ -724,7 +741,7 @@ void main(){
     <h2 class="section-title">Bond Cleaning in Your Metro Area — How It Works</h2>
     <div style="max-width:760px;margin:20px auto 0;text-align:left">
       <p style="font-size:14.5px;line-height:1.75;color:var(--on-surface-var);margin-bottom:14px">Your final inspection isn't about whether the place "looks clean" — your property manager walks room by room comparing it against the Property Condition Report you signed when you moved in. The items agents flag most often are the oven, shower screens, window tracks, skirting boards and wall marks. Our checklist is built around exactly those items, and every quote comes with the full scope of work in writing.</p>
-      <p style="font-size:14.5px;line-height:1.75;color:var(--on-surface-var);margin-bottom:14px">We cover suburbs across Perth, Melbourne, Brisbane, and Sydney metro areas and surrounds. Same fixed price by property size wherever you are, with morning and afternoon slots most days.</p>
+      <p style="font-size:14.5px;line-height:1.75;color:var(--on-surface-var);margin-bottom:14px">We cover suburbs across Perth, Melbourne, and Brisbane metro areas and surrounds. Same fixed price by property size wherever you are, with morning and afternoon slots most days.</p>
       <p style="font-size:14.5px;line-height:1.75;color:var(--on-surface-var);margin-bottom:20px">Got carpets? Most agencies ask for a professional steam-cleaning receipt at handover — add carpet steam in the quote form and the receipt is included for your agent. And if your property manager flags any cleaning item within 72 hours of your inspection, we come back and re-clean it free, typically within 2–3 business days.</p>
       <div style="text-align:center"><button class="btn-primary" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Get My Bond Clean Quote →</button></div>
     </div>
@@ -1043,7 +1060,7 @@ void main(){
         </button>
         <div class="faq-a" role="region">
           <div class="faq-a-inner">
-            We cover <strong>Perth, Melbourne, Brisbane, and Sydney</strong> metro areas and surrounding suburbs — typically within 30km of each CBD. Enter your suburb in the quote form to confirm availability and see your fixed price instantly.
+            We cover <strong>Perth, Melbourne, and Brisbane</strong> metro areas and surrounding suburbs — typically within 30km of each CBD. Enter your suburb in the quote form to confirm availability and see your fixed price instantly.
           </div>
         </div>
       </div>
@@ -1077,7 +1094,7 @@ void main(){
       <img src="oc-logo.webp" alt="Book & Clean Logo" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 4px 10px rgba(0,0,0,0.05)">
       <div>
         <div class="footer-brand">Book & Clean</div>
-        <div class="footer-caption">Perth · Melbourne · Brisbane · Sydney</div>
+        <div class="footer-caption">Perth · Melbourne · Brisbane</div>
       </div>
     </div>
     <div class="footer-right">
@@ -1116,17 +1133,6 @@ void main(){
   </button>
 </div>
 
-<!-- STICKY QUOTE SUMMARY -->
-<div class="sticky-summary" id="stickySummary">
-  <div class="ss-inner">
-    <div class="ss-details">
-      <div class="ss-title">Your Estimated Quote</div>
-      <div class="ss-items" id="ssItems"></div>
-    </div>
-    <div class="ss-price" id="ssPrice">$0</div>
-  </div>
-</div>
-
 <!-- ═══════════════════════════════════════════════════════════
      STICKY MOBILE CTA
 ════════════════════════════════════════════════════════════ -->
@@ -1147,47 +1153,12 @@ void main(){
 ════════════════════════════════════════════════════════════ -->
 <script src="suburbs.js"></script>
 <script>
-function showToast(msg) {
-  var container = document.getElementById('toastContainer');
-  if(!container) return;
-  var toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.innerHTML = msg;
-  container.appendChild(toast);
-  setTimeout(() => toast.classList.add('show'), 10);
-  setTimeout(() => {
-    toast.classList.remove('show');
-    setTimeout(() => toast.remove(), 400);
-  }, 3500);
-}
-
-function animateValue(id, start, end, duration) {
-  var obj = document.getElementById(id);
-  if (!obj) return;
-  if(obj.timer) clearInterval(obj.timer);
-  if(start === end) { obj.innerHTML = "$" + end; return; }
-  var range = end - start;
-  var current = start;
-  var stepTime = 30; 
-  var steps = Math.floor(duration / stepTime) || 1;
-  var stepCount = 0;
-  obj.timer = setInterval(function() {
-    stepCount++;
-    current = start + Math.round((range / steps) * stepCount);
-    if(stepCount >= steps) {
-      current = end;
-      clearInterval(obj.timer);
-    }
-    obj.innerHTML = "$" + current;
-  }, stepTime);
-}
-
 const WH='https://script.google.com/macros/s/AKfycbw-wXeRMfvg0qmSXTml8zurO7XZmO7h_ZX67wk4gk4z1dyivW6psyDkhVZrSgGgzgJI/exec';
 const OTP_WORKER='https://ordinary-cleaners-otp.ordinarycleaners.workers.dev';
 let OTP_VERIFIED=false;
 
 function normPhone(p){
-  p=(p||'').replace(/[^\d+]/g);
+  p=(p||'').replace(/[^\d+]/g,'');
   if(p.startsWith('+61'))p='0'+p.slice(3);
   else if(p.startsWith('61')&&p.length===11)p='0'+p.slice(2);
   else if(p.startsWith('4')&&p.length===9)p='0'+p;
@@ -1267,6 +1238,7 @@ function otpCheck(){
 
 const PRICES = {
   'Melbourne': {
+    'Studio / Granny Flat': { without_carpet: 190, with_carpet: 210 },
     '1 Bedroom, 1 Bathroom': { without_carpet: 200, with_carpet: 220 },
     '2 Bedroom, 1 Bathroom': { without_carpet: 250, with_carpet: 280 },
     '2 Bedroom, 2 Bathroom': { without_carpet: 280, with_carpet: 320 },
@@ -1279,6 +1251,7 @@ const PRICES = {
     '5 Bedroom, 3 Bathroom': { without_carpet: 480, with_carpet: 500 }
   },
   'Brisbane': {
+    'Studio / Granny Flat': { without_carpet: 310, with_carpet: 350 },
     '1 Bedroom, 1 Bathroom': { without_carpet: 320, with_carpet: 350 },
     '2 Bedroom, 1 Bathroom': { without_carpet: 400, with_carpet: 450 },
     '2 Bedroom, 2 Bathroom': { without_carpet: 420, with_carpet: 480 },
@@ -1291,6 +1264,7 @@ const PRICES = {
     '5 Bedroom, 3 Bathroom': { without_carpet: 700, with_carpet: 750 }
   },
   'Perth': {
+    'Studio / Granny Flat': { without_carpet: 295, with_carpet: 325 },
     '1 Bedroom, 1 Bathroom': { without_carpet: 304, with_carpet: 332.5 },
     '2 Bedroom, 1 Bathroom': { without_carpet: 380, with_carpet: 427.5 },
     '2 Bedroom, 2 Bathroom': { without_carpet: 399, with_carpet: 456 },
@@ -1305,26 +1279,30 @@ const PRICES = {
 };
 PRICES['Sydney'] = PRICES['Perth'];
 
+
 const ADDON_PRICES = {
   'Melbourne': {
+    'WIN': { 'Studio / Granny Flat': 40, '1 Bedroom, 1 Bathroom': 40, '2 Bedroom, 1 Bathroom': 70, '2 Bedroom, 2 Bathroom': 70, '3 Bedroom, 1 Bathroom': 90, '3 Bedroom, 2 Bathroom': 90, '3 Bedroom, 3 Bathroom': 90, '4 Bedroom, 2 Bathroom': 90, '4 Bedroom, 3 Bathroom': 90, '5 Bedroom, 2 Bathroom': 120, '5 Bedroom, 3 Bathroom': 120 }
   },
   'Brisbane': {
+    'WIN': { 'Studio / Granny Flat': 50, '1 Bedroom, 1 Bathroom': 50, '2 Bedroom, 1 Bathroom': 80, '2 Bedroom, 2 Bathroom': 80, '3 Bedroom, 1 Bathroom': 110, '3 Bedroom, 2 Bathroom': 110, '3 Bedroom, 3 Bathroom': 110, '4 Bedroom, 2 Bathroom': 120, '4 Bedroom, 3 Bathroom': 120, '5 Bedroom, 2 Bathroom': 140, '5 Bedroom, 3 Bathroom': 140 }
   }
 };
 ADDON_PRICES['Perth'] = ADDON_PRICES['Brisbane'];
 ADDON_PRICES['Sydney'] = ADDON_PRICES['Perth'];
 
-const ADDEF = [
-  { v: 'External Window Cleaning', i: '🪟', key: 'WIN', hint: 'Exterior glass on the ground floor, external sills, and tracks.' },
-  { v: 'Stair Carpet Steam Cleaning', i: '🪜', key: 'STAIRS', p: 40, qty: true, hint: 'Professional steam cleaning per staircase.' },
-  { v: 'Garage Cleaning', i: '🚗', key: 'GARAGE', p: 50, qty: true, hint: 'Sweeping and removing cobwebs from garage space.' },
-  { v: 'Study / Theatre Room', i: '🎬', key: 'STUDY', p: 25, qty: true, hint: 'Cleaning of additional study or theatre rooms.' },
-  { v: 'Extra Living Room', i: '🛋️', key: 'LIVING', p: 30, qty: true, hint: 'Cleaning of additional living spaces.' },
-  { v: 'Balcony Cleaning', i: '🏙️', key: 'BALCONY', p: 40, qty: true, hint: 'Sweeping and mopping of balcony floors.' },
-  { v: 'Full Wall Wash (Per Wall)', i: '🧽', key: 'WALL_WASH', p: 20, qty: true, hint: 'Full wash of individual walls to remove heavy marks.' },
-  { v: 'Blind Cleaning (wipe)', i: '🪟', key: 'BLIND', p: 15, qty: true, hint: 'Slat-by-slat wiping of venetian or vertical blinds.' }
+
+const ADDEF=[
+  {v:'External Window Cleaning',i:'🪟',key:'WIN',hint:'Exterior glass on the ground floor, external sills, and tracks.'},
+  {v:'Stair Carpet Steam Cleaning',i:'🪜',key:'STAIRS',p:40,qty:true,hint:'Professional steam cleaning per staircase.'},
+  {v:'Garage Cleaning',i:'🚗',key:'GARAGE',p:50,qty:true,hint:'Sweeping and removing cobwebs from garage space.'},
+  {v:'Study / Theatre Room',i:'🎬',key:'STUDY',p:25,qty:true,hint:'Cleaning of additional study or theatre rooms.'},
+  {v:'Extra Living Room',i:'🛋️',key:'LIVING',p:30,qty:true,hint:'Cleaning of additional living spaces.'},
+  {v:'Balcony Cleaning',i:'🏙️',key:'BALCONY',p:40,qty:true,hint:'Sweeping and mopping of balcony floors.'},
+  {v:'Full Wall Wash (Per Wall)',i:'🧽',key:'WALL_WASH',p:20,qty:true,hint:'Full wash of individual walls to remove heavy marks.'},
+  {v:'Blind Cleaning (wipe)',i:'🪟',key:'BLIND',p:15,qty:true,hint:'Slat-by-slat wiping of venetian or vertical blinds.'}
 ];
-const S={step:1,ps:'',pp:0,pt:'',pm:1,ca:'',cp:0,ads:[],at:0,sub:'',subv:false,dt:'',city:'',fn:'',ln:'',em:'',ph:'',uo:false,subKnown:false,move:'',street:'',post:''};
+const S={step:1,ps:'',pp:0,pt:'',pm:1,ca:'',cp:0,ads:[],at:0,sub:'Craigieburn',subv:false,dt:'',city:'Melbourne',fn:'',ln:'',em:'',ph:'',uo:false,subKnown:false,move:'',street:'',post:''};
 const TITLES={1:'Step 1 of 6 — Property Size',2:'Step 2 of 6 — Property Type',3:'Step 3 of 6 — Carpet Steam Cleaning',4:'Step 4 of 6 — Optional Add-Ons',5:'Step 5 of 6 — Date & Suburb',6:'Step 6 of 6 — Your Details'};
 
 function getAP(a){
@@ -1336,8 +1314,6 @@ function getAP(a){
 }
 
 function buildAds(){
-  console.time("buildAds");
-  performance.mark("buildAds-start");
   const g=document.getElementById('adgrid');
   g.innerHTML='';
   ADDEF.forEach(a=>{
@@ -1373,9 +1349,6 @@ function buildAds(){
     }
     g.appendChild(d);
   });
-  performance.mark("buildAds-end");
-  performance.measure("buildAds", "buildAds-start", "buildAds-end");
-  console.timeEnd("buildAds");
 }
 
 function adjQty(btn,name,unitP,delta){
@@ -1400,44 +1373,54 @@ function recalcAt(){
 }
 
 function updateStickySummary() {
-  console.time("updateStickySummary");
-  performance.mark("updateStickySummary-start");
-  const ss = document.getElementById('stickySummary');
-  if (!ss) {
-    performance.mark("updateStickySummary-end");
-    performance.measure("updateStickySummary", "updateStickySummary-start", "updateStickySummary-end");
-    console.timeEnd("updateStickySummary");
-    return;
-  }
-  if (S.step > 1 && S.step < 6) {
-    ss.classList.add('visible');
-  } else {
-    ss.classList.remove('visible');
-    performance.mark("updateStickySummary-end");
-    performance.measure("updateStickySummary", "updateStickySummary-start", "updateStickySummary-end");
-    console.timeEnd("updateStickySummary");
-    return;
-  }
-  
+  // Update ALL inline price panels in every step
+  const allPanels = document.querySelectorAll('[id^="inlinePriceSummary-"]');
+  if (!allPanels.length) return;
+
   const cityKey = S.city || 'Melbourne';
   const cityPrices = PRICES[cityKey] || PRICES['Melbourne'];
-  const sizePrices = cityPrices[S.ps] || cityPrices['1 Bedroom, 1 Bathroom'];
-  const isWithCarpet = (S.ca === 'With Carpet');
-  const basePriceVal = isWithCarpet ? sizePrices.with_carpet : sizePrices.without_carpet;
-  const base = Math.round(basePriceVal * S.pm);
-  const total = base + S.at;
-  
-  document.getElementById('ssPrice').textContent = '$' + total;
-  
-  let items = S.ps;
-  if (S.pm > 1) items += ' (2-Storey)';
-  if (isWithCarpet) items += ' + Carpet';
-  if (S.ads.length > 0) items += ' + ' + S.ads.length + ' Add-on' + (S.ads.length > 1 ? 's' : '');
-  
-  document.getElementById('ssItems').textContent = items;
-  performance.mark("updateStickySummary-end");
-  performance.measure("updateStickySummary", "updateStickySummary-start", "updateStickySummary-end");
-  console.timeEnd("updateStickySummary");
+
+  let base = 0;
+  if (S.ps) {
+    const sizePrices = cityPrices[S.ps] || cityPrices['1 Bedroom, 1 Bathroom'];
+    const isWithCarpet = (S.ca === 'With Carpet');
+    const basePriceVal = isWithCarpet ? sizePrices.with_carpet : sizePrices.without_carpet;
+    base = Math.round(basePriceVal * (S.pm || 1));
+  }
+  const total = base + (S.at || 0);
+  const hasAddons = (S.at || 0) > 0;
+
+  allPanels.forEach(function(panel) {
+    const stepNum = panel.id.replace('inlinePriceSummary-', '');
+    const stepId = 'fs' + stepNum;
+    const stepEl = document.getElementById(stepId);
+    // Show only on steps 2–5 (after size is known), and only on the active step
+    if (!S.ps || !stepEl || !stepEl.classList.contains('act')) {
+      panel.classList.remove('ips-visible');
+      return;
+    }
+    // Step 1 — no price yet, skip
+    if (parseInt(stepNum) < 2) {
+      panel.classList.remove('ips-visible');
+      return;
+    }
+
+    panel.classList.add('ips-visible');
+
+    const totalEl = document.getElementById('ipsTotal-' + stepNum);
+    const addEl   = document.getElementById('ipsAdditional-' + stepNum);
+    const addAmt  = document.getElementById('ipsAdditionalAmt-' + stepNum);
+
+    if (totalEl) totalEl.textContent = base > 0 ? '$' + total + ' AUD' : '—';
+    if (addEl && addAmt) {
+      if (hasAddons) {
+        addAmt.textContent = S.at;
+        addEl.style.display = '';
+      } else {
+        addEl.style.display = 'none';
+      }
+    }
+  });
 }
 
 function upProg(s){
@@ -1458,7 +1441,6 @@ function upProg(s){
 }
 
 function switchStep(fromId,toId){
-  console.log("ENTER switchStep");
   const cur=typeof fromId==='number'?document.getElementById('fs'+fromId):document.getElementById(fromId);
   const next=typeof toId==='number'?document.getElementById('fs'+toId):document.getElementById(toId);
   if(!cur||!next)return;
@@ -1487,142 +1469,69 @@ function showErr(step, msg) {
 
 let isNavigating = false;
 
-function nxt(step){
-  try {
-    console.log("ENTER nxt()", step);
-    console.time("nxt");
-    performance.mark("nxt-start");
-    
-    console.log("VALIDATION");
-    if(step===1){
-      if(!S.city){
-        showErr(step, "Please select your city ↑");
-        console.timeEnd("nxt");
-        return;
-      }
-      if(!S.ps){
-        console.log("RETURN", "S.ps missing");
-        showErr(step, "Please select a size ↑");
-        console.timeEnd("nxt");
-        return;
-      }
-    }
-    console.log("VALIDATION");
-    if(step===2){
-      if(!S.pt){
-        console.log("RETURN", "S.pt missing");
-        showErr(step, "Please select a type ↑");
-        console.timeEnd("nxt");
-        return;
-      }
-    }
-    console.log("VALIDATION");
-    if(step===3){
-      if(!S.ca){
-        console.log("RETURN", "S.ca missing");
-        showErr(step, "Please select an option ↑");
-        console.timeEnd("nxt");
-        return;
-      }
-    }
-    console.log("VALIDATION");
-    if(step===5){
-      S.dt=document.getElementById('idate').value;
-      S.addr=document.getElementById('iaddr').value.trim();
-      let ok=true;
-      S.sub=document.getElementById('isub').value.trim();
-      if(!S.sub){document.getElementById('esub').classList.add('on');ok=false}
-      else{document.getElementById('esub').classList.remove('on');S.city=S.sub;}
-      if(!S.addr){document.getElementById('eaddr').classList.add('on');ok=false}
-      else{document.getElementById('eaddr').classList.remove('on');}
-      if(!S.dt){document.getElementById('edate').classList.add('on');ok=false}
-      else{document.getElementById('edate').classList.remove('on')}
-      if(!ok){
-        console.log("RETURN", "validation ok is false");
-        console.timeEnd("nxt");
-        return;
-      }
-    }
-
-    if(step===3) buildAds();
-    
-    console.log("SWITCH");
-    console.time("switchStep");
-    performance.mark("switchStep-start");
-    switchStep(step,step+1);
-    performance.mark("switchStep-end");
-    performance.measure("switchStep", "switchStep-start", "switchStep-end");
-    console.timeEnd("switchStep");
-
-    S.step=step+1;
-    upProg(step+1);
-    if(typeof updateStickySummary==='function') updateStickySummary();
-    document.getElementById('quote').scrollIntoView({behavior:'auto',block:'start'});
-    
-    console.log("DONE");
-    performance.mark("nxt-end");
-    performance.measure("nxt", "nxt-start", "nxt-end");
-    console.timeEnd("nxt");
-  } catch(err) {
-    console.error(err);
+function nxt(f){ console.log("nxt called");
+  if(f===1){ if(!S.ps){showErr(f, "Please select a size ↑");return} console.log("validation passed"); }
+  if(f===2){ if(!S.pt){showErr(f, "Please select a type ↑");return} console.log("validation passed"); }
+  if(f===3){ if(!S.ca){showErr(f, "Please select an option ↑");return} console.log("validation passed"); }
+  if(f===5){
+    S.dt=document.getElementById('idate').value;
+    S.addr=document.getElementById('iaddr').value.trim();
+    let ok=true;
+    S.sub=document.getElementById('isub').value.trim();
+    if(!S.sub){document.getElementById('esub').classList.add('on');ok=false}
+    else{document.getElementById('esub').classList.remove('on');S.city=S.sub;}
+    if(!S.addr){document.getElementById('eaddr').classList.add('on');ok=false}
+    else{document.getElementById('eaddr').classList.remove('on');}
+    if(!S.dt){document.getElementById('edate').classList.add('on');ok=false}
+    else{document.getElementById('edate').classList.remove('on')}
+    if(!ok)return;
   }
+  if(f===3)buildAds();
+  
+  if (isNavigating) return;
+  isNavigating = true;
+  document.querySelectorAll('.bn, .bb').forEach(b => b.style.pointerEvents = 'none');
+  
+  switchStep(f,f+1);S.step=f+1;upProg(f+1);
+  if(typeof updateStickySummary==='function') updateStickySummary();
+  document.getElementById('quote').scrollIntoView({behavior:'auto',block:'start'});
+  
+  setTimeout(() => {
+    isNavigating = false;
+    document.querySelectorAll('.bn, .bb').forEach(b => b.style.pointerEvents = '');
+  }, 350);
 }
 
 function prv(f){
+  if (isNavigating) return;
+  isNavigating = true;
+  document.querySelectorAll('.bn, .bb').forEach(b => b.style.pointerEvents = 'none');
+  
   switchStep(f,f-1);S.step=f-1;upProg(f-1);
   if(typeof updateStickySummary==='function') updateStickySummary();
   document.getElementById('quote').scrollIntoView({behavior:'auto',block:'start'});
+  
+  setTimeout(() => {
+    isNavigating = false;
+    document.querySelectorAll('.bn, .bb').forEach(b => b.style.pointerEvents = '');
+  }, 350);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  let lastTouchTime = 0;
-  let touchStartX = 0;
-  let touchStartY = 0;
-
   const handleInteraction = (e) => {
-    const btnNav = e.target.closest("[data-nxt],[data-prv]");
-    if (e.type === 'touchend') {
-      if (e.changedTouches && e.changedTouches[0]) {
-        const touchEndX = e.changedTouches[0].clientX;
-        const touchEndY = e.changedTouches[0].clientY;
-        // Navigation buttons are more tolerant to finger movement (30px), option selections are 15px to avoid scroll triggers
-        const maxMove = btnNav ? 30 : 15;
-        if (Math.abs(touchEndX - touchStartX) > maxMove || Math.abs(touchEndY - touchStartY) > maxMove) {
-          return;
-        }
-      }
-      lastTouchTime = Date.now();
-    } else if (e.type === 'click') {
-      if (Date.now() - lastTouchTime < 500) {
-        return; // Prevent duplicate/ghost click
-      }
-    }
-
     // Handle Navigation Buttons
+    const btnNav = e.target.closest('[data-nxt], [data-prv]');
+    if (btnNav && btnNav.hasAttribute('data-nxt')) {
+      console.log("button tapped", e.type, "target:", e.target.tagName);
+    }
     if (btnNav) {
-      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
       if (btnNav.hasAttribute('data-nxt')) nxt(parseInt(btnNav.getAttribute('data-nxt')));
       else if (btnNav.hasAttribute('data-prv')) prv(parseInt(btnNav.getAttribute('data-prv')));
-      return;
-    }
-    // Handle City Selector Buttons
-    const cityBtn = e.target.closest('.city-btn');
-    if (cityBtn) {
-      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
-      document.querySelectorAll('.city-btn').forEach(x=>x.classList.remove('sel'));
-      cityBtn.classList.add('sel');
-      S.city = cityBtn.dataset.city;
-      S.sub = cityBtn.dataset.city;
-      document.getElementById('isub').value = cityBtn.dataset.city;
-      var h1city = document.getElementById('h1city');
-      if (h1city) h1city.textContent = ' ' + cityBtn.dataset.city;
-      if(typeof updateStickySummary==='function') updateStickySummary();
       return;
     }
     // Handle Property Size / Type Buttons
     const obtn1 = e.target.closest('.obtn[data-s="1"]');
     if (obtn1) {
-      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
       document.querySelectorAll('.obtn[data-s="1"]').forEach(x=>x.classList.remove('sel'));
       obtn1.classList.add('sel');S.ps=obtn1.dataset.v;S.ads=[];S.at=0;
       if(typeof updateStickySummary==='function') updateStickySummary();
@@ -1630,7 +1539,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const obtn2 = e.target.closest('.obtn[data-s="2"]');
     if (obtn2) {
-      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
       document.querySelectorAll('.obtn[data-s="2"]').forEach(x=>x.classList.remove('sel'));
       obtn2.classList.add('sel');S.pt=obtn2.dataset.v;S.pm=parseFloat(obtn2.dataset.m);
       if(typeof updateStickySummary==='function') updateStickySummary();
@@ -1639,7 +1547,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle Extras / Carpet Buttons
     const cbtn = e.target.closest('.cbtn');
     if (cbtn) {
-      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
       document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('sel'));
       cbtn.classList.add('sel');S.ca=cbtn.dataset.v;S.cp=parseFloat(cbtn.dataset.cp);
       if(typeof updateStickySummary==='function') updateStickySummary();
@@ -1648,14 +1555,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle quantity adjusters
     const aqtyBtn = e.target.closest('.aqty-btn');
     if (aqtyBtn) {
-      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
       adjQty(aqtyBtn, aqtyBtn.dataset.aqtyV, parseFloat(aqtyBtn.dataset.aqtyP), parseInt(aqtyBtn.dataset.aqtyDir));
       return;
     }
     // Handle standard add-ons
     const adn = e.target.closest('.adn:not(.adn-qty)');
     if (adn) {
-      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
       const v = adn.dataset.adnV;
       const p = parseFloat(adn.dataset.adnP);
       const inList=S.ads.find(x=>x.v===v);
@@ -1666,38 +1571,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  document.addEventListener('click', handleInteraction);
+  // Mobile double-event fix: track last touch so ghost clicks are suppressed.
+  // With touch-action:manipulation in CSS, the 300ms delay is already removed.
+  // This guard prevents the ghost 'click' that fires 300ms after touchend.
+  let _lastTouchEndTime = 0;
 
-  if(typeof flatpickr !== 'undefined') flatpickr("#idate", { minDate: "today", dateFormat: "Y-m-d" });
-  if(typeof Swiper !== 'undefined'){
-    new Swiper('.reviews-slider', {
-      slidesPerView: 1.2, spaceBetween: 20,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      breakpoints: { 640: { slidesPerView: 2.2 }, 900: { slidesPerView: 3 } },
-      autoplay: { delay: 4000, disableOnInteraction: true }
-    });
-  }
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+  document.addEventListener('touchend', function _touchEndTrack(e) {
+    _lastTouchEndTime = Date.now();
+    // Run the handler for touchend on nav/selection buttons immediately
+    // so there is zero latency on mobile taps.
+    const target = e.target;
+    const btnNav = target.closest('[data-nxt], [data-prv]');
+    const obtn1  = target.closest('.obtn[data-s="1"]');
+    const obtn2  = target.closest('.obtn[data-s="2"]');
+    const cbtnEl = target.closest('.cbtn');
+    const adnEl  = target.closest('.adn:not(.adn-qty)');
+    const aqtyEl = target.closest('.aqty-btn');
 
-  if(typeof google !== 'undefined' && google.maps && google.maps.places) {
-    new google.maps.places.Autocomplete(document.getElementById('iaddr'), { componentRestrictions: { country: "au" } });
-  }
+    if (btnNav || obtn1 || obtn2 || cbtnEl || adnEl || aqtyEl) {
+      if (e.cancelable) e.preventDefault(); // blocks the ghost click
+      handleInteraction(e);
+    }
+  }, { passive: false });
 
+  document.addEventListener('click', function _clickGuard(e) {
+    // Suppress ghost click that arrives within 500ms of a touchend
+    if (Date.now() - _lastTouchEndTime < 500) return;
+    handleInteraction(e);
+  });
 });
 
 function dateChg(v){S.dt=v;S.uo=false;}
-
+document.getElementById('idate').min=new Date().toISOString().split('T')[0];
 
 function showQ(){
-  if(!OTP_VERIFIED){showToast('Please verify your mobile number first.');return}
+  if(!OTP_VERIFIED){alert('Please verify your mobile number first.');return}
   S.fn=document.getElementById('ifn').value.trim();
   S.ln=document.getElementById('iln').value.trim();
   S.em=document.getElementById('iem').value.trim();
@@ -1882,19 +1790,13 @@ upProg(1);
 <script>
 (function(){
   try {
-    var map={'australia/perth':'Perth','australia/melbourne':'Melbourne','australia/brisbane':'Brisbane','australia/sydney':'Sydney'};
+    var map={'australia/perth':'Perth','australia/melbourne':'Melbourne','australia/brisbane':'Brisbane'};
     var qs=new URLSearchParams(location.search).get('city');
     var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
     var city=null;
     if(qs){qs=qs.toLowerCase();for(var k in map){if(map[k].toLowerCase()===qs){city=map[k];break}}}
     if(!city)city=map[tz]||null;
-    if(city){
-      var el=document.getElementById('h1city');if(el)el.textContent=' '+city;
-      S.city=city;
-      // Highlight the matching city selector button
-      var btns=document.querySelectorAll('.city-btn');
-      btns.forEach(function(b){b.classList.toggle('sel',b.dataset.city===city);});
-    }
+    if(city){var el=document.getElementById('h1city');if(el)el.textContent=' '+city;S.city=city;}
   }catch(e){}
 
 
@@ -2064,8 +1966,14 @@ document.addEventListener('DOMContentLoaded', function() {
   var trigger = document.getElementById('waTrigger');
   if (!bubble || !trigger) return;
 
+  /* Auto-open bubble after 10s if not interacted */
+  var autoTimer = setTimeout(function(){
+    bubble.classList.add('open');
+  }, 10000);
+
   /* Dismiss badge on first click */
   trigger.addEventListener('click', function(){
+    clearTimeout(autoTimer);
     if (badge) badge.style.display = 'none';
   }, { once: true });
 })();
@@ -2236,8 +2144,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>
 <script src="global-ui.js"></script>
-
-<div id="toastContainer"></div>
-
 </body>
 </html>

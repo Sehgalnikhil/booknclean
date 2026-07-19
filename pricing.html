@@ -23,14 +23,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
-
-  <!-- External Libraries -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY_HERE&libraries=places"></script>
 </head>
 <body>
 
@@ -107,16 +99,15 @@ void main(){
         <div class="nav-tagline">Bond Cleaning Experts</div>
       </div>
     </a>
-    <div class="nav-overlay" onclick="document.body.classList.remove('nav-open')"></div>
-    <div class="nav-links" id="navLinks">
-      <button class="nav-close" onclick="document.body.classList.remove('nav-open')" aria-label="Close menu">✕</button>
-      <a href="index.html" onclick="document.body.classList.remove('nav-open')">Home</a>
-      <a href="services.html" onclick="document.body.classList.remove('nav-open')">Services</a>
-      <a href="how-it-works.html" onclick="document.body.classList.remove('nav-open')">How It Works</a>
-      <a href="pricing.html" class="active" onclick="document.body.classList.remove('nav-open')">Pricing</a>
-      <a href="about.html" onclick="document.body.classList.remove('nav-open')">About Us</a>
-      <a href="contact.html" onclick="document.body.classList.remove('nav-open')">Contact</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="pricing.html" class="active">Pricing</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
     </div>
+    
     <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.body.classList.toggle('nav-open')">
       <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
     </button>
@@ -150,10 +141,10 @@ void main(){
     <p class="fqs">All standard cleans include our full bond-back guarantee, oven deep clean, and all standard room-by-room items.</p>
     
     <div class="og oga" style="margin-bottom: 40px;">
-      <div class="obtn" style="cursor:default;"><span class="on2" style="font-size:20px;color:var(--primary);">Studio / 1 Bed</span><span style="font-size:16px;">From $310</span></div>
-      <div class="obtn" style="cursor:default;"><span class="on2" style="font-size:20px;color:var(--primary);">2 Bedrooms</span><span style="font-size:16px;">From $400</span></div>
-      <div class="obtn" style="cursor:default;"><span class="on2" style="font-size:20px;color:var(--primary);">3 Bedrooms</span><span style="font-size:16px;">From $490</span></div>
-      <div class="obtn" style="cursor:default;"><span class="on2" style="font-size:20px;color:var(--primary);">4+ Bedrooms</span><span style="font-size:16px;">From $600</span></div>
+      <div class="obtn" style="cursor:default;"><span class="on2 pricing-title">Studio / 1 Bed</span><span class="pricing-price">From $310</span></div>
+      <div class="obtn" style="cursor:default;"><span class="on2 pricing-title">2 Bedrooms</span><span class="pricing-price">From $400</span></div>
+      <div class="obtn" style="cursor:default;"><span class="on2 pricing-title">3 Bedrooms</span><span class="pricing-price">From $490</span></div>
+      <div class="obtn" style="cursor:default;"><span class="on2 pricing-title">4+ Bedrooms</span><span class="pricing-price">From $600</span></div>
     </div>
     
     <div class="fh" style="border-bottom: none; margin-bottom: 10px; margin-top: 40px;">
@@ -304,47 +295,12 @@ function updateDiyCalc_pr() {
      JAVASCRIPT — All original functionality preserved
 ════════════════════════════════════════════════════════════ -->
 <script>
-function showToast(msg) {
-  var container = document.getElementById('toastContainer');
-  if(!container) return;
-  var toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.innerHTML = msg;
-  container.appendChild(toast);
-  setTimeout(() => toast.classList.add('show'), 10);
-  setTimeout(() => {
-    toast.classList.remove('show');
-    setTimeout(() => toast.remove(), 400);
-  }, 3500);
-}
-
-function animateValue(id, start, end, duration) {
-  var obj = document.getElementById(id);
-  if (!obj) return;
-  if(obj.timer) clearInterval(obj.timer);
-  if(start === end) { obj.innerHTML = "$" + end; return; }
-  var range = end - start;
-  var current = start;
-  var stepTime = 30; 
-  var steps = Math.floor(duration / stepTime) || 1;
-  var stepCount = 0;
-  obj.timer = setInterval(function() {
-    stepCount++;
-    current = start + Math.round((range / steps) * stepCount);
-    if(stepCount >= steps) {
-      current = end;
-      clearInterval(obj.timer);
-    }
-    obj.innerHTML = "$" + current;
-  }, stepTime);
-}
-
-const WH='https://script.google.com/macros/s/AKfycbw-wXeRMfvg0qmSXTml8zurO7XZmO7h_ZX67wk4gk4z1dyivW6psyDkhVZrSgGgzgJI/exec';
+const WH='https://services.leadconnectorhq.com/hooks/IO7f1jNbW4dgm0VwXpcQ/webhook-trigger/507247e1-d95e-4178-8197-0b95a83d4429';
 const OTP_WORKER='https://ordinary-cleaners-otp.ordinarycleaners.workers.dev';
 let OTP_VERIFIED=false;
 
 function normPhone(p){
-  p=(p||'').replace(/[^\d+]/g);
+  p=(p||'').replace(/[^\d+]/g,'');
   if(p.startsWith('+61'))p='0'+p.slice(3);
   else if(p.startsWith('61')&&p.length===11)p='0'+p.slice(2);
   else if(p.startsWith('4')&&p.length===9)p='0'+p;
@@ -424,6 +380,7 @@ function otpCheck(){
 
 const PRICES = {
   'Melbourne': {
+    'Studio / Granny Flat': { without_carpet: 190, with_carpet: 210 },
     '1 Bedroom, 1 Bathroom': { without_carpet: 200, with_carpet: 220 },
     '2 Bedroom, 1 Bathroom': { without_carpet: 250, with_carpet: 280 },
     '2 Bedroom, 2 Bathroom': { without_carpet: 280, with_carpet: 320 },
@@ -436,6 +393,7 @@ const PRICES = {
     '5 Bedroom, 3 Bathroom': { without_carpet: 480, with_carpet: 500 }
   },
   'Brisbane': {
+    'Studio / Granny Flat': { without_carpet: 310, with_carpet: 350 },
     '1 Bedroom, 1 Bathroom': { without_carpet: 320, with_carpet: 350 },
     '2 Bedroom, 1 Bathroom': { without_carpet: 400, with_carpet: 450 },
     '2 Bedroom, 2 Bathroom': { without_carpet: 420, with_carpet: 480 },
@@ -448,6 +406,7 @@ const PRICES = {
     '5 Bedroom, 3 Bathroom': { without_carpet: 700, with_carpet: 750 }
   },
   'Perth': {
+    'Studio / Granny Flat': { without_carpet: 295, with_carpet: 325 },
     '1 Bedroom, 1 Bathroom': { without_carpet: 304, with_carpet: 332.5 },
     '2 Bedroom, 1 Bathroom': { without_carpet: 380, with_carpet: 427.5 },
     '2 Bedroom, 2 Bathroom': { without_carpet: 399, with_carpet: 456 },
@@ -462,24 +421,28 @@ const PRICES = {
 };
 PRICES['Sydney'] = PRICES['Perth'];
 
+
 const ADDON_PRICES = {
   'Melbourne': {
+    'WIN': { 'Studio / Granny Flat': 40, '1 Bedroom, 1 Bathroom': 40, '2 Bedroom, 1 Bathroom': 70, '2 Bedroom, 2 Bathroom': 70, '3 Bedroom, 1 Bathroom': 90, '3 Bedroom, 2 Bathroom': 90, '3 Bedroom, 3 Bathroom': 90, '4 Bedroom, 2 Bathroom': 90, '4 Bedroom, 3 Bathroom': 90, '5 Bedroom, 2 Bathroom': 120, '5 Bedroom, 3 Bathroom': 120 }
   },
   'Brisbane': {
+    'WIN': { 'Studio / Granny Flat': 50, '1 Bedroom, 1 Bathroom': 50, '2 Bedroom, 1 Bathroom': 80, '2 Bedroom, 2 Bathroom': 80, '3 Bedroom, 1 Bathroom': 110, '3 Bedroom, 2 Bathroom': 110, '3 Bedroom, 3 Bathroom': 110, '4 Bedroom, 2 Bathroom': 120, '4 Bedroom, 3 Bathroom': 120, '5 Bedroom, 2 Bathroom': 140, '5 Bedroom, 3 Bathroom': 140 }
   }
 };
 ADDON_PRICES['Perth'] = ADDON_PRICES['Brisbane'];
 ADDON_PRICES['Sydney'] = ADDON_PRICES['Perth'];
 
-const ADDEF = [
-  { v: 'External Window Cleaning', i: '🪟', key: 'WIN', hint: 'Exterior glass on the ground floor, external sills, and tracks.' },
-  { v: 'Stair Carpet Steam Cleaning', i: '🪜', key: 'STAIRS', p: 40, qty: true, hint: 'Professional steam cleaning per staircase.' },
-  { v: 'Garage Cleaning', i: '🚗', key: 'GARAGE', p: 50, qty: true, hint: 'Sweeping and removing cobwebs from garage space.' },
-  { v: 'Study / Theatre Room', i: '🎬', key: 'STUDY', p: 25, qty: true, hint: 'Cleaning of additional study or theatre rooms.' },
-  { v: 'Extra Living Room', i: '🛋️', key: 'LIVING', p: 30, qty: true, hint: 'Cleaning of additional living spaces.' },
-  { v: 'Balcony Cleaning', i: '🏙️', key: 'BALCONY', p: 40, qty: true, hint: 'Sweeping and mopping of balcony floors.' },
-  { v: 'Full Wall Wash (Per Wall)', i: '🧽', key: 'WALL_WASH', p: 20, qty: true, hint: 'Full wash of individual walls to remove heavy marks.' },
-  { v: 'Blind Cleaning (wipe)', i: '🪟', key: 'BLIND', p: 15, qty: true, hint: 'Slat-by-slat wiping of venetian or vertical blinds.' }
+
+const ADDEF=[
+  {v:'External Window Cleaning',i:'🪟',key:'WIN',hint:'Exterior glass on the ground floor, external sills, and tracks.'},
+  {v:'Stair Carpet Steam Cleaning',i:'🪜',key:'STAIRS',p:40,qty:true,hint:'Professional steam cleaning per staircase.'},
+  {v:'Garage Cleaning',i:'🚗',key:'GARAGE',p:50,qty:true,hint:'Sweeping and removing cobwebs from garage space.'},
+  {v:'Study / Theatre Room',i:'🎬',key:'STUDY',p:25,qty:true,hint:'Cleaning of additional study or theatre rooms.'},
+  {v:'Extra Living Room',i:'🛋️',key:'LIVING',p:30,qty:true,hint:'Cleaning of additional living spaces.'},
+  {v:'Balcony Cleaning',i:'🏙️',key:'BALCONY',p:40,qty:true,hint:'Sweeping and mopping of balcony floors.'},
+  {v:'Full Wall Wash (Per Wall)',i:'🧽',key:'WALL_WASH',p:20,qty:true,hint:'Full wash of individual walls to remove heavy marks.'},
+  {v:'Blind Cleaning (wipe)',i:'🪟',key:'BLIND',p:15,qty:true,hint:'Slat-by-slat wiping of venetian or vertical blinds.'}
 ];
 const S={step:1,ps:'',pp:0,pt:'',pm:1,ca:'',cp:0,ads:[],at:0,sub:'',subv:false,dt:'',city:'',fn:'',ln:'',em:'',ph:'',uo:false,subKnown:false,move:'',street:'',post:''};
 const TITLES={1:'Step 1 of 6 — Property Size',2:'Step 2 of 6 — Property Type',3:'Step 3 of 6 — Carpet Steam Cleaning',4:'Step 4 of 6 — Optional Add-Ons',5:'Step 5 of 6 — Date & Suburb',6:'Step 6 of 6 — Your Details'};
@@ -493,8 +456,6 @@ function getAP(a){
 }
 
 function buildAds(){
-  console.time("buildAds");
-  performance.mark("buildAds-start");
   const g=document.getElementById('adgrid');
   g.innerHTML='';
   ADDEF.forEach(a=>{
@@ -511,14 +472,12 @@ function buildAds(){
           '<span class="adp">+$'+p+' each</span>'+
         '</span>'+
         '<span class="aqty-wrap">'+
-          `<button class="aqty-btn aqty-minus" data-aqty-v="${a.v}" data-aqty-p="${p}" data-aqty-dir="-1" `+(curQty===0?'disabled':'')+'>−</button>'+
+          '<button class="aqty-btn aqty-minus" onclick="adjQty(this,\''+a.v+'\','+p+',-1)" '+(curQty===0?'disabled':'')+'>−</button>'+
           '<span class="aqty-num">'+(curQty||0)+'</span>'+
-          `<button class="aqty-btn aqty-plus" data-aqty-v="${a.v}" data-aqty-p="${p}" data-aqty-dir="1">+</button>`+
+          '<button class="aqty-btn aqty-plus" onclick="adjQty(this,\''+a.v+'\','+p+',1)">+</button>'+
         '</span>';
     }else{
       d.className='adn'+(curQty>0?' sel':'');
-      d.dataset.adnV = a.v;
-      d.dataset.adnP = p;
       d.innerHTML=
         '<span class="adi">'+a.i+'</span>'+
         '<span class="adinf">'+
@@ -526,13 +485,17 @@ function buildAds(){
           (a.hint?'<span class="adn-hint">'+a.hint+'</span>':'')+
           '<span class="adp">+$'+p+'</span>'+
         '</span>'+
-        '<span class="adck">✓</span>';
+        '<span class="adck">'+(curQty>0?'✓':'')+'</span>';
+      d.addEventListener('click',()=>{
+        const inList=S.ads.find(x=>x.v===a.v);
+        const ck=d.querySelector('.adck');
+        if(inList){S.ads=S.ads.filter(x=>x.v!==a.v);d.classList.remove('sel');ck.textContent=''}
+        else{S.ads.push({v:a.v,p,qty:1});d.classList.add('sel');ck.textContent='✓'}
+        recalcAt();
+      });
     }
     g.appendChild(d);
   });
-  performance.mark("buildAds-end");
-  performance.measure("buildAds", "buildAds-start", "buildAds-end");
-  console.timeEnd("buildAds");
 }
 
 function adjQty(btn,name,unitP,delta){
@@ -551,310 +514,81 @@ function adjQty(btn,name,unitP,delta){
   recalcAt();
 }
 
-function recalcAt(){
-  S.at=S.ads.reduce((t,x)=>t+(x.p*(x.qty||1)),0);
-  if(typeof updateStickySummary==='function') updateStickySummary();
-}
-
-function updateStickySummary() {
-  console.time("updateStickySummary");
-  performance.mark("updateStickySummary-start");
-  const ss = document.getElementById('stickySummary');
-  if (!ss) {
-    performance.mark("updateStickySummary-end");
-    performance.measure("updateStickySummary", "updateStickySummary-start", "updateStickySummary-end");
-    console.timeEnd("updateStickySummary");
-    return;
-  }
-  if (S.step > 1 && S.step < 6) {
-    ss.classList.add('visible');
-  } else {
-    ss.classList.remove('visible');
-    performance.mark("updateStickySummary-end");
-    performance.measure("updateStickySummary", "updateStickySummary-start", "updateStickySummary-end");
-    console.timeEnd("updateStickySummary");
-    return;
-  }
-  
-  const cityKey = S.city || 'Melbourne';
-  const cityPrices = PRICES[cityKey] || PRICES['Melbourne'];
-  const sizePrices = cityPrices[S.ps] || cityPrices['1 Bedroom, 1 Bathroom'];
-  const isWithCarpet = (S.ca === 'With Carpet');
-  const basePriceVal = isWithCarpet ? sizePrices.with_carpet : sizePrices.without_carpet;
-  const base = Math.round(basePriceVal * S.pm);
-  const total = base + S.at;
-  
-  document.getElementById('ssPrice').textContent = '$' + total;
-  
-  let items = S.ps;
-  if (S.pm > 1) items += ' (2-Storey)';
-  if (isWithCarpet) items += ' + Carpet';
-  if (S.ads.length > 0) items += ' + ' + S.ads.length + ' Add-on' + (S.ads.length > 1 ? 's' : '');
-  
-  document.getElementById('ssItems').textContent = items;
-  performance.mark("updateStickySummary-end");
-  performance.measure("updateStickySummary", "updateStickySummary-start", "updateStickySummary-end");
-  console.timeEnd("updateStickySummary");
-}
+function recalcAt(){S.at=S.ads.reduce((t,x)=>t+(x.p*(x.qty||1)),0);}
 
 function upProg(s){
   for(let i=1;i<=6;i++){
     const d=document.getElementById('pd'+i);
-    if (d) {
-      if(i<s){d.className='pd dn';d.textContent='✓'}
-      else if(i===s){d.className='pd act';d.textContent=i}
-      else{d.className='pd';d.textContent=i}
-    }
-    const pl=document.getElementById('pl'+i);
-    if(i<6 && pl) pl.className=i<s?'pl dn':'pl';
+    if(i<s){d.className='pd dn';d.textContent='✓'}
+    else if(i===s){d.className='pd act';d.textContent=i}
+    else{d.className='pd';d.textContent=i}
+    if(i<6)document.getElementById('pl'+i).className=i<s?'pl dn':'pl';
   }
-  const fht = document.getElementById('fht');
-  const fhs = document.getElementById('fhs');
-  if (fht) fht.textContent=TITLES[s]||'';
-  if (fhs) fhs.textContent=s+' / 6';
+  document.getElementById('fht').textContent=TITLES[s]||'';
+  document.getElementById('fhs').textContent=s+' / 6';
 }
 
 function switchStep(fromId,toId){
-  console.log("ENTER switchStep");
   const cur=typeof fromId==='number'?document.getElementById('fs'+fromId):document.getElementById(fromId);
   const next=typeof toId==='number'?document.getElementById('fs'+toId):document.getElementById(toId);
   if(!cur||!next)return;
-  cur.style.display = '';
-  next.style.display = '';
-  cur.classList.remove('act','on');
-  next.classList.add('act');
-  // Small delay to allow act to apply before on for transition
-  setTimeout(() => next.classList.add('on'), 10);
+  cur.style.opacity='0';cur.style.transform='translateY(-12px)';
+  setTimeout(()=>{
+    cur.classList.remove('act','on');cur.style.display='none';
+    next.style.display='block';next.style.opacity='0';next.style.transform='translateY(12px)';
+    next.offsetHeight;
+    next.classList.add('act','on');next.style.opacity='1';next.style.transform='translateY(0)';
+  },250);
 }
 
+document.querySelectorAll('.obtn[data-s="1"]').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.obtn[data-s="1"]').forEach(x=>x.classList.remove('sel'));
+    b.classList.add('sel');S.ps=b.dataset.v;S.ads=[];S.at=0;
+  });
+});
+document.querySelectorAll('.obtn[data-s="2"]').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.obtn[data-s="2"]').forEach(x=>x.classList.remove('sel'));
+    b.classList.add('sel');S.pt=b.dataset.v;S.pm=parseFloat(b.dataset.m);
+  });
+});
+document.querySelectorAll('.cbtn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('sel'));
+    b.classList.add('sel');S.ca=b.dataset.v;S.cp=parseFloat(b.dataset.cp);
+  });
+});
 
-
-function showErr(step, msg) {
-  const btn = document.querySelector('#fs' + step + ' .bn');
-  if(!btn) return;
-  if (!btn.hasAttribute('data-orig')) btn.setAttribute('data-orig', btn.innerText);
-  btn.innerText = msg;
-  btn.style.background = '#d9381e'; // red
-  btn.style.transform = 'translateY(0)';
-  setTimeout(() => {
-    btn.innerText = btn.getAttribute('data-orig');
-    btn.style.background = '';
-  }, 2000);
-}
-
-let isNavigating = false;
-
-function nxt(step){
-  try {
-    console.log("ENTER nxt()", step);
-    console.time("nxt");
-    performance.mark("nxt-start");
-    
-    console.log("VALIDATION");
-    if(step===1){
-      if(!S.city){
-        showErr(step, "Please select your city ↑");
-        console.timeEnd("nxt");
-        return;
-      }
-      if(!S.ps){
-        console.log("RETURN", "S.ps missing");
-        showErr(step, "Please select a size ↑");
-        console.timeEnd("nxt");
-        return;
-      }
-    }
-    console.log("VALIDATION");
-    if(step===2){
-      if(!S.pt){
-        console.log("RETURN", "S.pt missing");
-        showErr(step, "Please select a type ↑");
-        console.timeEnd("nxt");
-        return;
-      }
-    }
-    console.log("VALIDATION");
-    if(step===3){
-      if(!S.ca){
-        console.log("RETURN", "S.ca missing");
-        showErr(step, "Please select an option ↑");
-        console.timeEnd("nxt");
-        return;
-      }
-    }
-    console.log("VALIDATION");
-    if(step===5){
-      S.dt=document.getElementById('idate').value;
-      S.addr=document.getElementById('iaddr').value.trim();
-      let ok=true;
-      S.sub=document.getElementById('isub').value.trim();
-      if(!S.sub){document.getElementById('esub').classList.add('on');ok=false}
-      else{document.getElementById('esub').classList.remove('on');S.city=S.sub;}
-      if(!S.addr){document.getElementById('eaddr').classList.add('on');ok=false}
-      else{document.getElementById('eaddr').classList.remove('on');}
-      if(!S.dt){document.getElementById('edate').classList.add('on');ok=false}
-      else{document.getElementById('edate').classList.remove('on')}
-      if(!ok){
-        console.log("RETURN", "validation ok is false");
-        console.timeEnd("nxt");
-        return;
-      }
-    }
-
-    if(step===3) buildAds();
-    
-    console.log("SWITCH");
-    console.time("switchStep");
-    performance.mark("switchStep-start");
-    switchStep(step,step+1);
-    performance.mark("switchStep-end");
-    performance.measure("switchStep", "switchStep-start", "switchStep-end");
-    console.timeEnd("switchStep");
-
-    S.step=step+1;
-    upProg(step+1);
-    if(typeof updateStickySummary==='function') updateStickySummary();
-    document.getElementById('quote').scrollIntoView({behavior:'auto',block:'start'});
-    
-    console.log("DONE");
-    performance.mark("nxt-end");
-    performance.measure("nxt", "nxt-start", "nxt-end");
-    console.timeEnd("nxt");
-  } catch(err) {
-    console.error(err);
+function nxt(f){
+  if(f===1&&!S.ps){alert('Please select a property size.');return}
+  if(f===2&&!S.pt){alert('Please select a property type.');return}
+  if(f===3&&!S.ca){alert('Please select a carpet option.');return}
+  if(f===5){
+    S.dt=document.getElementById('idate').value;
+    let ok=true;
+    S.sub=document.getElementById('isub').value.trim();
+    if(!S.sub){document.getElementById('esub').classList.add('on');ok=false}
+    else{document.getElementById('esub').classList.remove('on');S.city=S.sub;}
+    if(!S.dt){document.getElementById('edate').classList.add('on');ok=false}
+    else{document.getElementById('edate').classList.remove('on')}
+    if(!ok)return;
   }
+  if(f===3)buildAds();
+  switchStep(f,f+1);S.step=f+1;upProg(f+1);
+  document.getElementById('quote').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
 function prv(f){
   switchStep(f,f-1);S.step=f-1;upProg(f-1);
-  if(typeof updateStickySummary==='function') updateStickySummary();
-  document.getElementById('quote').scrollIntoView({behavior:'auto',block:'start'});
+  document.getElementById('quote').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  let lastTouchTime = 0;
-  let touchStartX = 0;
-  let touchStartY = 0;
-
-  const handleInteraction = (e) => {
-    const btnNav = e.target.closest("[data-nxt],[data-prv]");
-    if (e.type === 'touchend') {
-      if (e.changedTouches && e.changedTouches[0]) {
-        const touchEndX = e.changedTouches[0].clientX;
-        const touchEndY = e.changedTouches[0].clientY;
-        // Navigation buttons are more tolerant to finger movement (30px), option selections are 15px to avoid scroll triggers
-        const maxMove = btnNav ? 30 : 15;
-        if (Math.abs(touchEndX - touchStartX) > maxMove || Math.abs(touchEndY - touchStartY) > maxMove) {
-          return;
-        }
-      }
-      lastTouchTime = Date.now();
-    } else if (e.type === 'click') {
-      if (Date.now() - lastTouchTime < 500) {
-        return; // Prevent duplicate/ghost click
-      }
-    }
-
-    // Handle Navigation Buttons
-    if (btnNav) {
-      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
-      if (btnNav.hasAttribute('data-nxt')) nxt(parseInt(btnNav.getAttribute('data-nxt')));
-      else if (btnNav.hasAttribute('data-prv')) prv(parseInt(btnNav.getAttribute('data-prv')));
-      return;
-    }
-    // Handle City Selector Buttons
-    const cityBtn = e.target.closest('.city-btn');
-    if (cityBtn) {
-      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
-      document.querySelectorAll('.city-btn').forEach(x=>x.classList.remove('sel'));
-      cityBtn.classList.add('sel');
-      S.city = cityBtn.dataset.city;
-      S.sub = cityBtn.dataset.city;
-      document.getElementById('isub').value = cityBtn.dataset.city;
-      var h1city = document.getElementById('h1city');
-      if (h1city) h1city.textContent = ' ' + cityBtn.dataset.city;
-      if(typeof updateStickySummary==='function') updateStickySummary();
-      return;
-    }
-    // Handle Property Size / Type Buttons
-    const obtn1 = e.target.closest('.obtn[data-s="1"]');
-    if (obtn1) {
-      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
-      document.querySelectorAll('.obtn[data-s="1"]').forEach(x=>x.classList.remove('sel'));
-      obtn1.classList.add('sel');S.ps=obtn1.dataset.v;S.ads=[];S.at=0;
-      if(typeof updateStickySummary==='function') updateStickySummary();
-      return;
-    }
-    const obtn2 = e.target.closest('.obtn[data-s="2"]');
-    if (obtn2) {
-      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
-      document.querySelectorAll('.obtn[data-s="2"]').forEach(x=>x.classList.remove('sel'));
-      obtn2.classList.add('sel');S.pt=obtn2.dataset.v;S.pm=parseFloat(obtn2.dataset.m);
-      if(typeof updateStickySummary==='function') updateStickySummary();
-      return;
-    }
-    // Handle Extras / Carpet Buttons
-    const cbtn = e.target.closest('.cbtn');
-    if (cbtn) {
-      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
-      document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('sel'));
-      cbtn.classList.add('sel');S.ca=cbtn.dataset.v;S.cp=parseFloat(cbtn.dataset.cp);
-      if(typeof updateStickySummary==='function') updateStickySummary();
-      return;
-    }
-    // Handle quantity adjusters
-    const aqtyBtn = e.target.closest('.aqty-btn');
-    if (aqtyBtn) {
-      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
-      adjQty(aqtyBtn, aqtyBtn.dataset.aqtyV, parseFloat(aqtyBtn.dataset.aqtyP), parseInt(aqtyBtn.dataset.aqtyDir));
-      return;
-    }
-    // Handle standard add-ons
-    const adn = e.target.closest('.adn:not(.adn-qty)');
-    if (adn) {
-      if (e.type === 'touchend' && e.cancelable) e.preventDefault();
-      const v = adn.dataset.adnV;
-      const p = parseFloat(adn.dataset.adnP);
-      const inList=S.ads.find(x=>x.v===v);
-      if(inList){S.ads=S.ads.filter(x=>x.v!==v);adn.classList.remove('sel');}
-      else{S.ads.push({v,p,qty:1});adn.classList.add('sel');}
-      recalcAt();
-      return;
-    }
-  };
-
-  document.addEventListener('click', handleInteraction);
-
-  if(typeof flatpickr !== 'undefined') flatpickr("#idate", { minDate: "today", dateFormat: "Y-m-d" });
-  if(typeof Swiper !== 'undefined'){
-    new Swiper('.reviews-slider', {
-      slidesPerView: 1.2, spaceBetween: 20,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      breakpoints: { 640: { slidesPerView: 2.2 }, 900: { slidesPerView: 3 } },
-      autoplay: { delay: 4000, disableOnInteraction: true }
-    });
-  }
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
-
-  if(typeof google !== 'undefined' && google.maps && google.maps.places) {
-    new google.maps.places.Autocomplete(document.getElementById('iaddr'), { componentRestrictions: { country: "au" } });
-  }
-
-});
-
 function dateChg(v){S.dt=v;S.uo=false;}
-
+document.getElementById('idate').min=new Date().toISOString().split('T')[0];
 
 function showQ(){
-  if(!OTP_VERIFIED){showToast('Please verify your mobile number first.');return}
+  if(!OTP_VERIFIED){alert('Please verify your mobile number first.');return}
   S.fn=document.getElementById('ifn').value.trim();
   S.ln=document.getElementById('iln').value.trim();
   S.em=document.getElementById('iem').value.trim();
@@ -876,83 +610,36 @@ function showQ(){
   S.cp=isWithCarpet?(sizePrices.with_carpet-sizePrices.without_carpet):0;
   const base=Math.round(basePriceVal*S.pm);
   const std=base;
-  
-  const quoteBtn=document.getElementById('seeQuoteBtn');
-  const ogText=quoteBtn.innerHTML;
-  quoteBtn.innerHTML='<span style="display:flex;align-items:center;justify-content:center;gap:8px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite"><circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="32"></circle></svg> Calculating...</span>';
-  quoteBtn.style.pointerEvents='none';
-
-  setTimeout(() => {
-    const totalVal = std + S.at;
-    document.getElementById('rcity').textContent=S.sub+(S.city?', '+S.city:'');
-    document.getElementById('tpst').textContent='$'+totalVal;
-    let rows='<div class="ir"><span class="ql">✓ Standard End of Lease Clean</span><span class="qa">Included</span></div>';
-    rows+='<div class="qrw"><span class="ql">'+S.ps+' Bond Clean'+(S.pm>1?' (+10% double storey)':'')+' </span><span class="qa">$'+base+'</span></div>';
-    if(isWithCarpet){
-      rows+='<div class="qrw"><span class="ql">Carpet steam cleaning</span><span class="qa">Included in package</span></div>';
-    }else{
-      rows+='<div class="qrw"><span class="ql">Carpet steam cleaning</span><span class="qa">Not selected</span></div>';
-    }
-    
-    // Add chosen addons to the main breakdown table
-    if(S.ads.length > 0){
-      S.ads.forEach(a=>{
-        const qty=a.qty||1;
-        const tot=a.p*qty;
-        rows+='<div class="qrw"><span class="ql">+ '+a.v+(qty>1?' <span style="background:var(--secondary);color:#003824;font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px;margin-left:5px;font-family:var(--ff-mono)">×'+qty+'</span>':'')+' </span><span class="qa">$'+tot+'</span></div>';
-      });
-    }
-    
-    rows+='<div class="qt"><span>Your Price</span><span>$'+totalVal+'</span></div>';
-    
-    // Clear the optional addons box since they are now included in the main price
-    document.getElementById('qaddonbox').innerHTML='';
-    document.getElementById('qbk').innerHTML=rows;
-    switchStep(6,'qres');
-    document.getElementById('fht').textContent='Your Personalised Quote';
-    document.getElementById('fhs').textContent='✓ Done';
-    sendGHL(base,std);
-    document.getElementById('quote').scrollIntoView({behavior:'auto',block:'start'});
-    setTimeout(()=>{
-      if(typeof confetti!=='undefined'){
-        confetti({particleCount:150,spread:90,origin:{y:0.55},colors:['#E8705A','#C95740','#2B4A8B','#F9F3EC','#3A5EA8'],zIndex:9999});
-      }
-    },400);
-    
-    quoteBtn.innerHTML=ogText;
-    quoteBtn.style.pointerEvents='auto';
-  }, 1200);
+  document.getElementById('rcity').textContent=S.sub+(S.city?', '+S.city:'');
+  document.getElementById('tpst').textContent='$'+std;
+  let rows='<div class="ir"><span class="ql">✓ Standard End of Lease Clean</span><span class="qa">Included</span></div>';
+  rows+='<div class="qrw"><span class="ql">'+S.ps+' Bond Clean'+(S.pm>1?' (+10% double storey)':'')+' </span><span class="qa">$'+base+'</span></div>';
+  if(isWithCarpet){
+    rows+='<div class="qrw"><span class="ql">Carpet steam cleaning</span><span class="qa">Included in package</span></div>';
+  }else{
+    rows+='<div class="qrw"><span class="ql">Carpet steam cleaning</span><span class="qa">Not selected</span></div>';
+  }
+  rows+='<div class="qt"><span>Your Price</span><span>$'+std+'</span></div>';
+  let addonHtml='';
+  if(S.ads.length>0){
+    addonHtml+='<div class="qaddon"><div class="qaddon-badge">OPTIONAL</div><div class="qaddon-t">Additional services you selected</div>';
+    addonHtml+='<div class="qaddon-sub">These are optional extras — not included in your price above. Add only the ones you need.</div>';
+    S.ads.forEach(a=>{const qty=a.qty||1;const tot=a.p*qty;addonHtml+='<div class="qaddon-i"><span>+ '+a.v+(qty>1?' <span style="background:var(--secondary);color:#003824;font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px;margin-left:5px;font-family:var(--ff-mono)">×'+qty+'</span>':'')+' </span><span class="qaddon-p">$'+tot+'</span></div>';});
+    addonHtml+='<div class="qaddon-tot"><span>Add-ons total (optional)</span><span>$'+S.at+'</span></div>';
+    addonHtml+='<div class="qaddon-n">Want any of these? Just let us know when we follow up — easy to add to your booking.</div></div>';
+  }
+  document.getElementById('qaddonbox').innerHTML=addonHtml;
+  document.getElementById('qbk').innerHTML=rows;
+  switchStep(6,'qres');
+  document.getElementById('fht').textContent='Your Personalised Quote';
+  document.getElementById('fhs').textContent='✓ Done';
+  sendGHL(base,std);
+  document.getElementById('quote').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
 function sendGHL(b,std){
   if(typeof fbq!=='undefined'){fbq('track','Lead',{value:std,currency:'AUD',content_name:S.ps,content_category:'Bond Cleaning'});}
-  const inclusions = "Inclusions:\nLiving & Bedrooms: Doors, frames, handles, skirting boards, inside windows, blinds dusted, light fittings, wardrobes, railings, cobwebs.\nBathrooms & Laundry: Shower screens, bathtubs, toilets, wall tiles, vanities, mirrors, towel rails, cupboards, exhaust fans.\nKitchen: Oven, stovetop, rangehood, bench tops, splashbacks, sink, taps, cupboards inside/out.\nGeneral: Hard floors vacuumed and mopped.";
-  const exclusions = "Exclusions (Unless selected as Add-ons):\nOutside windows, Wall washing, Balcony/Patio cleaning, Garage cleaning, Furniture cleaning, Rubbish removal, Ceilings, Deep grout cleaning, Fridge/Microwave deep clean.";
-  const terms = "Terms & Conditions:\nWe offer a 3-working-day Bond Back Assurance. Should your property manager or agent raise any cleaning concerns, our team will promptly return to address the reported items at no additional cost, provided notification is received within this period. Pricing is based on a property in normal condition.";
-  const formatted_addons = S.ads.length > 0 ? "Selected Add-ons: " + S.ads.map(a=>(a.qty>1?a.qty+'x ':'')+a.v+' ($'+(a.p*(a.qty||1))+')').join(', ') : "No additional add-ons selected.";
-  const invoice_summary = inclusions + "\n\n" + exclusions + "\n\n" + formatted_addons + "\n\n" + terms;
-
-  let formattedDate = S.dt;
-  if (S.dt) {
-    const parts = S.dt.split('-');
-    if (parts.length === 3) {
-      let year = parseInt(parts[0], 10);
-      let month = parseInt(parts[1], 10) - 1;
-      let day = parseInt(parts[2], 10);
-      if (year < 100) {
-        year += 2000;
-      } else if (year < 2000) {
-        // If year is somehow 70 or 0070
-        year = new Date().getFullYear();
-      }
-      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-      if (months[month]) {
-        formattedDate = day + ' ' + months[month] + ' ' + year;
-      }
-    }
-  }
-
-  fetch(WH,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({first_name:S.fn,last_name:S.ln,email:S.em,phone:S.ph,suburb:S.sub,address:S.addr,city:S.city,property_size:S.ps,property_type:S.pt,carpet_rooms:S.ca,carpet_steam_cleaning:S.ca,carpet_price:S.cp,preferred_date:formattedDate,preferred_date_raw:S.dt,addons:S.ads.map(a=>(a.qty>1?a.qty+'x ':'')+a.v+' $'+(a.p*(a.qty||1))).join(', '),base_price:b,addon_total:S.at,standard_total:std,lead_source:(new URLSearchParams(window.location.search)).get('source')||'organic',total_price:std+S.at, inclusions: inclusions, exclusions: exclusions, terms: terms, invoice_summary: invoice_summary})}).catch(()=>{});
+  fetch(WH,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({first_name:S.fn,last_name:S.ln,email:S.em,phone:S.ph,suburb:S.sub,city:S.city,property_size:S.ps,property_type:S.pt,carpet_rooms:S.ca,carpet_steam_cleaning:S.ca,carpet_price:S.cp,preferred_date:S.dt,addons:S.ads.map(a=>(a.qty>1?a.qty+'x ':'')+a.v+' $'+(a.p*(a.qty||1))).join(', '),base_price:b,addon_total:S.at,standard_total:std,lead_source:(new URLSearchParams(window.location.search)).get('source')||'organic',total_price:std+S.at})}).catch(()=>{});
   if(typeof gtag!=='undefined'){
     var ecPhone=normPhone(S.ph);
     if(ecPhone.charAt(0)==='0')ecPhone='+61'+ecPhone.slice(1);
@@ -965,9 +652,6 @@ S.subKnown=false;
 function citySel(v){
   S.sub=v; S.city=v; S.subKnown=true;
   document.getElementById('esub').classList.remove('on');
-  if (typeof updateStickySummary === 'function') {
-    updateStickySummary();
-  }
 }
 
 function tFaq(el){
@@ -976,50 +660,6 @@ function tFaq(el){
   document.querySelectorAll('.fi2').forEach(x=>x.classList.remove('op'));
   if(!w)i.classList.add('op');
 }
-
-// ── New FAQ tabs + accordion ──────────────────────────────────
-(function(){
-  // Tab switching
-  document.querySelectorAll('.faq-tab').forEach(function(tab){
-    tab.addEventListener('click', function(){
-      var cat = tab.dataset.cat;
-      document.querySelectorAll('.faq-tab').forEach(function(t){
-        t.classList.remove('active');
-        t.setAttribute('aria-selected','false');
-      });
-      document.querySelectorAll('.faq-group').forEach(function(g){
-        g.classList.remove('active');
-      });
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected','true');
-      var group = document.querySelector('.faq-group[data-cat="'+cat+'"]');
-      if(group) group.classList.add('active');
-    });
-  });
-
-  // Accordion toggle
-  document.querySelectorAll('.faq-q').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var item = btn.closest('.faq-item');
-      var isOpen = item.classList.contains('open');
-      // Close all in this group
-      var group = btn.closest('.faq-group');
-      group.querySelectorAll('.faq-item').forEach(function(i){
-        i.classList.remove('open');
-        i.querySelector('.faq-q').setAttribute('aria-expanded','false');
-        var panel = i.querySelector('.faq-a');
-        panel.style.maxHeight = null;
-      });
-      // Open clicked (unless it was already open)
-      if(!isOpen){
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded','true');
-        var panel = item.querySelector('.faq-a');
-        panel.style.maxHeight = panel.scrollHeight + 'px';
-      }
-    });
-  });
-})();
 
 upProg(1);
 </script>
@@ -1052,8 +692,5 @@ upProg(1);
 })();
 </script>
 <script src="global-ui.js"></script>
-
-<div id="toastContainer"></div>
-
 </body>
 </html>

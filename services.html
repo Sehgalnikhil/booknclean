@@ -28,14 +28,6 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-
-  <!-- External Libraries -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY_HERE&libraries=places"></script>
 </head>
 
 <body>
@@ -113,16 +105,15 @@ void main(){
           <div class="nav-tagline">Bond Cleaning Experts</div>
         </div>
       </a>
-    <div class="nav-overlay" onclick="document.body.classList.remove('nav-open')"></div>
-    <div class="nav-links" id="navLinks">
-      <button class="nav-close" onclick="document.body.classList.remove('nav-open')" aria-label="Close menu">✕</button>
-        <a href="index.html" onclick="document.body.classList.remove('nav-open')">Home</a>
-        <a href="services.html" class="active" onclick="document.body.classList.remove('nav-open')">Services</a>
-        <a href="how-it-works.html" onclick="document.body.classList.remove('nav-open')">How It Works</a>
-        <a href="pricing.html" onclick="document.body.classList.remove('nav-open')">Pricing</a>
-        <a href="about.html" onclick="document.body.classList.remove('nav-open')">About Us</a>
-        <a href="contact.html" onclick="document.body.classList.remove('nav-open')">Contact</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
       </div>
+      
     <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.body.classList.toggle('nav-open')">
       <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
     </button>
@@ -175,7 +166,7 @@ void main(){
 
       <h2 style="font-family: var(--ff-head); color: var(--primary); margin-bottom: 24px;">Scope of Services</h2>
 
-      <div style="display: grid; grid-template-columns: 1fr; gap: 24px;">
+      <div class="services-grid">
 
         <div style="background: var(--bg); padding: 24px; border-radius: 12px; border: 1px solid var(--outline);">
           <h3 style="margin-bottom: 12px; color: var(--on-bg);">Living Areas & Bedrooms</h3>
@@ -390,64 +381,69 @@ void main(){
     }
 
     const PRICES = {
-  'Melbourne': {
-    '1 Bedroom, 1 Bathroom': { without_carpet: 200, with_carpet: 220 },
-    '2 Bedroom, 1 Bathroom': { without_carpet: 250, with_carpet: 280 },
-    '2 Bedroom, 2 Bathroom': { without_carpet: 280, with_carpet: 320 },
-    '3 Bedroom, 1 Bathroom': { without_carpet: 340, with_carpet: 350 },
-    '3 Bedroom, 2 Bathroom': { without_carpet: 360, with_carpet: 380 },
-    '3 Bedroom, 3 Bathroom': { without_carpet: 390, with_carpet: 410 },
-    '4 Bedroom, 2 Bathroom': { without_carpet: 400, with_carpet: 420 },
-    '4 Bedroom, 3 Bathroom': { without_carpet: 450, with_carpet: 480 },
-    '5 Bedroom, 2 Bathroom': { without_carpet: 450, with_carpet: 480 },
-    '5 Bedroom, 3 Bathroom': { without_carpet: 480, with_carpet: 500 }
-  },
-  'Brisbane': {
-    '1 Bedroom, 1 Bathroom': { without_carpet: 320, with_carpet: 350 },
-    '2 Bedroom, 1 Bathroom': { without_carpet: 400, with_carpet: 450 },
-    '2 Bedroom, 2 Bathroom': { without_carpet: 420, with_carpet: 480 },
-    '3 Bedroom, 1 Bathroom': { without_carpet: 490, with_carpet: 520 },
-    '3 Bedroom, 2 Bathroom': { without_carpet: 520, with_carpet: 580 },
-    '3 Bedroom, 3 Bathroom': { without_carpet: 550, with_carpet: 610 },
-    '4 Bedroom, 2 Bathroom': { without_carpet: 600, with_carpet: 670 },
-    '4 Bedroom, 3 Bathroom': { without_carpet: 630, with_carpet: 700 },
-    '5 Bedroom, 2 Bathroom': { without_carpet: 630, with_carpet: 700 },
-    '5 Bedroom, 3 Bathroom': { without_carpet: 700, with_carpet: 750 }
-  },
-  'Perth': {
-    '1 Bedroom, 1 Bathroom': { without_carpet: 304, with_carpet: 332.5 },
-    '2 Bedroom, 1 Bathroom': { without_carpet: 380, with_carpet: 427.5 },
-    '2 Bedroom, 2 Bathroom': { without_carpet: 399, with_carpet: 456 },
-    '3 Bedroom, 1 Bathroom': { without_carpet: 465.5, with_carpet: 494 },
-    '3 Bedroom, 2 Bathroom': { without_carpet: 494, with_carpet: 551 },
-    '3 Bedroom, 3 Bathroom': { without_carpet: 522.5, with_carpet: 579.5 },
-    '4 Bedroom, 2 Bathroom': { without_carpet: 570, with_carpet: 636.5 },
-    '4 Bedroom, 3 Bathroom': { without_carpet: 598.5, with_carpet: 665 },
-    '5 Bedroom, 2 Bathroom': { without_carpet: 598.5, with_carpet: 665 },
-    '5 Bedroom, 3 Bathroom': { without_carpet: 665, with_carpet: 712.5 }
-  }
-};
-PRICES['Sydney'] = PRICES['Perth'];
+      'Melbourne': {
+        'Studio / Granny Flat': { without_carpet: 190, with_carpet: 210 },
+        '1 Bedroom, 1 Bathroom': { without_carpet: 200, with_carpet: 220 },
+        '2 Bedroom, 1 Bathroom': { without_carpet: 250, with_carpet: 280 },
+        '2 Bedroom, 2 Bathroom': { without_carpet: 280, with_carpet: 320 },
+        '3 Bedroom, 1 Bathroom': { without_carpet: 340, with_carpet: 350 },
+        '3 Bedroom, 2 Bathroom': { without_carpet: 360, with_carpet: 380 },
+        '3 Bedroom, 3 Bathroom': { without_carpet: 390, with_carpet: 410 },
+        '4 Bedroom, 2 Bathroom': { without_carpet: 400, with_carpet: 420 },
+        '4 Bedroom, 3 Bathroom': { without_carpet: 450, with_carpet: 480 },
+        '5 Bedroom, 2 Bathroom': { without_carpet: 450, with_carpet: 480 },
+        '5 Bedroom, 3 Bathroom': { without_carpet: 480, with_carpet: 500 }
+      },
+      'Brisbane': {
+        'Studio / Granny Flat': { without_carpet: 310, with_carpet: 350 },
+        '1 Bedroom, 1 Bathroom': { without_carpet: 320, with_carpet: 350 },
+        '2 Bedroom, 1 Bathroom': { without_carpet: 400, with_carpet: 450 },
+        '2 Bedroom, 2 Bathroom': { without_carpet: 420, with_carpet: 480 },
+        '3 Bedroom, 1 Bathroom': { without_carpet: 490, with_carpet: 520 },
+        '3 Bedroom, 2 Bathroom': { without_carpet: 520, with_carpet: 580 },
+        '3 Bedroom, 3 Bathroom': { without_carpet: 550, with_carpet: 610 },
+        '4 Bedroom, 2 Bathroom': { without_carpet: 600, with_carpet: 670 },
+        '4 Bedroom, 3 Bathroom': { without_carpet: 630, with_carpet: 700 },
+        '5 Bedroom, 2 Bathroom': { without_carpet: 630, with_carpet: 700 },
+        '5 Bedroom, 3 Bathroom': { without_carpet: 700, with_carpet: 750 }
+      },
+      'Perth': {
+        'Studio / Granny Flat': { without_carpet: 295, with_carpet: 325 },
+        '1 Bedroom, 1 Bathroom': { without_carpet: 304, with_carpet: 332.5 },
+        '2 Bedroom, 1 Bathroom': { without_carpet: 380, with_carpet: 427.5 },
+        '2 Bedroom, 2 Bathroom': { without_carpet: 399, with_carpet: 456 },
+        '3 Bedroom, 1 Bathroom': { without_carpet: 465.5, with_carpet: 494 },
+        '3 Bedroom, 2 Bathroom': { without_carpet: 494, with_carpet: 551 },
+        '3 Bedroom, 3 Bathroom': { without_carpet: 522.5, with_carpet: 579.5 },
+        '4 Bedroom, 2 Bathroom': { without_carpet: 570, with_carpet: 636.5 },
+        '4 Bedroom, 3 Bathroom': { without_carpet: 598.5, with_carpet: 665 },
+        '5 Bedroom, 2 Bathroom': { without_carpet: 598.5, with_carpet: 665 },
+        '5 Bedroom, 3 Bathroom': { without_carpet: 665, with_carpet: 712.5 }
+      }
+    };
+    PRICES['Sydney'] = PRICES['Perth'];
 
-const ADDON_PRICES = {
-  'Melbourne': {
-  },
-  'Brisbane': {
-  }
-};
-ADDON_PRICES['Perth'] = ADDON_PRICES['Brisbane'];
-ADDON_PRICES['Sydney'] = ADDON_PRICES['Perth'];
+    const ADDON_PRICES = {
+      'Melbourne': {
+        'WIN': { 'Studio / Granny Flat': 40, '1 Bedroom, 1 Bathroom': 40, '2 Bedroom, 1 Bathroom': 70, '2 Bedroom, 2 Bathroom': 70, '3 Bedroom, 1 Bathroom': 90, '3 Bedroom, 2 Bathroom': 90, '3 Bedroom, 3 Bathroom': 90, '4 Bedroom, 2 Bathroom': 90, '4 Bedroom, 3 Bathroom': 90, '5 Bedroom, 2 Bathroom': 120, '5 Bedroom, 3 Bathroom': 120 }
+      },
+      'Brisbane': {
+        'WIN': { 'Studio / Granny Flat': 50, '1 Bedroom, 1 Bathroom': 50, '2 Bedroom, 1 Bathroom': 80, '2 Bedroom, 2 Bathroom': 80, '3 Bedroom, 1 Bathroom': 110, '3 Bedroom, 2 Bathroom': 110, '3 Bedroom, 3 Bathroom': 110, '4 Bedroom, 2 Bathroom': 120, '4 Bedroom, 3 Bathroom': 120, '5 Bedroom, 2 Bathroom': 140, '5 Bedroom, 3 Bathroom': 140 }
+      }
+    };
+    ADDON_PRICES['Perth'] = ADDON_PRICES['Brisbane'];
+    ADDON_PRICES['Sydney'] = ADDON_PRICES['Perth'];
 
-const ADDEF = [
-  { v: 'External Window Cleaning', i: '🪟', key: 'WIN', hint: 'Exterior glass on the ground floor, external sills, and tracks.' },
-  { v: 'Stair Carpet Steam Cleaning', i: '🪜', key: 'STAIRS', p: 40, qty: true, hint: 'Professional steam cleaning per staircase.' },
-  { v: 'Garage Cleaning', i: '🚗', key: 'GARAGE', p: 50, qty: true, hint: 'Sweeping and removing cobwebs from garage space.' },
-  { v: 'Study / Theatre Room', i: '🎬', key: 'STUDY', p: 25, qty: true, hint: 'Cleaning of additional study or theatre rooms.' },
-  { v: 'Extra Living Room', i: '🛋️', key: 'LIVING', p: 30, qty: true, hint: 'Cleaning of additional living spaces.' },
-  { v: 'Balcony Cleaning', i: '🏙️', key: 'BALCONY', p: 40, qty: true, hint: 'Sweeping and mopping of balcony floors.' },
-  { v: 'Full Wall Wash (Per Wall)', i: '🧽', key: 'WALL_WASH', p: 20, qty: true, hint: 'Full wash of individual walls to remove heavy marks.' },
-  { v: 'Blind Cleaning (wipe)', i: '🪟', key: 'BLIND', p: 15, qty: true, hint: 'Slat-by-slat wiping of venetian or vertical blinds.' }
-];
+    const ADDEF = [
+      { v: 'External Window Cleaning', i: '🪟', key: 'WIN', hint: 'Exterior glass on the ground floor, external sills, and tracks.' },
+      { v: 'Stair Carpet Steam Cleaning', i: '🪜', key: 'STAIRS', p: 40, qty: true, hint: 'Professional steam cleaning per staircase.' },
+      { v: 'Garage Cleaning', i: '🚗', key: 'GARAGE', p: 50, qty: true, hint: 'Sweeping and removing cobwebs from garage space.' },
+      { v: 'Study / Theatre Room', i: '🎬', key: 'STUDY', p: 25, qty: true, hint: 'Cleaning of additional study or theatre rooms.' },
+      { v: 'Extra Living Room', i: '🛋️', key: 'LIVING', p: 30, qty: true, hint: 'Cleaning of additional living spaces.' },
+      { v: 'Balcony Cleaning', i: '🏙️', key: 'BALCONY', p: 40, qty: true, hint: 'Sweeping and mopping of balcony floors.' },
+      { v: 'Full Wall Wash (Per Wall)', i: '🧽', key: 'WALL_WASH', p: 20, qty: true, hint: 'Full wash of individual walls to remove heavy marks.' },
+      { v: 'Blind Cleaning (wipe)', i: '🪟', key: 'BLIND', p: 15, qty: true, hint: 'Slat-by-slat wiping of venetian or vertical blinds.' }
+    ];
     const S = { step: 1, ps: '', pp: 0, pt: '', pm: 1, ca: '', cp: 0, ads: [], at: 0, sub: '', subv: false, dt: '', city: '', fn: '', ln: '', em: '', ph: '', uo: false, subKnown: false, move: '', street: '', post: '' };
     const TITLES = { 1: 'Step 1 of 6 — Property Size', 2: 'Step 2 of 6 — Property Type', 3: 'Step 3 of 6 — Carpet Steam Cleaning', 4: 'Step 4 of 6 — Optional Add-Ons', 5: 'Step 5 of 6 — Date & Suburb', 6: 'Step 6 of 6 — Your Details' };
 
@@ -715,9 +711,6 @@ const ADDEF = [
     });
   </script>
   <script src="global-ui.js"></script>
-
-<div id="toastContainer"></div>
-
 </body>
 
 </html>

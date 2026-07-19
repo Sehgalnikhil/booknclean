@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Sticky & Shrinking Navigation
   const nav = document.querySelector('nav');
-  
+
   if (nav) {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
@@ -35,4 +35,51 @@ document.addEventListener('DOMContentLoaded', () => {
       behavior: 'smooth'
     });
   });
+
+  // 3. Universal Mobile Nav: Inject .nav-overlay and .nav-close if missing
+  //    This keeps inner pages and suburb landing pages fully consistent
+  //    without editing 90+ generated HTML files individually.
+  const navLinks = document.querySelector('.nav-links');
+
+  if (navLinks) {
+    // Inject dark overlay behind menu if not already in DOM
+    let overlay = document.querySelector('.nav-overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.className = 'nav-overlay';
+      document.body.appendChild(overlay);
+    }
+    overlay.addEventListener('click', () => {
+      document.body.classList.remove('nav-open');
+    });
+
+    // Inject close (✕) button inside nav-links panel if not already there
+    let closeBtn = navLinks.querySelector('.nav-close');
+    if (!closeBtn) {
+      closeBtn = document.createElement('button');
+      closeBtn.className = 'nav-close';
+      closeBtn.setAttribute('aria-label', 'Close menu');
+      closeBtn.innerHTML = '&#x2715;';
+      navLinks.insertBefore(closeBtn, navLinks.firstChild);
+    }
+    closeBtn.addEventListener('click', () => {
+      document.body.classList.remove('nav-open');
+    });
+
+    // Close menu when any nav link is tapped (important for mobile anchor links)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.body.classList.remove('nav-open');
+      });
+    });
+  }
+
+  // 4. Hamburger toggle button — ensure it works on all pages
+  const navToggle = document.querySelector('.nav-toggle');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      document.body.classList.toggle('nav-open');
+    });
+  }
 });
+
