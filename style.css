@@ -1914,14 +1914,20 @@ body {
   letter-spacing: -0.02em;
   margin: 0 0 8px;
   line-height: 1.1;
+  max-width: 600px;
+  width: 100%;
 }
 .hero-badge {
-  font-family: 'Caveat', cursive;
+  font-family: var(--ff-head);
   font-weight: 700;
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(24px, 3.5vw, 36px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
   color: var(--hero-yellow);
   margin-bottom: 28px;
   display: block;
+  max-width: 600px;
+  width: 100%;
 }
 .hero-badge span { display: none; }
 .hero-note {
