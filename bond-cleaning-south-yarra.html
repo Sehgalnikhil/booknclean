@@ -245,6 +245,18 @@ void main(){
 
 <div class="quote-section" id="quote">
   <div class="container" style="padding:0 24px;max-width:900px">
+    
+    <!-- City Selector (Mandatory) -->
+    <div class="city-selector-wrap" id="citySelectorWrap">
+      <select id="citySelector" class="city-select-dropdown" onchange="selectCity(this.value)">
+        <option value="" disabled selected>Select your city...</option>
+        <option value="Melbourne">Melbourne</option>
+        <option value="Sydney">Sydney</option>
+        <option value="Brisbane">Brisbane</option>
+        <option value="Perth">Perth</option>
+      </select>
+    </div>
+
     <div class="fc">
       <div class="fh">
         <span class="fht" id="fht">Step 1 of 6 — Property Size</span>
@@ -1277,7 +1289,7 @@ const ADDEF=[
   {v:'Full Wall Wash (Per Wall)',i:'🧽',key:'WALL_WASH',p:20,qty:true,hint:'Full wash of individual walls to remove heavy marks.'},
   {v:'Blind Cleaning (wipe)',i:'🪟',key:'BLIND',p:15,qty:true,hint:'Slat-by-slat wiping of venetian or vertical blinds.'}
 ];
-const S={step:1,ps:'',pp:0,pt:'',pm:1,ca:'',cp:0,ads:[],at:0,sub:'South Yarra',subv:false,dt:'',city:'Melbourne',fn:'',ln:'',em:'',ph:'',uo:false,subKnown:false,move:'',street:'',post:''};
+const S={step:1,ps:'',pp:0,pt:'',pm:1,ca:'',cp:0,ads:[],at:0,sub:'South Yarra',subv:false,dt:'',city:'',fn:'',ln:'',em:'',ph:'',uo:false,subKnown:false,move:'',street:'',post:''};
 const TITLES={1:'Step 1 of 6 — Property Size',2:'Step 2 of 6 — Property Type',3:'Step 3 of 6 — Carpet Steam Cleaning',4:'Step 4 of 6 — Optional Add-Ons',5:'Step 5 of 6 — Date & Suburb',6:'Step 6 of 6 — Your Details'};
 
 function getAP(a){
@@ -1445,7 +1457,16 @@ function showErr(step, msg) {
 let isNavigating = false;
 
 function nxt(f){ console.log("nxt called");
-  if(f===1){ if(!S.ps){showErr(f, "Please select a size ↑");return} console.log("validation passed"); }
+  if(f===1){
+    if(!S.city){
+      showErr(f, "Please select your city.");
+      const sel = document.getElementById('citySelector');
+      if (sel) sel.classList.add('err');
+      return;
+    }
+    if(!S.ps){showErr(f, "Please select a size ↑");return}
+    console.log("validation passed");
+  }
   if(f===2){ if(!S.pt){showErr(f, "Please select a type ↑");return} console.log("validation passed"); }
   if(f===3){ if(!S.ca){showErr(f, "Please select an option ↑");return} console.log("validation passed"); }
   if(f===5){
@@ -1688,11 +1709,51 @@ function sendGHL(b,std){
 }
 
 S.subKnown=false;
+function selectCity(v) {
+  const isub = document.getElementById('isub');
+  const subInput = document.getElementById('suburbInput');
+  const defaultCity = isub ? isub.defaultValue || isub.value : '';
+  
+  if (S.city !== v) {
+    if (S.city !== '' || v !== defaultCity) {
+      if (subInput) subInput.value = '';
+      if (isub) isub.value = v;
+      S.sub = v;
+      S.subKnown = false;
+    } else {
+      if (isub) isub.value = v;
+      S.sub = subInput ? subInput.value : v;
+    }
+  }
+  S.city = v;
+  if (S.ads && S.ads.length > 0) {
+    S.ads.forEach(ad => {
+      const match = ADDEF.find(x => x.v === ad.v);
+      if (match) ad.p = getAP(match);
+    });
+  }
+  recalcAt();
+  if (document.getElementById('adgrid')) {
+    buildAds();
+  }
+  const sel = document.getElementById('citySelector');
+  if (sel) sel.classList.remove('err');
+}
+
 function citySel(v){
   S.sub=v; S.city=v; S.subKnown=true;
   document.getElementById('esub').classList.remove('on');
-  if (typeof updateStickySummary === 'function') {
-    updateStickySummary();
+  const sel = document.getElementById('citySelector');
+  if (sel) sel.value = v;
+  if (S.ads && S.ads.length > 0) {
+    S.ads.forEach(ad => {
+      const match = ADDEF.find(x => x.v === ad.v);
+      if (match) ad.p = getAP(match);
+    });
+  }
+  recalcAt();
+  if (document.getElementById('adgrid')) {
+    buildAds();
   }
 }
 
@@ -1771,7 +1832,7 @@ upProg(1);
     var city=null;
     if(qs){qs=qs.toLowerCase();for(var k in map){if(map[k].toLowerCase()===qs){city=map[k];break}}}
     if(!city)city=map[tz]||null;
-    if(city){var el=document.getElementById('h1city');if(el)el.textContent=' '+city;S.city=city;}
+    if(city){var el=document.getElementById('h1city');if(el)el.textContent=' '+city;}
   }catch(e){}
 
 

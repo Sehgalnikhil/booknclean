@@ -4255,3 +4255,48 @@ footer a { display: inline-block; min-height: 24px; padding: 2px 0; }
   pointer-events: auto;
   min-height: 44px;
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   CITY SELECTOR
+═══════════════════════════════════════════════════════════ */
+.city-selector-wrap {
+  max-width: 860px;
+  margin: 0 auto 16px auto;
+  position: relative;
+}
+.city-select-dropdown {
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--outline-var);
+  background: var(--surface-mid);
+  color: var(--on-bg);
+  font-family: var(--ff-body);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238e8e93' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+}
+.city-select-dropdown:focus {
+  border-color: var(--primary-ctr);
+  box-shadow: 0 0 0 3px rgba(232, 112, 90, 0.15);
+}
+.city-select-dropdown.err {
+  border-color: #d9381e !important;
+  box-shadow: 0 0 0 3px rgba(217, 56, 30, 0.15) !important;
+  animation: shake 0.3s ease-in-out;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
