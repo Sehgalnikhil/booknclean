@@ -2287,30 +2287,7 @@ body {
     max-width: 100vw;
     overflow-x: hidden;
   }
-  /* Navigation */
-  .nav-inner {
-    flex-wrap: wrap;
-    padding: 12px 24px;
-    gap: 16px;
-    max-width: 100vw;
-  }
-  .nav-links {
-    order: 3;
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-bottom: 8px;
-    justify-content: flex-start;
-    -webkit-overflow-scrolling: touch;
-    gap: 24px; /* Slightly tighter gap on mobile */
-  }
-  .nav-links::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for clean look */
-  }
-  .nav-right {
-    margin-left: auto;
-  }
+  /* Navigation styling handled in main mobile overrides */
 }
 
 @media (max-width: 1024px) {
@@ -2417,12 +2394,7 @@ body {
   .hero-h1 {
     font-size: 32px;
   }
-  .nav-inner {
-    padding: 12px 16px;
-  }
-  .nav-links {
-    padding-left: 0;
-  }
+  /* nav-inner and nav-links handled in main mobile overrides */
   .btn-call {
     font-size: 13px;
     padding: 8px 12px;
@@ -3253,57 +3225,14 @@ select.suburb-input {
 }
 
 @media (max-width: 1024px) {
-  /* Show hamburger */
+  /* Show hamburger on tablets & mobile */
   .nav-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
-  /* Hide right buttons (or keep call btn) */
   .nav-right {
     gap: 8px;
-  }
-  
-  /* Change nav-links into an off-canvas menu */
-  .nav-links {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 250px;
-    height: 100vh;
-    background: #fff;
-    flex-direction: column;
-    padding: 80px 24px 24px;
-    gap: 20px;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    transition: left 0.3s ease;
-    z-index: 999;
-    white-space: normal; /* Override the nowrap */
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-  
-  body.nav-open .nav-links {
-    left: 0;
-  }
-
-  /* Overlay for background */
-  .nav-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.5);
-    z-index: 998;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  body.nav-open .nav-overlay {
-    display: block;
-    opacity: 1;
   }
 }
 
@@ -3336,39 +3265,7 @@ html, body {
   width: 100%;
 }
 
-@media (max-width: 1024px) {
-  /* Fix Hamburger Icon Position and Color */
-  .nav-toggle {
-    margin-left: auto !important; /* Push to the right */
-    position: relative;
-    z-index: 1000;
-  }
-  .nav-toggle svg {
-    fill: #ffffff !important; /* Make it white to match hero text */
-  }
-  .nav-right {
-    margin-left: 12px !important; /* Sit next to hamburger */
-    position: relative;
-    z-index: 997; /* Below overlay */
-  }
-  
-  /* Fix invisible links inside white off-canvas */
-  .nav-links a {
-    color: var(--hero-blue) !important;
-    font-size: 20px !important;
-    font-weight: 600 !important;
-    padding: 12px 0 !important;
-    display: block;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    text-align: left;
-  }
-  .nav-links a::after {
-    display: none !important; /* Hide desktop active underline */
-  }
-  .nav-links {
-    padding-top: 60px !important; /* Give some space at the top */
-  }
-}
+
 
 /* Make property selection icons fill their button width */
 .prop-icon {
@@ -3420,11 +3317,12 @@ input, select, textarea {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   1024px — TABLET & MOBILE NAV
+   MOBILE NAV — SLIDE-IN DRAWER (≤1024px)
+   Single source of truth for all mobile nav behaviour.
 ═══════════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
 
-  /* ── NAV ────────────────────────────────────────────────── */
+  /* ── Nav bar sizing ─────────────────────────────────────── */
   nav {
     min-height: 64px;
     padding: 0;
@@ -3435,51 +3333,71 @@ input, select, textarea {
     flex-wrap: nowrap;
     position: relative;
   }
+
+  /* ── Slide-in drawer (left side) ────────────────────────── */
   .nav-links {
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     transform: translateX(-100%);
-    width: min(80vw, 300px);
+    width: min(82vw, 300px);
     height: 100dvh;
-    background: #fff;
+    height: 100vh; /* fallback */
+    background: var(--surface, #faf8f5);
     flex-direction: column;
-    padding: 80px 24px 40px;
+    padding: 72px 24px 40px;
     gap: 4px;
-    box-shadow: 4px 0 24px rgba(0,0,0,0.15);
+    box-shadow: 4px 0 32px rgba(0,0,0,0.18);
     transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 999;
+    z-index: 9999;
     overflow-y: auto;
     overflow-x: hidden;
     white-space: normal;
     overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
-  body.nav-open .nav-links { transform: translateX(0); }
+  body.nav-open .nav-links {
+    transform: translateX(0);
+  }
+
+  /* ── Nav links inside drawer ─────────────────────────────── */
   .nav-links a {
-    color: var(--primary) !important;
+    color: var(--secondary, #1a2e4a) !important;
     font-size: 17px !important;
     font-weight: 600 !important;
-    padding: 14px 0 !important;
-    display: block;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 15px 0 !important;
+    display: flex !important;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
     text-align: left;
     min-height: 48px;
-    display: flex;
-    align-items: center;
+    text-decoration: none;
+  }
+  .nav-links a:hover, .nav-links a:active {
+    color: var(--primary, #e8705a) !important;
   }
   .nav-links a::after { display: none !important; }
 
+  /* ── Full-screen dark overlay behind drawer ─────────────── */
   .nav-overlay {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 998;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 9998;
+    cursor: pointer;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
   }
-  body.nav-open .nav-overlay { display: block; }
-  body.nav-open { overflow: hidden; }
+  body.nav-open .nav-overlay {
+    display: block;
+  }
+  body.nav-open {
+    overflow: hidden;
+    touch-action: none;
+  }
 
+  /* ── Hamburger button ───────────────────────────────────── */
   .nav-toggle {
     display: flex !important;
     align-items: center;
@@ -3489,22 +3407,56 @@ input, select, textarea {
     padding: 10px;
     margin-left: 8px;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 10001;
     min-width: 44px;
     min-height: 44px;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
   }
   .nav-toggle svg {
     fill: #ffffff !important;
-    width: 26px; height: 26px;
+    width: 26px;
+    height: 26px;
+    display: block;
+    pointer-events: none;
   }
+
+  /* ── Close button inside drawer ─────────────────────────── */
+  .nav-close {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0,0,0,0.06);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10002;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .nav-close svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--secondary, #1a2e4a);
+    pointer-events: none;
+  }
+
+  /* ── Desktop-only: hide Get Quote in nav-right on mobile ─── */
   .nav-right {
     display: flex;
     align-items: center;
     gap: 8px;
     margin-left: auto;
-    z-index: 1001;
+    z-index: 10001;
+    position: relative;
   }
   .nav-right .btn-outline { display: none; }
+
+
   .btn-call {
     font-size: 12px;
     padding: 7px 12px;
@@ -3832,40 +3784,9 @@ input, select, textarea {
 }
 
 
-/* ── Nav close button inside mobile slide-out panel ──────── */
+/* nav-close: shown only in mobile (handled inside mobile nav media query above) */
 .nav-close {
   display: none;
-}
-@media (max-width: 768px) {
-  .nav-close {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 20px;
-    color: var(--on-surface-var);
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--surface-high);
-  }
-  .nav-close:active { background: var(--surface-highest); }
-  
-  /* Remove old duplicate overlay styles - nav-links already has position:fixed */
-  .nav-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
-    z-index: 998;
-    display: none;
-    cursor: pointer;
-  }
-  body.nav-open .nav-overlay { display: block; }
 }
 
 
@@ -4221,7 +4142,7 @@ button:disabled,
 .hero-bg-yellow-shape { pointer-events: none !important; }
 .photohero-overlay    { pointer-events: none !important; }
 
-/* ── 9. Nav overlay only blocks clicks when nav is open    */
+/* nav-overlay pointer-events: handled within the mobile nav media query */
 .nav-overlay { pointer-events: none; }
 body.nav-open .nav-overlay { pointer-events: auto; }
 
