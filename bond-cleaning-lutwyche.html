@@ -233,11 +233,48 @@ void main(){
     <div class="hero-badge">Exceptional Cleaning. Guaranteed Results.</div>
     <p class="hero-note">Professional bond cleaning services delivered by trusted experts with quality you can rely on.</p>
     
-    <div class="hero-trust-badges">
-      <div class="htb-item"><div class="htb-icon-wrap"><span class="htb-icon">🛡️</span></div> <div>Police Verified<br>Cleaners</div></div>
-      <div class="htb-item"><div class="htb-icon-wrap"><span class="htb-icon">✨</span></div> <div>100% Bond Back<br>Guarantee</div></div>
-      <div class="htb-item"><div class="htb-icon-wrap"><span class="htb-icon">👍</span></div> <div>Satisfaction<br>Guaranteed</div></div>
-      <div class="htb-item"><div class="htb-icon-wrap"><span class="htb-icon">⏱️</span></div> <div>On-Time<br>Service</div></div>
+    <div class="hero-trust-strip">
+      <div class="hts-item">
+        <div class="hts-icon-wrap">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <div class="hts-text">
+          <span class="hts-title">Police-Verified Cleaners</span>
+          <span class="hts-desc">Fully vetted & insured</span>
+        </div>
+      </div>
+      <div class="hts-item">
+        <div class="hts-icon-wrap">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        </div>
+        <div class="hts-text">
+          <span class="hts-title">Bond Back Guarantee</span>
+          <span class="hts-desc">100% written support</span>
+        </div>
+      </div>
+      <div class="hts-item">
+        <div class="hts-icon-wrap">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="hts-text">
+          <span class="hts-title">Satisfaction Assured</span>
+          <span class="hts-desc">Quality you can trust</span>
+        </div>
+      </div>
+      <div class="hts-item">
+        <div class="hts-icon-wrap">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="hts-text">
+          <span class="hts-title">On-Time Arrival</span>
+          <span class="hts-desc">Reliable & punctual</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-ctas">
+      <a href="#quote" class="btn-hero-primary">Get an Instant Quote →</a>
+      <a href="tel:+61468230552" class="btn-hero-secondary">Call Us Today</a>
     </div>
   </div>
 </div>
@@ -245,6 +282,11 @@ void main(){
 
 <div class="quote-section" id="quote">
   <div class="container" style="padding:0 24px;max-width:900px">
+    
+    <div class="quote-heading-wrap">
+      <h2 class="quote-heading">Get Your Instant Cleaning Quote</h2>
+      <p class="quote-subtext">Select your property details to see your price instantly.</p>
+    </div>
     
     <!-- City Selector (Mandatory) -->
     <div class="city-selector-wrap" id="citySelectorWrap">
@@ -322,10 +364,10 @@ void main(){
           <div class="fq">What type of property?</div>
           <div class="fqs">Double or multi-storey adds 10% to the package price</div>
           <div class="og og2">
-            <button class="obtn" data-s="2" data-v="Apartment / Unit" data-m="1"><span class="oi">🏢</span><span class="on2">Apartment / Unit</span></button>
-            <button class="obtn" data-s="2" data-v="Single Storey House" data-m="1"><span class="oi">🏠</span><span class="on2">Single Storey House</span></button>
-            <button class="obtn" data-s="2" data-v="Double Storey House" data-m="1.10"><span class="oi">🏡</span><span class="on2">Double Storey House</span><span class="op">+10%</span></button>
-            <button class="obtn" data-s="2" data-v="Townhouse / Multi-level" data-m="1.10"><span class="oi">🏘</span><span class="on2">Townhouse / Multi-level</span><span class="op">+10%</span></button>
+            <button class="obtn" data-s="2" data-v="Apartment / Unit" data-m="1"><span class="oi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building-2"><path d="M2 22h20"/><path d="M4 22V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v18"/><path d="M6 18h4"/><path d="M14 18h4"/><path d="M6 14h4"/><path d="M14 14h4"/><path d="M6 10h4"/><path d="M14 10h4"/><path d="M6 6h4"/><path d="M14 6h4"/></svg></span><span class="on2">Apartment / Unit</span></button>
+            <button class="obtn" data-s="2" data-v="Single Storey House" data-m="1"><span class="oi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span class="on2">Single Storey House</span></button>
+            <button class="obtn" data-s="2" data-v="Double Storey House" data-m="1.10"><span class="oi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/><path d="M9 7h6"/></svg></span><span class="on2">Double Storey House</span><span class="op">+10%</span></button>
+            <button class="obtn" data-s="2" data-v="Townhouse / Multi-level" data-m="1.10"><span class="oi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-boxes"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.73a2 2 0 0 0 2.06 0l3-1.73a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L8.03 11.2a2 2 0 0 0-2.06 0L2.97 12.92Z"/><path d="M12.97 2.92A2 2 0 0 0 12 4.63v3.24a2 2 0 0 0 .97 1.71l3 1.73a2 2 0 0 0 2.06 0l3-1.73a2 2 0 0 0 .97-1.71V4.63a2 2 0 0 0-.97-1.71L18.03 1.2a2 2 0 0 0-2.06 0L12.97 2.92Z"/><path d="m8 6 3-1.73"/><path d="M18.03 11.2a2 2 0 0 0-2.06 0L12.97 12.92a2 2 0 0 0-.97 1.71v3.24a2 2 0 0 0 .97 1.71l3 1.73a2 2 0 0 0 2.06 0l3-1.73a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L18.03 11.2Z"/><path d="m18 16 3-1.73"/></svg></span><span class="on2">Townhouse / Multi-level</span><span class="op">+10%</span></button>
           </div>
           <div class="fn form-navigation">
             <button type="button" class="bb back-button" data-prv="2">← Back</button>
@@ -381,7 +423,7 @@ void main(){
 
           <!-- Suburb Dropdown -->
           <div class="suburb-wrap">
-            <input type="text" class="suburb-input" id="suburbInput" placeholder="🔍 Enter your suburb (e.g. Bondi)" value="Lutwyche, QLD" autocomplete="off">
+            <input type="text" class="suburb-input" id="suburbInput" placeholder="Enter your suburb (e.g. Bondi)" autocomplete="off">
             <div class="suburb-dropdown" id="suburbDropdown"></div>
           </div>
           <!-- Hidden city field (populated by dropdown) -->
@@ -421,7 +463,7 @@ void main(){
 
           <!-- OTP VERIFY -->
           <div id="otpWrap" style="margin-top:6px">
-            <button class="bn" id="otpSendBtn" onclick="otpSend()" style="width:100%;background:linear-gradient(135deg,var(--primary-ctr),var(--secondary));color:#ffffff;font-size:15px;padding:13px">📱 Verify my number to get the quote</button>
+            <button class="bn" id="otpSendBtn" onclick="otpSend()" style="width:100%;background:linear-gradient(135deg,var(--primary-ctr),var(--secondary));color:#ffffff;font-size:15px;padding:13px"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:7px;vertical-align:middle"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg> Verify my number to get the quote</button>
             <div id="otpStep2" style="display:none;margin-top:12px">
               <p style="font-size:13px;color:var(--on-surface-var);margin-bottom:6px">We sent a 6-digit code by SMS to <strong id="otpPhoneEcho" style="color:var(--primary-ctr)"></strong>. Enter it below:</p>
               <input type="text" inputmode="numeric" maxlength="6" class="fi" id="otpCode" placeholder="6-digit code" style="letter-spacing:4px;text-align:center;font-size:20px;font-family:var(--ff-mono)">
@@ -431,7 +473,7 @@ void main(){
                 <button class="bb" onclick="otpResend()" style="flex:0 0 auto">Resend</button>
               </div>
             </div>
-            <div id="otpOk" style="display:none;margin-top:10px;color:var(--secondary);font-weight:600;font-size:14px;font-family:var(--ff-mono)">✅ Number verified</div>
+            <div id="otpOk" style="display:none;margin-top:10px;color:var(--secondary);font-weight:600;font-size:14px;font-family:var(--ff-mono)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:5px;vertical-align:middle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Number verified</div>
           </div>
 
           <div class="fn">
@@ -442,7 +484,7 @@ void main(){
 
         <!-- RESULT -->
         <div class="qr" id="qres">
-          <div class="qcb">📍 Quote for <strong id="rcity" style="margin-left:3px;color:var(--primary-ctr)">Perth</strong></div>
+          <div class="qcb"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:5px;vertical-align:middle"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Quote for <strong id="rcity" style="margin-left:3px;color:var(--primary-ctr)">Perth</strong></div>
           <div class="qbk" id="qbk"></div>
           <div class="ts">
             <div class="tc" id="tcst">
@@ -455,7 +497,7 @@ void main(){
           </div>
           <div class="qbk" id="qaddonbox"></div>
           <div style="margin-top:24px;padding:20px;background:rgba(46,204,113,0.08);border:1.5px solid rgba(46,204,113,0.3);border-radius:16px;display:flex;gap:16px;align-items:flex-start;text-align:left;box-shadow:0 10px 30px rgba(46,204,113,0.05)">
-            <div style="font-size:28px;line-height:1;margin-top:2px">🎉</div>
+            <div style="font-size:28px;line-height:1;margin-top:2px;color:var(--secondary)"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></div>
             <div style="font-size:14.5px;color:var(--on-bg);line-height:1.6;">
               <strong style="color:#1e8e45;display:block;margin-bottom:6px;font-size:17px;">Booking Request Confirmed!</strong>
               You will receive an email shortly with your detailed quotation, and one of our team members will contact you within <strong>2 hours</strong> to finalize your booking. You pay absolutely nothing until after the service is complete!
@@ -472,94 +514,140 @@ void main(){
 
 <div class="trust-badges-banner reveal-on-scroll">
   <div class="tb-item">
-    <span class="tb-icon" style="filter: hue-rotate(180deg)">👨‍🔧</span>
+    <span class="tb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-check"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg></span>
     <span class="tb-text">Trusted<br>Professionals</span>
   </div>
   <div class="tb-item">
-    <span class="tb-icon" style="filter: hue-rotate(180deg)">🛡️</span>
+    <span class="tb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7Z"/></svg></span>
     <span class="tb-text">Insured &<br>Reliable</span>
   </div>
   <div class="tb-item">
-    <span class="tb-icon" style="filter: hue-rotate(180deg)">💧</span>
+    <span class="tb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.3 5.45-6.05"/></svg></span>
     <span class="tb-text">Eco-Friendly<br>Products</span>
   </div>
   <div class="tb-item">
-    <span class="tb-icon" style="filter: hue-rotate(180deg)">💬</span>
+    <span class="tb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
     <span class="tb-text">Customer<br>Support</span>
   </div>
 </div>
 
 
-<!-- SHORT BOND BACK GUARANTEE -->
-<div class="bbg-wrap reveal-on-scroll">
-  <div class="bbg-card">
-    <div class="bbg-head">
-      <span class="bbg-ico">🛡️</span>
-      <h3 class="bbg-title">Our Bond Back Guarantee</h3>
+<!-- THE BOOK & CLEAN PROMISE -->
+<div class="promise-section reveal-on-scroll">
+  <div class="container-lg">
+    <div class="promise-header">
+      <h2 class="promise-title">The Book & Clean Promise</h2>
+      <p class="promise-subtitle">Four guarantees that make booking and moving stress-free.</p>
     </div>
-    <p class="bbg-text">If your property manager flags any issue with our clean, we'll come back and re-clean it <b style="color:var(--secondary)">free</b>. Just report it within 72 hours of your exit inspection and we'll arrange your re-clean fast — typically within 2–3 business days. Your bond, protected.</p>
-    <a class="bbg-link" href="#guarantee-terms">Read our full Bond Back Guarantee →</a>
+    <div class="promise-grid-horizontal">
+      <!-- Promise 1 -->
+      <div class="promise-card-horizontal">
+        <div class="promise-icon-horizontal">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M6 8h.01"/></svg>
+        </div>
+        <h4 class="promise-card-title">Fixed and Clear Pricing</h4>
+        <p class="promise-card-desc">No hidden charges or surprise extras. The price quoted is exactly what you pay.</p>
+      </div>
+
+      <!-- Promise 2 -->
+      <div class="promise-card-horizontal">
+        <div class="promise-icon-horizontal">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h4 class="promise-card-title">Police-Verified Cleaners</h4>
+        <p class="promise-card-desc">Vetted, background-checked, and insured professionals clean your home.</p>
+      </div>
+
+      <!-- Promise 3 -->
+      <div class="promise-card-horizontal">
+        <div class="promise-icon-horizontal">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        </div>
+        <h4 class="promise-card-title">Re-Clean Support</h4>
+        <p class="promise-card-desc">If your agent flags any cleaning item, we'll return and fix it completely free.</p>
+      </div>
+
+      <!-- Promise 4 -->
+      <div class="promise-card-horizontal">
+        <div class="promise-icon-horizontal">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smile"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+        </div>
+        <h4 class="promise-card-title">Friendly Customer Care</h4>
+        <p class="promise-card-desc">Helpful local support from booking to bond release whenever you need us.</p>
+      </div>
+    </div>
   </div>
 </div>
 
 
-<!-- STORY SECTION -->
-<div class="section section-alt reveal-on-scroll">
+<!-- SERVICES SECTION (6-CARD GRID) -->
+<div class="section reveal-on-scroll" style="background:var(--surface-bright);border-top:none;border-bottom:none">
   <div class="container">
-    <div style="text-align:center;margin-bottom:40px">
-      <span class="eyebrow">Our Story</span>
-      <h2 class="section-title">We've Seen Good Tenants Lose Their Bond Over a Missed Spot — <em style="font-style:normal" class="text-gradient">That's Why We Built This</em></h2>
-      <p class="section-sub" style="margin:0 auto;text-align:center">Bond cleaning isn't about making a house look nice.<br>It's about knowing <strong style="color:var(--on-bg)">exactly what an agent inspects</strong> — and never missing a single item.</p>
+    <div style="text-align:center;margin-bottom:48px">
+      <span class="eyebrow">Our Services</span>
+      <h2 class="section-title">Everything You Need for an Inspection-Ready Property</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;max-width:600px">Professional cleaning services designed around real estate inspection requirements.</p>
     </div>
-
-    <div class="story-grid" style="background:var(--surface-mid);border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:36px 40px;position:relative;overflow:hidden;">
-      <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--primary-ctr),var(--secondary));border-radius:4px 0 0 4px"></div>
-      <div>
-        <p style="font-size:16px;line-height:1.8;color:var(--on-bg);margin-bottom:16px">Moving out is stressful enough without losing your bond over something you didn't even know an agent checks. We've seen it happen too many times — tenants who cleaned for days, hired someone off Gumtree, handed back a tidy property, and still got hit with a deduction.</p>
-        <p style="font-size:15px;line-height:1.75;color:var(--on-surface-var);margin-bottom:16px">The problem isn't that they didn't clean. It's that their cleaner didn't know what a real estate agent actually looks for. There's a difference between <strong style="color:var(--on-bg)">clean</strong> and <strong style="color:var(--on-bg)">inspection-ready</strong> — and that gap costs tenants real money.</p>
-        <p style="font-size:15px;line-height:1.75;color:var(--on-surface-var)">So we built Book & Clean around one rule: clean to the real estate agent's standard, every single time — or come back and fix it for free. We now serve renters across <strong style="color:var(--on-bg)">Perth, Melbourne, and Brisbane</strong>, with more than <strong style="color:var(--on-bg)">3000 bond cleans</strong> behind us. Still family-run, not a franchise.</p>
-      </div>
-      <div>
-        <div style="background:rgba(0,102,204,0.06);border:1px solid rgba(0,102,204,0.15);border-radius:14px;padding:22px;margin-bottom:16px">
-          <div style="font-family:var(--ff-mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary-ctr);margin-bottom:14px">What sets us apart</div>
-          <div style="display:flex;flex-direction:column;gap:16px">
-            <div style="display:flex;gap:12px;align-items:flex-start">
-              <span style="width:22px;height:22px;background:var(--secondary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#003824;font-size:11px;font-weight:800;flex-shrink:0;margin-top:2px">✓</span>
-              <div><strong style="font-size:14px;color:var(--on-bg);display:block">We study agent inspection reports</strong><span style="font-size:13px;color:var(--on-surface-var)">Our checklists are built from real RE agent criteria, not generic cleaning lists</span></div>
-            </div>
-            <div style="display:flex;gap:12px;align-items:flex-start">
-              <span style="width:22px;height:22px;background:var(--secondary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#003824;font-size:11px;font-weight:800;flex-shrink:0;margin-top:2px">✓</span>
-              <div><strong style="font-size:14px;color:var(--on-bg);display:block">Oven + wall spots always included</strong><span style="font-size:13px;color:var(--on-surface-var)">The two biggest reasons agents fail bonds — we include both, always</span></div>
-            </div>
-            <div style="display:flex;gap:12px;align-items:flex-start">
-              <span style="width:22px;height:22px;background:var(--secondary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#003824;font-size:11px;font-weight:800;flex-shrink:0;margin-top:2px">✓</span>
-              <div><strong style="font-size:14px;color:var(--on-bg);display:block">Police-checked, insured cleaners only</strong><span style="font-size:13px;color:var(--on-surface-var)">Every cleaner on our team — no exceptions, no gig workers</span></div>
-            </div>
-          </div>
+    
+    <div class="service-grid">
+      <!-- Card 1 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
-        <div class="story-stat">
-          <div class="story-stat-label">Re-cleans requested out of 3000+ completed jobs</div>
-          <div class="story-stat-num">A handful.</div>
-          <div class="story-stat-cities">Perth · Melbourne · Brisbane</div>
-        </div>
+        <h3 class="service-card-title">End of Lease Cleaning</h3>
+        <p class="service-card-desc">Top-to-bottom clean of the entire property tailored to real estate checklists to help secure your full bond return.</p>
+        <a href="services.html" class="service-link">Learn More</a>
       </div>
-    </div>
 
-    <div class="story-stats-grid">
-      <div class="card" style="text-align:center">
-        <div style="font-family:var(--ff-mono);font-size:32px;font-weight:800;color:var(--primary-ctr);margin-bottom:4px;text-shadow:0 0 20px rgba(0,102,204,0.3)">3000+</div>
-        <div style="font-size:14px;font-weight:600;color:var(--on-bg);margin-bottom:3px">Bond Cleans Done</div>
-        <div style="font-size:12px;color:var(--on-surface-var)">Perth, Melbourne &amp; Brisbane</div>
+      <!-- Card 2 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/><path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5Z"/><path d="m19 17 1 2.5 2.5.5-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1Z"/></svg>
+        </div>
+        <h3 class="service-card-title">Carpet Steam Cleaning</h3>
+        <p class="service-card-desc">Deep hot-water extraction steam cleaning that removes deep-seated dirt, stains, and satisfies lease receipt requirements.</p>
+        <a href="services.html#carpet" class="service-link">Learn More</a>
       </div>
-      <div class="card" style="text-align:center">
-        <div style="font-family:var(--ff-mono);font-size:32px;font-weight:800;color:var(--primary-ctr);margin-bottom:4px;text-shadow:0 0 20px rgba(0,102,204,0.3)">72hr</div>
-        <div style="font-size:14px;font-weight:600;color:var(--on-bg);margin-bottom:3px">Re-clean Guarantee</div>
-        <div style="font-size:12px;color:var(--on-surface-var)">Agent flags it — we fix it free</div>
+
+      <!-- Card 3 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+        </div>
+        <h3 class="service-card-title">Oven Cleaning</h3>
+        <p class="service-card-desc">Deep grease removal from oven interiors, glass doors, trays, and wire racks to clear agent inspections.</p>
+        <a href="services.html#oven" class="service-link">Learn More</a>
       </div>
-      <div class="card" style="text-align:center">
-        <div style="font-family:var(--ff-mono);font-size:32px;font-weight:800;color:var(--primary-ctr);margin-bottom:4px;text-shadow:0 0 20px rgba(0,102,204,0.3)">$0</div>
-        <div style="font-size:14px;font-weight:600;color:var(--on-bg);margin-bottom:3px">Hidden Fees Ever</div>
-        <div style="font-size:12px;color:var(--on-surface-var)">Fixed price.</div>
+
+      <!-- Card 4 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-window"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/></svg>
+        </div>
+        <h3 class="service-card-title">Window Cleaning</h3>
+        <p class="service-card-desc">Detailed window tracks, sills, and internal glass cleaning for streak-free and dust-free window surfaces.</p>
+        <a href="services.html#windows" class="service-link">Learn More</a>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bath"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.67 3 3 4.67 3 5.67V12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5.67C21 4.67 19.33 3 18.5 3a1.5 1.5 0 0 0-1 .5L15 6"/><path d="M14 12v.01"/><path d="M10 12v.01"/><path d="M7 19c-1.1 0-2-.9-2-2v-.01"/><path d="M17 19c0 1.1.9 2 2 2h.01C20.1 21 21 20.1 21 19v-.01"/></svg>
+        </div>
+        <h3 class="service-card-title">Bathroom Deep Cleaning</h3>
+        <p class="service-card-desc">Thorough soap scum descaling, toilet disinfection, tile scrub, and mould sanitisation of all wet areas.</p>
+        <a href="services.html#bathroom" class="service-link">Learn More</a>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v8c0 1.1.9 2 2 2h3Z"/><path d="M18 22v-7"/></svg>
+        </div>
+        <h3 class="service-card-title">Kitchen Deep Cleaning</h3>
+        <p class="service-card-desc">Full sanitisation and grease clean of cupboards (inside/out), rangehoods, kickboards, benchtops, and sinks.</p>
+        <a href="services.html#kitchen" class="service-link">Learn More</a>
       </div>
     </div>
   </div>
@@ -617,60 +705,379 @@ void main(){
   </div>
 </div>
 
-<!-- WHY US -->
-<div class="section section-alt reveal-on-scroll">
-  <div class="container">
-    <span class="eyebrow">The Difference</span>
-    <h2 class="section-title">Why tenants switch to us</h2>
-    <p class="section-sub">We're not the cheapest quote you'll get. We're the one that doesn't change on the day.</p>
-    <div class="cmp">
-      <div class="cmp-h"><span></span><span style="text-align:center">Book & Clean</span><span style="text-align:center">Typical cleaner</span></div>
-      <div class="cmp-r"><span class="f">Fixed price before you book</span><span class="y">✓</span><span class="n">Quote "from" price, adjusts on the day</span></div>
-      <div class="cmp-r"><span class="f">Written scope of work with every quote</span><span class="y">✓</span><span class="n">Rare</span></div>
-      <div class="cmp-r"><span class="f">Before & after photos on every job</span><span class="y">✓</span><span class="n">Rare</span></div>
-      <div class="cmp-r"><span class="f">Re-clean guarantee in writing</span><span class="y">✓</span><span class="n">Verbal promise</span></div>
-      <div class="cmp-r"><span class="f">Book online without a phone call</span><span class="y">✓</span><span class="n">Call-back required</span></div>
+<!-- WHAT'S INCLUDED ACCORDION -->
+<div class="section reveal-on-scroll" id="what-is-included">
+  <div class="container" style="max-width:800px">
+    <div style="text-align:center;margin-bottom:36px">
+      <span class="eyebrow">Service Scope</span>
+      <h2 class="section-title">What's Included in Your Clean</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center">A comprehensive room-by-room breakdown of our standard lease cleaning checklist.</p>
+    </div>
+    
+    <div class="accordion-wrap">
+      <!-- Item 1: Kitchen -->
+      <details class="accordion-item" open>
+        <summary class="accordion-summary">
+          <span class="accordion-title">Kitchen</span>
+          <span class="accordion-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </summary>
+        <div class="accordion-content">
+          <ul class="accordion-list">
+            <li><strong>Oven Deep Clean:</strong> Complete interior and exterior clean, including racks, trays, glass door, and seals.</li>
+            <li><strong>Cooktop &amp; Stovetop:</strong> Degreased, scrubbed, and polished.</li>
+            <li><strong>Rangehood:</strong> Degreasing of filters, exterior body, and underside.</li>
+            <li><strong>Benchtops &amp; Splashback:</strong> Fully degreased, disinfected, and wiped down.</li>
+            <li><strong>Cupboards &amp; Drawers:</strong> Cleaned inside and out, including handles and shelving.</li>
+            <li><strong>Sink &amp; Taps:</strong> Descaled, scrubbed, and polished to a shine.</li>
+            <li><strong>Appliance Exteriors:</strong> Dishwasher, microwave housing, and kickboards wiped down.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Item 2: Bathrooms -->
+      <details class="accordion-item">
+        <summary class="accordion-summary">
+          <span class="accordion-title">Bathrooms</span>
+          <span class="accordion-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </summary>
+        <div class="accordion-content">
+          <ul class="accordion-list">
+            <li><strong>Shower Screen &amp; Recess:</strong> Soap scum, water spots, and grime removed.</li>
+            <li><strong>Bathtub &amp; Basins:</strong> Cleaned, descaled, and disinfected.</li>
+            <li><strong>Toilet:</strong> Disinfected inside and out, including bowl, seat, cistern, and base.</li>
+            <li><strong>Mirrors &amp; Vanity:</strong> Glass polished streak-free, benchtops and cupboards wiped.</li>
+            <li><strong>Wall Tiles:</strong> Wiped down and soap scum removed from grouting.</li>
+            <li><strong>Exhaust Fans:</strong> Dusted and wiped clean of grease and lint.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Item 3: Bedrooms -->
+      <details class="accordion-item">
+        <summary class="accordion-summary">
+          <span class="accordion-title">Bedrooms</span>
+          <span class="accordion-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </summary>
+        <div class="accordion-content">
+          <ul class="accordion-list">
+            <li><strong>Wardrobes:</strong> Cleaned inside and out, including tracking and sliding doors.</li>
+            <li><strong>Wardrobe Mirrors:</strong> Polished streak-free.</li>
+            <li><strong>Skirting Boards &amp; Doors:</strong> Dusted and wiped down to remove marks.</li>
+            <li><strong>Fixtures &amp; Fittings:</strong> Light switches, power points, and light fittings dusted.</li>
+            <li><strong>Floors:</strong> Thoroughly vacuumed or hard floors mopped.</li>
+            <li><strong>Cobwebs:</strong> Removed from cornices and corners.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Item 4: Living Areas -->
+      <details class="accordion-item">
+        <summary class="accordion-summary">
+          <span class="accordion-title">Living Areas</span>
+          <span class="accordion-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </summary>
+        <div class="accordion-content">
+          <ul class="accordion-list">
+            <li><strong>Skirting Boards:</strong> Detailed dusting and wiping throughout.</li>
+            <li><strong>Doors &amp; Frames:</strong> Cleaned to remove scuffs and fingerprints.</li>
+            <li><strong>Ceiling Fans &amp; A/C:</strong> Dusted and wiped clean where accessible.</li>
+            <li><strong>Storage Closets:</strong> Shelving and interior walls wiped down.</li>
+            <li><strong>Wall Spot Cleaning:</strong> Safe spot removal of light scuffs and fingerprints on walls.</li>
+            <li><strong>Floors:</strong> Vacuumed and mopped (including stairs if applicable).</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Item 5: Interior Windows -->
+      <details class="accordion-item">
+        <summary class="accordion-summary">
+          <span class="accordion-title">Interior Windows</span>
+          <span class="accordion-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </summary>
+        <div class="accordion-content">
+          <ul class="accordion-list">
+            <li><strong>Window Glass:</strong> Cleaned internally to a streak-free finish.</li>
+            <li><strong>Window Tracks &amp; Sills:</strong> Vacuumed and wiped clean.</li>
+            <li><strong>Fly Screens:</strong> Brushed down and wiped in place.</li>
+            <li><strong>Blinds:</strong> Dusted and lightly wiped (venetians, rollers, verticals).</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Item 6: Optional Add-ons -->
+      <details class="accordion-item">
+        <summary class="accordion-summary">
+          <span class="accordion-title">Optional Add-ons</span>
+          <span class="accordion-chevron">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </summary>
+        <div class="accordion-content">
+          <ul class="accordion-list">
+            <li><strong>Carpet Steam Cleaning:</strong> Professional hot-water extraction steam clean with receipt.</li>
+            <li><strong>Outside Windows:</strong> Ground-floor exterior glass, sills, and frames cleaned.</li>
+            <li><strong>Blind Deep Clean:</strong> Slat-by-slat chemical wash of vertical/venetian blinds.</li>
+            <li><strong>Full Wall Wash:</strong> Sugar-soap washing of all walls top to bottom.</li>
+            <li><strong>Garage Clean:</strong> Swept and mopped, cobwebs removed, doors wiped down.</li>
+            <li><strong>Balcony / Patio:</strong> Floor swept and mopped, railings and glass door track wiped.</li>
+          </ul>
+        </div>
+      </details>
     </div>
   </div>
 </div>
 
 <!-- TESTIMONIALS -->
-<div class="section reveal-on-scroll">
+<div class="section reveal-on-scroll" id="reviews-section" style="background:var(--surface-bright);border-top:none;border-bottom:none">
   <div class="container">
-    <span class="eyebrow">Customer Reviews</span>
-    <h2 class="section-title">Real tenants. Real bonds returned.</h2>
-    <p class="section-sub">Over 3000 bond cleans completed across Perth, Melbourne, and Brisbane — here's what tenants say.</p>
-    <div class="reviews-grid">
-      <div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Highly recommend these guys! My PM is notoriously strict. Got our full bond refund with zero issues!"</div><div class="rev-name">Sarah Jenkins</div></div>
-      <div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Great experience. Punctual, professional, very efficient. Easy booking, clear pricing with no hidden costs. The agent even commented on how clean the place was."</div><div class="rev-name">David T.</div></div>
-      <div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Incredible job on my 2 bed apartment. Carpet steam cleaning was top tier — got out stubborn stains I thought were permanent."</div><div class="rev-name">Michelle Nguyen</div></div>
-      <div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Absolute lifesavers. Another company cancelled last minute and these guys squeezed me in the next day. Passed inspection first go!"</div><div class="rev-name">Lachlan Smith</div></div>
-      <div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Best bond cleaners I've used. Professional, turned up when they said they would, and the quality was excellent."</div><div class="rev-name">Marcus Brody — Brisbane</div></div>
-      <div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Amazing attention to detail! They even cleaned the fly screens and tracks which most places miss. Real estate was super happy."</div><div class="rev-name">Jessica M.</div></div>
+    <div style="text-align:center;margin-bottom:40px">
+      <span class="eyebrow">Customer Reviews</span>
+      <h2 class="section-title">Real tenants. Real bonds returned.</h2>
+      <p class="section-sub">Over 3000 bond cleans completed across Perth, Melbourne, and Brisbane — here's what tenants say.</p>
+    </div>
+    
+    <div class="reviews-grid-new">
+      <!-- Card 1 -->
+      <div class="review-card-new">
+        <div class="rc-accent"></div>
+        <div class="rc-quote-top">
+          <svg class="quote-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.944 2c-3.197 1.024-4.944 3.409-4.944 5.725h4v6h-10v-2zm-13 0c0-5.141 3.892-10.519 10-11.725l.944 2c-3.197 1.024-4.944 3.409-4.944 5.725h4v6h-10v-2z"/></svg>
+        </div>
+        <div class="rating-stars">
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text-content">"The team arrived right on time and left the property spotless. Our agent approved everything on the first inspection. Couldn't be happier!"</p>
+        <div class="review-author-wrap">
+          <div class="review-avatar">EC</div>
+          <div class="review-meta">
+            <span class="review-name">Emily Carter</span>
+            <span class="review-city">Melbourne</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="review-card-new">
+        <div class="rc-accent"></div>
+        <div class="rc-quote-top">
+          <svg class="quote-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.944 2c-3.197 1.024-4.944 3.409-4.944 5.725h4v6h-10v-2zm-13 0c0-5.141 3.892-10.519 10-11.725l.944 2c-3.197 1.024-4.944 3.409-4.944 5.725h4v6h-10v-2z"/></svg>
+        </div>
+        <div class="rating-stars">
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text-content">"Booking was incredibly easy and the cleaners were professional from start to finish. The oven and bathrooms looked brand new."</p>
+        <div class="review-author-wrap">
+          <div class="review-avatar">JW</div>
+          <div class="review-meta">
+            <span class="review-name">James Wilson</span>
+            <span class="review-city">Sydney</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="review-card-new">
+        <div class="rc-accent"></div>
+        <div class="rc-quote-top">
+          <svg class="quote-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.944 2c-3.197 1.024-4.944 3.409-4.944 5.725h4v6h-10v-2zm-13 0c0-5.141 3.892-10.519 10-11.725l.944 2c-3.197 1.024-4.944 3.409-4.944 5.725h4v6h-10v-2z"/></svg>
+        </div>
+        <div class="rating-stars">
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text-content">"We received our full bond back without any issues. Excellent communication and fantastic attention to detail."</p>
+        <div class="review-author-wrap">
+          <div class="review-avatar">OT</div>
+          <div class="review-meta">
+            <span class="review-name">Olivia Thompson</span>
+            <span class="review-city">Brisbane</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="review-card-new">
+        <div class="rc-accent"></div>
+        <div class="rc-quote-top">
+          <svg class="quote-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.944 2c-3.197 1.024-4.944 3.409-4.944 5.725h4v6h-10v-2zm-13 0c0-5.141 3.892-10.519 10-11.725l.944 2c-3.197 1.024-4.944 3.409-4.944 5.725h4v6h-10v-2z"/></svg>
+        </div>
+        <div class="rating-stars">
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text-content">"Best bond cleaning service I've used. Every room was cleaned thoroughly and even the carpet stains were removed."</p>
+        <div class="review-author-wrap">
+          <div class="review-avatar">LA</div>
+          <div class="review-meta">
+            <span class="review-name">Liam Anderson</span>
+            <span class="review-city">Perth</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="review-card-new">
+        <div class="rc-accent"></div>
+        <div class="rc-quote-top">
+          <svg class="quote-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.944 2c-3.197 1.024-4.944 3.409-4.944 5.725h4v6h-10v-2zm-13 0c0-5.141 3.892-10.519 10-11.725l.944 2c-3.197 1.024-4.944 3.409-4.944 5.725h4v6h-10v-2z"/></svg>
+        </div>
+        <div class="rating-stars">
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text-content">"Very reliable company with transparent pricing. The cleaners exceeded my expectations and the property looked immaculate."</p>
+        <div class="review-author-wrap">
+          <div class="review-avatar">SM</div>
+          <div class="review-meta">
+            <span class="review-name">Sophie Martin</span>
+            <span class="review-city">Melbourne</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="review-card-new">
+        <div class="rc-accent"></div>
+        <div class="rc-quote-top">
+          <svg class="quote-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.944 2c-3.197 1.024-4.944 3.409-4.944 5.725h4v6h-10v-2zm-13 0c0-5.141 3.892-10.519 10-11.725l.944 2c-3.197 1.024-4.944 3.409-4.944 5.725h4v6h-10v-2z"/></svg>
+        </div>
+        <div class="rating-stars">
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text-content">"Highly recommend Book & Clean. Friendly staff, quality workmanship, and everything was completed exactly as promised."</p>
+        <div class="review-author-wrap">
+          <div class="review-avatar">EB</div>
+          <div class="review-meta">
+            <span class="review-name">Ethan Brown</span>
+            <span class="review-city">Sydney</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- STATS BAR -->
-<div class="section section-dark reveal-on-scroll" style="padding:44px 24px">
-  <div class="statbar">
-    <div class="statc"><div class="statn">3000+</div><div class="statl">Bond Cleans Completed</div></div>
-    <div class="statc"><div class="statn">100%</div><div class="statl">Bond-Back Guarantee</div></div>
-    <div class="statc"><div class="statn">Fully</div><div class="statl">Insured & Police-Checked</div></div>
-    <div class="statc"><div class="statn">60 sec</div><div class="statl">Instant Online Quote</div></div>
+<!-- COMPACT TRUST STRIP -->
+<div class="trust-strip-bar reveal-on-scroll">
+  <div class="container-lg">
+    <div class="trust-strip-inner">
+      <div class="trust-strip-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>3,000+ Properties Cleaned</span>
+      </div>
+      <div class="trust-strip-divider"></div>
+      <div class="trust-strip-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map"><path d="M14.106 5.553a2 2 0 0 0-1.66 0L8.5 7.5 3.61 5.05A1 1 0 0 0 2.22 6v11.8a2 2 0 0 0 1.11 1.79l4.88 2.44a2 2 0 0 0 1.66 0l3.9-1.95 4.89 2.44a1 1 0 0 0 1.39-.9V6c0-.44-.29-.83-.71-.97Z"/><path d="M9 22V7"/><path d="M15 17V2"/></svg>
+        <span>4 Major Australian Cities</span>
+      </div>
+      <div class="trust-strip-divider"></div>
+      <div class="trust-strip-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7Z"/></svg>
+        <span>Police-Verified Cleaning Team</span>
+      </div>
+      <div class="trust-strip-divider"></div>
+      <div class="trust-strip-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 1 15.2-6.6l3 2.9v-5"/></svg>
+        <span>Re-Clean Support Available</span>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- HOW IT WORKS -->
-<div class="section section-alt reveal-on-scroll">
+<!-- BOOKING PROCESS TIMELINE -->
+<div class="section section-alt reveal-on-scroll" id="how-it-works">
   <div class="container">
-    <span class="eyebrow">Simple Process</span>
-    <h2 class="section-title">Bond back in 3 steps</h2>
-    <p class="section-sub">From quote to clean — everything handled for you.</p>
-    <div class="steps-grid">
-      <div class="step-card"><div class="step-num">1</div><h3>Get Quote Instantly</h3><p>Fill the form above. See your exact price as you go — no waiting, no phone calls required.</p></div>
-      <div class="step-card"><div class="step-num">2</div><h3>Book Your Clean</h3><p>Lock in your preferred date instantly. No advance payment required — pay only after the clean is complete.</p></div>
-      <div class="step-card"><div class="step-num">3</div><h3>Get your bond back</h3><p>We clean to real estate agent standard. If anything is flagged, we re-clean completely free.</p></div>
+    <div style="text-align:center;margin-bottom:36px">
+      <span class="eyebrow">Simple Process</span>
+      <h2 class="section-title">Bond Back in 4 Simple Steps</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;max-width:600px">From booking to bond refund — we handle everything professionally.</p>
+    </div>
+    
+    <div class="timeline-wrap">
+      <div class="timeline-line"></div>
+      
+      <!-- Stage 1 -->
+      <div class="timeline-stage">
+        <div class="timeline-icon-wrap">
+          <div class="timeline-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+        </div>
+        <div class="timeline-content">
+          <h3 class="timeline-stage-title">1. Select Your City</h3>
+          <p class="timeline-stage-desc">Enter your suburb and property configuration in our easy online form.</p>
+        </div>
+      </div>
+
+      <!-- Stage 2 -->
+      <div class="timeline-stage">
+        <div class="timeline-icon-wrap">
+          <div class="timeline-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dollar-sign"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+        </div>
+        <div class="timeline-content">
+          <h3 class="timeline-stage-title">2. Get Instant Price</h3>
+          <p class="timeline-stage-desc">See your fixed price transparently with any add-ons instantly updated.</p>
+        </div>
+      </div>
+
+      <!-- Stage 3 -->
+      <div class="timeline-stage">
+        <div class="timeline-icon-wrap">
+          <div class="timeline-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-check-2"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+          </div>
+        </div>
+        <div class="timeline-content">
+          <h3 class="timeline-stage-title">3. Confirm Booking</h3>
+          <p class="timeline-stage-desc">Lock in your date. Pay nothing upfront — we charge only after cleaning.</p>
+        </div>
+      </div>
+
+      <!-- Stage 4 -->
+      <div class="timeline-stage">
+        <div class="timeline-icon-wrap">
+          <div class="timeline-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/><path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5Z"/><path d="m19 17 1 2.5 2.5.5-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1Z"/></svg>
+          </div>
+        </div>
+        <div class="timeline-content">
+          <h3 class="timeline-stage-title">4. Inspection Ready</h3>
+          <p class="timeline-stage-desc">We clean to agent standard. If issues are flagged, we re-clean free.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -696,13 +1103,14 @@ void main(){
 <div class="section section-alt reveal-on-scroll">
   <div class="container">
     <span class="eyebrow">Where We Clean</span>
-    <h2 class="section-title">Servicing Perth, Melbourne & Brisbane</h2>
-    <p class="section-sub">We cover most suburbs within 30km of each CBD. Type your suburb into the quote form — if we service it, you'll see your price straight away.</p>
+    <h2 class="section-title">Servicing Melbourne, Sydney, Brisbane & Perth</h2>
+    <p class="section-sub">We proudly service major suburbs across Melbourne, Sydney, Brisbane, and Perth. Enter your suburb in the booking form to instantly check availability and receive your quote.</p>
     <div class="areas-grid">
-      <div class="area-card"><div class="area-h">Perth & Surrounds</div><div class="area-list">Perth CBD · Subiaco · Victoria Park · Cannington · Morley · Joondalup · Scarborough · Fremantle · Midland · Armadale · Wanneroo · Bayswater · Belmont · Canning Vale · Gosnells · Stirling · Nedlands · Cottesloe · Rockingham · Mandurah</div></div>
       <div class="area-card"><div class="area-h">Melbourne & Surrounds</div><div class="area-list">St Kilda · Richmond · South Yarra · Brunswick · Footscray · Hawthorn · Preston · Glen Waverley · Box Hill · Doncaster · Essendon · Coburg · Brighton · Oakleigh · Frankston · Dandenong · Werribee · Tarneit · Hoppers Crossing · Pakenham</div></div>
+      <div class="area-card"><div class="area-h">Sydney & Surrounds</div><div class="area-list">Sydney CBD · Parramatta · Chatswood · Bondi · Surry Hills · Newtown · Ryde · Burwood · Ashfield · Blacktown · Liverpool · Hurstville · Bankstown · North Sydney · Manly · Hornsby · Castle Hill · Penrith · Mascot · Randwick</div></div>
       <div class="area-card"><div class="area-h">Brisbane & Surrounds</div><div class="area-list">Brisbane CBD · South Brisbane · Fortitude Valley · New Farm · West End · Toowong · Indooroopilly · Chermside · Carindale · Mount Gravatt · Sunnybank · Holland Park · Coorparoo · Wynnum · Cleveland · Redcliffe · Logan · Springfield · Ipswich · Capalaba</div></div>
-      </div>
+      <div class="area-card"><div class="area-h">Perth & Surrounds</div><div class="area-list">Perth CBD · Subiaco · Victoria Park · Cannington · Morley · Joondalup · Scarborough · Fremantle · Midland · Armadale · Wanneroo · Bayswater · Belmont · Canning Vale · Gosnells · Stirling · Nedlands · Cottesloe · Rockingham · Mandurah</div></div>
+    </div>
   </div>
 </div>
 
@@ -710,7 +1118,9 @@ void main(){
 <div class="section section-dark reveal-on-scroll" style="background-image:url(guarantee-bg.webp);background-size:cover;background-position:center;position:relative">
   <div style="position:absolute;inset:0;background:rgba(255,255,255,0.9);backdrop-filter:blur(2px);z-index:0"></div>
   <div class="container" style="position:relative;z-index:1;text-align:center">
-    <div style="width:64px;height:64px;background:rgba(0,102,204,0.1);border:1px solid rgba(0,102,204,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:28px;box-shadow:0 0 30px rgba(0,102,204,0.15)">🛡️</div>
+    <div class="guar-icon-wrap">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+    </div>
     <span class="eyebrow" style="color:var(--secondary)">Our Promise</span>
     <h2 class="section-title section-title-white">Bond-Back Guarantee</h2>
     <p class="section-sub section-sub-white" style="margin:0 auto 28px;text-align:center">If your property manager flags a cleaning issue from our service, we'll come back and re-clean it free. No fuss — just a fast re-clean to make it right.</p>
@@ -1280,16 +1690,16 @@ ADDON_PRICES['Sydney'] = ADDON_PRICES['Perth'];
 
 
 const ADDEF=[
-  {v:'External Window Cleaning',i:'🪟',key:'WIN',hint:'Exterior glass on the ground floor, external sills, and tracks.'},
-  {v:'Stair Carpet Steam Cleaning',i:'🪜',key:'STAIRS',p:40,qty:true,hint:'Professional steam cleaning per staircase.'},
-  {v:'Garage Cleaning',i:'🚗',key:'GARAGE',p:50,qty:true,hint:'Sweeping and removing cobwebs from garage space.'},
-  {v:'Study / Theatre Room',i:'🎬',key:'STUDY',p:25,qty:true,hint:'Cleaning of additional study or theatre rooms.'},
-  {v:'Extra Living Room',i:'🛋️',key:'LIVING',p:30,qty:true,hint:'Cleaning of additional living spaces.'},
-  {v:'Balcony Cleaning',i:'🏙️',key:'BALCONY',p:40,qty:true,hint:'Sweeping and mopping of balcony floors.'},
-  {v:'Full Wall Wash (Per Wall)',i:'🧽',key:'WALL_WASH',p:20,qty:true,hint:'Full wash of individual walls to remove heavy marks.'},
-  {v:'Blind Cleaning (wipe)',i:'🪟',key:'BLIND',p:15,qty:true,hint:'Slat-by-slat wiping of venetian or vertical blinds.'}
+  {v:'External Window Cleaning',i:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/></svg>',key:'WIN',hint:'Exterior glass on the ground floor, external sills, and tracks.'},
+  {v:'Stair Carpet Steam Cleaning',i:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M3 21V3"/><path d="M3 7h4v4H3z"/><path d="M7 11h4v4H7z"/><path d="M11 15h4v4h-4z"/><path d="M15 19h4V15"/></svg>',key:'STAIRS',p:40,qty:true,hint:'Professional steam cleaning per staircase.'},
+  {v:'Garage Cleaning',i:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><path d="M2 7 12 2l10 5"/></svg>',key:'GARAGE',p:50,qty:true,hint:'Sweeping and removing cobwebs from garage space.'},
+  {v:'Study / Theatre Room',i:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>',key:'STUDY',p:25,qty:true,hint:'Cleaning of additional study or theatre rooms.'},
+  {v:'Extra Living Room',i:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"/><path d="M4 18v2"/><path d="M20 18v2"/><path d="M12 4v9"/></svg>',key:'LIVING',p:30,qty:true,hint:'Cleaning of additional living spaces.'},
+  {v:'Balcony Cleaning',i:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 15h18"/><path d="M3 21h18"/></svg>',key:'BALCONY',p:40,qty:true,hint:'Sweeping and mopping of balcony floors.'},
+  {v:'Full Wall Wash (Per Wall)',i:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/></svg>',key:'WALL_WASH',p:20,qty:true,hint:'Full wash of individual walls to remove heavy marks.'},
+  {v:'Blind Cleaning (wipe)',i:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M3 10h18"/><path d="M3 14h18"/><path d="M3 18h18"/><path d="M6 3v18"/></svg>',key:'BLIND',p:15,qty:true,hint:'Slat-by-slat wiping of venetian or vertical blinds.'}
 ];
-const S={step:1,ps:'',pp:0,pt:'',pm:1,ca:'',cp:0,ads:[],at:0,sub:'Lutwyche',subv:false,dt:'',city:'',fn:'',ln:'',em:'',ph:'',uo:false,subKnown:false,move:'',street:'',post:''};
+const S={step:1,ps:'',pp:0,pt:'',pm:1,ca:'',cp:0,ads:[],at:0,sub:'Lutwyche',subv:false,dt:'',city:'Brisbane',fn:'',ln:'',em:'',ph:'',uo:false,subKnown:false,move:'',street:'',post:''};
 const TITLES={1:'Step 1 of 6 — Property Size',2:'Step 2 of 6 — Property Type',3:'Step 3 of 6 — Carpet Steam Cleaning',4:'Step 4 of 6 — Optional Add-Ons',5:'Step 5 of 6 — Date & Suburb',6:'Step 6 of 6 — Your Details'};
 
 function getAP(a){
@@ -2104,7 +2514,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var label = idx >= 0
         ? item.n.slice(0,idx) + '<strong>' + item.n.slice(idx, idx+query.length) + '</strong>' + item.n.slice(idx+query.length)
         : item.n;
-      div.innerHTML = '📍 ' + label + '<span class="sub-city">' + item.s + '</span>';
+      div.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:5px;vertical-align:middle;flex-shrink:0"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>' + label + '<span class="sub-city">' + item.s + '</span>';
       div.addEventListener('mousedown', function(e){
         e.preventDefault();
         select(item);
