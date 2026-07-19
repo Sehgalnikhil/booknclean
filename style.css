@@ -3514,30 +3514,83 @@ input, select, textarea {
 
   /* ── HERO SECTION ───────────────────────────────────────── */
   .hero-section {
-    padding: 80px 20px 48px;
+    padding: 130px 20px 32px;
     min-height: auto;
     text-align: center;
   }
   .hero-content { align-items: center; }
   .hero-bg-wrapper { display: none; }
-  .hero-kicker { font-size: 11px; margin-bottom: 16px; }
-  .hero-h1 { font-size: clamp(28px, 8vw, 38px); margin-bottom: 8px; }
-  .hero-badge { font-size: clamp(22px, 7vw, 32px); margin-bottom: 16px; }
-  .hero-note { font-size: 15px; padding: 0 4px; margin-bottom: 24px; }
-  .hero-trust-badges {
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 24px;
+  .hero-kicker { font-size: 11px; margin-bottom: 12px; }
+  .hero-h1 {
+    font-size: clamp(30px, 8vw, 38px);
+    margin-bottom: 6px;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
   }
-  .htb-item { font-size: 12px; padding: 8px 12px; gap: 8px; }
-  .htb-icon-wrap { width: 30px; height: 30px; }
-  .hero-ctas { flex-direction: column; align-items: stretch; gap: 12px; width: 100%; }
-  .hero-ctas .btn-primary, .hero-ctas .btn-call {
+  .hero-badge {
+    font-size: clamp(16px, 4.8vw, 20px);
+    margin-top: 6px;
+    margin-bottom: 16px;
+    line-height: 1.25;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero-note {
+    font-size: 14.5px;
+    line-height: 1.5;
+    padding: 0;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  .hero-trust-strip {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    margin-top: 16px !important;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+    max-width: 480px !important;
+  }
+  .hts-item {
+    flex: none !important;
+    min-width: 0 !important;
+    padding: 6px 10px !important;
+    gap: 8px !important;
+    border-radius: 8px !important;
+  }
+  .hts-icon-wrap {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .hts-icon-wrap svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .hts-title {
+    font-size: 11px !important;
+  }
+  .hts-desc {
+    font-size: 9.5px !important;
+    margin-top: 0px !important;
+  }
+  .hero-ctas {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    margin-top: 16px !important;
+    width: 100% !important;
+    max-width: 480px !important;
+  }
+  .hero-ctas .btn-hero-primary, .hero-ctas .btn-hero-secondary {
     width: 100%;
     justify-content: center;
     text-align: center;
-    min-height: 52px;
-    font-size: 16px;
+    min-height: 48px;
+    font-size: 15px;
   }
 
   /* ── QUOTE FORM ─────────────────────────────────────────── */
@@ -3668,9 +3721,9 @@ input, select, textarea {
    480px — SMALL PHONES
 ═══════════════════════════════════════════════════════════ */
 @media (max-width: 480px) {
-  .hero-section { padding: 72px 16px 40px; }
-  .hero-h1 { font-size: clamp(26px, 8vw, 34px); }
-  .hero-badge { font-size: clamp(20px, 6vw, 28px); }
+  .hero-section { padding: 120px 16px 24px; }
+  .hero-h1 { font-size: clamp(28px, 8vw, 34px); margin-bottom: 6px; }
+  .hero-badge { font-size: clamp(15px, 5vw, 17px); margin-top: 6px; margin-bottom: 14px; line-height: 1.2; }
 
   .fb { padding: 12px; }
   .oga { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
@@ -3703,7 +3756,7 @@ input, select, textarea {
 ═══════════════════════════════════════════════════════════ */
 @media (max-width: 390px) {
   .hero-h1 { font-size: 26px; }
-  .hero-badge { font-size: 20px; }
+  .hero-badge { font-size: 14px; }
   .oga { gap: 6px !important; }
   .obtn { min-height: 68px; padding: 8px 4px; }
   .cg { gap: 5px !important; }
@@ -3751,7 +3804,7 @@ input, select, textarea {
   
   /* Fix hero section on iPhone notch */
   .hero-section {
-    padding-top: max(80px, calc(64px + env(safe-area-inset-top)));
+    padding-top: calc(max(80px, calc(64px + env(safe-area-inset-top))) + 50px);
   }
   
   /* Avail strip compact on mobile */
@@ -4636,17 +4689,47 @@ footer a { display: inline-block; min-height: 24px; padding: 2px 0; }
 
 @media (max-width: 768px) {
   .hero-trust-strip {
-    margin-top: 24px;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    margin-top: 16px !important;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    margin-left: auto;
+    margin-right: auto;
   }
   .hts-item {
-    flex: 1 1 100%;
-    min-width: 100%;
+    flex: none !important;
+    min-width: 0 !important;
+    padding: 6px 10px !important;
+    gap: 8px !important;
+    border-radius: 8px !important;
+  }
+  .hts-icon-wrap {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .hts-icon-wrap svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .hts-title {
+    font-size: 11px !important;
+  }
+  .hts-desc {
+    font-size: 9.5px !important;
+    margin-top: 0px !important;
   }
   .hero-ctas {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    margin-top: 28px;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    margin-top: 16px !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    margin-left: auto;
+    margin-right: auto;
   }
   .btn-hero-primary {
     width: 100%;
@@ -4656,6 +4739,7 @@ footer a { display: inline-block; min-height: 24px; padding: 2px 0; }
     text-align: center;
     align-self: center;
     border-bottom-width: 1px;
+    margin-top: 4px;
   }
 }
 
