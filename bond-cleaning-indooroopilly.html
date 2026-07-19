@@ -103,7 +103,7 @@
       "name": "Which cities does Book & Clean service for bond cleaning?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Book &amp; Clean provides professional bond cleaning services across Perth, Melbourne, and Brisbane metro areas and surrounding suburbs — typically within 30km of each CBD."
+        "text": "Book &amp; Clean provides professional bond cleaning services across Perth, Melbourne, Brisbane, Canberra and Adelaide metro areas and surrounding suburbs — typically within 30km of each CBD."
       }
     }
   ]
@@ -307,6 +307,8 @@ void main(){
         <option value="Sydney">Sydney</option>
         <option value="Brisbane">Brisbane</option>
         <option value="Perth">Perth</option>
+        <option value="Canberra">Canberra</option>
+        <option value="Adelaide">Adelaide</option>
       </select>
     </div>
 
@@ -434,7 +436,7 @@ void main(){
 
           <!-- Suburb Dropdown -->
           <div class="suburb-wrap">
-            <input type="text" class="suburb-input" id="suburbInput" placeholder="Enter your suburb (e.g. Bondi)" autocomplete="off">
+            <input type="text" class="suburb-input" id="suburbInput" placeholder="Enter your suburb (e.g. Bondi)" value="Indooroopilly, QLD" autocomplete="off">
             <div class="suburb-dropdown" id="suburbDropdown"></div>
           </div>
           <!-- Hidden city field (populated by dropdown) -->
@@ -522,12 +524,6 @@ void main(){
   </div>
 </div>
 
-
-<div class="trust-badges-banner reveal-on-scroll">
-  <div class="tb-item">
-    <span class="tb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-check"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg></span>
-    <span class="tb-text">Trusted<br>Professionals</span>
-  </div>
   <div class="tb-item">
     <span class="tb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7Z"/></svg></span>
     <span class="tb-text">Insured &<br>Reliable</span>
@@ -722,7 +718,7 @@ void main(){
     <div style="text-align:center;margin-bottom:40px">
       <span class="eyebrow">Customer Reviews</span>
       <h2 class="section-title">Real tenants. Real bonds returned.</h2>
-      <p class="section-sub">Over 3000 bond cleans completed across Perth, Melbourne, and Brisbane — here's what tenants say.</p>
+      <p class="section-sub">Over 3000 bond cleans completed across Perth, Melbourne, Brisbane, Canberra and Adelaide — here's what tenants say.</p>
     </div>
     
     <div class="reviews-grid-new">
@@ -1067,7 +1063,7 @@ void main(){
     <div style="text-align:center">
       <span class="eyebrow">Where We Operate</span>
       <h2 class="section-title">Bond Cleaning Across Major Australian Cities</h2>
-      <p class="section-sub" style="margin:0 auto">Same checklist, same standard, same fixed price — whether you're in Melbourne, Sydney, Brisbane or Perth. Your property manager gets the same thorough result wherever you are.</p>
+      <p class="section-sub" style="margin:0 auto">Same checklist, same standard, same fixed price — whether you're in Melbourne, Sydney, Brisbane, Perth, Canberra or Adelaide. Your property manager gets the same thorough result wherever you are.</p>
     </div>
     <div class="city-ops-grid">
       <div class="city-ops-card">
@@ -1104,6 +1100,24 @@ void main(){
         <details class="city-ops-details">
           <summary>View Covered Suburbs</summary>
           <div class="city-ops-suburb-list">Perth CBD · Subiaco · Victoria Park · Cannington · Morley · Joondalup · Scarborough · Fremantle · Midland · Armadale · Wanneroo · Bayswater · Belmont · Canning Vale · Gosnells · Stirling · Nedlands · Cottesloe · Rockingham · Mandurah</div>
+        </details>
+      </div>
+      <div class="city-ops-card">
+        <div class="city-ops-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="city-ops-name">Canberra</div>
+        <div class="city-ops-desc">ACT metro area including Belconnen, Tuggeranong, Woden and Gungahlin. Fixed price, bond-back guaranteed.</div>
+        <details class="city-ops-details">
+          <summary>View Covered Suburbs</summary>
+          <div class="city-ops-suburb-list">Canberra CBD · Belconnen · Tuggeranong · Woden · Gungahlin · Queanbeyan · Bruce · Braddon · Dickson · Civic · Manuka · Kingston · Deakin · Narrabundah · Fyshwick · Holt · Greenway · Wanniassa · Kambah · Charnwood</div>
+        </details>
+      </div>
+      <div class="city-ops-card">
+        <div class="city-ops-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="city-ops-name">Adelaide</div>
+        <div class="city-ops-desc">CBD, inner north, south and eastern suburbs. Oven, carpets and bond-back guarantee all included.</div>
+        <details class="city-ops-details">
+          <summary>View Covered Suburbs</summary>
+          <div class="city-ops-suburb-list">Adelaide CBD · Glenelg · Norwood · Unley · Mitcham · Burnside · Prospect · Payneham · Campbelltown · Modbury · Tea Tree Gully · Elizabeth · Salisbury · Parafield Gardens · Morphett Vale · Marion · Hallett Cove · Christies Beach · Noarlunga · Port Adelaide</div>
         </details>
       </div>
     </div>
@@ -1658,7 +1672,7 @@ void main(){
         </button>
         <div class="faq-a" role="region">
           <div class="faq-a-inner">
-            We cover <strong>Perth, Melbourne, and Brisbane</strong> metro areas and surrounding suburbs — typically within 30km of each CBD. Enter your suburb in the quote form to confirm availability and see your fixed price instantly.
+            We cover <strong>Perth, Melbourne, Brisbane, Canberra and Adelaide</strong> metro areas and surrounding suburbs — typically within 30km of each CBD. Enter your suburb in the quote form to confirm availability and see your fixed price instantly.
           </div>
         </div>
       </div>
@@ -1692,7 +1706,7 @@ void main(){
       <img src="oc-logo.webp" alt="Book & Clean Logo" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 4px 10px rgba(0,0,0,0.05)">
       <div>
         <div class="footer-brand">Book & Clean</div>
-        <div class="footer-caption">Melbourne · Sydney · Brisbane · Perth</div>
+        <div class="footer-caption">Melbourne · Sydney · Brisbane · Perth · Canberra · Adelaide</div>
       </div>
     </div>
     <div class="footer-right">
@@ -1851,6 +1865,8 @@ const PRICES = {
   }
 };
 PRICES['Sydney'] = PRICES['Perth'];
+PRICES['Canberra'] = PRICES['Brisbane'];
+PRICES['Adelaide'] = PRICES['Brisbane'];
 
 
 const ADDON_PRICES = {
@@ -1863,6 +1879,8 @@ const ADDON_PRICES = {
 };
 ADDON_PRICES['Perth'] = ADDON_PRICES['Brisbane'];
 ADDON_PRICES['Sydney'] = ADDON_PRICES['Perth'];
+ADDON_PRICES['Canberra'] = ADDON_PRICES['Brisbane'];
+ADDON_PRICES['Adelaide'] = ADDON_PRICES['Brisbane'];
 
 
 const ADDEF=[
@@ -2420,7 +2438,7 @@ upProg(1);
 <script>
 (function(){
   try {
-    var map={'australia/perth':'Perth','australia/melbourne':'Melbourne','australia/brisbane':'Brisbane'};
+    var map={'australia/perth':'Perth','australia/melbourne':'Melbourne','australia/brisbane':'Brisbane','australia/sydney':'Sydney','australia/canberra':'Canberra','australia/adelaide':'Adelaide'};
     var qs=new URLSearchParams(location.search).get('city');
     var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
     var city=null;

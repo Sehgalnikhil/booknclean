@@ -273,7 +273,7 @@ function updateDiyCalc_pr() {
       <img src="oc-logo.webp" alt="Book & Clean Logo" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 4px 10px rgba(0,0,0,0.05)">
       <div>
         <div class="footer-brand">Book & Clean</div>
-        <div class="footer-caption">Perth · Melbourne · Brisbane · Sydney</div>
+        <div class="footer-caption">Perth · Melbourne · Brisbane · Sydney · Canberra · Adelaide</div>
       </div>
     </div>
     <div class="footer-right">
@@ -432,6 +432,8 @@ const PRICES = {
   }
 };
 PRICES['Sydney'] = PRICES['Perth'];
+PRICES['Canberra'] = PRICES['Brisbane'];
+PRICES['Adelaide'] = PRICES['Brisbane'];
 
 
 const ADDON_PRICES = {
@@ -444,6 +446,8 @@ const ADDON_PRICES = {
 };
 ADDON_PRICES['Perth'] = ADDON_PRICES['Brisbane'];
 ADDON_PRICES['Sydney'] = ADDON_PRICES['Perth'];
+ADDON_PRICES['Canberra'] = ADDON_PRICES['Brisbane'];
+ADDON_PRICES['Adelaide'] = ADDON_PRICES['Brisbane'];
 
 
 const ADDEF=[
@@ -691,7 +695,7 @@ upProg(1);
 <script>
 (function(){
   try {
-    var map={'australia/perth':'Perth','australia/melbourne':'Melbourne','australia/brisbane':'Brisbane','australia/sydney':'Sydney'};
+    var map={'australia/perth':'Perth','australia/melbourne':'Melbourne','australia/brisbane':'Brisbane','australia/sydney':'Sydney','australia/canberra':'Canberra','australia/adelaide':'Adelaide'};
     var qs=new URLSearchParams(location.search).get('city');
     var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
     var city=null;

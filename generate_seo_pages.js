@@ -10,10 +10,19 @@ const brisbaneSuburbs = [
 const perthSuburbs = [
   "Subiaco", "Fremantle", "Cottesloe", "Scarborough", "Joondalup", "Mandurah", "Midland", "Armadale", "Rockingham", "Cannington", "Belmont", "Victoria Park", "South Perth", "Como", "Applecross", "Melville", "Bibra Lake", "Cockburn Central", "Baldivis", "Success", "Ellenbrook", "Mirrabooka", "Malaga", "Morley", "Dianella", "Stirling", "Innaloo", "Osborne Park", "Wembley", "Floreat"
 ];
+const canberraSuburbs = [
+  "Belconnen", "Tuggeranong", "Woden", "Gungahlin", "Queanbeyan", "Bruce", "Braddon", "Dickson", "Civic", "Manuka", "Kingston", "Deakin", "Narrabundah", "Fyshwick", "Holt", "Greenway", "Wanniassa", "Kambah", "Charnwood"
+];
+const adelaideSuburbs = [
+  "Glenelg", "Norwood", "Unley", "Mitcham", "Burnside", "Prospect", "Payneham", "Campbelltown", "Modbury", "Tea Tree Gully", "Elizabeth", "Salisbury", "Parafield Gardens", "Morphett Vale", "Marion", "Hallett Cove", "Christies Beach", "Noarlunga", "Port Adelaide"
+];
 
-const allSuburbs = [  ...melbourneSuburbs.map(s => ({ name: s, region: "Melbourne" })),
+const allSuburbs = [
+  ...melbourneSuburbs.map(s => ({ name: s, region: "Melbourne" })),
   ...brisbaneSuburbs.map(s => ({ name: s, region: "Brisbane" })),
-  ...perthSuburbs.map(s => ({ name: s, region: "Perth" }))
+  ...perthSuburbs.map(s => ({ name: s, region: "Perth" })),
+  ...canberraSuburbs.map(s => ({ name: s, region: "Canberra" })),
+  ...adelaideSuburbs.map(s => ({ name: s, region: "Adelaide" }))
 ];
 
 // Clean duplicates just in case (e.g. Paddington is in both Sydney and Brisbane)
@@ -66,8 +75,8 @@ uniqueSuburbs.forEach(sub => {
     
     // Pre-fill suburb in JS payload
     content = content.replace(
-        `id="suburbInput" placeholder="🔍 Enter your suburb (e.g. Bondi)"`,
-        `id="suburbInput" placeholder="🔍 Enter your suburb (e.g. Bondi)" value="${suburb}, ${region === 'Melbourne' ? 'VIC' : region === 'Brisbane' ? 'QLD' : 'WA'}"`
+        `id="suburbInput" placeholder="Enter your suburb (e.g. Bondi)"`,
+        `id="suburbInput" placeholder="Enter your suburb (e.g. Bondi)" value="${suburb}, ${region === 'Melbourne' ? 'VIC' : region === 'Brisbane' ? 'QLD' : region === 'Canberra' ? 'ACT' : region === 'Adelaide' ? 'SA' : 'WA'}"`
     );
 
     // Set the hidden city input

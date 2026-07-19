@@ -7,8 +7,8 @@ fetch('https://raw.githubusercontent.com/matthewproctor/australianpostcodes/mast
        'VIC': 'Melbourne',
        'QLD': 'Brisbane',
        'WA': 'Perth',
-       'SA': 'Melbourne',
-       'ACT': 'Sydney',
+       'SA': 'Adelaide',
+       'ACT': 'Canberra',
        'TAS': 'Melbourne',
        'NT': 'Brisbane'
      };
