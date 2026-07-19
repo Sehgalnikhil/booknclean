@@ -258,6 +258,7 @@ void main(){
         <span class="fht" id="fht">Step 1 of 6 — Property Size</span>
         <span class="fhs" id="fhs">1 / 6</span>
       </div>
+      <div class="wizard-progress"><div class="wizard-progress-fill" id="wizardProgress"></div></div>
       <div class="fb">
 
         <!-- STEP 1 -->
@@ -368,7 +369,7 @@ void main(){
           <input type="text" class="fi" id="iaddr" placeholder="Street address (e.g. 123 Main St, Unit 4)" autocomplete="street-address" style="margin-top: 16px;">
           <div class="fe" id="eaddr">Please enter your street address</div>
 
-          <input type="text" placeholder="Select preferred date..." class="fi" id="idate" min="" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" onchange="dateChg(this.value)" style="margin-top: 16px;">
+          <input type="text" placeholder="Select preferred date..." class="fi" id="idate" min=""   onchange="dateChg(this.value)" style="margin-top: 16px;">
           <div class="fe" id="edate">Please select a preferred date</div>
           <div class="fn"><button class="bb" data-prv="5">← Back</button><button class="bn" data-nxt="5">Next →</button></div>
         </div>
@@ -609,12 +610,12 @@ void main(){
     <span class="eyebrow">Customer Reviews</span>
     <h2 class="section-title">Real tenants. Real bonds returned.</h2>
     <p class="section-sub">Over 3000 bond cleans completed across Perth, Melbourne, Brisbane, and Sydney — here's what tenants say.</p>
-    <div class="swiper-container reviews-slider"><div class="swiper-wrapper">
-      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Highly recommend these guys! My PM is notoriously strict. Got our full bond refund with zero issues!"</div><div class="rev-name">Sarah Jenkins</div></div>
-      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Great experience. Punctual, professional, very efficient. Easy booking, clear pricing with no hidden costs. The agent even commented on how clean the place was."</div><div class="rev-name">David T.</div></div>
-      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Incredible job on my 2 bed apartment. Carpet steam cleaning was top tier — got out stubborn stains I thought were permanent."</div><div class="rev-name">Michelle Nguyen</div></div>
-      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Absolute lifesavers. Another company cancelled last minute and these guys squeezed me in the next day. Passed inspection first go!"</div><div class="rev-name">Lachlan Smith</div></div>
-      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Best bond cleaners I've used. Professional, turned up when they said they would, and the quality was excellent."</div><div class="rev-name">Marcus Brody — Brisbane</div></div>
+    <div class="swiper reviews-slider"><div class="swiper-wrapper">
+      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Highly recommend these guys! My PM is notoriously strict. Got our full bond refund with zero issues!"</div><div class="rev-name">Sarah Jenkins</div></div></div>
+      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Great experience. Punctual, professional, very efficient. Easy booking, clear pricing with no hidden costs. The agent even commented on how clean the place was."</div><div class="rev-name">David T.</div></div></div>
+      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Incredible job on my 2 bed apartment. Carpet steam cleaning was top tier — got out stubborn stains I thought were permanent."</div><div class="rev-name">Michelle Nguyen</div></div></div>
+      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Absolute lifesavers. Another company cancelled last minute and these guys squeezed me in the next day. Passed inspection first go!"</div><div class="rev-name">Lachlan Smith</div></div></div>
+      <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Best bond cleaners I've used. Professional, turned up when they said they would, and the quality was excellent."</div><div class="rev-name">Marcus Brody — Brisbane</div></div></div>
       <div class="swiper-slide"><div class="review-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Amazing attention to detail! They even cleaned the fly screens and tracks which most places miss. Real estate was super happy."</div><div class="rev-name">Jessica M.</div></div>
     </div>
   </div>
