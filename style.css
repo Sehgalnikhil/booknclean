@@ -3850,6 +3850,41 @@ input, select, textarea {
    ADDITIONAL RESPONSIVENESS AND LAYOUT FIXES
 ─────────────────────────────────────────────────────────── */
 
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-ctr);
+  color: #fff !important;
+  font-family: var(--ff-head);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  box-shadow: 0 4px 14px rgba(232, 112, 90, 0.3);
+}
+.btn-hero-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 112, 90, 0.4);
+}
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--ff-head);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--primary-ctr) !important;
+  text-decoration: none;
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.btn-hero-secondary:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
 /* 1. Services page grid (.services-grid) */
 .services-grid {
   display: grid;
@@ -4358,39 +4393,7 @@ footer a { display: inline-block; min-height: 24px; padding: 2px 0; }
   max-width: 600px;
   width: 100%;
 }
-.btn-hero-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--hero-yellow);
-  color: var(--on-primary) !important;
-  font-family: var(--ff-head);
-  font-weight: 700;
-  font-size: 15px;
-  padding: 14px 28px;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: transform 0.2s var(--ease), filter 0.2s var(--ease);
-  box-shadow: 0 4px 14px rgba(43, 74, 139, 0.25);
-}
-.btn-hero-primary:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.1);
-}
-.btn-hero-secondary {
-  font-family: var(--ff-head);
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--on-primary) !important;
-  text-decoration: none;
-  border-bottom: 2px solid rgba(255,255,255,0.4);
-  padding-bottom: 2px;
-  transition: border-color 0.2s var(--ease), opacity 0.2s var(--ease);
-}
-.btn-hero-secondary:hover {
-  border-color: var(--on-primary);
-  opacity: 0.9;
-}
+
 
 /* Booking Form Heading block */
 .quote-heading-wrap {
